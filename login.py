@@ -12,7 +12,7 @@ import pyrebase
 import requests
 import json
 
-
+rutaUi = os.path.join(os.path.dirname(__file__), 'calculadora.ui')
 diractual = os.getcwd()
 path = diractual + "/8-login/"
 
