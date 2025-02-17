@@ -15,3 +15,6 @@ Python, PyQt, BD Local (SQL que carge lo inicial), Firebase
 Lógica de negocio:
 
 - Los aviones de cada destino pueden llenarse.
+
+Nombre de la aplicación:
+- Skyberia 
