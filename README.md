@@ -15,3 +15,12 @@ Python, PyQt, BD Local (SQL que carge lo inicial), Firebase
 Lógica de negocio:
 
 - Los aviones de cada destino pueden llenarse.
+- Los usuarios pueden tener acompañantes.
+- Si el avion esta lleno que no salga como viaje o destino disponible, en el apartado comprar.
+- No podemos comprar destino en fecha no vigentes
+- Solo los admins o agentes autorizados pueden crear destinos nuevos.
+- los agentes autorizados tendran un apartado ventas donde saldran el dinero que puede cuanto dinero y cuantos usuarios estan inscrito en ese avion
+- 
+
+Nombre de la aplicación:
+- Skyberia 
