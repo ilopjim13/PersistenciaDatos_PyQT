@@ -15,8 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QLabel, QMainWindow, QPushButton,
-    QSizePolicy, QStatusBar, QWidget)
+from PySide6.QtWidgets import (QApplication, QHeaderView, QLabel, QLineEdit,
+    QMainWindow, QPushButton, QSizePolicy, QStatusBar,
+    QTableWidget, QTableWidgetItem, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -26,25 +27,18 @@ class Ui_MainWindow(object):
         MainWindow.setStyleSheet(u"background-color: rgb(255, 225, 148);")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.label = QLabel(self.centralwidget)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(0, 40, 791, 61))
+        self.la_tit = QLabel(self.centralwidget)
+        self.la_tit.setObjectName(u"la_tit")
+        self.la_tit.setGeometry(QRect(0, 40, 791, 61))
         font = QFont()
         font.setFamilies([u"Times New Roman"])
         font.setPointSize(16)
         font.setBold(True)
-        self.label.setFont(font)
-        self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.la_res = QLabel(self.centralwidget)
-        self.la_res.setObjectName(u"la_res")
-        self.la_res.setGeometry(QRect(150, 140, 331, 20))
-        font1 = QFont()
-        font1.setPointSize(12)
-        self.la_res.setFont(font1)
-        self.la_res.setStyleSheet(u"color: red;")
+        self.la_tit.setFont(font)
+        self.la_tit.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.bu_volver_a = QPushButton(self.centralwidget)
         self.bu_volver_a.setObjectName(u"bu_volver_a")
-        self.bu_volver_a.setGeometry(QRect(310, 350, 121, 51))
+        self.bu_volver_a.setGeometry(QRect(190, 530, 121, 51))
         self.bu_volver_a.setStyleSheet(u"QPushButton {\n"
 "        background-color: palegoldenrod;\n"
 "        border-width: 2px;\n"
@@ -75,6 +69,36 @@ class Ui_MainWindow(object):
 "        min-width: 9ex;\n"
 "        min-height: 2.5ex;\n"
 "    }")
+        self.li_dni = QLineEdit(self.centralwidget)
+        self.li_dni.setObjectName(u"li_dni")
+        self.li_dni.setGeometry(QRect(150, 140, 211, 21))
+        self.li_apel1 = QLineEdit(self.centralwidget)
+        self.li_apel1.setObjectName(u"li_apel1")
+        self.li_apel1.setGeometry(QRect(150, 170, 211, 21))
+        self.lineEdit_3 = QLineEdit(self.centralwidget)
+        self.lineEdit_3.setObjectName(u"lineEdit_3")
+        self.lineEdit_3.setGeometry(QRect(150, 200, 131, 21))
+        self.la_nom = QLabel(self.centralwidget)
+        self.la_nom.setObjectName(u"la_nom")
+        self.la_nom.setGeometry(QRect(70, 140, 71, 16))
+        font1 = QFont()
+        font1.setPointSize(12)
+        font1.setBold(True)
+        self.la_nom.setFont(font1)
+        self.la_nom.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
+        self.la_nom_2 = QLabel(self.centralwidget)
+        self.la_nom_2.setObjectName(u"la_nom_2")
+        self.la_nom_2.setGeometry(QRect(60, 170, 81, 20))
+        self.la_nom_2.setFont(font1)
+        self.la_nom_2.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
+        self.la_nom_3 = QLabel(self.centralwidget)
+        self.la_nom_3.setObjectName(u"la_nom_3")
+        self.la_nom_3.setGeometry(QRect(70, 200, 71, 16))
+        self.la_nom_3.setFont(font1)
+        self.la_nom_3.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+        self.tableWidget = QTableWidget(self.centralwidget)
+        self.tableWidget.setObjectName(u"tableWidget")
+        self.tableWidget.setGeometry(QRect(90, 260, 331, 192))
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -87,8 +111,10 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"EJEMPLO LOGIN", None))
-        self.la_res.setText(QCoreApplication.translate("MainWindow", u"MEN\u00da DE OPCIONES", None))
+        self.la_tit.setText(QCoreApplication.translate("MainWindow", u"EJEMPLO LOGIN", None))
         self.bu_volver_a.setText(QCoreApplication.translate("MainWindow", u"VOLVER", None))
+        self.la_nom.setText(QCoreApplication.translate("MainWindow", u"Nombre:", None))
+        self.la_nom_2.setText(QCoreApplication.translate("MainWindow", u"Apellido 1:", None))
+        self.la_nom_3.setText(QCoreApplication.translate("MainWindow", u"DNI:", None))
     # retranslateUi
 

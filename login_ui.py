@@ -78,10 +78,76 @@ class Ui_MainWindow(object):
         font2.setPointSize(12)
         self.la_res.setFont(font2)
         self.la_res.setStyleSheet(u"color: red;")
-        self.buaceptar = QPushButton(self.centralwidget)
-        self.buaceptar.setObjectName(u"buaceptar")
-        self.buaceptar.setGeometry(QRect(300, 460, 75, 25))
-        self.buaceptar.setStyleSheet(u"QPushButton {\n"
+        self.bu_login = QPushButton(self.frame)
+        self.bu_login.setObjectName(u"bu_login")
+        self.bu_login.setGeometry(QRect(50, 130, 75, 25))
+        self.bu_login.setStyleSheet(u"QPushButton {\n"
+"        background-color: palegoldenrod;\n"
+"        border-width: 2px;\n"
+"        border-color: darkkhaki;\n"
+"        border-style: solid;\n"
+"        border-radius: 5;\n"
+"        padding: 3px;\n"
+"        min-width: 9ex;\n"
+"        min-height: 2.5ex;\n"
+"    }\n"
+"QPushButton:hover {\n"
+"        background-color: red;\n"
+"        border-width: 2px;\n"
+"        border-color: darkkhaki;\n"
+"        border-style: solid;\n"
+"        border-radius: 5;\n"
+"        padding: 3px;\n"
+"        min-width: 9ex;\n"
+"        min-height: 2.5ex;\n"
+"    }\n"
+"QPushButton:pressed{\n"
+"        background-color: blue;\n"
+"        border-width: 2px;\n"
+"        border-color: darkkhaki;\n"
+"        border-style: solid;\n"
+"        border-radius: 10;\n"
+"        padding: 3px;\n"
+"        min-width: 9ex;\n"
+"        min-height: 2.5ex;\n"
+"    }")
+        self.bu_reg = QPushButton(self.frame)
+        self.bu_reg.setObjectName(u"bu_reg")
+        self.bu_reg.setGeometry(QRect(240, 130, 75, 25))
+        self.bu_reg.setStyleSheet(u"QPushButton {\n"
+"        background-color: palegoldenrod;\n"
+"        border-width: 2px;\n"
+"        border-color: darkkhaki;\n"
+"        border-style: solid;\n"
+"        border-radius: 5;\n"
+"        padding: 3px;\n"
+"        min-width: 9ex;\n"
+"        min-height: 2.5ex;\n"
+"    }\n"
+"QPushButton:hover {\n"
+"        background-color: red;\n"
+"        border-width: 2px;\n"
+"        border-color: darkkhaki;\n"
+"        border-style: solid;\n"
+"        border-radius: 5;\n"
+"        padding: 3px;\n"
+"        min-width: 9ex;\n"
+"        min-height: 2.5ex;\n"
+"    }\n"
+"QPushButton:pressed{\n"
+"        background-color: blue;\n"
+"        border-width: 2px;\n"
+"        border-color: darkkhaki;\n"
+"        border-style: solid;\n"
+"        border-radius: 10;\n"
+"        padding: 3px;\n"
+"        min-width: 9ex;\n"
+"        min-height: 2.5ex;\n"
+"    }")
+        self.bu_salir = QPushButton(self.centralwidget)
+        self.bu_salir.setObjectName(u"bu_salir")
+        self.bu_salir.setGeometry(QRect(300, 440, 75, 25))
+        self.bu_salir.setStyleSheet(u"QPushButton {\n"
 "        background-color: palegoldenrod;\n"
 "        border-width: 2px;\n"
 "        border-color: darkkhaki;\n"
@@ -115,8 +181,13 @@ class Ui_MainWindow(object):
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
         MainWindow.setStatusBar(self.statusbar)
+        QWidget.setTabOrder(self.li_usuario, self.li_contra)
+        QWidget.setTabOrder(self.li_contra, self.bu_login)
+        QWidget.setTabOrder(self.bu_login, self.bu_reg)
+        QWidget.setTabOrder(self.bu_reg, self.bu_salir)
 
         self.retranslateUi(MainWindow)
+        self.bu_salir.clicked.connect(MainWindow.close)
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
@@ -129,6 +200,8 @@ class Ui_MainWindow(object):
         self.li_usuario.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce un usuario", None))
         self.la_contra.setText(QCoreApplication.translate("MainWindow", u"Contrase\u00f1a:", None))
         self.la_res.setText("")
-        self.buaceptar.setText(QCoreApplication.translate("MainWindow", u"Aceptar", None))
+        self.bu_login.setText(QCoreApplication.translate("MainWindow", u"Login", None))
+        self.bu_reg.setText(QCoreApplication.translate("MainWindow", u"Registrarse", None))
+        self.bu_salir.setText(QCoreApplication.translate("MainWindow", u"Salir", None))
     # retranslateUi
 

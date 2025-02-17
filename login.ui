@@ -174,12 +174,102 @@
       <string/>
      </property>
     </widget>
+    <widget class="QPushButton" name="bu_login">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>130</y>
+       <width>75</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+        background-color: palegoldenrod;
+        border-width: 2px;
+        border-color: darkkhaki;
+        border-style: solid;
+        border-radius: 5;
+        padding: 3px;
+        min-width: 9ex;
+        min-height: 2.5ex;
+    }
+QPushButton:hover {
+        background-color: red;
+        border-width: 2px;
+        border-color: darkkhaki;
+        border-style: solid;
+        border-radius: 5;
+        padding: 3px;
+        min-width: 9ex;
+        min-height: 2.5ex;
+    }
+QPushButton:pressed{
+        background-color: blue;
+        border-width: 2px;
+        border-color: darkkhaki;
+        border-style: solid;
+        border-radius: 10;
+        padding: 3px;
+        min-width: 9ex;
+        min-height: 2.5ex;
+    }</string>
+     </property>
+     <property name="text">
+      <string>Login</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="bu_reg">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>130</y>
+       <width>75</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+        background-color: palegoldenrod;
+        border-width: 2px;
+        border-color: darkkhaki;
+        border-style: solid;
+        border-radius: 5;
+        padding: 3px;
+        min-width: 9ex;
+        min-height: 2.5ex;
+    }
+QPushButton:hover {
+        background-color: red;
+        border-width: 2px;
+        border-color: darkkhaki;
+        border-style: solid;
+        border-radius: 5;
+        padding: 3px;
+        min-width: 9ex;
+        min-height: 2.5ex;
+    }
+QPushButton:pressed{
+        background-color: blue;
+        border-width: 2px;
+        border-color: darkkhaki;
+        border-style: solid;
+        border-radius: 10;
+        padding: 3px;
+        min-width: 9ex;
+        min-height: 2.5ex;
+    }</string>
+     </property>
+     <property name="text">
+      <string>Registrarse</string>
+     </property>
+    </widget>
    </widget>
-   <widget class="QPushButton" name="buaceptar">
+   <widget class="QPushButton" name="bu_salir">
     <property name="geometry">
      <rect>
       <x>300</x>
-      <y>460</y>
+      <y>440</y>
       <width>75</width>
       <height>25</height>
      </rect>
@@ -217,12 +307,36 @@ QPushButton:pressed{
     }</string>
     </property>
     <property name="text">
-     <string>Aceptar</string>
+     <string>Salir</string>
     </property>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <tabstops>
+  <tabstop>li_usuario</tabstop>
+  <tabstop>li_contra</tabstop>
+  <tabstop>bu_login</tabstop>
+  <tabstop>bu_reg</tabstop>
+  <tabstop>bu_salir</tabstop>
+ </tabstops>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>bu_salir</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>331</x>
+     <y>450</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>486</x>
+     <y>452</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
