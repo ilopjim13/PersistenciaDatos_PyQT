@@ -25,7 +25,7 @@ class AcceptWindow(QMainWindow):
         super().__init__() # Reservamos un espacio en memoria para la clase
 
         file_accept = "accept.ui"
-        full_path_accept = path + file_accept
+        full_path_accept =  os.path.join(os.path.dirname(__file__), file_accept)
         accept = uic.loadUi(full_path_accept) 
         uic.loadUi(full_path_accept,self) #Lee el archivo de QtDesigner
         self.bu_volver_a.clicked.connect(self.show_new_window2)
@@ -42,7 +42,7 @@ class ErrorWindow(QMainWindow):
         super().__init__() # Reservamos un espacio en memoria para la clase
 
         file_err = "error.ui"
-        full_path_err = path + file_err
+        full_path_err =  os.path.join(os.path.dirname(__file__), file_err)
         error = uic.loadUi(full_path_err) 
         uic.loadUi(full_path_err,self) #Lee el archivo de QtDesigner
         self.bu_volver.clicked.connect(self.show_new_window1)
@@ -58,7 +58,7 @@ class Ventana(QMainWindow):
     def __init__(self):        #Inicializa la ventana
         super(Ventana, self).__init__() # Reservamos un espacio en memoria para la clase
         file_log = "login.ui"
-        full_path_lo = path + file_log
+        full_path_lo = os.path.join(os.path.dirname(__file__), file_log)
 
         login = uic.loadUi(full_path_lo, self) #Lee el archivo de QtDesigner
 
