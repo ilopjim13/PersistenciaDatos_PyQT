@@ -1,4 +1,4 @@
-Estructura de pantallas : 
+# Estructura de pantallas : 
 
 - 1º Login/Register (Con sus respectivos errores y cositas).
 - 2º Principal con los destinos sugeridos y buscar destinos.
@@ -8,10 +8,13 @@ Estructura de pantallas :
 - 6º Gestión de usuario.
 - 7º Pantalla para editar campos, una pantalla para todos editandos los diferentes campos si es posible mediante codigo.
 
-Tecnologias a usar : 
+# Tecnologias a usar : 
 
 Python, PyQt, BD Local (SQL que carge lo inicial), Firebase 
 
+# IVAN
+
+## HACE TODO JAPON
 
 Lógica de negocio:
 
