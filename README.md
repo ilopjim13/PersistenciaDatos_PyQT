@@ -12,14 +12,28 @@
 
 Python, PyQt, BD Local (SQL que carge lo inicial), Firebase 
 
-# IVAN
+# Partes a realizar
 
-## HACE TODO JAPON
+- 2º Hacer una ventana con dos TextField (Uno no se puede editar) y una qtable (o alguna manera de poner una lista bonita) con los destinos y que sean clicables.
+
+- 3º Aparecen los vuelos con los precios con los precios, las maletas y la clase. Si no están disponibles no aparecerán. Se podrá filtrar por varios campos para el orden.
+
+- 4º Aparecerán preguntas para agregar el viaje, nombre, datos personaes, personas a viajar, (no podrá superar el espacio del avión) y elegir hotel
+
+- 5º Aparecerán los datos del viaje, con los datos persoanes, con el vuelo, el avion y el hotel y un boton para descargar
+
+- 6º Pantalla de usuario con boton de actualizar que aparecerán los campos con nuestros datos para actualizarlo y cancelar nuestros viajes (esto puede ser otra pantalla ) y dos botones abajo del todo para cerrar sesión y eliminar la cuenta (deberán sacarnos al login y al eliminar borrar ese usuario)
+
+- 7º Esta pagina aún no sé, deberemos tener un lugar donde podemos agregar, actualizar y eliminar aviones, hoteles y destinos
 
 Lógica de negocio:
 
 - Los aviones de cada destino pueden llenarse.
 - Los usuarios pueden tener acompañantes.
+- Si el avion esta lleno que no salga como viaje o destino disponible, en el apartado comprar.
+- No podemos comprar destino en fecha no vigentes
+- Solo los admins o agentes autorizados pueden crear destinos nuevos.
+- los usuarios pueden tener un historial de viajes ya realizados (opcional)
 
 >
     IDEAS NO CONFIRMADAS, SEGUN SU COMPLEJIDAD
