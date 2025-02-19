@@ -9,28 +9,31 @@ class Vuelos(QMainWindow):
     def __init__(self, destino):
         super().__init__()
         uic.loadUi("vuelos.ui", self)
+        self.Titulo.setText(f"Vuelos a {destino}")
         self.destino = destino
         self.orden = 2
         self.cargar_vuelos()
         self.comboBox.currentIndexChanged.connect(self.update_tabla_vuelos)
 
-    def cargar_vuelos(self, orden=2):
+    def cargar_vuelos(self):
         conn = sqlite3.connect("viajes.db")
         cursor = conn.cursor()
 
         cursor.execute("""
-            SELECT v.id, a.modelo, a.categoria, v.precio, (v.cantidad_asientos - a.capacidad_total) AS cantidad_total
+            SELECT a.modelo, a.categoria, v.precio, (v.cantidad_asientos - a.capacidad_total) AS cantidad_total,v.id 
             FROM avion a
             JOIN vuelo v ON a.id = v.avion_id
             JOIN destino d ON v.destino_id = d.id
             WHERE d.nombre = ?
             ORDER BY ?
-        """, (self.destino, orden))
+        """, (self.destino, self.orden))
 
         aviones = cursor.fetchall()
+        aviones.sort(key=lambda x: x[self.orden-2])
+        print(f"Aviones encontrados: {aviones}")
 
         self.tabla_vuelos.setColumnCount(4)
-        self.tabla_vuelos.setHorizontalHeaderLabels(["Modelo", "Categoria", "Precio", "Cantidad de Asientos"])
+        self.tabla_vuelos.setHorizontalHeaderLabels(["Modelo", "Categoria", "Precio", "Asientos"])
 
         self.tabla_vuelos.setRowCount(0)
         for row_idx, row_data in enumerate(aviones):
@@ -47,13 +50,14 @@ class Vuelos(QMainWindow):
             self.orden = 3
         elif self.comboBox.currentText() == "Precio":
             self.orden = 4
-        self.cargar_vuelos(self.orden)
+        self.tabla_vuelos.setRowCount(0)
+        self.cargar_vuelos()
 
 if __name__ == "__main__":
     # se crea la instancia de la aplicación
     app = QApplication(sys.argv)
     # se crea la instancia de la ventana
-    window = Vuelos("japon")
+    window = Vuelos("Francia")
     # se muestra la ventana 
     window.show()
     # se entrega el control al sistema operativo

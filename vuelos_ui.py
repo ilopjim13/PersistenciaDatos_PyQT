@@ -16,8 +16,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplication, QComboBox,
-    QHeaderView, QLabel, QMainWindow, QSizePolicy,
-    QStatusBar, QTableWidget, QTableWidgetItem, QWidget)
+    QFrame, QHeaderView, QLabel, QMainWindow,
+    QSizePolicy, QStatusBar, QTableWidget, QTableWidgetItem,
+    QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -39,18 +40,36 @@ class Ui_MainWindow(object):
         font.setPointSize(20)
         font.setBold(True)
         self.Titulo.setFont(font)
+        self.Titulo.setLayoutDirection(Qt.LeftToRight)
         self.Titulo.setStyleSheet(u"color: white;")
+        self.Titulo.setAlignment(Qt.AlignCenter)
         self.tabla_vuelos = QTableWidget(self.centralwidget)
         self.tabla_vuelos.setObjectName(u"tabla_vuelos")
         self.tabla_vuelos.setGeometry(QRect(20, 129, 760, 421))
+        self.tabla_vuelos.setLayoutDirection(Qt.LeftToRight)
+        self.tabla_vuelos.setAutoFillBackground(False)
+        self.tabla_vuelos.setFrameShape(QFrame.NoFrame)
+        self.tabla_vuelos.setFrameShadow(QFrame.Sunken)
+        self.tabla_vuelos.setLineWidth(1)
+        self.tabla_vuelos.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.tabla_vuelos.setSizeAdjustPolicy(QAbstractScrollArea.AdjustIgnored)
-        self.tabla_vuelos.setSelectionMode(QAbstractItemView.ExtendedSelection)
+        self.tabla_vuelos.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.tabla_vuelos.setDragDropMode(QAbstractItemView.NoDragDrop)
+        self.tabla_vuelos.setAlternatingRowColors(False)
+        self.tabla_vuelos.setSelectionMode(QAbstractItemView.SingleSelection)
+        self.tabla_vuelos.setSelectionBehavior(QAbstractItemView.SelectRows)
+        self.tabla_vuelos.setTextElideMode(Qt.ElideMiddle)
+        self.tabla_vuelos.setShowGrid(False)
+        self.tabla_vuelos.setGridStyle(Qt.SolidLine)
+        self.tabla_vuelos.setSortingEnabled(False)
+        self.tabla_vuelos.setCornerButtonEnabled(True)
         self.tabla_vuelos.setRowCount(0)
         self.tabla_vuelos.setColumnCount(0)
         self.tabla_vuelos.horizontalHeader().setVisible(True)
         self.tabla_vuelos.horizontalHeader().setCascadingSectionResizes(False)
-        self.tabla_vuelos.horizontalHeader().setDefaultSectionSize(100)
-        self.tabla_vuelos.verticalHeader().setVisible(True)
+        self.tabla_vuelos.horizontalHeader().setDefaultSectionSize(190)
+        self.tabla_vuelos.horizontalHeader().setStretchLastSection(False)
+        self.tabla_vuelos.verticalHeader().setVisible(False)
         self.tabla_vuelos.verticalHeader().setHighlightSections(True)
         self.comboBox = QComboBox(self.centralwidget)
         self.comboBox.addItem("")
