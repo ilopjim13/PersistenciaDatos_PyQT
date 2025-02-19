@@ -11,11 +11,20 @@ from PyQt6 import uic  # Librería para trabajar con el archivo de la interfaz
 import pyrebase
 import requests
 import json
+import BD
+import BD.basedatos
+from misviajes import MisViajes 
 
-rutaUi = os.path.join(os.path.dirname(__file__), 'calculadora.ui')
+#rutaUi = os.path.join(os.path.dirname(__file__), 'calculadora.ui')
 diractual = os.getcwd()
 path = diractual + "/8-login/"
 
+
+
+class VentanaPrincipal(QMainWindow):  
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Ventana Principal")
 
 #Carga la interfaz gráfica y conecta los botones
 class AcceptWindow(QMainWindow):
@@ -23,7 +32,7 @@ class AcceptWindow(QMainWindow):
     def __init__(self):
     #Inicializa la ventana
         super().__init__() # Reservamos un espacio en memoria para la clase
-
+        
         file_accept = "accept.ui"
         full_path_accept =  os.path.join(os.path.dirname(__file__), file_accept)
         accept = uic.loadUi(full_path_accept) 
@@ -54,6 +63,8 @@ class ErrorWindow(QMainWindow):
 class Ventana(QMainWindow):
     '''Esta es la clase principal'''
 
+    email = ""
+
 
     def __init__(self):        #Inicializa la ventana
         super(Ventana, self).__init__() # Reservamos un espacio en memoria para la clase
@@ -62,15 +73,16 @@ class Ventana(QMainWindow):
 
         login = uic.loadUi(full_path_lo, self) #Lee el archivo de QtDesigner
 
-        self.firebaseConfig = {
-            "apiKey": "AIzaSyBcKaidBnSBRdPIBmFoVJsgW9Qc0PcK9xo",
-            "authDomain": "login-new-17939.firebaseapp.com",
-            "databaseURL": "https://login-new-17939.firebaseio.com",
-            "projectId": "login-new-17939",
-            "storageBucket": "login-new-17939.firebasestorage.app",
-            "messagingSenderId": "884933777222",
-            "appId": "1:884933777222:web:93cffbbc6a878632a3b747"
-        }   
+        self.firebaseConfig ={
+            "apiKey": "AIzaSyDtWlIUbITDQtvTI6pi4k0WxxOlimBIXxY",
+            "authDomain": "prueba1-79b1f.firebaseapp.com",
+            "databaseURL": "https://prueba1-79b1f-default-rtdb.firebaseio.com/", 
+            "projectId": "prueba1-79b1f",
+            "storageBucket": "prueba1-79b1f.appspot.com",
+            "messagingSenderId": "827606316467",
+            "appId": "1:827606316467:web:7cd3fcc0d0d4af6edec7c6"
+        }
+
         
 
 
@@ -82,7 +94,7 @@ class Ventana(QMainWindow):
         self.bu_reg.clicked.connect(self.gui_reg)
 
 
-    def correcto(self, estatus):
+    def correcto(self, estatus,email):
         if estatus=="l":
             QMessageBox.information(self,'¡Login correcto!', "Acceso garantizado") 
         else:
@@ -90,22 +102,23 @@ class Ventana(QMainWindow):
         self.msg = QMessageBox(self)
         self.msg.show
         window.hide()
+        ##########VentanaViajes(email).show()
         w3.show() 
 
     def error():
         window.hide()
-        w2.show() 
+        w2.show()
 
     def gui_reg(self):
         name = self.li_usuario.text()
         passw = self.li_contra.text()  #hashlib
         if len(name)== 0 or len(passw) == 0:
-            self.la_res.setText("Ingrese todos los datos")
+            QMessageBox.critical(self,'Error', "Ingrese todos los datos") 
         else:
             # user = self.auth.create_user_with_email_and_password(name, passw)
             try:
                 user = self.auth.create_user_with_email_and_password(name, passw)
-                self.correcto("r")
+                self.correcto("r",email=user["email"])
             except requests.exceptions.HTTPError as e:
                 error_json = e.args[1]
                 error = json.loads(error_json)['error']['message']
@@ -131,11 +144,11 @@ class Ventana(QMainWindow):
         name = self.li_usuario.text()
         passw = self.li_contra.text()  #hashlib
         if len(name)== 0 or len(passw) == 0:
-            self.la_res.setText("Ingrese todos los datos")
+            QMessageBox.critical(self,'Error', "Ingrese todos los datos") 
         else:
             try:
                 user = self.auth.sign_in_with_email_and_password(name, passw)
-                self.correcto("l")
+                self.correcto("l",user["email"])
             except requests.exceptions.HTTPError as e:
                 error_json = e.args[1]
                 error = json.loads(error_json)['error']['message']
@@ -149,12 +162,12 @@ class Ventana(QMainWindow):
         name = self.li_usuario.text()
         passw = self.li_contra.text()  #hashlib
         if len(name)== 0 or len(passw) == 0:
-            self.la_res.setText("Ingrese todos los datos")
+            QMessageBox.critical(self,'Error', "Ingrese todos los datos") 
             
         else:
             try:
                 user = self.auth.sign_in_with_email_and_password(name, passw)
-                self.correcto()
+                self.correcto(email=user["email"])
             except requests.exceptions.HTTPError as e:
                 error_json = e.args[1]
                 error = json.loads(error_json)['error']['message']

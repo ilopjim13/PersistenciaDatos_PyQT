@@ -11,30 +11,37 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Vuelos App</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 225, 148);</string>
+   <string notr="true">
+    MainWindow {
+        background-image: url("imagenes/fondo.jpg") background-position: center;
+    }
+   </string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="Titulo">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>80</y>
-      <width>791</width>
-      <height>61</height>
+      <y>50</y>
+      <width>800</width>
+      <height>60</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Times New Roman</family>
-      <pointsize>16</pointsize>
+      <family>Arial</family>
+      <pointsize>20</pointsize>
       <bold>true</bold>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;</string>
+    </property>
     <property name="text">
-     <string>EJEMPLO LOGIN</string>
+     <string>Bienvenido a Vuelos App</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -43,177 +50,128 @@
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>220</y>
-      <width>371</width>
-      <height>181</height>
+      <x>215</x>
+      <y>200</y>
+      <width>370</width>
+      <height>200</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(85, 255, 255);</string>
+     <string notr="true">
+        QFrame {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            border: 2px solid #3498db;
+        }
+     </string>
     </property>
     <property name="frameShape">
      <enum>QFrame::Shape::Box</enum>
     </property>
     <property name="frameShadow">
-     <enum>QFrame::Shadow::Sunken</enum>
+     <enum>QFrame::Shadow::Raised</enum>
     </property>
-    <widget class="QLineEdit" name="li_contra">
-     <property name="geometry">
-      <rect>
-       <x>130</x>
-       <y>80</y>
-       <width>161</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255,255,255);</string>
-     </property>
-     <property name="echoMode">
-      <enum>QLineEdit::EchoMode::Password</enum>
-     </property>
-     <property name="placeholderText">
-      <string>introduce una contraseña</string>
-     </property>
-    </widget>
     <widget class="QLabel" name="la_usu">
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>30</y>
-       <width>71</width>
-       <height>21</height>
+       <y>40</y>
+       <width>80</width>
+       <height>25</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>Times New Roman</family>
+       <family>Arial</family>
        <pointsize>12</pointsize>
        <bold>true</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">colo: rgb(255, 255, 255)</string>
+      <string notr="true">color: black;</string>
      </property>
      <property name="text">
       <string>Usuario:</string>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
     <widget class="QLineEdit" name="li_usuario">
      <property name="geometry">
       <rect>
-       <x>130</x>
-       <y>30</y>
-       <width>161</width>
-       <height>21</height>
+       <x>140</x>
+       <y>40</y>
+       <width>180</width>
+       <height>25</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(255,255,255);
-
-</string>
+      <string notr="true">background-color: white; border-radius: 5px;</string>
      </property>
      <property name="placeholderText">
-      <string>Introduce un usuario</string>
+      <string>Introduce tu usuario</string>
      </property>
     </widget>
     <widget class="QLabel" name="la_contra">
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>80</y>
-       <width>91</width>
-       <height>21</height>
+       <y>90</y>
+       <width>100</width>
+       <height>25</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>Times New Roman</family>
+       <family>Arial</family>
        <pointsize>12</pointsize>
        <bold>true</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">colo: rgb(255, 255, 255)</string>
+      <string notr="true">color: black;</string>
      </property>
      <property name="text">
       <string>Contraseña:</string>
      </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-     </property>
     </widget>
-    <widget class="QLabel" name="la_res">
+    <widget class="QLineEdit" name="li_contra">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>110</y>
-       <width>331</width>
-       <height>20</height>
+       <x>140</x>
+       <y>90</y>
+       <width>180</width>
+       <height>25</height>
       </rect>
      </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
      <property name="styleSheet">
-      <string notr="true">color: red;</string>
+      <string notr="true">background-color: white; border-radius: 5px;</string>
      </property>
-     <property name="text">
-      <string/>
+     <property name="echoMode">
+      <enum>QLineEdit::EchoMode::Password</enum>
+     </property>
+     <property name="placeholderText">
+      <string>Introduce tu contraseña</string>
      </property>
     </widget>
     <widget class="QPushButton" name="bu_login">
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>130</y>
-       <width>75</width>
-       <height>25</height>
+       <y>140</y>
+       <width>100</width>
+       <height>30</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">QPushButton {
-        background-color: palegoldenrod;
-        border-width: 2px;
-        border-color: darkkhaki;
-        border-style: solid;
-        border-radius: 5;
-        padding: 3px;
-        min-width: 9ex;
-        min-height: 2.5ex;
-    }
-QPushButton:hover {
-        background-color: red;
-        border-width: 2px;
-        border-color: darkkhaki;
-        border-style: solid;
-        border-radius: 5;
-        padding: 3px;
-        min-width: 9ex;
-        min-height: 2.5ex;
-    }
-QPushButton:pressed{
-        background-color: blue;
-        border-width: 2px;
-        border-color: darkkhaki;
-        border-style: solid;
-        border-radius: 10;
-        padding: 3px;
-        min-width: 9ex;
-        min-height: 2.5ex;
-    }</string>
+      <string notr="true">
+        QPushButton {
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+        }
+        QPushButton:hover {
+            background-color: #2980b9;
+        }
+      </string>
      </property>
      <property name="text">
       <string>Login</string>
@@ -222,43 +180,23 @@ QPushButton:pressed{
     <widget class="QPushButton" name="bu_reg">
      <property name="geometry">
       <rect>
-       <x>240</x>
-       <y>130</y>
-       <width>75</width>
-       <height>25</height>
+       <x>210</x>
+       <y>140</y>
+       <width>100</width>
+       <height>30</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">QPushButton {
-        background-color: palegoldenrod;
-        border-width: 2px;
-        border-color: darkkhaki;
-        border-style: solid;
-        border-radius: 5;
-        padding: 3px;
-        min-width: 9ex;
-        min-height: 2.5ex;
-    }
-QPushButton:hover {
-        background-color: red;
-        border-width: 2px;
-        border-color: darkkhaki;
-        border-style: solid;
-        border-radius: 5;
-        padding: 3px;
-        min-width: 9ex;
-        min-height: 2.5ex;
-    }
-QPushButton:pressed{
-        background-color: blue;
-        border-width: 2px;
-        border-color: darkkhaki;
-        border-style: solid;
-        border-radius: 10;
-        padding: 3px;
-        min-width: 9ex;
-        min-height: 2.5ex;
-    }</string>
+      <string notr="true">
+        QPushButton {
+            background-color: #2ecc71;
+            color: white;
+            border-radius: 5px;
+        }
+        QPushButton:hover {
+            background-color: #27ae60;
+        }
+      </string>
      </property>
      <property name="text">
       <string>Registrarse</string>
@@ -268,43 +206,23 @@ QPushButton:pressed{
    <widget class="QPushButton" name="bu_salir">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>440</y>
-      <width>75</width>
-      <height>25</height>
+      <x>350</x>
+      <y>450</y>
+      <width>100</width>
+      <height>30</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QPushButton {
-        background-color: palegoldenrod;
-        border-width: 2px;
-        border-color: darkkhaki;
-        border-style: solid;
-        border-radius: 5;
-        padding: 3px;
-        min-width: 9ex;
-        min-height: 2.5ex;
-    }
-QPushButton:hover {
-        background-color: red;
-        border-width: 2px;
-        border-color: darkkhaki;
-        border-style: solid;
-        border-radius: 5;
-        padding: 3px;
-        min-width: 9ex;
-        min-height: 2.5ex;
-    }
-QPushButton:pressed{
-        background-color: blue;
-        border-width: 2px;
-        border-color: darkkhaki;
-        border-style: solid;
-        border-radius: 10;
-        padding: 3px;
-        min-width: 9ex;
-        min-height: 2.5ex;
-    }</string>
+     <string notr="true">
+        QPushButton {
+            background-color: red;
+            color: white;
+            border-radius: 5px;
+        }
+        QPushButton:hover {
+            background-color: darkred;
+        }
+      </string>
     </property>
     <property name="text">
      <string>Salir</string>
@@ -313,30 +231,6 @@ QPushButton:pressed{
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <tabstops>
-  <tabstop>li_usuario</tabstop>
-  <tabstop>li_contra</tabstop>
-  <tabstop>bu_login</tabstop>
-  <tabstop>bu_reg</tabstop>
-  <tabstop>bu_salir</tabstop>
- </tabstops>
  <resources/>
- <connections>
-  <connection>
-   <sender>bu_salir</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>331</x>
-     <y>450</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>486</x>
-     <y>452</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
