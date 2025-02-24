@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="mis_viajes">
+    <property name="title">
+     <string>Mis viajes</string>
+    </property>
+    <addaction name="actionver_viajes"/>
+    <addaction name="actioncomprar_viaje"/>
+   </widget>
+   <widget class="QMenu" name="menuMi_zona">
+    <property name="title">
+     <string>Mi zona</string>
+    </property>
+    <addaction name="actionconfiguracion"/>
+    <addaction name="actionacerca_de_mi"/>
+   </widget>
+   <widget class="QMenu" name="menuCerrar_sesion">
+    <property name="title">
+     <string>Salir</string>
+    </property>
+    <addaction name="actionCerrar_sesion"/>
+    <addaction name="actionSalir_del_programa"/>
+   </widget>
+   <addaction name="mis_viajes"/>
+   <addaction name="menuMi_zona"/>
+   <addaction name="menuCerrar_sesion"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionCerrar_sesion">
+   <property name="text">
+    <string>Cerrar sesion</string>
+   </property>
+  </action>
+  <action name="actionSalir_del_programa">
+   <property name="text">
+    <string>Salir del programa</string>
+   </property>
+  </action>
+  <action name="actionver_viajes">
+   <property name="text">
+    <string>ver viajes</string>
+   </property>
+  </action>
+  <action name="actioncomprar_viaje">
+   <property name="text">
+    <string>comprar viaje</string>
+   </property>
+  </action>
+  <action name="actionconfiguracion">
+   <property name="text">
+    <string>configuracion</string>
+   </property>
+  </action>
+  <action name="actionacerca_de_mi">
+   <property name="text">
+    <string>acerca de mi</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
