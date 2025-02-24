@@ -22,6 +22,14 @@ class Compra(QMainWindow):
         self.pt_destino.setPlainText(self.vuelo[0])
         self.pt_vuelo.setPlainText(self.vuelo[1])
 
+    def comprar(self):
+        con = sqlite3.connect("viajes.db")
+        cur = con.cursor()
+        cur.execute('''
+            INSERT INTO viaje (nombre, email)
+            VALUES (?, ?)
+        ''', (self.pasajero[0], self.pasajero[2]))
+
 if __name__ == "__main__":
     # se crea la instancia de la aplicación
     app = QApplication(sys.argv)
