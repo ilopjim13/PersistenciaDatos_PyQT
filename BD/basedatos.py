@@ -87,39 +87,39 @@ cursor.execute("""
 cursor.execute("""
     INSERT INTO vuelo (destino_id, avion_id, cantidad_asientos, precio) 
     VALUES 
-    (1, 1, (SELECT capacidad_total FROM avion WHERE id = 1), 
+    (1, 1, 0, 
      (SELECT precio * porcentaje_precio FROM destino, avion WHERE destino.id = 1 AND avion.id = 1)),
     
-    (1, 2, (SELECT capacidad_total FROM avion WHERE id = 2), 
+    (1, 2, 0, 
      (SELECT precio * porcentaje_precio FROM destino, avion WHERE destino.id = 1 AND avion.id = 2)),
     
-    (1, 3, (SELECT capacidad_total FROM avion WHERE id = 3), 
+    (1, 3, 0, 
      (SELECT precio * porcentaje_precio FROM destino, avion WHERE destino.id = 1 AND avion.id = 3));
 """)
 
 cursor.execute("""
     INSERT INTO vuelo (destino_id, avion_id, cantidad_asientos, precio) 
     VALUES 
-    (2, 1, (SELECT capacidad_total FROM avion WHERE id = 1), 
+    (2, 1, 0, 
      (SELECT precio * porcentaje_precio FROM destino, avion WHERE destino.id = 2 AND avion.id = 1)),
     
-    (2, 2, (SELECT capacidad_total FROM avion WHERE id = 2), 
+    (2, 2, 0, 
      (SELECT precio * porcentaje_precio FROM destino, avion WHERE destino.id = 2 AND avion.id = 2)),
     
-    (2, 3, (SELECT capacidad_total FROM avion WHERE id = 3), 
+    (2, 3, 0, 
      (SELECT precio * porcentaje_precio FROM destino, avion WHERE destino.id = 2 AND avion.id = 3));
 """)
 
 cursor.execute("""
     INSERT INTO vuelo (destino_id, avion_id, cantidad_asientos, precio) 
     VALUES 
-    (3, 1, (SELECT capacidad_total FROM avion WHERE id = 1), 
+    (3, 1, 0, 
      (SELECT precio * porcentaje_precio FROM destino, avion WHERE destino.id = 3 AND avion.id = 1)),
 
-    (3, 2, (SELECT capacidad_total FROM avion WHERE id = 2), 
+    (3, 2, 0, 
      (SELECT precio * porcentaje_precio FROM destino, avion WHERE destino.id = 3 AND avion.id = 2)),
 
-    (3, 3, (SELECT capacidad_total FROM avion WHERE id = 3), 
+    (3, 3, 0, 
      (SELECT precio * porcentaje_precio FROM destino, avion WHERE destino.id = 3 AND avion.id = 3));
 """)
 
