@@ -2,6 +2,15 @@ import sqlite3
 
 #Crear las tablas que necesiteis brothers nico gay
 
+def obtener_cliente(email):
+    conn = sqlite3.connect("viajes.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM cliente WHERE email = ?", (email,))
+    cliente = cursor.fetchone()
+    conn.close()
+    return cliente
+
+
 conn = sqlite3.connect("viajes.db")
 cursor = conn.cursor()
 
@@ -122,8 +131,6 @@ cursor.execute("""
     (3, 3, 0, 
      (SELECT precio * porcentaje_precio FROM destino, avion WHERE destino.id = 3 AND avion.id = 3));
 """)
-
-
 
 conn.commit()
 conn.close()

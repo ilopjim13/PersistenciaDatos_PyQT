@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>940</width>
+    <height>856</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,7 @@
   <property name="styleSheet">
    <string notr="true">
     MainWindow {
-        background-image: url("imagenes/fondo.jpg") background-position: center;
+        background-image: url(&quot;imagenes/fondo.jpg&quot;) background-position: center;
     }
    </string>
   </property>
@@ -24,7 +24,7 @@
    <widget class="QLabel" name="Titulo">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>30</x>
       <y>50</y>
       <width>800</width>
       <height>60</height>
@@ -50,10 +50,10 @@
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>215</x>
-      <y>200</y>
-      <width>370</width>
-      <height>200</height>
+      <x>180</x>
+      <y>160</y>
+      <width>511</width>
+      <height>521</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -97,7 +97,7 @@
     <widget class="QLineEdit" name="li_usuario">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>230</x>
        <y>40</y>
        <width>180</width>
        <height>25</height>
@@ -136,7 +136,7 @@
     <widget class="QLineEdit" name="li_contra">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>230</x>
        <y>90</y>
        <width>180</width>
        <height>25</height>
@@ -155,7 +155,7 @@
     <widget class="QPushButton" name="bu_login">
      <property name="geometry">
       <rect>
-       <x>50</x>
+       <x>200</x>
        <y>140</y>
        <width>100</width>
        <height>30</height>
@@ -180,8 +180,8 @@
     <widget class="QPushButton" name="bu_reg">
      <property name="geometry">
       <rect>
-       <x>210</x>
-       <y>140</y>
+       <x>190</x>
+       <y>440</y>
        <width>100</width>
        <height>30</height>
       </rect>
@@ -202,12 +202,92 @@
       <string>Registrarse</string>
      </property>
     </widget>
+    <widget class="QLineEdit" name="li_usuario_2">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>200</y>
+       <width>180</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white; border-radius: 5px;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Introduce tu usuario</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="li_usuario_3">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>250</y>
+       <width>180</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white; border-radius: 5px;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Introduce tu usuario</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="li_usuario_4">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>290</y>
+       <width>180</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white; border-radius: 5px;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Introduce tu usuario</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="li_usuario_5">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>340</y>
+       <width>180</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white; border-radius: 5px;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Introduce tu usuario</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="li_usuario_6">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>380</y>
+       <width>180</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white; border-radius: 5px;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Introduce tu usuario</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QPushButton" name="bu_salir">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>450</y>
+      <x>380</x>
+      <y>720</y>
       <width>100</width>
       <height>30</height>
      </rect>
