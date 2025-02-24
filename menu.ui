@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>799</width>
+    <height>623</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,13 +19,36 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>99</x>
+      <y>119</y>
+      <width>18</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QFrame" name="frame">
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>799</width>
      <height>33</height>
     </rect>
    </property>

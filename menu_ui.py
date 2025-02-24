@@ -16,14 +16,15 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QMainWindow, QMenu, QMenuBar,
-    QSizePolicy, QStatusBar, QWidget)
+from PySide6.QtWidgets import (QApplication, QFrame, QMainWindow, QMenu,
+    QMenuBar, QSizePolicy, QStatusBar, QVBoxLayout,
+    QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(799, 623)
         MainWindow.setAutoFillBackground(False)
         MainWindow.setStyleSheet(u"")
         self.actionCerrar_sesion = QAction(MainWindow)
@@ -40,10 +41,22 @@ class Ui_MainWindow(object):
         self.actionacerca_de_mi.setObjectName(u"actionacerca_de_mi")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
+        self.widget = QWidget(self.centralwidget)
+        self.widget.setObjectName(u"widget")
+        self.widget.setGeometry(QRect(99, 119, 18, 28))
+        self.verticalLayout = QVBoxLayout(self.widget)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.frame = QFrame(self.widget)
+        self.frame.setObjectName(u"frame")
+        self.frame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Shadow.Raised)
+
+        self.verticalLayout.addWidget(self.frame)
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 800, 33))
+        self.menubar.setGeometry(QRect(0, 0, 799, 33))
         self.mis_viajes = QMenu(self.menubar)
         self.mis_viajes.setObjectName(u"mis_viajes")
         self.menuMi_zona = QMenu(self.menubar)
