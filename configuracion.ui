@@ -36,7 +36,7 @@ background-color:#6b6b6b
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="QPBVolver">
          <property name="minimumSize">
           <size>
            <width>50</width>

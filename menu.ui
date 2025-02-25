@@ -80,7 +80,7 @@ background-color:#6b6b6b
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>:/icons/iconos/usuario.png</pixmap>
+          <pixmap resource="recursos.qrc">:/icons/recursos/iconos/usuario.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -174,7 +174,7 @@ background-color:#6b6b6b
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>:/icons/iconos/engranaje.png</pixmap>
+          <pixmap resource="recursos.qrc">:/icons/recursos/iconos/engranaje.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -459,7 +459,7 @@ background-color:#6b6b6b
   </action>
  </widget>
  <resources>
-  <include location="recursos/recursos.qrc"/>
+  <include location="recursos.qrc"/>
  </resources>
  <connections/>
 </ui>

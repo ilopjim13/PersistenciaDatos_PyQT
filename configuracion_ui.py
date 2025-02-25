@@ -42,12 +42,12 @@ class Ui_MainWindow(object):
         self.widget.setSizePolicy(sizePolicy)
         self.horizontalLayout = QHBoxLayout(self.widget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.pushButton = QPushButton(self.widget)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setMinimumSize(QSize(50, 50))
-        self.pushButton.setMaximumSize(QSize(50, 50))
+        self.QPBVolver = QPushButton(self.widget)
+        self.QPBVolver.setObjectName(u"QPBVolver")
+        self.QPBVolver.setMinimumSize(QSize(50, 50))
+        self.QPBVolver.setMaximumSize(QSize(50, 50))
 
-        self.horizontalLayout.addWidget(self.pushButton)
+        self.horizontalLayout.addWidget(self.QPBVolver)
 
         self.label_7 = QLabel(self.widget)
         self.label_7.setObjectName(u"label_7")
@@ -445,7 +445,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"volver", None))
+        self.QPBVolver.setText(QCoreApplication.translate("MainWindow", u"volver", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"CONFIGURACION", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Actualizar tu cuenta", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Correo       ", None))

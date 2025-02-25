@@ -1,13 +1,16 @@
+import os
 from PyQt6 import QtWidgets, uic
 import sys
-from PyQt6.QtWidgets import * # Librerías de los componentes
-import sqlite3
+from PyQt6.QtWidgets import *
 
 
 class Menu(QtWidgets.QMainWindow):
-    def __init__(self):
-        super().__init__()
-        uic.loadUi("menu.ui", self) 
+    def __init__(self,manager):
+        super(Menu, self).__init__()
+        file_log = "menu.ui"
+        full_path_lo = os.path.join(os.path.dirname(__file__), file_log)
+        uic.loadUi(full_path_lo,self)
+        self.manager = manager
         self.BMisViajes.clicked.connect(self.cargar_viajes)
         self.BViajes.clicked.connect(self.cargar_viajes)
         self.QLabelConfiguracion.mousePressEvent= self.mousePressEventLabel
@@ -15,15 +18,9 @@ class Menu(QtWidgets.QMainWindow):
     def cargar_viajes(self):
         conn = 3
         print("emmanuel")
-    def mousePressEventLabel(self, event):
-        self.cargar_viajes()
-if __name__ == '__main__':
-    # se crea la instancia de la aplicación
-    app = QApplication(sys.argv)
-    # se crea la instancia de la ventana
-    window = Menu()
 
-    # se muestra la ventana 
-    window.show()
-    # se entrega el control al sistema operativo
-    app.exec() 
+    def mousePressEventLabel(self, event):
+        self.irAConfiguracion()
+
+    def irAConfiguracion(self):
+        self.manager.mostrarVentana("configuracion")

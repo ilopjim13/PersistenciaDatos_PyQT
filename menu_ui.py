@@ -69,7 +69,7 @@ class Ui_MainWindow(object):
         self.QLabelUsuario = QLabel(self.QWGridCabecera)
         self.QLabelUsuario.setObjectName(u"QLabelUsuario")
         self.QLabelUsuario.setMaximumSize(QSize(85, 85))
-        self.QLabelUsuario.setPixmap(QPixmap(u":/icons/iconos/usuario.png"))
+        self.QLabelUsuario.setPixmap(QPixmap(u":/icons/recursos/iconos/usuario.png"))
         self.QLabelUsuario.setScaledContents(True)
 
         self.horizontalLayout.addWidget(self.QLabelUsuario)
@@ -120,7 +120,7 @@ class Ui_MainWindow(object):
         self.QLabelConfiguracion = QLabel(self.QWGridCabecera)
         self.QLabelConfiguracion.setObjectName(u"QLabelConfiguracion")
         self.QLabelConfiguracion.setMaximumSize(QSize(80, 80))
-        self.QLabelConfiguracion.setPixmap(QPixmap(u":/icons/iconos/engranaje.png"))
+        self.QLabelConfiguracion.setPixmap(QPixmap(u":/icons/recursos/iconos/engranaje.png"))
         self.QLabelConfiguracion.setScaledContents(True)
         self.QLabelConfiguracion.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
