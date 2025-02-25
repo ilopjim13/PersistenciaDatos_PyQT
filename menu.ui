@@ -6,78 +6,390 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>799</width>
-    <height>623</height>
+    <width>775</width>
+    <height>485</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>775</width>
+    <height>485</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
+  </property>
+  <property name="toolTip">
+   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </property>
   <property name="autoFillBackground">
-   <bool>false</bool>
+   <bool>true</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">
+</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="widget" native="true">
-    <property name="geometry">
-     <rect>
-      <x>99</x>
-      <y>119</y>
-      <width>18</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QFrame" name="frame">
-       <property name="frameShape">
-        <enum>QFrame::Shape::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Shadow::Raised</enum>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>799</width>
-     <height>33</height>
-    </rect>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::TabShape::Rounded</enum>
+  </property>
+  <property name="dockNestingEnabled">
+   <bool>false</bool>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="principal">
+   <property name="acceptDrops">
+    <bool>false</bool>
    </property>
-   <widget class="QMenu" name="mis_viajes">
-    <property name="title">
-     <string>Mis viajes</string>
-    </property>
-    <addaction name="actionver_viajes"/>
-    <addaction name="actioncomprar_viaje"/>
-   </widget>
-   <widget class="QMenu" name="menuMi_zona">
-    <property name="title">
-     <string>Mi zona</string>
-    </property>
-    <addaction name="actionconfiguracion"/>
-    <addaction name="actionacerca_de_mi"/>
-   </widget>
-   <widget class="QMenu" name="menuCerrar_sesion">
-    <property name="title">
-     <string>Salir</string>
-    </property>
-    <addaction name="actionCerrar_sesion"/>
-    <addaction name="actionSalir_del_programa"/>
-   </widget>
-   <addaction name="mis_viajes"/>
-   <addaction name="menuMi_zona"/>
-   <addaction name="menuCerrar_sesion"/>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#principal{
+background-color:#6b6b6b
+}</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QWidget" name="QWGridCabecera" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>10</verstretch>
+       </sizepolicy>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="QLabelUsuario">
+         <property name="maximumSize">
+          <size>
+           <width>85</width>
+           <height>85</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="recursos/recursos.qrc">:/icons/iconos/usuario.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="QWGirdDatosUsuarios" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLabel" name="QLNombre">
+            <property name="font">
+             <font>
+              <pointsize>20</pointsize>
+              <fontweight>ExtraBold</fontweight>
+             </font>
+            </property>
+            <property name="text">
+             <string>usuario</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="QLCorreo">
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <fontweight>ExtraBold</fontweight>
+             </font>
+            </property>
+            <property name="text">
+             <string>usuario@gmail.com</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="QLNombreApp">
+         <property name="palette">
+          <palette>
+           <active>
+            <colorrole role="WindowText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>0</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </active>
+           <inactive>
+            <colorrole role="WindowText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>0</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </inactive>
+           <disabled/>
+          </palette>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>24</pointsize>
+           <underline>false</underline>
+           <stylestrategy>PreferDefault</stylestrategy>
+           <hintingpreference>PreferDefaultHinting</hintingpreference>
+           <fontweight>Black</fontweight>
+          </font>
+         </property>
+         <property name="text">
+          <string>Skyberia</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="QLabelConfiguracion">
+         <property name="maximumSize">
+          <size>
+           <width>80</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="recursos/recursos.qrc">:/icons/iconos/engranaje.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="QWGridMenus" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>90</verstretch>
+       </sizepolicy>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QWidget" name="QWMenus" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>484</height>
+          </size>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QFrame" name="QFMisViajes">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Shape::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Shadow::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <widget class="QLabel" name="QLMisViajes">
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                 <fontweight>ExtraBold</fontweight>
+                </font>
+               </property>
+               <property name="text">
+                <string>Mis viajes</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QListWidget" name="QTredingTopics">
+               <item>
+                <property name="text">
+                 <string>Grecia</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Francia</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Alemania</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="QFTredingTopics">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Shape::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Shadow::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <widget class="QLabel" name="QLTredingTopics">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>22</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                 <fontweight>ExtraBold</fontweight>
+                </font>
+               </property>
+               <property name="text">
+                <string>Treding topics</string>
+               </property>
+               <property name="indent">
+                <number>-1</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTableWidget" name="tableWidget">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="contextMenuPolicy">
+                <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
+               </property>
+               <property name="acceptDrops">
+                <bool>false</bool>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Shadow::Sunken</enum>
+               </property>
+               <property name="verticalScrollBarPolicy">
+                <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
+               </property>
+               <property name="horizontalScrollBarPolicy">
+                <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
+               </property>
+               <property name="sizeAdjustPolicy">
+                <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
+               </property>
+               <property name="autoScrollMargin">
+                <number>1</number>
+               </property>
+               <property name="alternatingRowColors">
+                <bool>true</bool>
+               </property>
+               <property name="selectionMode">
+                <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
+               </property>
+               <property name="horizontalScrollMode">
+                <enum>QAbstractItemView::ScrollMode::ScrollPerPixel</enum>
+               </property>
+               <property name="showGrid">
+                <bool>true</bool>
+               </property>
+               <attribute name="verticalHeaderDefaultSectionSize">
+                <number>24</number>
+               </attribute>
+               <row/>
+               <column>
+                <property name="text">
+                 <string>Origen</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Destino</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Precio</string>
+                </property>
+               </column>
+               <item row="0" column="0">
+                <property name="text">
+                 <string>españa</string>
+                </property>
+                <property name="flags">
+                 <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+                </property>
+               </item>
+               <item row="0" column="1">
+                <property name="text">
+                 <string>Francia</string>
+                </property>
+               </item>
+               <item row="0" column="2">
+                <property name="text">
+                 <string>23€</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="actionCerrar_sesion">
    <property name="text">
     <string>Cerrar sesion</string>
@@ -109,6 +421,8 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="recursos/recursos.qrc"/>
+ </resources>
  <connections/>
 </ui>
