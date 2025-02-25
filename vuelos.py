@@ -4,6 +4,7 @@ from PyQt6.QtWidgets import * # Librerías de los componentes
 from PyQt6 import uic  # Librería para trabajar con el archivo de la interfaz
 import BD.basedatos
 import sqlite3
+from compra import Compra
 
 class Vuelos(QMainWindow):
     def __init__(self, destino, pasajero):
@@ -60,13 +61,15 @@ class Vuelos(QMainWindow):
         precio = self.tabla_vuelos.item(row, 2).text()
         asientos = self.tabla_vuelos.item(row, 3).text()
         vuelo = [modelo, precio, asientos]
-        print(f"Vuelo seleccionado: {vuelo}")
+        self.compra = Compra(vuelo, self.pasajero)
+        self.compra.show()
+        self.hide()
 
 if __name__ == "__main__":
     # se crea la instancia de la aplicación
     app = QApplication(sys.argv)
     # se crea la instancia de la ventana
-    window = Vuelos("Francia", "Juan")
+    window = Vuelos("Francia", ["Pepe", "Perez", "12345678"])
     # se muestra la ventana 
     window.show()
     # se entrega el control al sistema operativo

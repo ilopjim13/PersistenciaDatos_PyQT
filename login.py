@@ -11,15 +11,10 @@ from PyQt6 import uic  # Librería para trabajar con el archivo de la interfaz
 import pyrebase
 import requests
 import json
-import BD
 import BD.basedatos
 from misviajes import MisViajes 
 
-#rutaUi = os.path.join(os.path.dirname(__file__), 'calculadora.ui')
-diractual = os.getcwd()
-path = diractual + "/8-login/"
-
-
+#TODO hacer register bien y devolver el cliente
 
 class VentanaPrincipal(QMainWindow):  
     def __init__(self):
@@ -96,13 +91,17 @@ class Ventana(QMainWindow):
 
     def correcto(self, estatus,email):
         if estatus=="l":
-            QMessageBox.information(self,'¡Login correcto!', "Acceso garantizado") 
+            QMessageBox.information(self,'¡Login correcto!', "Acceso garantizado")
+            self.cliente = BD.basedatos.get_cliente(email)
         else:
-            QMessageBox.information(self,'¡Usuario creado correctamente!', "Creación de usuario") 
+            QMessageBox.information(self,'¡Usuario creado correctamente!', "Creación de usuario")
+            self.cliente #TODO hacer data class del cliente y consegir los datos
+
+        
         self.msg = QMessageBox(self)
         self.msg.show
         window.hide()
-        ##########VentanaViajes(email).show()
+        self.menu = menu(self.cliente)
         w3.show() 
 
     def error():
