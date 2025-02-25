@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>recursos/iconos/usuario.png</file>
+    <file>recursos/iconos/engranaje.png</file>
+    <file>recursos/media/fondo.jpg</file>
+  </qresource>
+</RCC>

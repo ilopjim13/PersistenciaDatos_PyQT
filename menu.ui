@@ -29,8 +29,7 @@
    <bool>true</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-</string>
+   <string notr="true"/>
   </property>
   <property name="documentMode">
    <bool>false</bool>
@@ -81,7 +80,7 @@ background-color:#6b6b6b
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="recursos/recursos.qrc">:/icons/iconos/usuario.png</pixmap>
+          <pixmap>:/icons/iconos/usuario.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -175,7 +174,7 @@ background-color:#6b6b6b
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="recursos/recursos.qrc">:/icons/iconos/engranaje.png</pixmap>
+          <pixmap>:/icons/iconos/engranaje.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -199,10 +198,16 @@ background-color:#6b6b6b
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
         <widget class="QWidget" name="QWMenus" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>484</height>
+           <height>0</height>
           </size>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -223,6 +228,12 @@ background-color:#6b6b6b
             <layout class="QVBoxLayout" name="verticalLayout_4">
              <item>
               <widget class="QLabel" name="QLMisViajes">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>50</height>
+                </size>
+               </property>
                <property name="font">
                 <font>
                  <pointsize>12</pointsize>
@@ -236,6 +247,18 @@ background-color:#6b6b6b
              </item>
              <item>
               <widget class="QListWidget" name="QTredingTopics">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>16777215</height>
+                </size>
+               </property>
                <item>
                 <property name="text">
                  <string>Grecia</string>
@@ -251,6 +274,13 @@ background-color:#6b6b6b
                  <string>Alemania</string>
                 </property>
                </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="BMisViajes">
+               <property name="text">
+                <string>Mis Viajes</string>
+               </property>
               </widget>
              </item>
             </layout>
@@ -377,6 +407,13 @@ background-color:#6b6b6b
                  <string>23€</string>
                 </property>
                </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="BViajes">
+               <property name="text">
+                <string>Viajes</string>
+               </property>
               </widget>
              </item>
             </layout>
