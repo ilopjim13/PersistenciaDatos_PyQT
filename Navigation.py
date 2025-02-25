@@ -7,7 +7,7 @@ from menu import Menu
 
 class WindowManager:
     def __init__(self):
-        self.current_window = None  # Almacena la ventana actual
+        self.current_window = None  # Almacena la ventana actual dd
 
         self.ventanas = {  #aqui estara todos las ventanas que necesitaremos
             "menu": Menu(self), 
