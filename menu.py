@@ -10,8 +10,8 @@ class Menu(QtWidgets.QMainWindow):
         file_log = "menu.ui"
         full_path_lo = os.path.join(os.path.dirname(__file__), file_log)
         uic.loadUi(full_path_lo,self)
-        self.QLabelUsuario.setPixmap(QtGui.QPixmap(":/icons/usuario.png"))
-        self.principal.setPixmap(QtGui.QPixmap(":/icons/usuario.png"))
+        self.QLabelUsuario.setPixmap(QtGui.QPixmap(":/icons/recursos/iconos/usuario.png"))
+        self.QLabelConfiguracion.setPixmap(QtGui.QPixmap(":/icons/recursos/iconos/engranaje.png"))
         self.manager = manager
         self.BMisViajes.clicked.connect(self.cargar_viajes)
         self.BViajes.clicked.connect(self.cargar_viajes)

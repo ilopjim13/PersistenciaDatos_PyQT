@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'menu.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.1
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -27,7 +27,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(775, 485)
+        MainWindow.resize(1163, 660)
         MainWindow.setMinimumSize(QSize(775, 485))
         MainWindow.setWindowOpacity(1.000000000000000)
         MainWindow.setAutoFillBackground(True)
@@ -53,7 +53,10 @@ class Ui_MainWindow(object):
         self.principal.setAcceptDrops(False)
         self.principal.setAutoFillBackground(False)
         self.principal.setStyleSheet(u"#principal{\n"
-"background-color:#6b6b6b\n"
+"background-image: url(:/icons/recursos/media/fondo.jpg);\n"
+"background-repeat: no-repeat;\n"
+"background-position: center;\n"
+"background-attachment: fixed;\n"
 "}")
         self.verticalLayout = QVBoxLayout(self.principal)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -149,28 +152,31 @@ class Ui_MainWindow(object):
         self.QWMenus.setMinimumSize(QSize(0, 0))
         self.horizontalLayout_2 = QHBoxLayout(self.QWMenus)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.QFMisViajes = QFrame(self.QWMenus)
+        self.QFMisViajes = QWidget(self.QWMenus)
         self.QFMisViajes.setObjectName(u"QFMisViajes")
         sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
         sizePolicy3.setHorizontalStretch(1)
         sizePolicy3.setVerticalStretch(0)
         sizePolicy3.setHeightForWidth(self.QFMisViajes.sizePolicy().hasHeightForWidth())
         self.QFMisViajes.setSizePolicy(sizePolicy3)
-        self.QFMisViajes.setFrameShape(QFrame.Shape.StyledPanel)
-        self.QFMisViajes.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_4 = QVBoxLayout(self.QFMisViajes)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.QLMisViajes = QLabel(self.QFMisViajes)
         self.QLMisViajes.setObjectName(u"QLMisViajes")
-        self.QLMisViajes.setMaximumSize(QSize(16777215, 50))
+        self.QLMisViajes.setMaximumSize(QSize(16777215, 22))
         font3 = QFont()
         font3.setPointSize(12)
         font3.setWeight(QFont.ExtraBold)
         self.QLMisViajes.setFont(font3)
+        self.QLMisViajes.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_4.addWidget(self.QLMisViajes)
 
-        self.QTredingTopics = QListWidget(self.QFMisViajes)
+        self.widget_2 = QWidget(self.QFMisViajes)
+        self.widget_2.setObjectName(u"widget_2")
+        self.horizontalLayout_4 = QHBoxLayout(self.widget_2)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.QTredingTopics = QListWidget(self.widget_2)
         QListWidgetItem(self.QTredingTopics)
         QListWidgetItem(self.QTredingTopics)
         QListWidgetItem(self.QTredingTopics)
@@ -180,9 +186,12 @@ class Ui_MainWindow(object):
         sizePolicy4.setVerticalStretch(0)
         sizePolicy4.setHeightForWidth(self.QTredingTopics.sizePolicy().hasHeightForWidth())
         self.QTredingTopics.setSizePolicy(sizePolicy4)
-        self.QTredingTopics.setMaximumSize(QSize(16777215, 16777215))
+        self.QTredingTopics.setMaximumSize(QSize(350, 16777215))
 
-        self.verticalLayout_4.addWidget(self.QTredingTopics)
+        self.horizontalLayout_4.addWidget(self.QTredingTopics)
+
+
+        self.verticalLayout_4.addWidget(self.widget_2)
 
         self.BMisViajes = QPushButton(self.QFMisViajes)
         self.BMisViajes.setObjectName(u"BMisViajes")
@@ -192,23 +201,33 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.QFMisViajes)
 
-        self.QFTredingTopics = QFrame(self.QWMenus)
+        self.QFTredingTopics = QWidget(self.QWMenus)
         self.QFTredingTopics.setObjectName(u"QFTredingTopics")
         sizePolicy3.setHeightForWidth(self.QFTredingTopics.sizePolicy().hasHeightForWidth())
         self.QFTredingTopics.setSizePolicy(sizePolicy3)
-        self.QFTredingTopics.setFrameShape(QFrame.Shape.StyledPanel)
-        self.QFTredingTopics.setFrameShadow(QFrame.Shadow.Raised)
+        self.QFTredingTopics.setAcceptDrops(False)
         self.verticalLayout_5 = QVBoxLayout(self.QFTredingTopics)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
         self.QLTredingTopics = QLabel(self.QFTredingTopics)
         self.QLTredingTopics.setObjectName(u"QLTredingTopics")
         self.QLTredingTopics.setMaximumSize(QSize(16777215, 22))
         self.QLTredingTopics.setFont(font3)
+        self.QLTredingTopics.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.QLTredingTopics.setIndent(-1)
 
         self.verticalLayout_5.addWidget(self.QLTredingTopics)
 
-        self.tableWidget = QTableWidget(self.QFTredingTopics)
+        self.widget = QWidget(self.QFTredingTopics)
+        self.widget.setObjectName(u"widget")
+        sizePolicy5 = QSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Preferred)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.widget.sizePolicy().hasHeightForWidth())
+        self.widget.setSizePolicy(sizePolicy5)
+        self.widget.setMaximumSize(QSize(16777215, 16777215))
+        self.horizontalLayout_3 = QHBoxLayout(self.widget)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.tableWidget = QTableWidget(self.widget)
         if (self.tableWidget.columnCount() < 3):
             self.tableWidget.setColumnCount(3)
         __qtablewidgetitem = QTableWidgetItem()
@@ -227,14 +246,16 @@ class Ui_MainWindow(object):
         __qtablewidgetitem5 = QTableWidgetItem()
         self.tableWidget.setItem(0, 2, __qtablewidgetitem5)
         self.tableWidget.setObjectName(u"tableWidget")
-        sizePolicy5 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Preferred)
-        sizePolicy5.setHorizontalStretch(0)
-        sizePolicy5.setVerticalStretch(0)
-        sizePolicy5.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
-        self.tableWidget.setSizePolicy(sizePolicy5)
+        sizePolicy6 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Preferred)
+        sizePolicy6.setHorizontalStretch(0)
+        sizePolicy6.setVerticalStretch(0)
+        sizePolicy6.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
+        self.tableWidget.setSizePolicy(sizePolicy6)
         self.tableWidget.setMinimumSize(QSize(0, 0))
+        self.tableWidget.setMaximumSize(QSize(350, 16777215))
         self.tableWidget.setContextMenuPolicy(Qt.ContextMenuPolicy.DefaultContextMenu)
         self.tableWidget.setAcceptDrops(False)
+        self.tableWidget.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.tableWidget.setFrameShadow(QFrame.Shadow.Sunken)
         self.tableWidget.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
         self.tableWidget.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
@@ -246,7 +267,10 @@ class Ui_MainWindow(object):
         self.tableWidget.setShowGrid(True)
         self.tableWidget.verticalHeader().setDefaultSectionSize(24)
 
-        self.verticalLayout_5.addWidget(self.tableWidget)
+        self.horizontalLayout_3.addWidget(self.tableWidget)
+
+
+        self.verticalLayout_5.addWidget(self.widget)
 
         self.BViajes = QPushButton(self.QFTredingTopics)
         self.BViajes.setObjectName(u"BViajes")

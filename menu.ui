@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>775</width>
-    <height>485</height>
+    <width>1163</width>
+    <height>660</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -55,7 +55,10 @@
    </property>
    <property name="styleSheet">
     <string notr="true">#principal{
-background-color:#6b6b6b
+background-image: url(:/icons/recursos/media/fondo.jpg);
+background-repeat: no-repeat;
+background-position: center;
+background-attachment: fixed;
 }</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -215,18 +218,12 @@ background-color:#6b6b6b
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
-           <widget class="QFrame" name="QFMisViajes">
+           <widget class="QWidget" name="QFMisViajes" native="true">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>1</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::Shape::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Shadow::Raised</enum>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_4">
              <item>
@@ -234,7 +231,7 @@ background-color:#6b6b6b
                <property name="maximumSize">
                 <size>
                  <width>16777215</width>
-                 <height>50</height>
+                 <height>22</height>
                 </size>
                </property>
                <property name="font">
@@ -246,37 +243,46 @@ background-color:#6b6b6b
                <property name="text">
                 <string>Mis viajes</string>
                </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
               </widget>
              </item>
              <item>
-              <widget class="QListWidget" name="QTredingTopics">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <item>
-                <property name="text">
-                 <string>Grecia</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Francia</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Alemania</string>
-                </property>
-               </item>
+              <widget class="QWidget" name="widget_2" native="true">
+               <layout class="QHBoxLayout" name="horizontalLayout_4">
+                <item>
+                 <widget class="QListWidget" name="QTredingTopics">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>350</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>Grecia</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Francia</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Alemania</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
               </widget>
              </item>
              <item>
@@ -290,18 +296,15 @@ background-color:#6b6b6b
            </widget>
           </item>
           <item>
-           <widget class="QFrame" name="QFTredingTopics">
+           <widget class="QWidget" name="QFTredingTopics" native="true">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>1</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
-            <property name="frameShape">
-             <enum>QFrame::Shape::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Shadow::Raised</enum>
+            <property name="acceptDrops">
+             <bool>false</bool>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_5">
              <item>
@@ -321,95 +324,125 @@ background-color:#6b6b6b
                <property name="text">
                 <string>Treding topics</string>
                </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
                <property name="indent">
                 <number>-1</number>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QTableWidget" name="tableWidget">
+              <widget class="QWidget" name="widget" native="true">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
-               <property name="minimumSize">
+               <property name="maximumSize">
                 <size>
-                 <width>0</width>
-                 <height>0</height>
+                 <width>16777215</width>
+                 <height>16777215</height>
                 </size>
                </property>
-               <property name="contextMenuPolicy">
-                <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
-               </property>
-               <property name="acceptDrops">
-                <bool>false</bool>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Shadow::Sunken</enum>
-               </property>
-               <property name="verticalScrollBarPolicy">
-                <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
-               </property>
-               <property name="horizontalScrollBarPolicy">
-                <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
-               </property>
-               <property name="sizeAdjustPolicy">
-                <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
-               </property>
-               <property name="autoScrollMargin">
-                <number>1</number>
-               </property>
-               <property name="alternatingRowColors">
-                <bool>true</bool>
-               </property>
-               <property name="selectionMode">
-                <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
-               </property>
-               <property name="horizontalScrollMode">
-                <enum>QAbstractItemView::ScrollMode::ScrollPerPixel</enum>
-               </property>
-               <property name="showGrid">
-                <bool>true</bool>
-               </property>
-               <attribute name="verticalHeaderDefaultSectionSize">
-                <number>24</number>
-               </attribute>
-               <row/>
-               <column>
-                <property name="text">
-                 <string>Origen</string>
-                </property>
-               </column>
-               <column>
-                <property name="text">
-                 <string>Destino</string>
-                </property>
-               </column>
-               <column>
-                <property name="text">
-                 <string>Precio</string>
-                </property>
-               </column>
-               <item row="0" column="0">
-                <property name="text">
-                 <string>españa</string>
-                </property>
-                <property name="flags">
-                 <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
-                </property>
-               </item>
-               <item row="0" column="1">
-                <property name="text">
-                 <string>Francia</string>
-                </property>
-               </item>
-               <item row="0" column="2">
-                <property name="text">
-                 <string>23€</string>
-                </property>
-               </item>
+               <layout class="QHBoxLayout" name="horizontalLayout_3">
+                <item>
+                 <widget class="QTableWidget" name="tableWidget">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>350</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="contextMenuPolicy">
+                   <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
+                  </property>
+                  <property name="acceptDrops">
+                   <bool>false</bool>
+                  </property>
+                  <property name="layoutDirection">
+                   <enum>Qt::LayoutDirection::LeftToRight</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Shadow::Sunken</enum>
+                  </property>
+                  <property name="verticalScrollBarPolicy">
+                   <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
+                  </property>
+                  <property name="horizontalScrollBarPolicy">
+                   <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
+                  </property>
+                  <property name="sizeAdjustPolicy">
+                   <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
+                  </property>
+                  <property name="autoScrollMargin">
+                   <number>1</number>
+                  </property>
+                  <property name="alternatingRowColors">
+                   <bool>true</bool>
+                  </property>
+                  <property name="selectionMode">
+                   <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
+                  </property>
+                  <property name="horizontalScrollMode">
+                   <enum>QAbstractItemView::ScrollMode::ScrollPerPixel</enum>
+                  </property>
+                  <property name="showGrid">
+                   <bool>true</bool>
+                  </property>
+                  <attribute name="verticalHeaderDefaultSectionSize">
+                   <number>24</number>
+                  </attribute>
+                  <row/>
+                  <column>
+                   <property name="text">
+                    <string>Origen</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Destino</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Precio</string>
+                   </property>
+                  </column>
+                  <item row="0" column="0">
+                   <property name="text">
+                    <string>españa</string>
+                   </property>
+                   <property name="flags">
+                    <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+                   </property>
+                  </item>
+                  <item row="0" column="1">
+                   <property name="text">
+                    <string>Francia</string>
+                   </property>
+                  </item>
+                  <item row="0" column="2">
+                   <property name="text">
+                    <string>23€</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
               </widget>
              </item>
              <item>
