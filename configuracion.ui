@@ -20,6 +20,12 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="principal">
+   <property name="contextMenuPolicy">
+    <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
+   </property>
+   <property name="acceptDrops">
+    <bool>false</bool>
+   </property>
    <property name="autoFillBackground">
     <bool>true</bool>
    </property>
@@ -201,12 +207,12 @@ QTextEdit {
                       </size>
                      </property>
                      <property name="text">
-                      <string>Correo       </string>
+                      <string> Nombre</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QTextEdit" name="textEdit">
+                    <widget class="QTextEdit" name="QTENombre">
                      <property name="minimumSize">
                       <size>
                        <width>200</width>
@@ -242,12 +248,12 @@ QTextEdit {
                       </size>
                      </property>
                      <property name="text">
-                      <string>DNI             </string>
+                      <string>Apellido</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QTextEdit" name="textEdit_3">
+                    <widget class="QTextEdit" name="QTEApellido">
                      <property name="minimumSize">
                       <size>
                        <width>200</width>
@@ -283,12 +289,12 @@ QTextEdit {
                       </size>
                      </property>
                      <property name="text">
-                      <string>Contraseña</string>
+                      <string>    DNI    </string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QTextEdit" name="textEdit_2">
+                    <widget class="QTextEdit" name="QTEDni">
                      <property name="minimumSize">
                       <size>
                        <width>200</width>
@@ -313,7 +319,7 @@ QTextEdit {
                  </widget>
                 </item>
                 <item>
-                 <widget class="QDialogButtonBox" name="buttonBox">
+                 <widget class="QDialogButtonBox" name="BBActualizarUsuario">
                   <property name="standardButtons">
                    <set>QDialogButtonBox::StandardButton::Apply</set>
                   </property>
