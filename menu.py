@@ -11,6 +11,7 @@ class Menu(QtWidgets.QMainWindow):
         full_path_lo = os.path.join(os.path.dirname(__file__), file_log)
         uic.loadUi(full_path_lo,self)
         self.QLabelUsuario.setPixmap(QtGui.QPixmap(":/icons/usuario.png"))
+        self.principal.setPixmap(QtGui.QPixmap(":/icons/usuario.png"))
         self.manager = manager
         self.BMisViajes.clicked.connect(self.cargar_viajes)
         self.BViajes.clicked.connect(self.cargar_viajes)
@@ -20,7 +21,7 @@ class Menu(QtWidgets.QMainWindow):
         conn = 3
         print("emmanuel")
 
-    def mousePressEventLabel(self):
+    def mousePressEventLabel(self, event):
         self.irAConfiguracion()
 
     def irAConfiguracion(self):
