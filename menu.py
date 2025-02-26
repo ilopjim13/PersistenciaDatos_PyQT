@@ -20,7 +20,7 @@ class Menu(QtWidgets.QMainWindow):
         conn = 3
         print("emmanuel")
 
-    def mousePressEventLabel(self, event):
+    def mousePressEventLabel(self):
         self.irAConfiguracion()
 
     def irAConfiguracion(self):
