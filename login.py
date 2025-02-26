@@ -94,12 +94,13 @@ class Ventana(QMainWindow):
         w2.show()
 
     def gui_reg(self):
+        #TODO Hacer aquí las entradas de registro
         name = self.li_usuario.text()
         passw = self.li_contra.text()  #hashlib
+
         if len(name)== 0 or len(passw) == 0:
             QMessageBox.critical(self,'Error', "Ingrese todos los datos") 
         else:
-            # user = self.auth.create_user_with_email_and_password(name, passw)
             try:
                 user = self.auth.create_user_with_email_and_password(name, passw)
                 self.correcto("r",email=user["email"])
