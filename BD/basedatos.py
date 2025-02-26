@@ -55,8 +55,7 @@ cursor.execute("""
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         modelo TEXT NOT NULL,
         categoria TEXT NOT NULL,
-        porcentaje_precio REAL NOT NULL,
-        capacidad_total INTEGER NOT NULL
+        porcentaje_precio REAL NOT NULL
     )
 """)
 
@@ -86,49 +85,49 @@ cursor.execute("""
 
 # INSERTS DE AVIONES
 cursor.execute("""
-    INSERT INTO avion (modelo, categoria, porcentaje_precio, capacidad_total) VALUES 
-    ('Boeing 737', 'Económico', 1.2, 180),
-    ('Airbus A320', 'Económico', 1.1, 160),
-    ('Boeing 777', 'Premium', 1.5, 300);
+    INSERT INTO avion (modelo, categoria, porcentaje_precio) VALUES 
+    ('Boeing 737', 'Económico', 1.2),
+    ('Airbus A320', 'Económico', 1.1),
+    ('Boeing 777', 'Premium', 1.5);
 """)
 # INSERTS DE VUELOS
 
 cursor.execute("""
     INSERT INTO vuelo (destino_id, avion_id, cantidad_asientos, precio) 
     VALUES 
-    (1, 1, 0, 
+    (1, 1, 180, 
      (SELECT precio * porcentaje_precio FROM destino, avion WHERE destino.id = 1 AND avion.id = 1)),
     
-    (1, 2, 0, 
+    (1, 2, 160, 
      (SELECT precio * porcentaje_precio FROM destino, avion WHERE destino.id = 1 AND avion.id = 2)),
     
-    (1, 3, 0, 
+    (1, 3, 300, 
      (SELECT precio * porcentaje_precio FROM destino, avion WHERE destino.id = 1 AND avion.id = 3));
 """)
 
 cursor.execute("""
     INSERT INTO vuelo (destino_id, avion_id, cantidad_asientos, precio) 
     VALUES 
-    (2, 1, 0, 
+    (2, 1, 180, 
      (SELECT precio * porcentaje_precio FROM destino, avion WHERE destino.id = 2 AND avion.id = 1)),
     
-    (2, 2, 0, 
+    (2, 2, 160, 
      (SELECT precio * porcentaje_precio FROM destino, avion WHERE destino.id = 2 AND avion.id = 2)),
     
-    (2, 3, 0, 
+    (2, 3, 300, 
      (SELECT precio * porcentaje_precio FROM destino, avion WHERE destino.id = 2 AND avion.id = 3));
 """)
 
 cursor.execute("""
     INSERT INTO vuelo (destino_id, avion_id, cantidad_asientos, precio) 
     VALUES 
-    (3, 1, 0, 
+    (3, 1, 160, 
      (SELECT precio * porcentaje_precio FROM destino, avion WHERE destino.id = 3 AND avion.id = 1)),
 
-    (3, 2, 0, 
+    (3, 2, 180, 
      (SELECT precio * porcentaje_precio FROM destino, avion WHERE destino.id = 3 AND avion.id = 2)),
 
-    (3, 3, 0, 
+    (3, 3, 300, 
      (SELECT precio * porcentaje_precio FROM destino, avion WHERE destino.id = 3 AND avion.id = 3));
 """)
 
