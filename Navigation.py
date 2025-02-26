@@ -42,6 +42,7 @@ class WindowManager:
             if self.previous_size:
                 self.current_window.resize(self.previous_size)
                 self.current_window.move(self.previous_position) 
+            self.current_window.__init__(self) 
             self.current_window.show()
 
     def cerrarVentana(self):

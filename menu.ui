@@ -141,7 +141,7 @@ QPushButton {
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="recursos.qrc">:/icons/recursos/iconos/usuario.png</pixmap>
+          <pixmap>:/icons/recursos/iconos/usuario.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -238,7 +238,7 @@ QPushButton {
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="recursos.qrc">:/icons/recursos/iconos/engranaje.png</pixmap>
+          <pixmap>:/icons/recursos/iconos/engranaje.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
