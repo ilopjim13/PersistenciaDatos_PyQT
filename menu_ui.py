@@ -71,6 +71,7 @@ class Ui_MainWindow(object):
         self.QLabelUsuario.setMaximumSize(QSize(85, 85))
         self.QLabelUsuario.setPixmap(QPixmap(u":/icons/recursos/iconos/usuario.png"))
         self.QLabelUsuario.setScaledContents(True)
+        self.QLabelUsuario.setWordWrap(False)
 
         self.horizontalLayout.addWidget(self.QLabelUsuario)
 
