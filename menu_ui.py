@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'menu.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.2
+## Created by: Qt User Interface Compiler version 6.8.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -71,6 +71,7 @@ class Ui_MainWindow(object):
         self.QLabelUsuario.setMaximumSize(QSize(85, 85))
         self.QLabelUsuario.setPixmap(QPixmap(u":/icons/recursos/iconos/usuario.png"))
         self.QLabelUsuario.setScaledContents(True)
+        self.QLabelUsuario.setWordWrap(False)
 
         self.horizontalLayout.addWidget(self.QLabelUsuario)
 

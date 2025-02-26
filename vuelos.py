@@ -23,7 +23,7 @@ class Vuelos(QMainWindow):
         cursor = conn.cursor()
 
         cursor.execute("""
-            SELECT a.modelo, a.categoria, ROUND(v.precio, 2), (a.capacidad_total - v.cantidad_asientos) AS cantidad_total,v.id 
+            SELECT a.modelo, a.categoria, ROUND(v.precio, 2), v.cantidad_asientos,v.id 
             FROM avion a
             JOIN vuelo v ON a.id = v.avion_id
             JOIN destino d ON v.destino_id = d.id
@@ -35,8 +35,8 @@ class Vuelos(QMainWindow):
         aviones.sort(key=lambda x: x[self.orden])
         print(f"Aviones encontrados: {aviones}")
 
-        self.tabla_vuelos.setColumnCount(4)
-        self.tabla_vuelos.setHorizontalHeaderLabels(["Modelo", "Categoria", "Precio", "Asientos"])
+        self.tabla_vuelos.setColumnCount(5)
+        self.tabla_vuelos.setHorizontalHeaderLabels(["Modelo", "Categoria", "Precio", "Asientos", "ID"])
 
         self.tabla_vuelos.setRowCount(0)
         for row_idx, row_data in enumerate(aviones):
@@ -60,7 +60,8 @@ class Vuelos(QMainWindow):
         modelo = self.tabla_vuelos.item(row, 0).text()
         precio = self.tabla_vuelos.item(row, 2).text()
         asientos = self.tabla_vuelos.item(row, 3).text()
-        vuelo = [modelo, precio, asientos]
+        id_vuelo = self.tabla_vuelos.item(row, 4).text()
+        vuelo = [modelo, precio, asientos, id_vuelo, self.destino]
         self.compra = Compra(vuelo, self.pasajero)
         self.compra.show()
         self.hide()
@@ -69,7 +70,7 @@ if __name__ == "__main__":
     # se crea la instancia de la aplicación
     app = QApplication(sys.argv)
     # se crea la instancia de la ventana
-    window = Vuelos("Francia", ["Pepe", "Perez", "12345678"])
+    window = Vuelos("Francia", ["Pepe", "Perez", "12345678","1"])
     # se muestra la ventana 
     window.show()
     # se entrega el control al sistema operativo

@@ -90,37 +90,7 @@ background-color:#6b6b6b
           <string notr="true"/>
          </property>
          <layout class="QGridLayout" name="gridLayout">
-          <item row="2" column="1">
-           <widget class="QWidget" name="widget_11" native="true">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>10</verstretch>
-             </sizepolicy>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="2">
-           <widget class="QWidget" name="widget_6" native="true">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>10</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QWidget" name="widget_13" native="true">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>10</verstretch>
-             </sizepolicy>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
+          <item row="0" column="0">
            <widget class="QWidget" name="widget_9" native="true">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -130,10 +100,10 @@ background-color:#6b6b6b
             </property>
            </widget>
           </item>
-          <item row="1" column="1">
+          <item row="0" column="1">
            <widget class="QFrame" name="frame_8">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
               <horstretch>90</horstretch>
               <verstretch>90</verstretch>
              </sizepolicy>
@@ -200,6 +170,12 @@ QTextEdit {
              </item>
              <item>
               <widget class="QWidget" name="widget" native="true">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <layout class="QVBoxLayout" name="verticalLayout_4">
                 <item>
                  <widget class="QWidget" name="widget_12" native="true">
@@ -212,6 +188,12 @@ QTextEdit {
                   <layout class="QHBoxLayout" name="horizontalLayout_3">
                    <item>
                     <widget class="QLabel" name="label_3">
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>50</height>
+                      </size>
+                     </property>
                      <property name="text">
                       <string>Correo       </string>
                      </property>
@@ -228,7 +210,7 @@ QTextEdit {
                      <property name="maximumSize">
                       <size>
                        <width>16777215</width>
-                       <height>100</height>
+                       <height>50</height>
                       </size>
                      </property>
                     </widget>
@@ -247,6 +229,12 @@ QTextEdit {
                   <layout class="QHBoxLayout" name="horizontalLayout_5">
                    <item>
                     <widget class="QLabel" name="label_5">
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>50</height>
+                      </size>
+                     </property>
                      <property name="text">
                       <string>DNI             </string>
                      </property>
@@ -258,6 +246,12 @@ QTextEdit {
                       <size>
                        <width>200</width>
                        <height>0</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>50</height>
                       </size>
                      </property>
                     </widget>
@@ -276,6 +270,12 @@ QTextEdit {
                   <layout class="QHBoxLayout" name="horizontalLayout_4">
                    <item>
                     <widget class="QLabel" name="label_4">
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>50</height>
+                      </size>
+                     </property>
                      <property name="text">
                       <string>Contraseña</string>
                      </property>
@@ -292,7 +292,7 @@ QTextEdit {
                      <property name="maximumSize">
                       <size>
                        <width>16777215</width>
-                       <height>100</height>
+                       <height>50</height>
                       </size>
                      </property>
                      <property name="sizeIncrement">
@@ -337,7 +337,7 @@ QTextEdit {
           <string notr="true"/>
          </property>
          <layout class="QGridLayout" name="gridLayout_2">
-          <item row="1" column="1">
+          <item row="0" column="1">
            <widget class="QFrame" name="frame_3">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -638,6 +638,12 @@ QDialogButtonBox QPushButton:disabled {
                <layout class="QVBoxLayout" name="verticalLayout_5">
                 <item>
                  <widget class="QLabel" name="label_6">
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>150</height>
+                   </size>
+                  </property>
                   <property name="palette">
                    <palette>
                     <active>
@@ -869,20 +875,7 @@ borrar tu cuenta?</string>
             </layout>
            </widget>
           </item>
-          <item row="0" column="1">
-           <spacer name="verticalSpacer">
-            <property name="orientation">
-             <enum>Qt::Orientation::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>8</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="1" column="0">
+          <item row="0" column="0">
            <widget class="QWidget" name="widget_4" native="true">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -892,7 +885,7 @@ borrar tu cuenta?</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="2">
+          <item row="0" column="2">
            <widget class="QWidget" name="widget_7" native="true">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -901,19 +894,6 @@ borrar tu cuenta?</string>
              </sizepolicy>
             </property>
            </widget>
-          </item>
-          <item row="2" column="1">
-           <spacer name="verticalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Orientation::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>5</height>
-             </size>
-            </property>
-           </spacer>
           </item>
          </layout>
         </widget>
