@@ -12,6 +12,7 @@ import pyrebase
 import requests
 import json
 import BD.basedatos
+import menu
 from misviajes import MisViajes 
 
 #TODO hacer register bien y devolver el cliente
@@ -21,22 +22,7 @@ class VentanaPrincipal(QMainWindow):
         super().__init__()
         self.setWindowTitle("Ventana Principal")
 
-#Carga la interfaz gráfica y conecta los botones
-class AcceptWindow(QMainWindow):
 
-    def __init__(self):
-    #Inicializa la ventana
-        super().__init__() # Reservamos un espacio en memoria para la clase
-        
-        file_accept = "accept.ui"
-        full_path_accept =  os.path.join(os.path.dirname(__file__), file_accept)
-        accept = uic.loadUi(full_path_accept) 
-        uic.loadUi(full_path_accept,self) #Lee el archivo de QtDesigner
-        self.bu_volver_a.clicked.connect(self.show_new_window2)
-
-    def show_new_window2(self, checked):
-        window.show()
-        w3.hide()  
 
 
 class ErrorWindow(QMainWindow):
@@ -101,8 +87,7 @@ class Ventana(QMainWindow):
         self.msg = QMessageBox(self)
         self.msg.show
         window.hide()
-        self.menu = menu(self.cliente)
-        w3.show() 
+        self.menu = menu(self.cliente) 
 
     def error():
         window.hide()
@@ -189,8 +174,7 @@ if __name__ == '__main__':
     # se crea la instancia de la ventana
     window = Ventana()
     w2 = ErrorWindow()
-    w3 = AcceptWindow()
-    # se muestra la ventana 
+
     window.show()
     # se entrega el control al sistema operativo
     app.exec() 

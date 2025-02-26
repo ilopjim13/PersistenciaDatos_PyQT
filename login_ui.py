@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'login.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.2
+## Created by: Qt User Interface Compiler version 6.8.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -43,7 +43,7 @@ class Ui_MainWindow(object):
         self.Titulo.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.frame = QFrame(self.centralwidget)
         self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QRect(180, 160, 511, 521))
+        self.frame.setGeometry(QRect(170, 150, 511, 521))
         self.frame.setStyleSheet(u"\n"
 "        QFrame {\n"
 "            background-color: rgba(255, 255, 255, 0.8);\n"
@@ -91,7 +91,7 @@ class Ui_MainWindow(object):
 "      ")
         self.bu_reg = QPushButton(self.frame)
         self.bu_reg.setObjectName(u"bu_reg")
-        self.bu_reg.setGeometry(QRect(190, 440, 100, 30))
+        self.bu_reg.setGeometry(QRect(190, 350, 100, 30))
         self.bu_reg.setStyleSheet(u"\n"
 "        QPushButton {\n"
 "            background-color: #2ecc71;\n"
@@ -106,22 +106,29 @@ class Ui_MainWindow(object):
         self.li_usuario_2.setObjectName(u"li_usuario_2")
         self.li_usuario_2.setGeometry(QRect(230, 200, 180, 25))
         self.li_usuario_2.setStyleSheet(u"background-color: white; border-radius: 5px;")
-        self.li_usuario_3 = QLineEdit(self.frame)
-        self.li_usuario_3.setObjectName(u"li_usuario_3")
-        self.li_usuario_3.setGeometry(QRect(230, 250, 180, 25))
-        self.li_usuario_3.setStyleSheet(u"background-color: white; border-radius: 5px;")
-        self.li_usuario_4 = QLineEdit(self.frame)
-        self.li_usuario_4.setObjectName(u"li_usuario_4")
-        self.li_usuario_4.setGeometry(QRect(230, 290, 180, 25))
-        self.li_usuario_4.setStyleSheet(u"background-color: white; border-radius: 5px;")
-        self.li_usuario_5 = QLineEdit(self.frame)
-        self.li_usuario_5.setObjectName(u"li_usuario_5")
-        self.li_usuario_5.setGeometry(QRect(230, 340, 180, 25))
-        self.li_usuario_5.setStyleSheet(u"background-color: white; border-radius: 5px;")
-        self.li_usuario_6 = QLineEdit(self.frame)
-        self.li_usuario_6.setObjectName(u"li_usuario_6")
-        self.li_usuario_6.setGeometry(QRect(230, 380, 180, 25))
-        self.li_usuario_6.setStyleSheet(u"background-color: white; border-radius: 5px;")
+        self.li_contra_2 = QLineEdit(self.frame)
+        self.li_contra_2.setObjectName(u"li_contra_2")
+        self.li_contra_2.setGeometry(QRect(230, 250, 180, 25))
+        self.li_contra_2.setStyleSheet(u"background-color: white; border-radius: 5px;")
+        self.li_nombre = QLineEdit(self.frame)
+        self.li_nombre.setObjectName(u"li_nombre")
+        self.li_nombre.setGeometry(QRect(230, 290, 180, 25))
+        self.li_nombre.setStyleSheet(u"background-color: white; border-radius: 5px;")
+        self.la_usu_3 = QLabel(self.frame)
+        self.la_usu_3.setObjectName(u"la_usu_3")
+        self.la_usu_3.setGeometry(QRect(60, 200, 80, 25))
+        self.la_usu_3.setFont(font1)
+        self.la_usu_3.setStyleSheet(u"color: black;")
+        self.la_contra_3 = QLabel(self.frame)
+        self.la_contra_3.setObjectName(u"la_contra_3")
+        self.la_contra_3.setGeometry(QRect(40, 250, 100, 25))
+        self.la_contra_3.setFont(font1)
+        self.la_contra_3.setStyleSheet(u"color: black;")
+        self.la_nombre = QLabel(self.frame)
+        self.la_nombre.setObjectName(u"la_nombre")
+        self.la_nombre.setGeometry(QRect(40, 290, 100, 25))
+        self.la_nombre.setFont(font1)
+        self.la_nombre.setStyleSheet(u"color: black;")
         self.bu_salir = QPushButton(self.centralwidget)
         self.bu_salir.setObjectName(u"bu_salir")
         self.bu_salir.setGeometry(QRect(380, 720, 100, 30))
@@ -135,6 +142,10 @@ class Ui_MainWindow(object):
 "            background-color: darkred;\n"
 "        }\n"
 "      ")
+        self.fondo = QLabel(self.centralwidget)
+        self.fondo.setObjectName(u"fondo")
+        self.fondo.setGeometry(QRect(0, 10, 961, 841))
+        self.fondo.setPixmap(QPixmap(u"imagenes/fondo.jpg"))
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -148,17 +159,19 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Vuelos App", None))
         self.Titulo.setText(QCoreApplication.translate("MainWindow", u"Bienvenido a Vuelos App", None))
-        self.la_usu.setText(QCoreApplication.translate("MainWindow", u"Usuario:", None))
+        self.la_usu.setText(QCoreApplication.translate("MainWindow", u"Email:", None))
         self.li_usuario.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce tu usuario", None))
         self.la_contra.setText(QCoreApplication.translate("MainWindow", u"Contrase\u00f1a:", None))
         self.li_contra.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce tu contrase\u00f1a", None))
         self.bu_login.setText(QCoreApplication.translate("MainWindow", u"Login", None))
         self.bu_reg.setText(QCoreApplication.translate("MainWindow", u"Registrarse", None))
         self.li_usuario_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce tu usuario", None))
-        self.li_usuario_3.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce tu usuario", None))
-        self.li_usuario_4.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce tu usuario", None))
-        self.li_usuario_5.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce tu usuario", None))
-        self.li_usuario_6.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce tu usuario", None))
+        self.li_contra_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce tu usuario", None))
+        self.li_nombre.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce tu usuario", None))
+        self.la_usu_3.setText(QCoreApplication.translate("MainWindow", u"Email:", None))
+        self.la_contra_3.setText(QCoreApplication.translate("MainWindow", u"Contrase\u00f1a:", None))
+        self.la_nombre.setText(QCoreApplication.translate("MainWindow", u"Nombre:", None))
         self.bu_salir.setText(QCoreApplication.translate("MainWindow", u"Salir", None))
+        self.fondo.setText("")
     # retranslateUi
 

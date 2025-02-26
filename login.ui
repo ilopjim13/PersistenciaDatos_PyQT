@@ -50,8 +50,8 @@
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>160</y>
+      <x>170</x>
+      <y>150</y>
       <width>511</width>
       <height>521</height>
      </rect>
@@ -91,7 +91,7 @@
       <string notr="true">color: black;</string>
      </property>
      <property name="text">
-      <string>Usuario:</string>
+      <string>Email:</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="li_usuario">
@@ -181,7 +181,7 @@
      <property name="geometry">
       <rect>
        <x>190</x>
-       <y>440</y>
+       <y>350</y>
        <width>100</width>
        <height>30</height>
       </rect>
@@ -218,7 +218,7 @@
       <string>Introduce tu usuario</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="li_usuario_3">
+    <widget class="QLineEdit" name="li_contra_2">
      <property name="geometry">
       <rect>
        <x>230</x>
@@ -234,7 +234,7 @@
       <string>Introduce tu usuario</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="li_usuario_4">
+    <widget class="QLineEdit" name="li_nombre">
      <property name="geometry">
       <rect>
        <x>230</x>
@@ -250,36 +250,73 @@
       <string>Introduce tu usuario</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="li_usuario_5">
+    <widget class="QLabel" name="la_usu_3">
      <property name="geometry">
       <rect>
-       <x>230</x>
-       <y>340</y>
-       <width>180</width>
+       <x>60</x>
+       <y>200</y>
+       <width>80</width>
        <height>25</height>
       </rect>
      </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white; border-radius: 5px;</string>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
      </property>
-     <property name="placeholderText">
-      <string>Introduce tu usuario</string>
+     <property name="styleSheet">
+      <string notr="true">color: black;</string>
+     </property>
+     <property name="text">
+      <string>Email:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="li_usuario_6">
+    <widget class="QLabel" name="la_contra_3">
      <property name="geometry">
       <rect>
-       <x>230</x>
-       <y>380</y>
-       <width>180</width>
+       <x>40</x>
+       <y>250</y>
+       <width>100</width>
        <height>25</height>
       </rect>
      </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white; border-radius: 5px;</string>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
      </property>
-     <property name="placeholderText">
-      <string>Introduce tu usuario</string>
+     <property name="styleSheet">
+      <string notr="true">color: black;</string>
+     </property>
+     <property name="text">
+      <string>Contraseña:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="la_nombre">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>290</y>
+       <width>100</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: black;</string>
+     </property>
+     <property name="text">
+      <string>Nombre:</string>
      </property>
     </widget>
    </widget>
@@ -306,6 +343,22 @@
     </property>
     <property name="text">
      <string>Salir</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fondo">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>961</width>
+      <height>841</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>imagenes/fondo.jpg</pixmap>
     </property>
    </widget>
   </widget>
