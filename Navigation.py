@@ -23,8 +23,10 @@ class WindowManager:
             print(f"❌ ERROR: La ventana '{nombre}' no está registrada.")
             return
 
+        self.full_screen_state = None
         if self.current_window:
             self.full_screen_state = self.current_window.isFullScreen()
+            print(self.current_window.isFullScreen())
             self.current_window.close()
         self.current_window = self.ventanas[nombre]
         if self.full_screen_state:
