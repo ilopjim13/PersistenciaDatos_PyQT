@@ -28,7 +28,7 @@ cursor.execute("""
         nombre TEXT NOT NULL,
         email TEXT NOT NULL UNIQUE,
         apellido TEXT NOT NULL,
-        dni TEXT NOT NULL,
+        dni TEXT NOT NULL
     )
 """)
 

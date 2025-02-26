@@ -1,6 +1,5 @@
 from PyQt6.QtWidgets import *
 import sys
-
 from configuracion import Configuracion
 from menu import Menu
 
