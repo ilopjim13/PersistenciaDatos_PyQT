@@ -14,7 +14,7 @@ class WindowManager:
             "configuracion": Configuracion(self)
         }
 
-        self.token = None # paco aqui quiero que me des el token y lo pases aqui esta arreglado
+        self.token = None # paco aqui quiero que me des el token y lo pases aqui
 
         self.usuario = None # paco o ivan aqui teneis el usuario actual lo guardamos
 
