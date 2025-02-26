@@ -76,6 +76,11 @@ cursor.execute("""
 
 
 ## INSERTS PARA PRUEBAS
+#insert para clientes
+cursor.execute("""
+    INSERT INTO cliente (nombre, email, apellido, dni)
+    VALUES (?, ?, ?, ?)
+""", ("Juan", "juan@example.com", "Pérez", "12345678A"))
 
 # INSERTS DE DESTINOS
 cursor.execute("""
