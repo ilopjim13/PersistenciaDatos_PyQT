@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 import sqlite3
+
 import os
 from PyQt6.QtWidgets import * # Librerías de los componentes
 from PyQt6 import QtWidgets, uic
-
+import pyrebase
 from models.cliente import Cliente  # Librería para trabajar con el archivo de la interfaz
 
 #configuracion
@@ -63,3 +64,18 @@ class Configuracion(QtWidgets.QMainWindow):
 
         id, nombre, email, apellido, dni = usuario_actualizado
         self.manager.usuario = Cliente(id, nombre, email, apellido, dni)
+    
+    def eliminarusuario(self):
+        self.firebaseConfig ={
+            "apiKey": "AIzaSyDtWlIUbITDQtvTI6pi4k0WxxOlimBIXxY",
+            "authDomain": "prueba1-79b1f.firebaseapp.com",
+            "databaseURL": "https://prueba1-79b1f-default-rtdb.firebaseio.com/", 
+            "projectId": "prueba1-79b1f",
+            "storageBucket": "prueba1-79b1f.appspot.com",
+            "messagingSenderId": "827606316467",
+            "appId": "1:827606316467:web:7cd3fcc0d0d4af6edec7c6"
+        }
+        self.firebase = self.pyrebase.initialize_app(self.firebaseConfig)
+        self.auth = self.firebase.auth()
+        self.auth.delete_user(self.manager.token)
+        #eliminar de manera local
