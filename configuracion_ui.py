@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'configuracion.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.1
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -28,8 +28,12 @@ class Ui_MainWindow(object):
         MainWindow.setMinimumSize(QSize(775, 484))
         self.principal = QWidget(MainWindow)
         self.principal.setObjectName(u"principal")
+        self.principal.setAutoFillBackground(True)
         self.principal.setStyleSheet(u"#principal{\n"
-"background-color:#6b6b6b\n"
+"background-image: url(:/icons/recursos/media/fondo.jpg);\n"
+"background-repeat: no-repeat;\n"
+"background-position: center;\n"
+"background-attachment: fixed;\n"
 "}")
         self.verticalLayout = QVBoxLayout(self.principal)
         self.verticalLayout.setObjectName(u"verticalLayout")

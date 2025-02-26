@@ -27,3 +27,6 @@ class Configuracion(QtWidgets.QMainWindow):
     
     def irAMenu(self):
         self.manager.mostrarVentana("menu")
+
+    def actualizarUsuario(self):
+        self.QTENombre.text()

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1163</width>
-    <height>660</height>
+    <width>775</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -59,7 +59,65 @@ background-image: url(:/icons/recursos/media/fondo.jpg);
 background-repeat: no-repeat;
 background-position: center;
 background-attachment: fixed;
-}</string>
+}
+#QTMisViajes {
+background-color: rgba(255, 255, 255, 150); /* Fondo blanco con 150 de opacidad (0-255) */
+color: black; 
+border: 1px solid #555; /* Borde gris */
+padding: 5px; /* Espaciado interno */
+}
+#QTMisViajes::item {
+padding: 5px; /* Espaciado interno en cada item */
+color: black; 
+margin: 5px; /* Espaciado externo en cada item */
+}
+#QTMisViajes::item:selected {
+background-color: rgba(100, 100, 255, 200); /* Fondo azul al seleccionar un item */
+color: black; /* Color del texto al seleccionar */
+}
+
+#QTTredingsTopicsTabla {
+background-color: rgba(255, 255, 255, 150); /* Fondo blanco con 150 de opacidad (0-255) */
+color: black; 
+border: 1px solid #555; /* Borde gris */
+padding: 5px; /* Espaciado interno */
+}
+#QTTredingsTopicsTabla::item {
+padding: 5px; /* Espaciado interno en cada item */
+color: black; 
+margin: 5px; /* Espaciado externo en cada item */
+}
+#QTTredingsTopicsTabla::item:selected {
+background-color: rgba(100, 100, 255, 200); /* Fondo azul al seleccionar un item */
+color: black; /* Color del texto al seleccionar */
+}
+#QTTredingsTopicsTabla QTableCornerButton::section {
+        background-color: rgba(255, 255, 255, 50); /* Fondo semitransparente para las cabeceras */
+        color: black; /* Color del texto en las cabeceras */
+        border: 1px solid black; /* Borde negro */
+    }
+
+    #QTTredingsTopicsTabla::horizontalHeader {
+        background-color: rgba(255, 255, 255, 50); /* Fondo semitransparente para las cabeceras horizontales */
+        color: black; /* Color del texto en las cabeceras */
+        border: 1px solid black; /* Borde negro */
+    }
+QPushButton {
+        background-color: rgba(255, 255, 255, 150); /* Fondo semitransparente para los botones */
+        color: black; /* Color del texto en los botones */
+        border: 1px solid black; /* Borde negro */
+        padding: 5px; /* Espaciado interno */
+        border-radius: 5px; /* Bordes redondeados */
+    }
+
+    QPushButton:hover {
+        background-color: rgba(200, 200, 200, 200); /* Fondo más oscuro al pasar el ratón */
+    }
+
+    QPushButton:pressed {
+        background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presionar */
+    }
+</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
@@ -252,7 +310,7 @@ background-attachment: fixed;
               <widget class="QWidget" name="widget_2" native="true">
                <layout class="QHBoxLayout" name="horizontalLayout_4">
                 <item>
-                 <widget class="QListWidget" name="QTredingTopics">
+                 <widget class="QListWidget" name="QTMisViajes">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -286,10 +344,31 @@ background-attachment: fixed;
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="BMisViajes">
-               <property name="text">
-                <string>Mis Viajes</string>
+              <widget class="QWidget" name="widget_4" native="true">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>45</height>
+                </size>
                </property>
+               <property name="layoutDirection">
+                <enum>Qt::LayoutDirection::LeftToRight</enum>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_5">
+                <item>
+                 <widget class="QPushButton" name="BMisViajes">
+                  <property name="maximumSize">
+                   <size>
+                    <width>350</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Mis Viajes</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
               </widget>
              </item>
             </layout>
@@ -348,7 +427,7 @@ background-attachment: fixed;
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_3">
                 <item>
-                 <widget class="QTableWidget" name="tableWidget">
+                 <widget class="QTableWidget" name="QTTredingsTopicsTabla">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -446,10 +525,34 @@ background-attachment: fixed;
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="BViajes">
-               <property name="text">
-                <string>Viajes</string>
+              <widget class="QWidget" name="widget_3" native="true">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
                </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_6">
+                <item>
+                 <widget class="QPushButton" name="BViajes">
+                  <property name="maximumSize">
+                   <size>
+                    <width>350</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Viajes</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
               </widget>
              </item>
             </layout>
