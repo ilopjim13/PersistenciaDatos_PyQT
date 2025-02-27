@@ -1,5 +1,7 @@
 import sqlite3
 
+from models.cliente import Cliente
+
 #Crear las tablas que necesiteis brothers nico gay
 
 
@@ -9,7 +11,7 @@ def obtener_cliente(email):
     cursor.execute("SELECT * FROM cliente WHERE email = ?", (email,))
     cliente = cursor.fetchone()
     conn.close()
-    return cliente
+    return Cliente(cliente[1],cliente[2],cliente[3],cliente[4])
 
 def prueba():
     conn = sqlite3.connect("viajes.db")

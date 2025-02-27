@@ -22,14 +22,15 @@ class Configuracion(QtWidgets.QMainWindow):
         super(Configuracion, self).__init__()
         file_log = "configuracion.ui"
         full_path_lo = os.path.join(os.path.dirname(__file__), file_log)
-        login = uic.loadUi(full_path_lo, self)  # Cargar la UI de QtDesigner
+        uic.loadUi(full_path_lo, self)  # Cargar la UI de QtDesigner
         self.manager = manager
-        self.BBActualizarUsuario.clicked.connect(lambda: self.actualizarUsuario())
-        self.QPBVolver.clicked.connect(lambda: self.irAMenu())
-        self.obtenerUsuarioPorId("juan@example.com")
-        self.QTENombre.setPlainText(self.manager.usuario.nombre)  # Para QLineEdit
-        self.QTEApellido.setPlainText(self.manager.usuario.apellido)  # Para QLineEdit
-        self.QTEDni.setPlainText(self.manager.usuario.dni)  # Para QLineEdit
+        if self.manager.usuario is not None:
+            self.BBActualizarUsuario.clicked.connect(lambda: self.actualizarUsuario())
+            self.QPBVolver.clicked.connect(lambda: self.irAMenu())
+            self.obtenerUsuarioPorId(self.manager.usuario.email)
+            self.QTENombre.setPlainText(self.manager.usuario.nombre)  # Para QLineEdit
+            self.QTEApellido.setPlainText(self.manager.usuario.apellido)  # Para QLineEdit
+            self.QTEDni.setPlainText(self.manager.usuario.dni)  # Para QLineEdit
     def irAMenu(self):
         self.manager.mostrarVentana("menu")
 
@@ -38,8 +39,7 @@ class Configuracion(QtWidgets.QMainWindow):
         nuevo_nombre = self.QTENombre.toPlainText()
         nuevo_email = self.QTEApellido.toPlainText()
         dni = self.QTEDni.toPlainText()
-        print(dni)
-        correo = "juan@example.com"
+        correo = self.manager.usuario.email
         # Conectar a la base de datos
         conn = sqlite3.connect('viajes.db')
         cursor = conn.cursor()
@@ -63,7 +63,7 @@ class Configuracion(QtWidgets.QMainWindow):
         conn.close()
 
         id, nombre, email, apellido, dni = usuario_actualizado
-        self.manager.usuario = Cliente(id, nombre, email, apellido, dni)
+        self.manager.usuario = Cliente(nombre, email, apellido, dni)
     
     def eliminarusuario(self):
         self.firebaseConfig ={

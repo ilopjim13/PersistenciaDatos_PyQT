@@ -8,12 +8,13 @@ class MisViajes(QtWidgets.QMainWindow):
     def __init__(self, manager):
         super().__init__()
         uic.loadUi("misviajes.ui", self) 
-        self.email = manager.usuario.email
         self.manager = manager
-        self.boton_actualizar.clicked.connect(self.actualizar_viaje)
-        self.boton_eliminar.clicked.connect(self.eliminar_viaje)
-        self.boton_volver_menu.clicked.connect(self.volverMenu)
-        self.cargar_viajes()
+        if self.manager.usuario is not None:
+            self.email = self.manager.usuario.email
+            self.boton_actualizar.clicked.connect(self.actualizar_viaje)
+            self.boton_eliminar.clicked.connect(self.eliminar_viaje)
+            self.boton_volver_menu.clicked.connect(self.volverMenu)
+            self.cargar_viajes()
 
     def cargar_viajes(self):
         viajes = baseLocal.getMisViajes(self.email)

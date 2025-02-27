@@ -11,6 +11,8 @@ from models.cliente import Cliente
 class WindowManager:
     def __init__(self):
         self.current_window = None  # Almacena la ventana actual dd
+        self.token = None # paco aqui quiero que me des el token y lo pases aqui
+        self.usuario:Cliente = None # paco o ivan aqui teneis el usuario actual lo guardamos
 
         self.ventanas = {  #aqui estara todos las ventanas que necesitaremos
             "menu": Menu(self), 
@@ -18,10 +20,6 @@ class WindowManager:
             "login":Ventana(self),
             "misviajes":MisViajes(self)
         }
-
-        self.token = None # paco aqui quiero que me des el token y lo pases aqui
-
-        self.usuario:Cliente = None # paco o ivan aqui teneis el usuario actual lo guardamos
 
         self.full_screen_state:bool = None # estado de la ventana si esta activa o no
         self.previous_size:QSize = None # tamaño de la ventana
@@ -43,10 +41,10 @@ class WindowManager:
             self.current_window.showMaximized()
         #si no le pongo el tamaño y la posicion
         else:
+            self.current_window.__init__(self) 
             if self.previous_size:
                 self.current_window.resize(self.previous_size)
                 self.current_window.move(self.previous_position) 
-            self.current_window.__init__(self) 
             self.current_window.show()
 
     def cerrarVentana(self):

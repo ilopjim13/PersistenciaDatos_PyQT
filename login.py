@@ -85,7 +85,7 @@ class Ventana(QMainWindow):
 
             self.manager.mostrarVentana("menu")
             self.manager.token = user["idToken"]
-            self.manager.usuario = cliente          
+            self.manager.usuario = cliente        
 
             if cliente is not None:
                 self.correcto("l")
