@@ -7,11 +7,12 @@ import BD.basedatos
 import sqlite3
 
 class Compra(QMainWindow):
-    def __init__(self, vuelo, pasajero):
+    def __init__(self, manager):
         super().__init__()
         uic.loadUi("compras.ui", self)
-        self.vuelo = vuelo
-        self.pasajero = pasajero
+        self.manager = manager
+        self.vuelo = self.manager.selfvuelo
+        self.pasajero = self.manager.usuario
         self.fecha_salida = ""
         self.fecha_regreso = ""
         self.cantidad_asientos = 1
@@ -31,6 +32,7 @@ class Compra(QMainWindow):
         self.fc_vuelta.setDate(QDate.currentDate())
         self.set_fecha_regreso(QDate.currentDate())
         self.set_fecha_salida(QDate.currentDate())
+        self.bt_volver.clicked.connect(self.volver)
 
     def set_cantidad_asientos(self, cantidad):
         self.cantidad_asientos = cantidad
@@ -90,6 +92,9 @@ class Compra(QMainWindow):
             return 0
         else:
             return int(id[0])
+        
+    def volver(self):
+        self.manager.mostrarVentana("vuelos")
 
 
 class Bilete(QMainWindow):

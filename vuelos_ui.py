@@ -17,8 +17,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplication, QComboBox,
     QFrame, QHeaderView, QLabel, QMainWindow,
-    QSizePolicy, QStatusBar, QTableWidget, QTableWidgetItem,
-    QWidget)
+    QPushButton, QSizePolicy, QStatusBar, QTableWidget,
+    QTableWidgetItem, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -45,7 +45,7 @@ class Ui_MainWindow(object):
         self.Titulo.setAlignment(Qt.AlignCenter)
         self.tabla_vuelos = QTableWidget(self.centralwidget)
         self.tabla_vuelos.setObjectName(u"tabla_vuelos")
-        self.tabla_vuelos.setGeometry(QRect(20, 129, 760, 421))
+        self.tabla_vuelos.setGeometry(QRect(20, 129, 760, 391))
         self.tabla_vuelos.setLayoutDirection(Qt.LeftToRight)
         self.tabla_vuelos.setAutoFillBackground(False)
         self.tabla_vuelos.setFrameShape(QFrame.NoFrame)
@@ -78,6 +78,9 @@ class Ui_MainWindow(object):
         self.comboBox.setObjectName(u"comboBox")
         self.comboBox.setGeometry(QRect(660, 100, 121, 22))
         self.comboBox.setEditable(False)
+        self.bt_volver = QPushButton(self.centralwidget)
+        self.bt_volver.setObjectName(u"bt_volver")
+        self.bt_volver.setGeometry(QRect(20, 530, 75, 24))
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -95,5 +98,6 @@ class Ui_MainWindow(object):
         self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"Categoria", None))
         self.comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"Precio", None))
 
+        self.bt_volver.setText(QCoreApplication.translate("MainWindow", u"Volver", None))
     # retranslateUi
 

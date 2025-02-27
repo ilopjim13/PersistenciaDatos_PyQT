@@ -56,7 +56,7 @@
       <x>20</x>
       <y>129</y>
       <width>760</width>
-      <height>421</height>
+      <height>391</height>
      </rect>
     </property>
     <property name="layoutDirection">
@@ -162,6 +162,19 @@
       <string>Precio</string>
      </property>
     </item>
+   </widget>
+   <widget class="QPushButton" name="bt_volver">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>530</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Volver</string>
+    </property>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>

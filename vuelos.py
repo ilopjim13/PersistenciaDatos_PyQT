@@ -7,16 +7,18 @@ import sqlite3
 from compra import Compra
 
 class Vuelos(QMainWindow):
-    def __init__(self, destino, pasajero):
+    def __init__(self, manager):
         super().__init__()
         uic.loadUi("vuelos.ui", self)
-        self.Titulo.setText(f"Vuelos a {destino}")
-        self.destino = destino
-        self.pasajero = pasajero
+        self.manager = manager
+        self.destino = self.manager.destino
+        self.Titulo.setText(f"Vuelos a {self.destino}")
+        self.pasajero = self.manager.usuario
         self.orden = 0
         self.cargar_vuelos()
         self.comboBox.currentIndexChanged.connect(self.update_tabla_vuelos)
         self.tabla_vuelos.cellClicked.connect(self.ir_a_comprar)
+        self.bt_volver.clicked.connect(self.volver)
 
     def cargar_vuelos(self):
         conn = sqlite3.connect("viajes.db")
@@ -62,9 +64,14 @@ class Vuelos(QMainWindow):
         asientos = self.tabla_vuelos.item(row, 3).text()
         id_vuelo = self.tabla_vuelos.item(row, 4).text()
         vuelo = [modelo, precio, asientos, id_vuelo, self.destino]
-        self.compra = Compra(vuelo, self.pasajero)
-        self.compra.show()
-        self.hide()
+        self.manager.vuelo = vuelo
+        self.manager.mostrarVentana("compra")
+        #self.compra = Compra(vuelo, self.pasajero)
+        #self.compra.show()
+        #self.hide()
+
+    def volver(self):
+        self.manager.mostrarVentana("menu")
 
 if __name__ == "__main__":
     # se crea la instancia de la aplicación

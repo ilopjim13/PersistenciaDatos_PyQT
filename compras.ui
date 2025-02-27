@@ -53,7 +53,7 @@
    <widget class="QTextEdit" name="te_nombre">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>120</x>
       <y>140</y>
       <width>241</width>
       <height>31</height>
@@ -63,7 +63,7 @@
    <widget class="QTextEdit" name="te_apellido">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>120</x>
       <y>220</y>
       <width>241</width>
       <height>31</height>
@@ -73,7 +73,7 @@
    <widget class="QSpinBox" name="bt_cantidad">
     <property name="geometry">
      <rect>
-      <x>280</x>
+      <x>320</x>
       <y>370</y>
       <width>42</width>
       <height>22</height>
@@ -86,7 +86,7 @@
    <widget class="QTextEdit" name="te_dni">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>120</x>
       <y>310</y>
       <width>241</width>
       <height>31</height>
@@ -96,7 +96,7 @@
    <widget class="QPushButton" name="boton_comprar">
     <property name="geometry">
      <rect>
-      <x>370</x>
+      <x>360</x>
       <y>530</y>
       <width>75</width>
       <height>24</height>
@@ -109,35 +109,8 @@
    <widget class="QDateEdit" name="fc_salida">
     <property name="geometry">
      <rect>
-      <x>580</x>
+      <x>560</x>
       <y>110</y>
-      <width>110</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="dateTime">
-     <datetime>
-      <hour>23</hour>
-      <minute>0</minute>
-      <second>0</second>
-      <year>2025</year>
-      <month>2</month>
-      <day>24</day>
-     </datetime>
-    </property>
-    <property name="date">
-     <date>
-      <year>2025</year>
-      <month>2</month>
-      <day>24</day>
-     </date>
-    </property>
-   </widget>
-   <widget class="QDateEdit" name="fc_vuelta">
-    <property name="geometry">
-     <rect>
-      <x>580</x>
-      <y>140</y>
       <width>110</width>
       <height>22</height>
      </rect>
@@ -160,10 +133,37 @@
      </date>
     </property>
    </widget>
+   <widget class="QDateEdit" name="fc_vuelta">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>140</y>
+      <width>110</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="dateTime">
+     <datetime>
+      <hour>21</hour>
+      <minute>0</minute>
+      <second>0</second>
+      <year>2025</year>
+      <month>2</month>
+      <day>24</day>
+     </datetime>
+    </property>
+    <property name="date">
+     <date>
+      <year>2025</year>
+      <month>2</month>
+      <day>24</day>
+     </date>
+    </property>
+   </widget>
    <widget class="QPlainTextEdit" name="plainTextEdit">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>120</x>
       <y>110</y>
       <width>241</width>
       <height>20</height>
@@ -203,7 +203,7 @@
    <widget class="QPlainTextEdit" name="plainTextEdit_2">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>120</x>
       <y>190</y>
       <width>241</width>
       <height>20</height>
@@ -243,7 +243,7 @@
    <widget class="QPlainTextEdit" name="plainTextEdit_3">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>120</x>
       <y>280</y>
       <width>241</width>
       <height>20</height>
@@ -283,7 +283,7 @@
    <widget class="QPlainTextEdit" name="plainTextEdit_4">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>430</x>
       <y>110</y>
       <width>241</width>
       <height>20</height>
@@ -323,7 +323,7 @@
    <widget class="QPlainTextEdit" name="plainTextEdit_5">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>430</x>
       <y>140</y>
       <width>241</width>
       <height>20</height>
@@ -363,7 +363,7 @@
    <widget class="QPlainTextEdit" name="plainTextEdit_6">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>120</x>
       <y>370</y>
       <width>241</width>
       <height>20</height>
@@ -403,7 +403,7 @@
    <widget class="QPlainTextEdit" name="pt_destino">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>430</x>
       <y>220</y>
       <width>241</width>
       <height>31</height>
@@ -413,7 +413,7 @@
    <widget class="QPlainTextEdit" name="pt_vuelo">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>430</x>
       <y>310</y>
       <width>241</width>
       <height>31</height>
@@ -423,7 +423,7 @@
    <widget class="QPlainTextEdit" name="plainTextEdit_7">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>430</x>
       <y>190</y>
       <width>241</width>
       <height>20</height>
@@ -463,7 +463,7 @@
    <widget class="QPlainTextEdit" name="plainTextEdit_8">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>430</x>
       <y>280</y>
       <width>241</width>
       <height>20</height>
@@ -500,6 +500,19 @@
      <bool>false</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="bt_volver">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>530</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Volver</string>
+    </property>
+   </widget>
    <zorder>plainTextEdit_5</zorder>
    <zorder>plainTextEdit_4</zorder>
    <zorder>plainTextEdit_6</zorder>
@@ -518,6 +531,7 @@
    <zorder>pt_vuelo</zorder>
    <zorder>plainTextEdit_7</zorder>
    <zorder>plainTextEdit_8</zorder>
+   <zorder>bt_volver</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
