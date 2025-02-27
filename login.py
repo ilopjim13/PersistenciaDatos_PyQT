@@ -56,11 +56,12 @@ class Ventana(QMainWindow):
 
             user = self.auth.create_user_with_email_and_password(email, passw)
             print(user)
+            self.manager.usuario = cliente
             self.manager.mostrarVentana("menu")
             self.manager.token = user["idToken"]
             print(user["idToken"])
             
-            self.manager.usuario = cliente
+            
             
 
             self.correcto("r")
@@ -84,9 +85,9 @@ class Ventana(QMainWindow):
 
             baseLocal.prueba()
 
+            self.manager.usuario = cliente   
             self.manager.mostrarVentana("menu")
             self.manager.token = user["idToken"]
-            self.manager.usuario = cliente        
 
             if cliente is not None:
                 self.correcto("l")

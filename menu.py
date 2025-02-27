@@ -15,15 +15,15 @@ class Menu(QtWidgets.QMainWindow):
         self.QLabelUsuario.setPixmap(QtGui.QPixmap(":/icons/recursos/iconos/usuario.png"))
         self.QLabelConfiguracion.setPixmap(QtGui.QPixmap(":/icons/recursos/iconos/engranaje.png"))
         self.manager = manager
-        if self.manager.usuario is not None:
-            self.refrescarIdDelLoginOResgiterDelCliente()
         self.BMisViajes.clicked.connect(self.irAMisViajes)
         self.QTTredingsTopicsTabla.cellClicked.connect(self.irACompras)
         self.QLabelConfiguracion.mousePressEvent= self.mousePressEventLabel
+        if self.manager.usuario is not None:
+            self.refrescarIdDelLoginOResgiterDelCliente()
 
     def refrescarIdDelLoginOResgiterDelCliente(self):
         print(self.manager.usuario)
-        baseLocal.obtenerElIdDelClienteUnaVezLogeado(self.manager.usuario.email)
+        self.manager.usuario.id = baseLocal.obtenerElIdDelClienteUnaVezLogeado(self.manager.usuario.email)[0]
         print("EL PACO NO SABE NI LA MITAD DE COMOPILLAR EL ID")
         print(self.manager.usuario)
 
