@@ -23,7 +23,8 @@ class Ui_GestionViajes(object):
     def setupUi(self, GestionViajes):
         if not GestionViajes.objectName():
             GestionViajes.setObjectName(u"GestionViajes")
-        GestionViajes.resize(653, 420)
+        GestionViajes.resize(755, 485)
+        GestionViajes.setMinimumSize(QSize(755, 485))
         self.centralwidget = QWidget(GestionViajes)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout_3 = QVBoxLayout(self.centralwidget)
