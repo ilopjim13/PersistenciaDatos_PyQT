@@ -40,12 +40,14 @@ def getMisViajes(email):
     cursor = conn.cursor()
 
     cursor.execute("""
-        SELECT viaje.id,cliente.nombre, destino.nombre, viaje.fecha_salida, viaje.fecha_regreso, viaje.precio
-        FROM viaje
-        JOIN cliente ON viaje.cliente_id = cliente.id
-        JOIN destino ON viaje.destino_id = destino.id
-        WHERE cliente.email = ?
-    """, (email))
+    SELECT viaje.id, cliente.nombre, destino.nombre, viaje.fecha_salida, viaje.fecha_regreso, viaje.precio
+    FROM viaje
+    JOIN cliente ON viaje.cliente_id = cliente.id
+    JOIN vuelo ON viaje.vuelo_id = vuelo.id
+    JOIN destino ON vuelo.destino_id = destino.id
+    WHERE cliente.email = ?
+    """, (email,))
+
 
     # Porquee cojoneeees no sale nadaaaaaaaaa
     viajes = cursor.fetchall()
