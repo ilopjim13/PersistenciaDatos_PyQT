@@ -18,7 +18,7 @@ class Menu(QtWidgets.QMainWindow):
         self.QLabelConfiguracion.mousePressEvent= self.mousePressEventLabel
 
     def irAMisViajes(self):
-        self.manager.mostrarVentana("misViajes")
+        self.manager.mostrarVentana("misviajes")
 
     def irACompras(self):
         self.manager.mostrarVentana("compras")
