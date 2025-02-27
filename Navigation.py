@@ -20,8 +20,8 @@ class WindowManager:
 
         self.ventanas = {  #aqui estara todos las ventanas que necesitaremos
             "menu": Menu(self), 
-            "configuracion": Configuracion(self),
             "login":Ventana(self),
+            "configuracion": Configuracion(self),
             "misviajes":MisViajes(self),
             "vuelos":Vuelos(self),
             "compra":Compra(self)

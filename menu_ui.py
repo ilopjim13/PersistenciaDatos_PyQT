@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'menu.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.1
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -296,23 +296,14 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3 = QHBoxLayout(self.widget)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.QTTredingsTopicsTabla = QTableWidget(self.widget)
-        if (self.QTTredingsTopicsTabla.columnCount() < 3):
-            self.QTTredingsTopicsTabla.setColumnCount(3)
+        if (self.QTTredingsTopicsTabla.columnCount() < 1):
+            self.QTTredingsTopicsTabla.setColumnCount(1)
         __qtablewidgetitem = QTableWidgetItem()
         self.QTTredingsTopicsTabla.setHorizontalHeaderItem(0, __qtablewidgetitem)
-        __qtablewidgetitem1 = QTableWidgetItem()
-        self.QTTredingsTopicsTabla.setHorizontalHeaderItem(1, __qtablewidgetitem1)
-        __qtablewidgetitem2 = QTableWidgetItem()
-        self.QTTredingsTopicsTabla.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         if (self.QTTredingsTopicsTabla.rowCount() < 1):
             self.QTTredingsTopicsTabla.setRowCount(1)
-        __qtablewidgetitem3 = QTableWidgetItem()
-        __qtablewidgetitem3.setFlags(Qt.ItemIsSelectable|Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.QTTredingsTopicsTabla.setItem(0, 0, __qtablewidgetitem3)
-        __qtablewidgetitem4 = QTableWidgetItem()
-        self.QTTredingsTopicsTabla.setItem(0, 1, __qtablewidgetitem4)
-        __qtablewidgetitem5 = QTableWidgetItem()
-        self.QTTredingsTopicsTabla.setItem(0, 2, __qtablewidgetitem5)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.QTTredingsTopicsTabla.setItem(0, 0, __qtablewidgetitem1)
         self.QTTredingsTopicsTabla.setObjectName(u"QTTredingsTopicsTabla")
         sizePolicy6 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Preferred)
         sizePolicy6.setHorizontalStretch(0)
@@ -332,32 +323,19 @@ class Ui_MainWindow(object):
         self.QTTredingsTopicsTabla.setAlternatingRowColors(True)
         self.QTTredingsTopicsTabla.setSelectionMode(QAbstractItemView.SelectionMode.NoSelection)
         self.QTTredingsTopicsTabla.setHorizontalScrollMode(QAbstractItemView.ScrollMode.ScrollPerPixel)
-        self.QTTredingsTopicsTabla.setShowGrid(True)
+        self.QTTredingsTopicsTabla.setShowGrid(False)
+        self.QTTredingsTopicsTabla.setWordWrap(True)
+        self.QTTredingsTopicsTabla.setCornerButtonEnabled(True)
+        self.QTTredingsTopicsTabla.horizontalHeader().setVisible(True)
+        self.QTTredingsTopicsTabla.horizontalHeader().setHighlightSections(True)
+        self.QTTredingsTopicsTabla.verticalHeader().setVisible(False)
         self.QTTredingsTopicsTabla.verticalHeader().setDefaultSectionSize(24)
+        self.QTTredingsTopicsTabla.verticalHeader().setHighlightSections(True)
 
         self.horizontalLayout_3.addWidget(self.QTTredingsTopicsTabla)
 
 
         self.verticalLayout_5.addWidget(self.widget)
-
-        self.widget_3 = QWidget(self.QFTredingTopics)
-        self.widget_3.setObjectName(u"widget_3")
-        sizePolicy7 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
-        sizePolicy7.setHorizontalStretch(0)
-        sizePolicy7.setVerticalStretch(0)
-        sizePolicy7.setHeightForWidth(self.widget_3.sizePolicy().hasHeightForWidth())
-        self.widget_3.setSizePolicy(sizePolicy7)
-        self.widget_3.setMaximumSize(QSize(16777215, 45))
-        self.horizontalLayout_6 = QHBoxLayout(self.widget_3)
-        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.BViajes = QPushButton(self.widget_3)
-        self.BViajes.setObjectName(u"BViajes")
-        self.BViajes.setMaximumSize(QSize(350, 16777215))
-
-        self.horizontalLayout_6.addWidget(self.BViajes)
-
-
-        self.verticalLayout_5.addWidget(self.widget_3)
 
 
         self.horizontalLayout_2.addWidget(self.QFTredingTopics)
@@ -409,22 +387,13 @@ class Ui_MainWindow(object):
         self.BMisViajes.setText(QCoreApplication.translate("MainWindow", u"Mis Viajes", None))
         self.QLTredingTopics.setText(QCoreApplication.translate("MainWindow", u"Treding topics", None))
         ___qtablewidgetitem = self.QTTredingsTopicsTabla.horizontalHeaderItem(0)
-        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Origen", None));
-        ___qtablewidgetitem1 = self.QTTredingsTopicsTabla.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Destino", None));
-        ___qtablewidgetitem2 = self.QTTredingsTopicsTabla.horizontalHeaderItem(2)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Precio", None));
+        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Destino", None));
 
         __sortingEnabled1 = self.QTTredingsTopicsTabla.isSortingEnabled()
         self.QTTredingsTopicsTabla.setSortingEnabled(False)
-        ___qtablewidgetitem3 = self.QTTredingsTopicsTabla.item(0, 0)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"espa\u00f1a", None));
-        ___qtablewidgetitem4 = self.QTTredingsTopicsTabla.item(0, 1)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"Francia", None));
-        ___qtablewidgetitem5 = self.QTTredingsTopicsTabla.item(0, 2)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"23\u20ac", None));
+        ___qtablewidgetitem1 = self.QTTredingsTopicsTabla.item(0, 0)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Francia", None));
         self.QTTredingsTopicsTabla.setSortingEnabled(__sortingEnabled1)
 
-        self.BViajes.setText(QCoreApplication.translate("MainWindow", u"Viajes", None))
     # retranslateUi
 

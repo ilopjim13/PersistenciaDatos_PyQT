@@ -14,14 +14,15 @@ class Menu(QtWidgets.QMainWindow):
         self.QLabelConfiguracion.setPixmap(QtGui.QPixmap(":/icons/recursos/iconos/engranaje.png"))
         self.manager = manager
         self.BMisViajes.clicked.connect(self.irAMisViajes)
-        self.BViajes.clicked.connect(self.irACompras)
+        self.QTTredingsTopicsTabla.cellClicked.connect(self.irACompras)
         self.QLabelConfiguracion.mousePressEvent= self.mousePressEventLabel
 
     def irAMisViajes(self):
         self.manager.mostrarVentana("misviajes")
 
-    def irACompras(self):
-        self.manager.mostrarVentana("compras")
+    def irACompras(self,row):
+        self.manager.destino=self.QTTredingsTopicsTabla.item(row,0).text()
+        self.manager.mostrarVentana("vuelos")
 
     def mousePressEventLabel(self, event):
         self.irAConfiguracion()

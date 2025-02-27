@@ -11,16 +11,17 @@ class Compra(QMainWindow):
         super().__init__()
         uic.loadUi("compras.ui", self)
         self.manager = manager
-        self.vuelo = self.manager.selfvuelo
-        self.pasajero = self.manager.usuario
-        self.fecha_salida = ""
-        self.fecha_regreso = ""
-        self.cantidad_asientos = 1
-        self.cargar_datos()
-        self.fc_salida.dateChanged.connect(self.set_fecha_salida)
-        self.fc_vuelta.dateChanged.connect(self.set_fecha_regreso)
-        self.bt_cantidad.valueChanged.connect(self.set_cantidad_asientos)
-        self.boton_comprar.clicked.connect(self.comprar)
+        if self.manager.usuario is not None:
+            self.vuelo = self.manager.vuelo
+            self.pasajero = self.manager.usuario
+            self.fecha_salida = ""
+            self.fecha_regreso = ""
+            self.cantidad_asientos = 1
+            self.cargar_datos()
+            self.fc_salida.dateChanged.connect(self.set_fecha_salida)
+            self.fc_vuelta.dateChanged.connect(self.set_fecha_regreso)
+            self.bt_cantidad.valueChanged.connect(self.set_cantidad_asientos)
+            self.boton_comprar.clicked.connect(self.comprar)
 
     def cargar_datos(self):
         self.te_nombre.setText(self.pasajero.nombre)

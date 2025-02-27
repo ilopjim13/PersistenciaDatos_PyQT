@@ -478,76 +478,40 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
                    <enum>QAbstractItemView::ScrollMode::ScrollPerPixel</enum>
                   </property>
                   <property name="showGrid">
+                   <bool>false</bool>
+                  </property>
+                  <property name="wordWrap">
                    <bool>true</bool>
                   </property>
+                  <property name="cornerButtonEnabled">
+                   <bool>true</bool>
+                  </property>
+                  <attribute name="horizontalHeaderVisible">
+                   <bool>true</bool>
+                  </attribute>
+                  <attribute name="horizontalHeaderHighlightSections">
+                   <bool>true</bool>
+                  </attribute>
+                  <attribute name="verticalHeaderVisible">
+                   <bool>false</bool>
+                  </attribute>
                   <attribute name="verticalHeaderDefaultSectionSize">
                    <number>24</number>
                   </attribute>
+                  <attribute name="verticalHeaderHighlightSections">
+                   <bool>true</bool>
+                  </attribute>
                   <row/>
-                  <column>
-                   <property name="text">
-                    <string>Origen</string>
-                   </property>
-                  </column>
                   <column>
                    <property name="text">
                     <string>Destino</string>
                    </property>
                   </column>
-                  <column>
-                   <property name="text">
-                    <string>Precio</string>
-                   </property>
-                  </column>
                   <item row="0" column="0">
-                   <property name="text">
-                    <string>españa</string>
-                   </property>
-                   <property name="flags">
-                    <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
-                   </property>
-                  </item>
-                  <item row="0" column="1">
                    <property name="text">
                     <string>Francia</string>
                    </property>
                   </item>
-                  <item row="0" column="2">
-                   <property name="text">
-                    <string>23€</string>
-                   </property>
-                  </item>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item>
-              <widget class="QWidget" name="widget_3" native="true">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>45</height>
-                </size>
-               </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_6">
-                <item>
-                 <widget class="QPushButton" name="BViajes">
-                  <property name="maximumSize">
-                   <size>
-                    <width>350</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>Viajes</string>
-                  </property>
                  </widget>
                 </item>
                </layout>

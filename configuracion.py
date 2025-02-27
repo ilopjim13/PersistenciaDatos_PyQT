@@ -65,4 +65,4 @@ class Configuracion(QtWidgets.QMainWindow):
         #eliminar de manera local
         #baseLocal.eliminarClientePorCorreo(self.manager.usuario.email)
         self.manager.usuario = None
-        self.manager.mostrarVentana("login")
+        #self.manager.mostrarVentana("login")
