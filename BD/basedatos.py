@@ -16,6 +16,14 @@ def update_cliente(nuevo_nombre, nuevo_email, dni,correo):
     conn.commit()
     conn.close()
 
+def obtenerElIdDelClienteUnaVezLogeado(correo):
+    conn = sqlite3.connect('viajes.db')
+    cursor = conn.cursor()
+    cursor.execute("""SELECT id FROM cliente WHERE email = ?""", (correo,))
+    id = cursor.fetchone()
+    conn.close()
+    return id
+
 def obtenerSoloElNombreDelDestinoParaLaPantallaMenu():
     conn = sqlite3.connect('viajes.db')
     cursor = conn.cursor()
@@ -38,7 +46,7 @@ def obtener_cliente(email):
     cursor.execute("SELECT * FROM cliente WHERE email = ?", (email,))
     cliente = cursor.fetchone()
     conn.close()
-    return Cliente(cliente[1],cliente[2],cliente[3],cliente[4])
+    return Cliente(0,cliente[1],cliente[2],cliente[3],cliente[4])
 
 def eliminarClientePorCorreo(correo):
     conexion = sqlite3.connect("viajes.db")

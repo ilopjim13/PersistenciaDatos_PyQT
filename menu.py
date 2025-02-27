@@ -11,13 +11,22 @@ class Menu(QtWidgets.QMainWindow):
         file_log = "menu.ui"
         full_path_lo = os.path.join(os.path.dirname(__file__), file_log)
         uic.loadUi(full_path_lo,self)
-        
+        self.cargarDatos()
         self.QLabelUsuario.setPixmap(QtGui.QPixmap(":/icons/recursos/iconos/usuario.png"))
         self.QLabelConfiguracion.setPixmap(QtGui.QPixmap(":/icons/recursos/iconos/engranaje.png"))
         self.manager = manager
+        if self.manager.usuario is not None:
+            self.refrescarIdDelLoginOResgiterDelCliente()
         self.BMisViajes.clicked.connect(self.irAMisViajes)
         self.QTTredingsTopicsTabla.cellClicked.connect(self.irACompras)
         self.QLabelConfiguracion.mousePressEvent= self.mousePressEventLabel
+
+    def refrescarIdDelLoginOResgiterDelCliente(self):
+        print(self.manager.usuario)
+        baseLocal.obtenerElIdDelClienteUnaVezLogeado(self.manager.usuario.email)
+        print("EL PACO NO SABE NI LA MITAD DE COMOPILLAR EL ID")
+        print(self.manager.usuario)
+
 
     def cargarDatos(self):
         destinos = baseLocal.obtenerSoloElNombreDelDestinoParaLaPantallaMenu()
@@ -25,9 +34,9 @@ class Menu(QtWidgets.QMainWindow):
         self.QTTredingsTopicsTabla.setHorizontalHeaderLabels(["Destinos"])
         self.QTTredingsTopicsTabla.setRowCount(0)
         for row_idx, row_data in enumerate(destinos):
-            self.tabla_vuelos.insertRow(row_idx)
+            self.QTTredingsTopicsTabla.insertRow(row_idx)
             for col_idx, data in enumerate(row_data):
-                self.tabla_vuelos.setItem(row_idx, col_idx, QTableWidgetItem(str(data)))
+                self.QTTredingsTopicsTabla.setItem(row_idx, col_idx, QTableWidgetItem(str(data)))
     
     def irAMisViajes(self):
         self.manager.mostrarVentana("misviajes")

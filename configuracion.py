@@ -27,7 +27,6 @@ class Configuracion(QtWidgets.QMainWindow):
         self.QPBVolver.clicked.connect(lambda: self.irAMenu())
         self.buttonBox_2.button(self.buttonBox_2.StandardButton.Apply).clicked.connect(lambda: self.eliminarusuario())
         self.BBActualizarUsuario.clicked.connect(lambda :self.actualizarUsuario())
-        self.eliminarusuario()
         if self.manager.usuario is not None:
             self.QTENombre.setPlainText(self.manager.usuario.nombre)  # Para QLineEdit
             self.QTEApellido.setPlainText(self.manager.usuario.apellido)  # Para QLineEdit
@@ -65,4 +64,4 @@ class Configuracion(QtWidgets.QMainWindow):
         #eliminar de manera local
         #baseLocal.eliminarClientePorCorreo(self.manager.usuario.email)
         self.manager.usuario = None
-        #self.manager.mostrarVentana("login")
+        self.manager.mostrarVentana("login")

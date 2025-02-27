@@ -7,4 +7,4 @@ class Cliente:
         self.dni = dni
 
     def __repr__(self):
-        return f"Cliente( nombre='{self.nombre}', email='{self.email}', apellido='{self.apellido}', dni='{self.dni}')"
+        return f"Cliente( id='{self.id} nombre='{self.nombre}', email='{self.email}', apellido='{self.apellido}', dni='{self.dni}')"
