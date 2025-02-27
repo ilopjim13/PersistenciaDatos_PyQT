@@ -22,11 +22,7 @@ class Menu(QtWidgets.QMainWindow):
             self.refrescarIdDelLoginOResgiterDelCliente()
 
     def refrescarIdDelLoginOResgiterDelCliente(self):
-        print(self.manager.usuario)
         self.manager.usuario.id = baseLocal.obtenerElIdDelClienteUnaVezLogeado(self.manager.usuario.email)[0]
-        print("EL PACO NO SABE NI LA MITAD DE COMOPILLAR EL ID")
-        print(self.manager.usuario)
-
 
     def cargarDatos(self):
         destinos = baseLocal.obtenerSoloElNombreDelDestinoParaLaPantallaMenu()
