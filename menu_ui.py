@@ -27,7 +27,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1163, 660)
+        MainWindow.resize(775, 500)
         MainWindow.setMinimumSize(QSize(775, 485))
         MainWindow.setWindowOpacity(1.000000000000000)
         MainWindow.setAutoFillBackground(True)
@@ -57,7 +57,67 @@ class Ui_MainWindow(object):
 "background-repeat: no-repeat;\n"
 "background-position: center;\n"
 "background-attachment: fixed;\n"
-"}")
+"}\n"
+"#QTMisViajes {\n"
+"background-color: rgba(255, 255, 255, 150); /* Fondo blanco con 150 de opacidad (0-255) */\n"
+"color: black; \n"
+"border: 1px solid #555; /* Borde gris */\n"
+"padding: 5px; /* Espaciado interno */\n"
+"}\n"
+"#QTMisViajes::item {\n"
+"padding: 5px; /* Espaciado interno en cada item */\n"
+"color: black; \n"
+"margin: 5px; /* Espaciado externo en cada item */\n"
+"}\n"
+"#QTMisViajes::item:selected {\n"
+"background-color: rgba(100, 100, 255, 200); /* Fondo azul al seleccionar un item */\n"
+"color: black; /* Color del texto al seleccionar */\n"
+"}\n"
+"\n"
+"#QTTredingsTopicsTabla {\n"
+"background-color: rgba(255, 255, 255, 150); /* Fondo blanco con 150 de opacidad (0-255) */\n"
+"color: black; \n"
+"border: 1px solid #555; /* Borde gris */\n"
+"padding: 5px; /* Espaciado interno */\n"
+"}\n"
+"#QTTredingsTopicsTabla::item {\n"
+""
+                        "padding: 5px; /* Espaciado interno en cada item */\n"
+"color: black; \n"
+"margin: 5px; /* Espaciado externo en cada item */\n"
+"}\n"
+"#QTTredingsTopicsTabla::item:selected {\n"
+"background-color: rgba(100, 100, 255, 200); /* Fondo azul al seleccionar un item */\n"
+"color: black; /* Color del texto al seleccionar */\n"
+"}\n"
+"#QTTredingsTopicsTabla QTableCornerButton::section {\n"
+"        background-color: rgba(255, 255, 255, 50); /* Fondo semitransparente para las cabeceras */\n"
+"        color: black; /* Color del texto en las cabeceras */\n"
+"        border: 1px solid black; /* Borde negro */\n"
+"    }\n"
+"\n"
+"    #QTTredingsTopicsTabla::horizontalHeader {\n"
+"        background-color: rgba(255, 255, 255, 50); /* Fondo semitransparente para las cabeceras horizontales */\n"
+"        color: black; /* Color del texto en las cabeceras */\n"
+"        border: 1px solid black; /* Borde negro */\n"
+"    }\n"
+"QPushButton {\n"
+"        background-color: rgba(255, 255, 255, 150); /* Fondo semitransparente para los b"
+                        "otones */\n"
+"        color: black; /* Color del texto en los botones */\n"
+"        border: 1px solid black; /* Borde negro */\n"
+"        padding: 5px; /* Espaciado interno */\n"
+"        border-radius: 5px; /* Bordes redondeados */\n"
+"    }\n"
+"\n"
+"    QPushButton:hover {\n"
+"        background-color: rgba(200, 200, 200, 200); /* Fondo m\u00e1s oscuro al pasar el rat\u00f3n */\n"
+"    }\n"
+"\n"
+"    QPushButton:pressed {\n"
+"        background-color: rgba(150, 150, 150, 200); /* Fondo a\u00fan m\u00e1s oscuro al presionar */\n"
+"    }\n"
+"")
         self.verticalLayout = QVBoxLayout(self.principal)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.QWGridCabecera = QWidget(self.principal)
@@ -176,27 +236,37 @@ class Ui_MainWindow(object):
         self.widget_2.setObjectName(u"widget_2")
         self.horizontalLayout_4 = QHBoxLayout(self.widget_2)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.QTredingTopics = QListWidget(self.widget_2)
-        QListWidgetItem(self.QTredingTopics)
-        QListWidgetItem(self.QTredingTopics)
-        QListWidgetItem(self.QTredingTopics)
-        self.QTredingTopics.setObjectName(u"QTredingTopics")
+        self.QTMisViajes = QListWidget(self.widget_2)
+        QListWidgetItem(self.QTMisViajes)
+        QListWidgetItem(self.QTMisViajes)
+        QListWidgetItem(self.QTMisViajes)
+        self.QTMisViajes.setObjectName(u"QTMisViajes")
         sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
         sizePolicy4.setHorizontalStretch(0)
         sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.QTredingTopics.sizePolicy().hasHeightForWidth())
-        self.QTredingTopics.setSizePolicy(sizePolicy4)
-        self.QTredingTopics.setMaximumSize(QSize(350, 16777215))
+        sizePolicy4.setHeightForWidth(self.QTMisViajes.sizePolicy().hasHeightForWidth())
+        self.QTMisViajes.setSizePolicy(sizePolicy4)
+        self.QTMisViajes.setMaximumSize(QSize(350, 16777215))
 
-        self.horizontalLayout_4.addWidget(self.QTredingTopics)
+        self.horizontalLayout_4.addWidget(self.QTMisViajes)
 
 
         self.verticalLayout_4.addWidget(self.widget_2)
 
-        self.BMisViajes = QPushButton(self.QFMisViajes)
+        self.widget_4 = QWidget(self.QFMisViajes)
+        self.widget_4.setObjectName(u"widget_4")
+        self.widget_4.setMaximumSize(QSize(16777215, 45))
+        self.widget_4.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.horizontalLayout_5 = QHBoxLayout(self.widget_4)
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.BMisViajes = QPushButton(self.widget_4)
         self.BMisViajes.setObjectName(u"BMisViajes")
+        self.BMisViajes.setMaximumSize(QSize(350, 16777215))
 
-        self.verticalLayout_4.addWidget(self.BMisViajes)
+        self.horizontalLayout_5.addWidget(self.BMisViajes)
+
+
+        self.verticalLayout_4.addWidget(self.widget_4)
 
 
         self.horizontalLayout_2.addWidget(self.QFMisViajes)
@@ -227,55 +297,69 @@ class Ui_MainWindow(object):
         self.widget.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalLayout_3 = QHBoxLayout(self.widget)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.tableWidget = QTableWidget(self.widget)
-        if (self.tableWidget.columnCount() < 3):
-            self.tableWidget.setColumnCount(3)
+        self.QTTredingsTopicsTabla = QTableWidget(self.widget)
+        if (self.QTTredingsTopicsTabla.columnCount() < 3):
+            self.QTTredingsTopicsTabla.setColumnCount(3)
         __qtablewidgetitem = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        self.QTTredingsTopicsTabla.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        self.QTTredingsTopicsTabla.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         __qtablewidgetitem2 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
-        if (self.tableWidget.rowCount() < 1):
-            self.tableWidget.setRowCount(1)
+        self.QTTredingsTopicsTabla.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        if (self.QTTredingsTopicsTabla.rowCount() < 1):
+            self.QTTredingsTopicsTabla.setRowCount(1)
         __qtablewidgetitem3 = QTableWidgetItem()
         __qtablewidgetitem3.setFlags(Qt.ItemIsSelectable|Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(0, 0, __qtablewidgetitem3)
+        self.QTTredingsTopicsTabla.setItem(0, 0, __qtablewidgetitem3)
         __qtablewidgetitem4 = QTableWidgetItem()
-        self.tableWidget.setItem(0, 1, __qtablewidgetitem4)
+        self.QTTredingsTopicsTabla.setItem(0, 1, __qtablewidgetitem4)
         __qtablewidgetitem5 = QTableWidgetItem()
-        self.tableWidget.setItem(0, 2, __qtablewidgetitem5)
-        self.tableWidget.setObjectName(u"tableWidget")
+        self.QTTredingsTopicsTabla.setItem(0, 2, __qtablewidgetitem5)
+        self.QTTredingsTopicsTabla.setObjectName(u"QTTredingsTopicsTabla")
         sizePolicy6 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Preferred)
         sizePolicy6.setHorizontalStretch(0)
         sizePolicy6.setVerticalStretch(0)
-        sizePolicy6.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
-        self.tableWidget.setSizePolicy(sizePolicy6)
-        self.tableWidget.setMinimumSize(QSize(0, 0))
-        self.tableWidget.setMaximumSize(QSize(350, 16777215))
-        self.tableWidget.setContextMenuPolicy(Qt.ContextMenuPolicy.DefaultContextMenu)
-        self.tableWidget.setAcceptDrops(False)
-        self.tableWidget.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
-        self.tableWidget.setFrameShadow(QFrame.Shadow.Sunken)
-        self.tableWidget.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
-        self.tableWidget.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
-        self.tableWidget.setSizeAdjustPolicy(QAbstractScrollArea.SizeAdjustPolicy.AdjustToContents)
-        self.tableWidget.setAutoScrollMargin(1)
-        self.tableWidget.setAlternatingRowColors(True)
-        self.tableWidget.setSelectionMode(QAbstractItemView.SelectionMode.NoSelection)
-        self.tableWidget.setHorizontalScrollMode(QAbstractItemView.ScrollMode.ScrollPerPixel)
-        self.tableWidget.setShowGrid(True)
-        self.tableWidget.verticalHeader().setDefaultSectionSize(24)
+        sizePolicy6.setHeightForWidth(self.QTTredingsTopicsTabla.sizePolicy().hasHeightForWidth())
+        self.QTTredingsTopicsTabla.setSizePolicy(sizePolicy6)
+        self.QTTredingsTopicsTabla.setMinimumSize(QSize(0, 0))
+        self.QTTredingsTopicsTabla.setMaximumSize(QSize(350, 16777215))
+        self.QTTredingsTopicsTabla.setContextMenuPolicy(Qt.ContextMenuPolicy.DefaultContextMenu)
+        self.QTTredingsTopicsTabla.setAcceptDrops(False)
+        self.QTTredingsTopicsTabla.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.QTTredingsTopicsTabla.setFrameShadow(QFrame.Shadow.Sunken)
+        self.QTTredingsTopicsTabla.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
+        self.QTTredingsTopicsTabla.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
+        self.QTTredingsTopicsTabla.setSizeAdjustPolicy(QAbstractScrollArea.SizeAdjustPolicy.AdjustToContents)
+        self.QTTredingsTopicsTabla.setAutoScrollMargin(1)
+        self.QTTredingsTopicsTabla.setAlternatingRowColors(True)
+        self.QTTredingsTopicsTabla.setSelectionMode(QAbstractItemView.SelectionMode.NoSelection)
+        self.QTTredingsTopicsTabla.setHorizontalScrollMode(QAbstractItemView.ScrollMode.ScrollPerPixel)
+        self.QTTredingsTopicsTabla.setShowGrid(True)
+        self.QTTredingsTopicsTabla.verticalHeader().setDefaultSectionSize(24)
 
-        self.horizontalLayout_3.addWidget(self.tableWidget)
+        self.horizontalLayout_3.addWidget(self.QTTredingsTopicsTabla)
 
 
         self.verticalLayout_5.addWidget(self.widget)
 
-        self.BViajes = QPushButton(self.QFTredingTopics)
+        self.widget_3 = QWidget(self.QFTredingTopics)
+        self.widget_3.setObjectName(u"widget_3")
+        sizePolicy7 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
+        sizePolicy7.setHorizontalStretch(0)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.widget_3.sizePolicy().hasHeightForWidth())
+        self.widget_3.setSizePolicy(sizePolicy7)
+        self.widget_3.setMaximumSize(QSize(16777215, 45))
+        self.horizontalLayout_6 = QHBoxLayout(self.widget_3)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.BViajes = QPushButton(self.widget_3)
         self.BViajes.setObjectName(u"BViajes")
+        self.BViajes.setMaximumSize(QSize(350, 16777215))
 
-        self.verticalLayout_5.addWidget(self.BViajes)
+        self.horizontalLayout_6.addWidget(self.BViajes)
+
+
+        self.verticalLayout_5.addWidget(self.widget_3)
 
 
         self.horizontalLayout_2.addWidget(self.QFTredingTopics)
@@ -314,34 +398,34 @@ class Ui_MainWindow(object):
         self.QLabelConfiguracion.setText("")
         self.QLMisViajes.setText(QCoreApplication.translate("MainWindow", u"Mis viajes", None))
 
-        __sortingEnabled = self.QTredingTopics.isSortingEnabled()
-        self.QTredingTopics.setSortingEnabled(False)
-        ___qlistwidgetitem = self.QTredingTopics.item(0)
+        __sortingEnabled = self.QTMisViajes.isSortingEnabled()
+        self.QTMisViajes.setSortingEnabled(False)
+        ___qlistwidgetitem = self.QTMisViajes.item(0)
         ___qlistwidgetitem.setText(QCoreApplication.translate("MainWindow", u"Grecia", None));
-        ___qlistwidgetitem1 = self.QTredingTopics.item(1)
+        ___qlistwidgetitem1 = self.QTMisViajes.item(1)
         ___qlistwidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Francia", None));
-        ___qlistwidgetitem2 = self.QTredingTopics.item(2)
+        ___qlistwidgetitem2 = self.QTMisViajes.item(2)
         ___qlistwidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Alemania", None));
-        self.QTredingTopics.setSortingEnabled(__sortingEnabled)
+        self.QTMisViajes.setSortingEnabled(__sortingEnabled)
 
         self.BMisViajes.setText(QCoreApplication.translate("MainWindow", u"Mis Viajes", None))
         self.QLTredingTopics.setText(QCoreApplication.translate("MainWindow", u"Treding topics", None))
-        ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
+        ___qtablewidgetitem = self.QTTredingsTopicsTabla.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Origen", None));
-        ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem1 = self.QTTredingsTopicsTabla.horizontalHeaderItem(1)
         ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Destino", None));
-        ___qtablewidgetitem2 = self.tableWidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem2 = self.QTTredingsTopicsTabla.horizontalHeaderItem(2)
         ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Precio", None));
 
-        __sortingEnabled1 = self.tableWidget.isSortingEnabled()
-        self.tableWidget.setSortingEnabled(False)
-        ___qtablewidgetitem3 = self.tableWidget.item(0, 0)
+        __sortingEnabled1 = self.QTTredingsTopicsTabla.isSortingEnabled()
+        self.QTTredingsTopicsTabla.setSortingEnabled(False)
+        ___qtablewidgetitem3 = self.QTTredingsTopicsTabla.item(0, 0)
         ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"espa\u00f1a", None));
-        ___qtablewidgetitem4 = self.tableWidget.item(0, 1)
+        ___qtablewidgetitem4 = self.QTTredingsTopicsTabla.item(0, 1)
         ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"Francia", None));
-        ___qtablewidgetitem5 = self.tableWidget.item(0, 2)
+        ___qtablewidgetitem5 = self.QTTredingsTopicsTabla.item(0, 2)
         ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"23\u20ac", None));
-        self.tableWidget.setSortingEnabled(__sortingEnabled1)
+        self.QTTredingsTopicsTabla.setSortingEnabled(__sortingEnabled1)
 
         self.BViajes.setText(QCoreApplication.translate("MainWindow", u"Viajes", None))
     # retranslateUi

@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'configuracion.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.1
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -28,8 +28,14 @@ class Ui_MainWindow(object):
         MainWindow.setMinimumSize(QSize(775, 484))
         self.principal = QWidget(MainWindow)
         self.principal.setObjectName(u"principal")
+        self.principal.setContextMenuPolicy(Qt.ContextMenuPolicy.DefaultContextMenu)
+        self.principal.setAcceptDrops(False)
+        self.principal.setAutoFillBackground(True)
         self.principal.setStyleSheet(u"#principal{\n"
-"background-color:#6b6b6b\n"
+"background-image: url(:/icons/recursos/media/fondo.jpg);\n"
+"background-repeat: no-repeat;\n"
+"background-position: center;\n"
+"background-attachment: fixed;\n"
 "}")
         self.verticalLayout = QVBoxLayout(self.principal)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -156,12 +162,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3.addWidget(self.label_3)
 
-        self.textEdit = QTextEdit(self.widget_12)
-        self.textEdit.setObjectName(u"textEdit")
-        self.textEdit.setMinimumSize(QSize(200, 0))
-        self.textEdit.setMaximumSize(QSize(16777215, 50))
+        self.QTENombre = QTextEdit(self.widget_12)
+        self.QTENombre.setObjectName(u"QTENombre")
+        self.QTENombre.setMinimumSize(QSize(200, 0))
+        self.QTENombre.setMaximumSize(QSize(16777215, 50))
 
-        self.horizontalLayout_3.addWidget(self.textEdit)
+        self.horizontalLayout_3.addWidget(self.QTENombre)
 
 
         self.verticalLayout_4.addWidget(self.widget_12)
@@ -178,12 +184,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_5.addWidget(self.label_5)
 
-        self.textEdit_3 = QTextEdit(self.widget_14)
-        self.textEdit_3.setObjectName(u"textEdit_3")
-        self.textEdit_3.setMinimumSize(QSize(200, 0))
-        self.textEdit_3.setMaximumSize(QSize(16777215, 50))
+        self.QTEApellido = QTextEdit(self.widget_14)
+        self.QTEApellido.setObjectName(u"QTEApellido")
+        self.QTEApellido.setMinimumSize(QSize(200, 0))
+        self.QTEApellido.setMaximumSize(QSize(16777215, 50))
 
-        self.horizontalLayout_5.addWidget(self.textEdit_3)
+        self.horizontalLayout_5.addWidget(self.QTEApellido)
 
 
         self.verticalLayout_4.addWidget(self.widget_14)
@@ -200,23 +206,23 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_4.addWidget(self.label_4)
 
-        self.textEdit_2 = QTextEdit(self.widget_10)
-        self.textEdit_2.setObjectName(u"textEdit_2")
-        self.textEdit_2.setMinimumSize(QSize(200, 0))
-        self.textEdit_2.setMaximumSize(QSize(16777215, 50))
-        self.textEdit_2.setSizeIncrement(QSize(0, 0))
+        self.QTEDni = QTextEdit(self.widget_10)
+        self.QTEDni.setObjectName(u"QTEDni")
+        self.QTEDni.setMinimumSize(QSize(200, 0))
+        self.QTEDni.setMaximumSize(QSize(16777215, 50))
+        self.QTEDni.setSizeIncrement(QSize(0, 0))
 
-        self.horizontalLayout_4.addWidget(self.textEdit_2)
+        self.horizontalLayout_4.addWidget(self.QTEDni)
 
 
         self.verticalLayout_4.addWidget(self.widget_10)
 
-        self.buttonBox = QDialogButtonBox(self.widget1)
-        self.buttonBox.setObjectName(u"buttonBox")
-        self.buttonBox.setStandardButtons(QDialogButtonBox.StandardButton.Apply)
-        self.buttonBox.setCenterButtons(True)
+        self.BBActualizarUsuario = QDialogButtonBox(self.widget1)
+        self.BBActualizarUsuario.setObjectName(u"BBActualizarUsuario")
+        self.BBActualizarUsuario.setStandardButtons(QDialogButtonBox.StandardButton.Apply)
+        self.BBActualizarUsuario.setCenterButtons(True)
 
-        self.verticalLayout_4.addWidget(self.buttonBox)
+        self.verticalLayout_4.addWidget(self.BBActualizarUsuario)
 
 
         self.verticalLayout_3.addWidget(self.widget1)
@@ -432,9 +438,9 @@ class Ui_MainWindow(object):
         self.QPBVolver.setText(QCoreApplication.translate("MainWindow", u"volver", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"CONFIGURACION", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Actualizar tu cuenta", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Correo       ", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"DNI             ", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Contrase\u00f1a", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u" Nombre", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Apellido", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"    DNI    ", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Borrar tu cuenta", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"\u00bfEstas seguro de \n"
 "borrar tu cuenta?", None))

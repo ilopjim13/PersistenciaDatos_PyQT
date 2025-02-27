@@ -26,7 +26,9 @@ cursor.execute("""
     CREATE TABLE IF NOT EXISTS cliente (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         nombre TEXT NOT NULL,
-        email TEXT NOT NULL UNIQUE
+        email TEXT NOT NULL UNIQUE,
+        apellido TEXT NOT NULL,
+        dni TEXT NOT NULL
     )
 """)
 
@@ -74,6 +76,11 @@ cursor.execute("""
 
 
 ## INSERTS PARA PRUEBAS
+#insert para clientes
+cursor.execute("""
+    INSERT INTO cliente (nombre, email, apellido, dni)
+    VALUES (?, ?, ?, ?)
+""", ("Juan", "juan@example.com", "Pérez", "12345678A"))
 
 # INSERTS DE DESTINOS
 cursor.execute("""

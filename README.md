@@ -63,3 +63,117 @@ Lógica de negocio:
 
 Nombre de la aplicación:
 - Skyberia 
+
+# Documentación de `WindowManager`
+
+## Descripción
+
+La clase `WindowManager` se encarga de gestionar las ventanas de la aplicación. Permite mostrar diferentes ventanas, manejar la ventana actual y almacenar información relevante sobre el usuario y el token de autenticación.
+
+## Atributos
+
+- `current_window`: Almacena la instancia de la ventana actualmente visible.
+- `ventanas`: Un diccionario que mapea los nombres de las ventanas a sus respectivas instancias. Las ventanas actualmente registradas son:
+  - `menu`: Instancia de la ventana de menú.
+  - `configuracion`: Instancia de la ventana de configuración.
+- `token`: Variable para almacenar el token de autenticación del usuario. Inicialmente se establece en `None`.
+- `usuario`: Variable para almacenar la información del usuario actual. Inicialmente se establece en `None`.
+
+## Métodos
+
+### `__init__(self)`
+
+Constructor de la clase. Inicializa los atributos y crea instancias de las ventanas registradas.
+
+### `mostrarVentana(self, nombre: str)`
+
+Muestra la ventana especificada por el nombre. Si la ventana actual está abierta, se cierra antes de mostrar la nueva ventana.
+
+**Parámetros:**
+- `nombre` (str): El nombre de la ventana que se desea mostrar.
+
+
+# Documentación de `Configuracion`
+
+## Descripción
+
+La clase `Configuracion` representa la ventana de configuración de la aplicación. Permite a los usuarios actualizar su información personal, como nombre, apellido y DNI. La clase también gestiona la conexión con una base de datos SQLite para almacenar y recuperar la información del usuario.
+
+## Atributos
+
+- `manager`: Instancia de la clase `WindowManager`, utilizada para gestionar las ventanas de la aplicación.
+- `QTENombre`: Campo de texto que permite al usuario ingresar su nuevo nombre.
+- `QTEApellido`: Campo de texto que permite al usuario ingresar su nuevo apellido.
+- `QTEDNI`: Campo de texto que permite al usuario ingresar su nuevo DNI.
+- `QPBVolver`: Botón para volver al menú principal.
+
+## Métodos
+
+### `__init__(self, manager)`
+
+Constructor de la clase. Inicializa los atributos y carga la interfaz de usuario desde el archivo `configuracion.ui`. También establece la conexión del botón "Volver" con el método `obtenerUsuarioPorId`.
+
+### `irAMenu(self)`
+
+Cierra la ventana de configuración y muestra la ventana del menú principal.
+
+### `actualizarUsuario(self)`
+
+Obtiene los valores ingresados en los campos de texto y actualiza la información del usuario en la base de datos. Luego muestra un mensaje de confirmación con los datos actualizados.
+
+### `obtenerUsuarioPorId(self, correo)`
+
+Recupera la información del usuario de la base de datos utilizando el correo electrónico como identificador. Crea una instancia de la clase `Cliente` con la información del usuario recuperado y la asigna al atributo `usuario` del `manager`.
+
+**Parámetros:**
+- `correo` (str): El correo electrónico del usuario que se desea recuperar.
+
+# Documentación de `Menu`
+
+## Descripción
+
+La clase `Menu` representa la ventana principal del menú de la aplicación. Desde esta ventana, los usuarios pueden acceder a diferentes secciones de la aplicación, como "Mis Viajes", "Destinos" y "Configuración". La clase utiliza la interfaz gráfica creada con Qt Designer y gestiona las acciones de los botones y etiquetas en la ventana.
+
+## Atributos
+
+- `manager`: Instancia de la clase `WindowManager`, utilizada para gestionar la navegación entre diferentes ventanas de la aplicación.
+- `QLabelUsuario`: Etiqueta que muestra el ícono del usuario.
+- `QLabelConfiguracion`: Etiqueta que muestra el ícono de configuración.
+- `BMisViajes`: Botón para acceder a la sección "Mis Viajes".
+- `BViajes`: Botón para acceder a la sección de "Compras".
+
+## Métodos
+
+### `__init__(self, manager)`
+
+Constructor de la clase. Inicializa los atributos y carga la interfaz de usuario desde el archivo `menu.ui`. También establece las conexiones de los botones y etiquetas a sus respectivos métodos.
+
+### `irAMisViajes(self)`
+
+Cierra la ventana actual y muestra la ventana de "Mis Viajes".
+
+### `irACompras(self)`
+
+Cierra la ventana actual y muestra la ventana de "Compras". *(Este método está definido pero no utilizado en la implementación actual.)*
+
+### `mousePressEventLabel(self, event)`
+
+Maneja el evento de clic en la etiqueta de configuración (`QLabelConfiguracion`). Llama al método `irAConfiguracion` para mostrar la ventana de configuración.
+
+### `irAConfiguracion(self)`
+
+Cierra la ventana actual y muestra la ventana de "Configuración".
+
+## Ejemplo de uso
+
+```python
+if __name__ == "__main__":
+    import sys
+    from PyQt6.QtWidgets import QApplication
+    from window_manager import WindowManager  # Asegúrate de que este import esté correcto
+
+    app = QApplication(sys.argv)
+    manager = WindowManager()
+    menu = Menu(manager)
+    menu.show()
+    sys.exit(app.exec())
