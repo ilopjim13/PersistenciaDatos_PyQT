@@ -18,6 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QHeaderView, QMainWindow,
     QPushButton, QSizePolicy, QTableWidget, QTableWidgetItem,
     QVBoxLayout, QWidget)
+import recursos_rc
 
 class Ui_GestionViajes(object):
     def setupUi(self, GestionViajes):
@@ -25,11 +26,56 @@ class Ui_GestionViajes(object):
             GestionViajes.setObjectName(u"GestionViajes")
         GestionViajes.resize(755, 485)
         GestionViajes.setMinimumSize(QSize(755, 485))
-        self.centralwidget = QWidget(GestionViajes)
-        self.centralwidget.setObjectName(u"centralwidget")
-        self.verticalLayout_3 = QVBoxLayout(self.centralwidget)
+        self.principal = QWidget(GestionViajes)
+        self.principal.setObjectName(u"principal")
+        self.principal.setStyleSheet(u"#principal{\n"
+"background-image: url(:/icons/recursos/media/fondo.jpg);\n"
+"background-repeat: no-repeat;\n"
+"background-position: center;\n"
+"background-attachment: fixed;\n"
+"}\n"
+"QTableWidget {\n"
+"background-color: rgba(255, 255, 255, 150); /* Fondo blanco con 150 de opacidad (0-255) */\n"
+"color: black; \n"
+"border: 1px solid #555; /* Borde gris */\n"
+"padding: 5px; /* Espaciado interno */\n"
+"}\n"
+"QTableWidget::item {\n"
+"padding: 5px; /* Espaciado interno en cada item */\n"
+"color: black; \n"
+"margin: 5px; /* Espaciado externo en cada item */\n"
+"}\n"
+"QTableWidget::item:selected {\n"
+"background-color: rgba(100, 100, 255, 200); /* Fondo azul al seleccionar un item */\n"
+"color: black; /* Color del texto al seleccionar */\n"
+"}\n"
+"QTableWidget QTableCornerButton::section {\n"
+"background-color: rgba(255, 255, 255, 50); /* Fondo semitransparente para las cabeceras */\n"
+"color: black; /* Color del texto en las cabeceras */\n"
+"border: 1px solid black; /* Borde negro */\n"
+"}\n"
+"QTableWidget::horizon"
+                        "talHeader {\n"
+"background-color: rgba(255, 255, 255, 50); /* Fondo semitransparente para las cabeceras horizontales */\n"
+"color: black; /* Color del texto en las cabeceras */\n"
+"border: 1px solid black; /* Borde negro */\n"
+"}\n"
+"QPushButton {\n"
+"background-color: rgba(255, 255, 255, 150); /* Fondo semitransparente para los botones */\n"
+"color: black; /* Color del texto en los botones */\n"
+"border: 1px solid black; /* Borde negro */\n"
+"padding: 5px; /* Espaciado interno */\n"
+"border-radius: 5px; /* Bordes redondeados */\n"
+"}\n"
+"QPushButton:hover {\n"
+"background-color: rgba(200, 200, 200, 200); /* Fondo m\u00e1s oscuro al pasar el rat\u00f3n */\n"
+"}\n"
+"QPushButton:pressed {\n"
+"background-color: rgba(150, 150, 150, 200); /* Fondo a\u00fan m\u00e1s oscuro al presionar */\n"
+"}")
+        self.verticalLayout_3 = QVBoxLayout(self.principal)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.widget = QWidget(self.centralwidget)
+        self.widget = QWidget(self.principal)
         self.widget.setObjectName(u"widget")
         self.verticalLayout = QVBoxLayout(self.widget)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -70,7 +116,7 @@ class Ui_GestionViajes(object):
 
         self.verticalLayout_3.addWidget(self.widget)
 
-        GestionViajes.setCentralWidget(self.centralwidget)
+        GestionViajes.setCentralWidget(self.principal)
 
         self.retranslateUi(GestionViajes)
 

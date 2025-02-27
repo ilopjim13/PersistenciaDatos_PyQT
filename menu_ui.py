@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'menu.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.1
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -27,7 +27,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(775, 500)
+        MainWindow.resize(775, 485)
         MainWindow.setMinimumSize(QSize(775, 485))
         MainWindow.setWindowOpacity(1.000000000000000)
         MainWindow.setAutoFillBackground(True)
@@ -100,23 +100,21 @@ class Ui_MainWindow(object):
 "        background-color: rgba(255, 255, 255, 50); /* Fondo semitransparente para las cabeceras horizontales */\n"
 "        color: black; /* Color del texto en las cabeceras */\n"
 "        border: 1px solid black; /* Borde negro */\n"
-"    }\n"
+"}\n"
 "QPushButton {\n"
-"        background-color: rgba(255, 255, 255, 150); /* Fondo semitransparente para los b"
-                        "otones */\n"
-"        color: black; /* Color del texto en los botones */\n"
-"        border: 1px solid black; /* Borde negro */\n"
-"        padding: 5px; /* Espaciado interno */\n"
-"        border-radius: 5px; /* Bordes redondeados */\n"
-"    }\n"
-"\n"
-"    QPushButton:hover {\n"
-"        background-color: rgba(200, 200, 200, 200); /* Fondo m\u00e1s oscuro al pasar el rat\u00f3n */\n"
-"    }\n"
-"\n"
-"    QPushButton:pressed {\n"
-"        background-color: rgba(150, 150, 150, 200); /* Fondo a\u00fan m\u00e1s oscuro al presionar */\n"
-"    }\n"
+"background-color: rgba(255, 255, 255, 150); /* Fondo semitransparente para los botones */\n"
+""
+                        "color: black; /* Color del texto en los botones */\n"
+"border: 1px solid black; /* Borde negro */\n"
+"padding: 5px; /* Espaciado interno */\n"
+"border-radius: 5px; /* Bordes redondeados */\n"
+"}\n"
+"QPushButton:hover {\n"
+"background-color: rgba(200, 200, 200, 200); /* Fondo m\u00e1s oscuro al pasar el rat\u00f3n */\n"
+"}\n"
+"QPushButton:pressed {\n"
+"background-color: rgba(150, 150, 150, 200); /* Fondo a\u00fan m\u00e1s oscuro al presionar */\n"
+"}\n"
 "")
         self.verticalLayout = QVBoxLayout(self.principal)
         self.verticalLayout.setObjectName(u"verticalLayout")

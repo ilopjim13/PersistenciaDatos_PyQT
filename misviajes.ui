@@ -19,7 +19,53 @@
   <property name="windowTitle">
    <string>Gestión de Viajes</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
+  <widget class="QWidget" name="principal">
+   <property name="styleSheet">
+    <string notr="true">#principal{
+background-image: url(:/icons/recursos/media/fondo.jpg);
+background-repeat: no-repeat;
+background-position: center;
+background-attachment: fixed;
+}
+QTableWidget {
+background-color: rgba(255, 255, 255, 150); /* Fondo blanco con 150 de opacidad (0-255) */
+color: black; 
+border: 1px solid #555; /* Borde gris */
+padding: 5px; /* Espaciado interno */
+}
+QTableWidget::item {
+padding: 5px; /* Espaciado interno en cada item */
+color: black; 
+margin: 5px; /* Espaciado externo en cada item */
+}
+QTableWidget::item:selected {
+background-color: rgba(100, 100, 255, 200); /* Fondo azul al seleccionar un item */
+color: black; /* Color del texto al seleccionar */
+}
+QTableWidget QTableCornerButton::section {
+background-color: rgba(255, 255, 255, 50); /* Fondo semitransparente para las cabeceras */
+color: black; /* Color del texto en las cabeceras */
+border: 1px solid black; /* Borde negro */
+}
+QTableWidget::horizontalHeader {
+background-color: rgba(255, 255, 255, 50); /* Fondo semitransparente para las cabeceras horizontales */
+color: black; /* Color del texto en las cabeceras */
+border: 1px solid black; /* Borde negro */
+}
+QPushButton {
+background-color: rgba(255, 255, 255, 150); /* Fondo semitransparente para los botones */
+color: black; /* Color del texto en los botones */
+border: 1px solid black; /* Borde negro */
+padding: 5px; /* Espaciado interno */
+border-radius: 5px; /* Bordes redondeados */
+}
+QPushButton:hover {
+background-color: rgba(200, 200, 200, 200); /* Fondo más oscuro al pasar el ratón */
+}
+QPushButton:pressed {
+background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presionar */
+}</string>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
      <widget class="QWidget" name="widget" native="true">
@@ -66,6 +112,8 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="recursos.qrc"/>
+ </resources>
  <connections/>
 </ui>

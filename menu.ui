@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>775</width>
-    <height>500</height>
+    <height>485</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -101,22 +101,20 @@ color: black; /* Color del texto al seleccionar */
         background-color: rgba(255, 255, 255, 50); /* Fondo semitransparente para las cabeceras horizontales */
         color: black; /* Color del texto en las cabeceras */
         border: 1px solid black; /* Borde negro */
-    }
+}
 QPushButton {
-        background-color: rgba(255, 255, 255, 150); /* Fondo semitransparente para los botones */
-        color: black; /* Color del texto en los botones */
-        border: 1px solid black; /* Borde negro */
-        padding: 5px; /* Espaciado interno */
-        border-radius: 5px; /* Bordes redondeados */
-    }
-
-    QPushButton:hover {
-        background-color: rgba(200, 200, 200, 200); /* Fondo más oscuro al pasar el ratón */
-    }
-
-    QPushButton:pressed {
-        background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presionar */
-    }
+background-color: rgba(255, 255, 255, 150); /* Fondo semitransparente para los botones */
+color: black; /* Color del texto en los botones */
+border: 1px solid black; /* Borde negro */
+padding: 5px; /* Espaciado interno */
+border-radius: 5px; /* Bordes redondeados */
+}
+QPushButton:hover {
+background-color: rgba(200, 200, 200, 200); /* Fondo más oscuro al pasar el ratón */
+}
+QPushButton:pressed {
+background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presionar */
+}
 </string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -141,7 +139,7 @@ QPushButton {
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>:/icons/recursos/iconos/usuario.png</pixmap>
+          <pixmap resource="recursos.qrc">:/icons/recursos/iconos/usuario.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -238,7 +236,7 @@ QPushButton {
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>:/icons/recursos/iconos/engranaje.png</pixmap>
+          <pixmap resource="recursos.qrc">:/icons/recursos/iconos/engranaje.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
