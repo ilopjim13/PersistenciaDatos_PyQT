@@ -58,6 +58,7 @@ class Ventana(QMainWindow):
             print(user)
             self.manager.mostrarVentana("menu")
             self.manager.token = user["idToken"]
+            print(user["idToken"])
             
             self.manager.usuario = cliente
             

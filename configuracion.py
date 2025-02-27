@@ -4,7 +4,6 @@ import sqlite3
 import os
 from PyQt6.QtWidgets import * # Librerías de los componentes
 from PyQt6 import QtWidgets, uic
-import pyrebase
 import BD.basedatos as baseLocal
 from models.cliente import Cliente  # Librería para trabajar con el archivo de la interfaz
 
@@ -27,10 +26,12 @@ class Configuracion(QtWidgets.QMainWindow):
         self.manager = manager
         self.QPBVolver.clicked.connect(lambda: self.irAMenu())
         self.BBActualizarUsuario.clicked.connect(lambda: self.actualizarUsuario())
+        self.eliminarusuario()
         if self.manager.usuario is not None:
             self.QTENombre.setPlainText(self.manager.usuario.nombre)  # Para QLineEdit
             self.QTEApellido.setPlainText(self.manager.usuario.apellido)  # Para QLineEdit
             self.QTEDni.setPlainText(self.manager.usuario.dni)  # Para QLineEdit
+        
     def irAMenu(self):
         self.manager.mostrarVentana("menu")
 
@@ -49,6 +50,7 @@ class Configuracion(QtWidgets.QMainWindow):
         self.manager.usuario = Cliente(nombre, email, apellido, dni)
     
     def eliminarusuario(self):
+        import pyrebase
         self.firebaseConfig ={
             "apiKey": "AIzaSyDtWlIUbITDQtvTI6pi4k0WxxOlimBIXxY",
             "authDomain": "prueba1-79b1f.firebaseapp.com",
@@ -58,7 +60,7 @@ class Configuracion(QtWidgets.QMainWindow):
             "messagingSenderId": "827606316467",
             "appId": "1:827606316467:web:7cd3fcc0d0d4af6edec7c6"
         }
-        self.firebase = self.pyrebase.initialize_app(self.firebaseConfig)
-        self.auth = self.firebase.auth()
-        self.auth.delete_user(self.manager.token)
+        self.firebase = pyrebase.initialize_app(self.firebaseConfig)
+        self.firebase.auth().delete_user_account(self.manager.token)
+      
         #eliminar de manera local
