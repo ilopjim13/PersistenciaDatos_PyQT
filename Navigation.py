@@ -16,7 +16,7 @@ class WindowManager:
             "menu": Menu(self), 
             "configuracion": Configuracion(self),
             "login":Ventana(self),
-            "misviajes":MisViajes(self.usuario.email)
+            "misviajes":MisViajes(self)
         }
 
         self.token = None # paco aqui quiero que me des el token y lo pases aqui

@@ -35,7 +35,7 @@ def insertar_cliente(cliente):
     conn.close()
     print("Cliente insertado correctamente.")
 
-def getMisViajes():
+def getMisViajes(email):
     conn = sqlite3.connect("viajes.db") 
     cursor = conn.cursor()
 
@@ -45,7 +45,7 @@ def getMisViajes():
         JOIN cliente ON viaje.cliente_id = cliente.id
         JOIN destino ON viaje.destino_id = destino.id
         WHERE cliente.email = ?
-    """, (self.email,))
+    """, (email))
 
     # Porquee cojoneeees no sale nadaaaaaaaaa
     viajes = cursor.fetchall()

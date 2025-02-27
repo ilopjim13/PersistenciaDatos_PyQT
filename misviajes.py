@@ -5,17 +5,18 @@ import sqlite3
 import BD.basedatos as baseLocal
 
 class MisViajes(QtWidgets.QMainWindow):
-    def __init__(self, email, manager):
+    def __init__(self, manager):
         super().__init__()
         uic.loadUi("misviajes.ui", self) 
-        self.email = email
+        self.email = manager.usuario.email
         self.manager = manager
         self.boton_actualizar.clicked.connect(self.actualizar_viaje)
         self.boton_eliminar.clicked.connect(self.eliminar_viaje)
+        self.boton_volver_menu.clicked.connect(self.volverMenu)
         self.cargar_viajes()
 
     def cargar_viajes(self):
-        viajes = baseLocal.getMisViajes()
+        viajes = baseLocal.getMisViajes(self.email)
         print(f"Viajes encontrados: {viajes}") 
 
         # La fuckin tabla
