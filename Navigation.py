@@ -2,6 +2,7 @@ from PyQt6.QtWidgets import *
 from PyQt6.QtCore import QSize,QPoint
 import sys
 from configuracion import Configuracion
+from login import Ventana
 from menu import Menu
 from models.cliente import Cliente
 
@@ -12,7 +13,8 @@ class WindowManager:
 
         self.ventanas = {  #aqui estara todos las ventanas que necesitaremos
             "menu": Menu(self), 
-            "configuracion": Configuracion(self)
+            "configuracion": Configuracion(self),
+            "login":Ventana(self)
         }
 
         self.token = None # paco aqui quiero que me des el token y lo pases aqui
@@ -60,5 +62,5 @@ class WindowManager:
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     manager = WindowManager()
-    manager.mostrarVentana("menu")
+    manager.mostrarVentana("login")
     sys.exit(app.exec())

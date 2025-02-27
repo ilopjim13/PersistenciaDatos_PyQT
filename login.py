@@ -12,12 +12,12 @@ import BD.basedatos as baseLocal
 
 
 class Ventana(QMainWindow):
-    def __init__(self):
+    def __init__(self,manager):
         super(Ventana, self).__init__()
         file_log = "login.ui"
         full_path_lo = os.path.join(os.path.dirname(__file__), file_log)
         uic.loadUi(full_path_lo, self)
-
+        self.manager = manager
         self.firebaseConfig = {
             "apiKey": "AIzaSyDtWlIUbITDQtvTI6pi4k0WxxOlimBIXxY",
             "authDomain": "prueba1-79b1f.firebaseapp.com",
@@ -48,11 +48,16 @@ class Ventana(QMainWindow):
             return
         
         try:
+            
             user = self.auth.create_user_with_email_and_password(email, passw)
+            print(user)
+            self.manager.mostrarVentana("menu")
+            self.manager.token = user["token"]
+            self.manager.usuario = cliente
+
             cliente = model.Cliente(0,nombre, email, apellido, dni)
             baseLocal.insertar_cliente(cliente)
-            
-            
+
             self.correcto("r", cliente)
         except requests.exceptions.HTTPError as e:
             error_json = e.args[1]
@@ -71,8 +76,12 @@ class Ventana(QMainWindow):
         try:
             user = self.auth.sign_in_with_email_and_password(email, passw)
             cliente = baseLocal.obtener_cliente(email)
-            
+
             baseLocal.prueba()
+
+            self.manager.mostrarVentana("menu")
+            self.manager.token = user["token"]
+            self.manager.usuario = cliente          
 
             if cliente is not None:
                 self.correcto("l", cliente)
@@ -98,9 +107,3 @@ class Ventana(QMainWindow):
         self.li_usuario.setText("")
         self.li_contra.setText("")
         self.li_usuario.setFocus()
-
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    window = Ventana()
-    window.show()
-    app.exec()
