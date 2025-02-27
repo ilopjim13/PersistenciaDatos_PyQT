@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'login.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.1
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -17,14 +17,14 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QLineEdit, QMainWindow, QPushButton, QSizePolicy,
-    QStatusBar, QVBoxLayout, QWidget)
+    QSpacerItem, QStatusBar, QVBoxLayout, QWidget)
 import recursos_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(775, 485)
+        MainWindow.resize(775, 513)
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -59,8 +59,17 @@ class Ui_MainWindow(object):
         self.widget_2.setSizePolicy(sizePolicy1)
         self.verticalLayout_2 = QVBoxLayout(self.widget_2)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_2.addItem(self.verticalSpacer)
+
         self.Titulo = QLabel(self.widget_2)
         self.Titulo.setObjectName(u"Titulo")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(10)
+        sizePolicy2.setHeightForWidth(self.Titulo.sizePolicy().hasHeightForWidth())
+        self.Titulo.setSizePolicy(sizePolicy2)
         font = QFont()
         font.setFamilies([u"Arial"])
         font.setPointSize(20)
@@ -73,11 +82,11 @@ class Ui_MainWindow(object):
 
         self.ContainerLoginYResgister = QWidget(self.widget_2)
         self.ContainerLoginYResgister.setObjectName(u"ContainerLoginYResgister")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(90)
-        sizePolicy2.setHeightForWidth(self.ContainerLoginYResgister.sizePolicy().hasHeightForWidth())
-        self.ContainerLoginYResgister.setSizePolicy(sizePolicy2)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(85)
+        sizePolicy3.setHeightForWidth(self.ContainerLoginYResgister.sizePolicy().hasHeightForWidth())
+        self.ContainerLoginYResgister.setSizePolicy(sizePolicy3)
         self.ContainerLoginYResgister.setStyleSheet(u"#ContainerLoginYResgister{\n"
 "min-height: 325;\n"
 "min-width: 556px;\n"
@@ -90,13 +99,13 @@ class Ui_MainWindow(object):
 "min-height: 35px;\n"
 "max-height: 35px;\n"
 "min-width: 40px;\n"
-"max-width: 150px;\n"
+"max-width: 170px;\n"
 "color:black;\n"
 "}   \n"
 "QLineEdit { \n"
 "min-height: 35px;\n"
 "max-height: 35px;\n"
-"max-width: 150px;\n"
+"max-width: 170px;\n"
 "}\n"
 "QLineEdit{\n"
 "color:black;\n"
@@ -105,22 +114,23 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.frame_2 = QFrame(self.ContainerLoginYResgister)
         self.frame_2.setObjectName(u"frame_2")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
-        sizePolicy3.setHorizontalStretch(50)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.frame_2.sizePolicy().hasHeightForWidth())
-        self.frame_2.setSizePolicy(sizePolicy3)
+        sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
+        sizePolicy4.setHorizontalStretch(50)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.frame_2.sizePolicy().hasHeightForWidth())
+        self.frame_2.setSizePolicy(sizePolicy4)
+        self.frame_2.setMaximumSize(QSize(358, 308))
         self.frame_2.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_2.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_3 = QVBoxLayout(self.frame_2)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.widget = QWidget(self.frame_2)
         self.widget.setObjectName(u"widget")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
-        sizePolicy4.setHorizontalStretch(0)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.widget.sizePolicy().hasHeightForWidth())
-        self.widget.setSizePolicy(sizePolicy4)
+        sizePolicy5 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.widget.sizePolicy().hasHeightForWidth())
+        self.widget.setSizePolicy(sizePolicy5)
         self.widget.setMinimumSize(QSize(0, 42))
         self.horizontalLayout_14 = QHBoxLayout(self.widget)
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
@@ -248,16 +258,17 @@ class Ui_MainWindow(object):
 
         self.frame = QFrame(self.ContainerLoginYResgister)
         self.frame.setObjectName(u"frame")
-        sizePolicy3.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
-        self.frame.setSizePolicy(sizePolicy3)
+        sizePolicy4.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
+        self.frame.setSizePolicy(sizePolicy4)
+        self.frame.setMaximumSize(QSize(357, 211))
         self.frame.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_4 = QVBoxLayout(self.frame)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.horizontalWidget_5 = QWidget(self.frame)
         self.horizontalWidget_5.setObjectName(u"horizontalWidget_5")
-        sizePolicy4.setHeightForWidth(self.horizontalWidget_5.sizePolicy().hasHeightForWidth())
-        self.horizontalWidget_5.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.horizontalWidget_5.sizePolicy().hasHeightForWidth())
+        self.horizontalWidget_5.setSizePolicy(sizePolicy5)
         self.horizontalLayout_13 = QHBoxLayout(self.horizontalWidget_5)
         self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
         self.label_2 = QLabel(self.horizontalWidget_5)
@@ -272,17 +283,17 @@ class Ui_MainWindow(object):
 
         self.verticalWidget_2 = QWidget(self.frame)
         self.verticalWidget_2.setObjectName(u"verticalWidget_2")
-        sizePolicy4.setHeightForWidth(self.verticalWidget_2.sizePolicy().hasHeightForWidth())
-        self.verticalWidget_2.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.verticalWidget_2.sizePolicy().hasHeightForWidth())
+        self.verticalWidget_2.setSizePolicy(sizePolicy5)
         self.horizontalLayout_4 = QHBoxLayout(self.verticalWidget_2)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.la_usu = QLabel(self.verticalWidget_2)
         self.la_usu.setObjectName(u"la_usu")
-        sizePolicy5 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
-        sizePolicy5.setHorizontalStretch(0)
-        sizePolicy5.setVerticalStretch(0)
-        sizePolicy5.setHeightForWidth(self.la_usu.sizePolicy().hasHeightForWidth())
-        self.la_usu.setSizePolicy(sizePolicy5)
+        sizePolicy6 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy6.setHorizontalStretch(0)
+        sizePolicy6.setVerticalStretch(0)
+        sizePolicy6.setHeightForWidth(self.la_usu.sizePolicy().hasHeightForWidth())
+        self.la_usu.setSizePolicy(sizePolicy6)
         self.la_usu.setFont(font1)
         self.la_usu.setStyleSheet(u"")
         self.la_usu.setTextFormat(Qt.TextFormat.AutoText)
@@ -300,8 +311,8 @@ class Ui_MainWindow(object):
 
         self.horizontalWidget = QWidget(self.frame)
         self.horizontalWidget.setObjectName(u"horizontalWidget")
-        sizePolicy4.setHeightForWidth(self.horizontalWidget.sizePolicy().hasHeightForWidth())
-        self.horizontalWidget.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.horizontalWidget.sizePolicy().hasHeightForWidth())
+        self.horizontalWidget.setSizePolicy(sizePolicy5)
         self.horizontalLayout_3 = QHBoxLayout(self.horizontalWidget)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.la_contra = QLabel(self.horizontalWidget)
@@ -344,10 +355,20 @@ class Ui_MainWindow(object):
 
         self.widget_3 = QWidget(self.widget_2)
         self.widget_3.setObjectName(u"widget_3")
+        sizePolicy7 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy7.setHorizontalStretch(0)
+        sizePolicy7.setVerticalStretch(5)
+        sizePolicy7.setHeightForWidth(self.widget_3.sizePolicy().hasHeightForWidth())
+        self.widget_3.setSizePolicy(sizePolicy7)
         self.horizontalLayout_12 = QHBoxLayout(self.widget_3)
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
         self.bu_salir = QPushButton(self.widget_3)
         self.bu_salir.setObjectName(u"bu_salir")
+        sizePolicy8 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
+        sizePolicy8.setHorizontalStretch(0)
+        sizePolicy8.setVerticalStretch(0)
+        sizePolicy8.setHeightForWidth(self.bu_salir.sizePolicy().hasHeightForWidth())
+        self.bu_salir.setSizePolicy(sizePolicy8)
         self.bu_salir.setMaximumSize(QSize(150, 16777215))
         self.bu_salir.setStyleSheet(u"\n"
 "        QPushButton {\n"
