@@ -4,6 +4,7 @@ import sys
 from configuracion import Configuracion
 from login import Ventana
 from menu import Menu
+from misviajes import MisViajes
 from models.cliente import Cliente
 
 
@@ -14,7 +15,8 @@ class WindowManager:
         self.ventanas = {  #aqui estara todos las ventanas que necesitaremos
             "menu": Menu(self), 
             "configuracion": Configuracion(self),
-            "login":Ventana(self)
+            "login":Ventana(self),
+            "misviajes":MisViajes(self.usuario.email)
         }
 
         self.token = None # paco aqui quiero que me des el token y lo pases aqui

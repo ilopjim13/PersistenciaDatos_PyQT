@@ -2,30 +2,20 @@ from PyQt6 import QtWidgets, uic
 import sys
 from PyQt6.QtWidgets import * # Librerías de los componentes
 import sqlite3
+import BD.basedatos as baseLocal
 
 class MisViajes(QtWidgets.QMainWindow):
-    def __init__(self, email):
+    def __init__(self, email, manager):
         super().__init__()
         uic.loadUi("misviajes.ui", self) 
         self.email = email
+        self.manager = manager
         self.boton_actualizar.clicked.connect(self.actualizar_viaje)
         self.boton_eliminar.clicked.connect(self.eliminar_viaje)
         self.cargar_viajes()
 
     def cargar_viajes(self):
-        conn = sqlite3.connect("viajes.db") 
-        cursor = conn.cursor()
-
-        cursor.execute("""
-            SELECT viaje.id,cliente.nombre, destino.nombre, viaje.fecha_salida, viaje.fecha_regreso, viaje.precio
-            FROM viaje
-            JOIN cliente ON viaje.cliente_id = cliente.id
-            JOIN destino ON viaje.destino_id = destino.id
-            WHERE cliente.email = ?
-        """, (self.email,))
-
-        # Porquee cojoneeees no sale nadaaaaaaaaa
-        viajes = cursor.fetchall()
+        viajes = baseLocal.getMisViajes()
         print(f"Viajes encontrados: {viajes}") 
 
         # La fuckin tabla
@@ -38,9 +28,7 @@ class MisViajes(QtWidgets.QMainWindow):
             for col_idx, data in enumerate(row_data):
                
                 self.tabla_viajes.setItem(row_idx, col_idx, QtWidgets.QTableWidgetItem(str(data)))
-
-        conn.close()
-
+        
 
     def actualizar_viaje(self):
 
@@ -53,13 +41,7 @@ class MisViajes(QtWidgets.QMainWindow):
         nueva_fecha_salida = self.input_fecha_salida.text()
         nueva_fecha_regreso = self.input_fecha_regreso.text()
 
-        conn = sqlite3.connect("viajes.db")  
-        cursor = conn.cursor()
-        cursor.execute("""
-            UPDATE viaje SET fecha_salida = ?, fecha_regreso = ? WHERE id = ?
-        """, (nueva_fecha_salida, nueva_fecha_regreso, viaje_id))
-        conn.commit()
-        conn.close()
+        baseLocal.putMisViajes(nueva_fecha_salida, nueva_fecha_regreso, viaje_id)
         
         self.cargar_viajes()
 
@@ -77,22 +59,9 @@ class MisViajes(QtWidgets.QMainWindow):
             QtWidgets.QMessageBox.StandardButton.Yes | QtWidgets.QMessageBox.StandardButton.No
         )
         if respuesta == QtWidgets.QMessageBox.StandardButton.Yes:
-            conn = sqlite3.connect("viajes.db")
-            cursor = conn.cursor()
-            cursor.execute("DELETE FROM viaje WHERE id = ?", (viaje_id,))
-            conn.commit()
-            conn.close()
-            
+            baseLocal.delMisViajes(viaje_id)
             self.cargar_viajes()
-
-
-if __name__ == '__main__':
-    # se crea la instancia de la aplicación
-    app = QApplication(sys.argv)
-    # se crea la instancia de la ventana
-    window = MisViajes("paco@gmail.com")
-
-    # se muestra la ventana 
-    window.show()
-    # se entrega el control al sistema operativo
-    app.exec() 
+    
+    
+    def volverMenu(self):
+        self.manager.mostrarVentana("menu")

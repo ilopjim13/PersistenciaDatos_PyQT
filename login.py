@@ -58,7 +58,7 @@ class Ventana(QMainWindow):
             cliente = model.Cliente(0,nombre, email, apellido, dni)
             baseLocal.insertar_cliente(cliente)
 
-            self.correcto("r", cliente)
+            self.correcto("r")
         except requests.exceptions.HTTPError as e:
             error_json = e.args[1]
             error = json.loads(error_json)['error']['message']
@@ -84,7 +84,7 @@ class Ventana(QMainWindow):
             self.manager.usuario = cliente          
 
             if cliente is not None:
-                self.correcto("l", cliente)
+                self.correcto("l")
             else:
                 QMessageBox.critical(self, 'Error', "No se encontró el usuario en la base de datos")
         except requests.exceptions.HTTPError as e:
@@ -93,7 +93,7 @@ class Ventana(QMainWindow):
             QMessageBox.critical(self, 'Error', error)
             self.delete_line()
 
-    def correcto(self, estatus, cliente):
+    def correcto(self, estatus):
         if estatus == "l":
             QMessageBox.information(self, '¡Login correcto!', "Acceso garantizado")
         else:
