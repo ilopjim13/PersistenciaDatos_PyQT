@@ -33,6 +33,7 @@ def insertar_cliente(cliente):
     
     conn.commit()
     conn.close()
+    return True
     print("Cliente insertado correctamente.")
 
 def getMisViajes(email):
