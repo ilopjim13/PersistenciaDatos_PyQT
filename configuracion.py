@@ -25,7 +25,8 @@ class Configuracion(QtWidgets.QMainWindow):
         uic.loadUi(full_path_lo, self)  # Cargar la UI de QtDesigner
         self.manager = manager
         self.QPBVolver.clicked.connect(lambda: self.irAMenu())
-        self.BBActualizarUsuario.clicked.connect(lambda: self.actualizarUsuario())
+        self.buttonBox_2.button(self.buttonBox_2.StandardButton.Apply).clicked.connect(lambda: self.eliminarusuario())
+        self.BBActualizarUsuario.clicked.connect(lambda :self.actualizarUsuario())
         self.eliminarusuario()
         if self.manager.usuario is not None:
             self.QTENombre.setPlainText(self.manager.usuario.nombre)  # Para QLineEdit
@@ -41,11 +42,9 @@ class Configuracion(QtWidgets.QMainWindow):
         nuevo_email = self.QTEApellido.toPlainText()
         dni = self.QTEDni.toPlainText()
         correo = self.manager.usuario.email
-        # Conectar a la base de datos
         baseLocal.update_cliente(nuevo_nombre, nuevo_email, dni,correo,)
         usuario_actualizado = baseLocal.obtenerUsuarioPorCorreo(correo)
         QMessageBox.information(self, "Actualización", usuario_actualizado)
-        
         id, nombre, email, apellido, dni = usuario_actualizado
         self.manager.usuario = Cliente(nombre, email, apellido, dni)
     
@@ -61,6 +60,9 @@ class Configuracion(QtWidgets.QMainWindow):
             "appId": "1:827606316467:web:7cd3fcc0d0d4af6edec7c6"
         }
         self.firebase = pyrebase.initialize_app(self.firebaseConfig)
-        self.firebase.auth().delete_user_account(self.manager.token)
-      
+        #self.firebase.auth().delete_user_account(self.manager.token)
+
         #eliminar de manera local
+        #baseLocal.eliminarClientePorCorreo(self.manager.usuario.email)
+        self.manager.usuario = None
+        self.manager.mostrarVentana("login")

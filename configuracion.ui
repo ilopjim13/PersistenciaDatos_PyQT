@@ -160,8 +160,7 @@ color:black;
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">
-</string>
+             <string notr="true"/>
             </property>
             <property name="frameShape">
              <enum>QFrame::Shape::StyledPanel</enum>
@@ -1095,8 +1094,7 @@ borrar tu cuenta?</string>
                    </palette>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">
-</string>
+                   <string notr="true"/>
                   </property>
                   <property name="inputMethodHints">
                    <set>Qt::InputMethodHint::ImhNone</set>
