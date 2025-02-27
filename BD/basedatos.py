@@ -163,7 +163,7 @@ def restablecer():
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS viaje (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            cliente_id INTEGER NOT NULL,
+            cliente_email TEXT NOT NULL,
             vuelo_id INTEGER NOT NULL,
             fecha_salida TEXT NOT NULL,
             fecha_regreso TEXT NOT NULL,

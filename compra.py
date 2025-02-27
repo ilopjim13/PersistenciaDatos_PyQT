@@ -23,9 +23,9 @@ class Compra(QMainWindow):
         self.boton_comprar.clicked.connect(self.comprar)
 
     def cargar_datos(self):
-        self.te_nombre.setText(self.pasajero[0])
-        self.te_apellido.setText(self.pasajero[1])
-        self.te_dni.setText(self.pasajero[2])
+        self.te_nombre.setText(self.pasajero.nombre)
+        self.te_apellido.setText(self.pasajero.apellido)
+        self.te_dni.setText(self.pasajero.dni)
         self.pt_destino.setPlainText(self.vuelo[4])
         self.pt_vuelo.setPlainText(self.vuelo[0])
         self.fc_salida.setDate(QDate.currentDate())
@@ -53,9 +53,9 @@ class Compra(QMainWindow):
             cur = con.cursor()
             id = self.obtener_ultimo_id_viaje() + 1 
             cur.execute('''
-                INSERT INTO viaje (id, cliente_id, vuelo_id, fecha_salida, fecha_regreso, precio)
+                INSERT INTO viaje (id, cliente_email, vuelo_id, fecha_salida, fecha_regreso, precio)
                 VALUES (?, ?, ?, ?, ?, ?)
-            ''', (id, self.pasajero[3], self.vuelo[3], self.fecha_salida, self.fecha_regreso, self.vuelo[1])) 
+            ''', (id, self.pasajero.email, self.vuelo[3], self.fecha_salida, self.fecha_regreso, self.vuelo[1])) 
             con.commit()
             con.close()
             self.actualizar_asientos()
@@ -109,8 +109,6 @@ class Bilete(QMainWindow):
         self.te_apellido.setText(self.viaje[1])
         self.te_dni.setText(self.viaje[2])
         self.te_id.setText(self.viaje[3])
-
-
 
 if __name__ == "__main__":
     # se crea la instancia de la aplicación
