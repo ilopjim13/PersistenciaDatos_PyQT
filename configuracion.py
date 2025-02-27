@@ -5,6 +5,7 @@ import os
 from PyQt6.QtWidgets import * # Librerías de los componentes
 from PyQt6 import QtWidgets, uic
 import pyrebase
+import BD.basedatos as baseLocal
 from models.cliente import Cliente  # Librería para trabajar con el archivo de la interfaz
 
 #configuracion
@@ -24,10 +25,9 @@ class Configuracion(QtWidgets.QMainWindow):
         full_path_lo = os.path.join(os.path.dirname(__file__), file_log)
         uic.loadUi(full_path_lo, self)  # Cargar la UI de QtDesigner
         self.manager = manager
+        self.QPBVolver.clicked.connect(lambda: self.irAMenu())
+        self.BBActualizarUsuario.clicked.connect(lambda: self.actualizarUsuario())
         if self.manager.usuario is not None:
-            self.BBActualizarUsuario.clicked.connect(lambda: self.actualizarUsuario())
-            self.QPBVolver.clicked.connect(lambda: self.irAMenu())
-            self.obtenerUsuarioPorId(self.manager.usuario.email)
             self.QTENombre.setPlainText(self.manager.usuario.nombre)  # Para QLineEdit
             self.QTEApellido.setPlainText(self.manager.usuario.apellido)  # Para QLineEdit
             self.QTEDni.setPlainText(self.manager.usuario.dni)  # Para QLineEdit
@@ -41,27 +41,10 @@ class Configuracion(QtWidgets.QMainWindow):
         dni = self.QTEDni.toPlainText()
         correo = self.manager.usuario.email
         # Conectar a la base de datos
-        conn = sqlite3.connect('viajes.db')
-        cursor = conn.cursor()
-
-        # Ejecutar la actualización
-        cursor.execute("""
-            UPDATE cliente
-            SET nombre = ?, apellido = ?, dni = ?
-            WHERE email = ? 
-        """, (nuevo_nombre, nuevo_email, dni,correo,))
-        conn.commit()
-        conn.close()
-        usuario_actualizado = self.obtenerUsuarioPorId(correo)
+        baseLocal.update_cliente(nuevo_nombre, nuevo_email, dni,correo,)
+        usuario_actualizado = baseLocal.obtenerUsuarioPorCorreo(correo)
         QMessageBox.information(self, "Actualización", usuario_actualizado)
-    
-    def obtenerUsuarioPorId(self,correo):
-        conn = sqlite3.connect('viajes.db')
-        cursor = conn.cursor()
-        cursor.execute("""SELECT * FROM cliente WHERE email = ?""", (correo,))
-        usuario_actualizado = cursor.fetchone()
-        conn.close()
-
+        
         id, nombre, email, apellido, dni = usuario_actualizado
         self.manager.usuario = Cliente(nombre, email, apellido, dni)
     

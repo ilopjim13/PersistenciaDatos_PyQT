@@ -4,6 +4,25 @@ from models.cliente import Cliente
 
 #Crear las tablas que necesiteis brothers nico gay
 
+def update_cliente(nuevo_nombre, nuevo_email, dni,correo):
+    conn = sqlite3.connect('viajes.db')
+    cursor = conn.cursor()
+    # Ejecutar la actualización
+    cursor.execute("""
+        UPDATE cliente
+        SET nombre = ?, apellido = ?, dni = ?
+        WHERE email = ? 
+    """, (nuevo_nombre, nuevo_email, dni,correo,))
+    conn.commit()
+    conn.close()
+
+def obtenerUsuarioPorCorreo(correo):
+    conn = sqlite3.connect('viajes.db')
+    cursor = conn.cursor()
+    cursor.execute("""SELECT * FROM cliente WHERE email = ?""", (correo,))
+    usuario = cursor.fetchone()
+    conn.close()
+    return usuario
 
 def obtener_cliente(email):
     conn = sqlite3.connect("viajes.db")
