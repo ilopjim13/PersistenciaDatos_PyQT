@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>949</width>
-    <height>744</height>
+    <width>592</width>
+    <height>459</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,6 +19,9 @@
   <property name="windowTitle">
    <string>Vuelos App</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
   <property name="styleSheet">
    <string notr="true">
     MainWindow {
@@ -26,186 +29,300 @@
     }
    </string>
   </property>
-  <widget class="QWidget" name="centralwidget">
+  <widget class="QWidget" name="principal">
    <property name="sizePolicy">
     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
-   <widget class="QLabel" name="Titulo">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>50</y>
-      <width>800</width>
-      <height>60</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>20</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: white;</string>
-    </property>
-    <property name="text">
-     <string>Bienvenido a Vuelos App</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QFrame" name="frame">
-    <property name="geometry">
-     <rect>
-      <x>170</x>
-      <y>150</y>
-      <width>511</width>
-      <height>521</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">
-        QFrame {
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            border: 2px solid #3498db;
-        }
-     </string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Shape::Box</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Shadow::Raised</enum>
-    </property>
-    <widget class="QLabel" name="la_usu">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>40</y>
-       <width>80</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>12</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: black;</string>
-     </property>
-     <property name="text">
-      <string>Email:</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="li_usuario">
-     <property name="geometry">
-      <rect>
-       <x>230</x>
-       <y>40</y>
-       <width>180</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white; border-radius: 5px;</string>
-     </property>
-     <property name="placeholderText">
-      <string>Introduce tu usuario</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="la_contra">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>90</y>
-       <width>100</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>12</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: black;</string>
-     </property>
-     <property name="text">
-      <string>Contraseña:</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="li_contra">
-     <property name="geometry">
-      <rect>
-       <x>230</x>
-       <y>90</y>
-       <width>180</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white; border-radius: 5px;</string>
-     </property>
-     <property name="echoMode">
-      <enum>QLineEdit::EchoMode::Password</enum>
-     </property>
-     <property name="placeholderText">
-      <string>Introduce tu contraseña</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="bu_login">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>140</y>
-       <width>100</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
-        QPushButton {
-            background-color: #3498db;
-            color: white;
-            border-radius: 5px;
-        }
-        QPushButton:hover {
-            background-color: #2980b9;
-        }
-      </string>
-     </property>
-     <property name="text">
-      <string>Login</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="bu_reg">
-     <property name="geometry">
-      <rect>
-       <x>210</x>
-       <y>460</y>
-       <width>100</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#principal{
+background-image: url(:/icons/recursos/media/fondo.jpg);
+background-repeat: no-repeat;
+background-position: center;
+background-attachment: fixed;
+}</string>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_11">
+    <item>
+     <widget class="QWidget" name="widget_2" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>10</verstretch>
+       </sizepolicy>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="Titulo">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>20</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: white;</string>
+         </property>
+         <property name="text">
+          <string>Bienvenido a Vuelos App</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="ContainerLoginYResgister" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>90</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#ContainerLoginYResgister{
+min-height: 325;
+min-width: 556px;
+}
+QFrame {
+background-color: rgba(255, 255, 255, 150);
+border-radius: 15px;
+}
+QLabel{ 
+min-height: 35px;
+max-height: 35px;
+min-width: 40px;
+max-width: 150px;
+color:black;
+}   
+QLineEdit { 
+min-height: 35px;
+max-height: 35px;
+max-width: 150px;
+}
+QLineEdit{
+color:black;
+}</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QFrame" name="frame_2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>50</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Shape::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Shadow::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <item>
+              <widget class="QWidget" name="widget" native="true">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>42</height>
+                </size>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_14">
+                <item>
+                 <widget class="QLabel" name="label">
+                  <property name="font">
+                   <font>
+                    <family>Arial</family>
+                    <pointsize>12</pointsize>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>REGISTRARSE</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <item>
+                <widget class="QLabel" name="la_nombre">
+                 <property name="font">
+                  <font>
+                   <family>Arial</family>
+                   <pointsize>12</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="text">
+                  <string>Nombre: </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="li_nombre">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: white; border-radius: 5px;</string>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Introduce tu usuario</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_5">
+               <item>
+                <widget class="QLabel" name="la_nombre_3">
+                 <property name="font">
+                  <font>
+                   <family>Arial</family>
+                   <pointsize>12</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="text">
+                  <string>Apellido: </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="li_apellido">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: white; border-radius: 5px;</string>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Introduce tu usuario</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_6">
+               <item>
+                <widget class="QLabel" name="la_contra_3">
+                 <property name="font">
+                  <font>
+                   <family>Arial</family>
+                   <pointsize>12</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="text">
+                  <string>Contraseña:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="li_contra_2">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: white; border-radius: 5px;</string>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Introduce tu usuario</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_7">
+               <item>
+                <widget class="QLabel" name="la_usu_3">
+                 <property name="font">
+                  <font>
+                   <family>Arial</family>
+                   <pointsize>12</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="text">
+                  <string>Email:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="li_usuario_2">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: white; border-radius: 5px;</string>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Introduce tu usuario</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_8">
+               <item>
+                <widget class="QLabel" name="la_nombre_2">
+                 <property name="font">
+                  <font>
+                   <family>Arial</family>
+                   <pointsize>12</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="text">
+                  <string>DNI:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="li_dni">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: white; border-radius: 5px;</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Introduce tu usuario</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QPushButton" name="bu_reg">
+               <property name="styleSheet">
+                <string notr="true">
         QPushButton {
             background-color: #2ecc71;
             color: white;
@@ -215,217 +332,187 @@
             background-color: #27ae60;
         }
       </string>
-     </property>
-     <property name="text">
-      <string>Registrarse</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="li_usuario_2">
-     <property name="geometry">
-      <rect>
-       <x>230</x>
-       <y>200</y>
-       <width>180</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white; border-radius: 5px;</string>
-     </property>
-     <property name="placeholderText">
-      <string>Introduce tu usuario</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="li_contra_2">
-     <property name="geometry">
-      <rect>
-       <x>230</x>
-       <y>250</y>
-       <width>180</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white; border-radius: 5px;</string>
-     </property>
-     <property name="placeholderText">
-      <string>Introduce tu usuario</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="li_nombre">
-     <property name="geometry">
-      <rect>
-       <x>230</x>
-       <y>290</y>
-       <width>180</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white; border-radius: 5px;</string>
-     </property>
-     <property name="placeholderText">
-      <string>Introduce tu usuario</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="la_usu_3">
-     <property name="geometry">
-      <rect>
-       <x>60</x>
-       <y>200</y>
-       <width>80</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>12</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: black;</string>
-     </property>
-     <property name="text">
-      <string>Email:</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="la_contra_3">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>250</y>
-       <width>100</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>12</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: black;</string>
-     </property>
-     <property name="text">
-      <string>Contraseña:</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="la_nombre">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>290</y>
-       <width>100</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>12</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: black;</string>
-     </property>
-     <property name="text">
-      <string>Nombre:</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="la_nombre_2">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>380</y>
-       <width>100</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>12</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: black;</string>
-     </property>
-     <property name="text">
-      <string>DNI:</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="la_nombre_3">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>340</y>
-       <width>100</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>12</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: black;</string>
-     </property>
-     <property name="text">
-      <string>Apellido:</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="li_apellido">
-     <property name="geometry">
-      <rect>
-       <x>230</x>
-       <y>340</y>
-       <width>180</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white; border-radius: 5px;</string>
-     </property>
-     <property name="placeholderText">
-      <string>Introduce tu usuario</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="li_dni">
-     <property name="geometry">
-      <rect>
-       <x>230</x>
-       <y>380</y>
-       <width>180</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white; border-radius: 5px;</string>
-     </property>
-     <property name="placeholderText">
-      <string>Introduce tu usuario</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="bu_salir">
-     <property name="geometry">
-      <rect>
-       <x>360</x>
-       <y>460</y>
-       <width>100</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
+               </property>
+               <property name="text">
+                <string>Registrarse</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>50</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Shape::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Shadow::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <widget class="QWidget" name="horizontalWidget_5" native="true">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_13">
+                <item>
+                 <widget class="QLabel" name="label_2">
+                  <property name="font">
+                   <font>
+                    <family>Arial</family>
+                    <pointsize>12</pointsize>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>LOGIN</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="verticalWidget_2" native="true">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_4">
+                <item>
+                 <widget class="QLabel" name="la_usu">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Arial</family>
+                    <pointsize>12</pointsize>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
+                  <property name="text">
+                   <string>Email:</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::TextFormat::AutoText</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="li_usuario">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: white; border-radius: 5px;</string>
+                  </property>
+                  <property name="placeholderText">
+                   <string>Introduce tu usuario</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="horizontalWidget" native="true">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_3">
+                <item>
+                 <widget class="QLabel" name="la_contra">
+                  <property name="font">
+                   <font>
+                    <family>Arial</family>
+                    <pointsize>12</pointsize>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
+                  <property name="text">
+                   <string>Contraseña:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="li_contra">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: white; border-radius: 5px;</string>
+                  </property>
+                  <property name="echoMode">
+                   <enum>QLineEdit::EchoMode::Password</enum>
+                  </property>
+                  <property name="placeholderText">
+                   <string>Introduce tu contraseña</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="bu_login">
+               <property name="styleSheet">
+                <string notr="true">
+        QPushButton {
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+        }
+        QPushButton:hover {
+            background-color: #2980b9;
+        }
+      </string>
+               </property>
+               <property name="text">
+                <string>Login</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_3" native="true">
+         <layout class="QHBoxLayout" name="horizontalLayout_12">
+          <item>
+           <widget class="QPushButton" name="bu_salir">
+            <property name="maximumSize">
+             <size>
+              <width>150</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
         QPushButton {
             background-color: red;
             color: white;
@@ -435,56 +522,24 @@
             background-color: darkred;
         }
       </string>
-     </property>
-     <property name="text">
-      <string>Salir</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QFrame" name="frame_2">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>-40</y>
-      <width>961</width>
-      <height>811</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Shape::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Shadow::Raised</enum>
-    </property>
-    <widget class="QLabel" name="fondo">
-     <property name="geometry">
-      <rect>
-       <x>-70</x>
-       <y>-210</y>
-       <width>961</width>
-       <height>841</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>imagenes/fondo.jpg</pixmap>
-     </property>
-    </widget>
-   </widget>
-   <zorder>frame_2</zorder>
-   <zorder>Titulo</zorder>
-   <zorder>frame</zorder>
+            </property>
+            <property name="text">
+             <string>Salir</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="recursos.qrc"/>
+ </resources>
  <connections/>
 </ui>
