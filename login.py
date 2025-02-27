@@ -48,15 +48,19 @@ class Ventana(QMainWindow):
             return
         
         try:
+            cliente = model.Cliente(0,nombre, email, apellido, dni)
+            existo = baseLocal.insertar_cliente(cliente)
+
+            if existo is None:
+                QMessageBox.critical(self, 'Error', "No se ingresó el usuario en la base de datos")
 
             user = self.auth.create_user_with_email_and_password(email, passw)
             print(user)
             self.manager.mostrarVentana("menu")
             self.manager.token = user["idToken"]
+            
             self.manager.usuario = cliente
-
-            cliente = model.Cliente(0,nombre, email, apellido, dni)
-            baseLocal.insertar_cliente(cliente)
+            
 
             self.correcto("r")
         except requests.exceptions.HTTPError as e:
