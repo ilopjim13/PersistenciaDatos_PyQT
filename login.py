@@ -48,11 +48,11 @@ class Ventana(QMainWindow):
             return
         
         try:
-            
+
             user = self.auth.create_user_with_email_and_password(email, passw)
             print(user)
             self.manager.mostrarVentana("menu")
-            self.manager.token = user["token"]
+            self.manager.token = user["idToken"]
             self.manager.usuario = cliente
 
             cliente = model.Cliente(0,nombre, email, apellido, dni)
@@ -80,7 +80,7 @@ class Ventana(QMainWindow):
             baseLocal.prueba()
 
             self.manager.mostrarVentana("menu")
-            self.manager.token = user["token"]
+            self.manager.token = user["idToken"]
             self.manager.usuario = cliente          
 
             if cliente is not None:
@@ -99,9 +99,6 @@ class Ventana(QMainWindow):
         else:
             QMessageBox.information(self, '¡Usuario creado correctamente!', "Creación de usuario")
         
-        #Navigation.WindowManager#Nose que hacer con el manager
-        self.menu.show()
-        self.hide()
 
     def delete_line(self):
         self.li_usuario.setText("")
