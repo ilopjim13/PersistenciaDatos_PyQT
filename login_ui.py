@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'login.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.2
+## Created by: Qt User Interface Compiler version 6.8.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -23,7 +23,12 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(940, 856)
+        MainWindow.resize(949, 744)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
+        MainWindow.setSizePolicy(sizePolicy)
         MainWindow.setStyleSheet(u"\n"
 "    MainWindow {\n"
 "        background-image: url(\"imagenes/fondo.jpg\") background-position: center;\n"
@@ -31,6 +36,8 @@ class Ui_MainWindow(object):
 "   ")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
+        sizePolicy.setHeightForWidth(self.centralwidget.sizePolicy().hasHeightForWidth())
+        self.centralwidget.setSizePolicy(sizePolicy)
         self.Titulo = QLabel(self.centralwidget)
         self.Titulo.setObjectName(u"Titulo")
         self.Titulo.setGeometry(QRect(30, 50, 800, 60))
@@ -44,6 +51,8 @@ class Ui_MainWindow(object):
         self.frame = QFrame(self.centralwidget)
         self.frame.setObjectName(u"frame")
         self.frame.setGeometry(QRect(170, 150, 511, 521))
+        sizePolicy.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
+        self.frame.setSizePolicy(sizePolicy)
         self.frame.setStyleSheet(u"\n"
 "        QFrame {\n"
 "            background-color: rgba(255, 255, 255, 0.8);\n"
@@ -91,7 +100,7 @@ class Ui_MainWindow(object):
 "      ")
         self.bu_reg = QPushButton(self.frame)
         self.bu_reg.setObjectName(u"bu_reg")
-        self.bu_reg.setGeometry(QRect(190, 350, 100, 30))
+        self.bu_reg.setGeometry(QRect(210, 460, 100, 30))
         self.bu_reg.setStyleSheet(u"\n"
 "        QPushButton {\n"
 "            background-color: #2ecc71;\n"
@@ -129,9 +138,27 @@ class Ui_MainWindow(object):
         self.la_nombre.setGeometry(QRect(40, 290, 100, 25))
         self.la_nombre.setFont(font1)
         self.la_nombre.setStyleSheet(u"color: black;")
-        self.bu_salir = QPushButton(self.centralwidget)
+        self.la_nombre_2 = QLabel(self.frame)
+        self.la_nombre_2.setObjectName(u"la_nombre_2")
+        self.la_nombre_2.setGeometry(QRect(40, 380, 100, 25))
+        self.la_nombre_2.setFont(font1)
+        self.la_nombre_2.setStyleSheet(u"color: black;")
+        self.la_nombre_3 = QLabel(self.frame)
+        self.la_nombre_3.setObjectName(u"la_nombre_3")
+        self.la_nombre_3.setGeometry(QRect(40, 340, 100, 25))
+        self.la_nombre_3.setFont(font1)
+        self.la_nombre_3.setStyleSheet(u"color: black;")
+        self.li_apellido = QLineEdit(self.frame)
+        self.li_apellido.setObjectName(u"li_apellido")
+        self.li_apellido.setGeometry(QRect(230, 340, 180, 25))
+        self.li_apellido.setStyleSheet(u"background-color: white; border-radius: 5px;")
+        self.li_dni = QLineEdit(self.frame)
+        self.li_dni.setObjectName(u"li_dni")
+        self.li_dni.setGeometry(QRect(230, 380, 180, 25))
+        self.li_dni.setStyleSheet(u"background-color: white; border-radius: 5px;")
+        self.bu_salir = QPushButton(self.frame)
         self.bu_salir.setObjectName(u"bu_salir")
-        self.bu_salir.setGeometry(QRect(380, 720, 100, 30))
+        self.bu_salir.setGeometry(QRect(360, 460, 100, 30))
         self.bu_salir.setStyleSheet(u"\n"
 "        QPushButton {\n"
 "            background-color: red;\n"
@@ -142,11 +169,21 @@ class Ui_MainWindow(object):
 "            background-color: darkred;\n"
 "        }\n"
 "      ")
-        self.fondo = QLabel(self.centralwidget)
+        self.frame_2 = QFrame(self.centralwidget)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setGeometry(QRect(0, -40, 961, 811))
+        sizePolicy.setHeightForWidth(self.frame_2.sizePolicy().hasHeightForWidth())
+        self.frame_2.setSizePolicy(sizePolicy)
+        self.frame_2.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Shadow.Raised)
+        self.fondo = QLabel(self.frame_2)
         self.fondo.setObjectName(u"fondo")
-        self.fondo.setGeometry(QRect(0, 10, 961, 841))
+        self.fondo.setGeometry(QRect(-70, -210, 961, 841))
         self.fondo.setPixmap(QPixmap(u"imagenes/fondo.jpg"))
         MainWindow.setCentralWidget(self.centralwidget)
+        self.frame_2.raise_()
+        self.Titulo.raise_()
+        self.frame.raise_()
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
         MainWindow.setStatusBar(self.statusbar)
@@ -171,6 +208,10 @@ class Ui_MainWindow(object):
         self.la_usu_3.setText(QCoreApplication.translate("MainWindow", u"Email:", None))
         self.la_contra_3.setText(QCoreApplication.translate("MainWindow", u"Contrase\u00f1a:", None))
         self.la_nombre.setText(QCoreApplication.translate("MainWindow", u"Nombre:", None))
+        self.la_nombre_2.setText(QCoreApplication.translate("MainWindow", u"DNI:", None))
+        self.la_nombre_3.setText(QCoreApplication.translate("MainWindow", u"Apellido:", None))
+        self.li_apellido.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce tu usuario", None))
+        self.li_dni.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce tu usuario", None))
         self.bu_salir.setText(QCoreApplication.translate("MainWindow", u"Salir", None))
         self.fondo.setText("")
     # retranslateUi
