@@ -3,6 +3,7 @@ from PyQt6 import QtWidgets, uic, QtGui
 import sys
 from PyQt6.QtWidgets import *
 from recursos_rc import *
+import BD.basedatos as baseLocal
 
 class Menu(QtWidgets.QMainWindow):
     def __init__(self,manager):
@@ -10,6 +11,7 @@ class Menu(QtWidgets.QMainWindow):
         file_log = "menu.ui"
         full_path_lo = os.path.join(os.path.dirname(__file__), file_log)
         uic.loadUi(full_path_lo,self)
+        
         self.QLabelUsuario.setPixmap(QtGui.QPixmap(":/icons/recursos/iconos/usuario.png"))
         self.QLabelConfiguracion.setPixmap(QtGui.QPixmap(":/icons/recursos/iconos/engranaje.png"))
         self.manager = manager
@@ -17,6 +19,16 @@ class Menu(QtWidgets.QMainWindow):
         self.QTTredingsTopicsTabla.cellClicked.connect(self.irACompras)
         self.QLabelConfiguracion.mousePressEvent= self.mousePressEventLabel
 
+    def cargarDatos(self):
+        destinos = baseLocal.obtenerSoloElNombreDelDestinoParaLaPantallaMenu()
+        self.QTTredingsTopicsTabla.setColumnCount(1)
+        self.QTTredingsTopicsTabla.setHorizontalHeaderLabels(["Destinos"])
+        self.QTTredingsTopicsTabla.setRowCount(0)
+        for row_idx, row_data in enumerate(destinos):
+            self.tabla_vuelos.insertRow(row_idx)
+            for col_idx, data in enumerate(row_data):
+                self.tabla_vuelos.setItem(row_idx, col_idx, QTableWidgetItem(str(data)))
+    
     def irAMisViajes(self):
         self.manager.mostrarVentana("misviajes")
 

@@ -16,6 +16,14 @@ def update_cliente(nuevo_nombre, nuevo_email, dni,correo):
     conn.commit()
     conn.close()
 
+def obtenerSoloElNombreDelDestinoParaLaPantallaMenu():
+    conn = sqlite3.connect('viajes.db')
+    cursor = conn.cursor()
+    cursor.execute("""SELECT nombre FROM destino""")
+    destinos = cursor.fetchone()
+    conn.close()
+    return destinos
+
 def obtenerUsuarioPorCorreo(correo):
     conn = sqlite3.connect('viajes.db')
     cursor = conn.cursor()
