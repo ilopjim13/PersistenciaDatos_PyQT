@@ -83,9 +83,9 @@ border: 1px solid #555; /* Borde gris */
 padding: 5px; /* Espaciado interno */
 }
 #QTTredingsTopicsTabla::item {
-padding: 5px; /* Espaciado interno en cada item */
+padding: 15px; /* Espaciado interno en cada item */
 color: black; 
-margin: 5px; /* Espaciado externo en cada item */
+margin: 15px; /* Espaciado externo en cada item */
 }
 #QTTredingsTopicsTabla::item:selected {
 background-color: rgba(100, 100, 255, 200); /* Fondo azul al seleccionar un item */
@@ -446,7 +446,7 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
                   </property>
                   <property name="font">
                    <font>
-                    <pointsize>24</pointsize>
+                    <pointsize>20</pointsize>
                     <italic>true</italic>
                     <bold>true</bold>
                     <underline>false</underline>

@@ -82,9 +82,9 @@ class Ui_MainWindow(object):
 "}\n"
 "#QTTredingsTopicsTabla::item {\n"
 ""
-                        "padding: 5px; /* Espaciado interno en cada item */\n"
+                        "padding: 15px; /* Espaciado interno en cada item */\n"
 "color: black; \n"
-"margin: 5px; /* Espaciado externo en cada item */\n"
+"margin: 15px; /* Espaciado externo en cada item */\n"
 "}\n"
 "#QTTredingsTopicsTabla::item:selected {\n"
 "background-color: rgba(100, 100, 255, 200); /* Fondo azul al seleccionar un item */\n"
@@ -313,7 +313,7 @@ class Ui_MainWindow(object):
         self.QTTredingsTopicsTabla.setMinimumSize(QSize(0, 0))
         self.QTTredingsTopicsTabla.setMaximumSize(QSize(350, 16777215))
         font4 = QFont()
-        font4.setPointSize(24)
+        font4.setPointSize(20)
         font4.setBold(True)
         font4.setItalic(True)
         font4.setUnderline(False)
