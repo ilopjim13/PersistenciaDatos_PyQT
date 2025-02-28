@@ -18,11 +18,7 @@ class Menu(QtWidgets.QMainWindow):
         self.BMisViajes.clicked.connect(self.irAMisViajes)
         self.QTTredingsTopicsTabla.cellClicked.connect(self.irACompras)
         self.QLabelConfiguracion.mousePressEvent= self.mousePressEventLabel
-        if self.manager.usuario is not None:
-            self.refrescarIdDelLoginOResgiterDelCliente()
 
-    def refrescarIdDelLoginOResgiterDelCliente(self):
-        self.manager.usuario.id = baseLocal.obtenerElIdDelClienteUnaVezLogeado(self.manager.usuario.email)[0]
 
     def cargarDatos(self):
         destinos = baseLocal.obtenerSoloElNombreDelDestinoParaLaPantallaMenu()
