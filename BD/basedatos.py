@@ -28,7 +28,7 @@ def obtenerSoloElNombreDelDestinoParaLaPantallaMenu():
     conn = sqlite3.connect('viajes.db')
     cursor = conn.cursor()
     cursor.execute("""SELECT nombre FROM destino""")
-    destinos = cursor.fetchone()
+    destinos = cursor.fetchall()
     conn.close()
     return destinos
 

@@ -26,13 +26,14 @@ class Menu(QtWidgets.QMainWindow):
 
     def cargarDatos(self):
         destinos = baseLocal.obtenerSoloElNombreDelDestinoParaLaPantallaMenu()
+        
         self.QTTredingsTopicsTabla.setColumnCount(1)
         self.QTTredingsTopicsTabla.setHorizontalHeaderLabels(["Destinos"])
         self.QTTredingsTopicsTabla.setRowCount(0)
         for row_idx, row_data in enumerate(destinos):
             self.QTTredingsTopicsTabla.insertRow(row_idx)
             for col_idx, data in enumerate(row_data):
-                self.QTTredingsTopicsTabla.setItem(row_idx, col_idx, QTableWidgetItem(str(data)))
+                self.QTTredingsTopicsTabla.setItem(row_idx, col_idx, QtWidgets.QTableWidgetItem(str(data)))
     
     def irAMisViajes(self):
         self.manager.mostrarVentana("misviajes")
