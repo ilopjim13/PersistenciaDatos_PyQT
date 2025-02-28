@@ -45,7 +45,7 @@ class Configuracion(QtWidgets.QMainWindow):
         usuario_actualizado = baseLocal.obtenerUsuarioPorCorreo(correo)
         QMessageBox.information(self, "Actualización", usuario_actualizado)
         id, nombre, email, apellido, dni = usuario_actualizado
-        self.manager.usuario = Cliente(nombre, email, apellido, dni)
+        self.manager.usuario = Cliente(id, nombre, email, apellido, dni)
     
     def eliminarusuario(self):
         import pyrebase
