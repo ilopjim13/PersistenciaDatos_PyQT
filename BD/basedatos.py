@@ -71,7 +71,7 @@ def prueba():
     conn.close()
     print (cliente)
 
-prueba()
+#prueba()
 
 
 def insertar_cliente(cliente):
@@ -95,7 +95,7 @@ def getMisViajes(email):
     cursor.execute("""
     SELECT viaje.id, cliente.nombre, destino.nombre, viaje.fecha_salida, viaje.fecha_regreso, viaje.precio
     FROM viaje
-    JOIN cliente ON viaje.cliente_id = cliente.id
+    JOIN cliente ON viaje.cliente_email = cliente.email
     JOIN vuelo ON viaje.vuelo_id = vuelo.id
     JOIN destino ON vuelo.destino_id = destino.id
     WHERE cliente.email = ?
@@ -130,7 +130,7 @@ def restablecer():
     cursor = conn.cursor()
 
     # DROP PARA CREAR LAS TABLAS DE NUEVO
-    cursor.execute("DROP TABLE IF EXISTS cliente") 
+    #cursor.execute("DROP TABLE IF EXISTS cliente") 
     cursor.execute("DROP TABLE IF EXISTS destino") 
     cursor.execute("DROP TABLE IF EXISTS vuelo") 
     cursor.execute("DROP TABLE IF EXISTS avion") 
@@ -184,7 +184,7 @@ def restablecer():
             fecha_salida TEXT NOT NULL,
             fecha_regreso TEXT NOT NULL,
             precio REAL NOT NULL,
-            FOREIGN KEY (cliente_id) REFERENCES cliente(id),
+            FOREIGN KEY (cliente_email) REFERENCES cliente(id),
             FOREIGN KEY (vuelo_id) REFERENCES vuelos(id)
         )
     """)
@@ -192,10 +192,10 @@ def restablecer():
 
     ## INSERTS PARA PRUEBAS
     #insert para clientes
-    cursor.execute("""
-        INSERT INTO cliente (nombre, email, apellido, dni)
-        VALUES (?, ?, ?, ?)
-    """, ("Juan", "juan@example.com", "Pérez", "12345678A"))
+    #cursor.execute("""
+    #    INSERT INTO cliente (nombre, email, apellido, dni)
+    #    VALUES (?, ?, ?, ?)
+    #""", ("Juan", "juan@example.com", "Pérez", "12345678A"))
 
     # INSERTS DE DESTINOS
     cursor.execute("""
@@ -255,4 +255,3 @@ def restablecer():
 
     conn.commit()
     conn.close()
-
