@@ -3,7 +3,7 @@ import os
 from PyQt6.QtWidgets import * # Librerías de los componentes
 from PyQt6 import uic  # Librería para trabajar con el archivo de la interfaz
 from PyQt6.QtCore import QDate
-import BD.basedatos
+import BD.basedatos as baseLocal
 import sqlite3
 
 class Compra(QMainWindow):
@@ -60,7 +60,8 @@ class Compra(QMainWindow):
             con.commit()
             con.close()
             self.actualizar_asientos()
-            QMessageBox.information(self, "Compra exitosa", "Compra realizada con éxito")
+            self.manager.viaje = [id, self.pasajero.email, self.vuelo[3], self.fecha_salida, self.fecha_regreso, self.vuelo[1], self.cantidad_asientos]
+            self.manager.mostrarVentana("bilete")
         else:
             QMessageBox.critical(self, "Error", "La fecha de regreso debe ser posterior a la de salida")
 
@@ -98,18 +99,33 @@ class Compra(QMainWindow):
         self.manager.mostrarVentana("vuelos")
 
 
-class Bilete(QMainWindow):
-    def __init__(self, viaje):
+class Billete(QMainWindow):
+    def __init__(self, manager):
         super().__init__()
-        uic.loadUi("bilete.ui", self)
-        self.viaje = viaje
+        uic.loadUi("billete.ui", self)
+        self.manager = manager
+        if self.manager.viaje is not None:
+            self.viaje = manager.viaje
+        if self.manager.usuario is not None:
+            self.cliente = self.manager.usuario
         self.cargar_datos()
+        self.aceptar.clicked.connect(self.aceptar)
 
     def cargar_datos(self):
-        self.te_nombre.setText(self.viaje.nombre)
-        self.te_apellido.setText(self.viaje[1])
-        self.te_dni.setText(self.viaje[2])
-        self.te_id.setText(self.viaje[3])
+        self.te_nombre.setText(self.cliente.nombre)
+        self.te_apellido.setText(self.cliente.apellido)
+        self.te_dni.setText(self.cliente.dni)
+        self.te_asientos.setText(self.viaje[6])
+        destino = baseLocal.obtener_destinos_y_aviones(self.viaje[2])
+        self.te_destino.setText(destino[0])
+        self.te_avion.setText(destino[1])
+        self.te_salida.setText(self.viaje[3])
+        self.te_regreso.setText(self.viaje[4])
+        self.te_precio.setText(self.viaje[5])
+        self.lt_email.setText(self.cliente.email)
+
+def aceptar(self):
+    self.manager.mostrarVentana("menu")
 
 if __name__ == "__main__":
     # se crea la instancia de la aplicación

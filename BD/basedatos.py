@@ -125,6 +125,22 @@ def delMisViajes(viaje_id):
     conn.close()
     
 
+def obtener_destinos_y_aviones(vuelo_id):
+    conn = sqlite3.connect("viajes.db")
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT destino.nombre AS destino, avion.modelo AS modelo
+        FROM vuelo
+        JOIN destino ON vuelo.destino_id = destino.id
+        JOIN avion ON vuelo.avion_id = avion.id
+        WHERE vuelo.id = ?;
+    """, (vuelo_id,))
+
+    destinos = cursor.fetchall()
+    conn.close()
+    return destinos
+
 def restablecer():
     conn = sqlite3.connect("viajes.db")
     cursor = conn.cursor()

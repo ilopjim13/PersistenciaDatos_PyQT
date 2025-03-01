@@ -6,7 +6,7 @@ from login import Ventana
 from menu import Menu
 from misviajes import MisViajes
 from vuelos import Vuelos
-from compra import Compra
+from compra import Compra, Billete
 from models.cliente import Cliente
 
 
@@ -17,6 +17,7 @@ class WindowManager:
         self.usuario:Cliente = None # paco o ivan aqui teneis el usuario actual lo guardamos
         self.destino = None
         self.vuelo = None
+        self.viaje = None
 
         self.ventanas = {  #aqui estara todos las ventanas que necesitaremos
             "menu": Menu(self), 
@@ -24,7 +25,8 @@ class WindowManager:
             "configuracion": Configuracion(self),
             "misviajes":MisViajes(self),
             "vuelos":Vuelos(self),
-            "compra":Compra(self)
+            "compra":Compra(self),
+            "billente":Billete(self)
         }
 
         self.full_screen_state:bool = None # estado de la ventana si esta activa o no
