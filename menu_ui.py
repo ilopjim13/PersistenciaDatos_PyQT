@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'menu.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.2
+## Created by: Qt User Interface Compiler version 6.8.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -53,10 +53,7 @@ class Ui_MainWindow(object):
         self.principal.setAcceptDrops(False)
         self.principal.setAutoFillBackground(False)
         self.principal.setStyleSheet(u"#principal{\n"
-"background-image: url(:/icons/recursos/media/fondo.jpg);\n"
-"background-repeat: no-repeat;\n"
-"background-position: center;\n"
-"background-attachment: fixed;\n"
+"	background-color: rgb(238, 247, 255);\n"
 "}\n"
 "#QTMisViajes {\n"
 "background-color: rgba(255, 255, 255, 150); /* Fondo blanco con 150 de opacidad (0-255) */\n"
@@ -81,10 +78,10 @@ class Ui_MainWindow(object):
 "padding: 5px; /* Espaciado interno */\n"
 "}\n"
 "#QTTredingsTopicsTabla::item {\n"
-""
-                        "padding: 15px; /* Espaciado interno en cada item */\n"
+"padding: 15px; /* Espaciado interno en cada item */\n"
 "color: black; \n"
-"margin: 15px; /* Espaciado externo en cada item */\n"
+"margin: 15px; /* Espaciado externo en cad"
+                        "a item */\n"
 "}\n"
 "#QTTredingsTopicsTabla::item:selected {\n"
 "background-color: rgba(100, 100, 255, 200); /* Fondo azul al seleccionar un item */\n"
@@ -103,10 +100,10 @@ class Ui_MainWindow(object):
 "}\n"
 "QPushButton {\n"
 "background-color: rgba(255, 255, 255, 150); /* Fondo semitransparente para los botones */\n"
-""
-                        "color: black; /* Color del texto en los botones */\n"
+"color: black; /* Color del texto en los botones */\n"
 "border: 1px solid black; /* Borde negro */\n"
-"padding: 5px; /* Espaciado interno */\n"
+"padding: 5"
+                        "px; /* Espaciado interno */\n"
 "border-radius: 5px; /* Bordes redondeados */\n"
 "}\n"
 "QPushButton:hover {\n"
@@ -125,6 +122,7 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(10)
         sizePolicy.setHeightForWidth(self.QWGridCabecera.sizePolicy().hasHeightForWidth())
         self.QWGridCabecera.setSizePolicy(sizePolicy)
+        self.QWGridCabecera.setStyleSheet(u"background-color: rgb(0, 0, 255);")
         self.horizontalLayout = QHBoxLayout(self.QWGridCabecera)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.QLabelUsuario = QLabel(self.QWGridCabecera)
@@ -167,7 +165,18 @@ class Ui_MainWindow(object):
         brush = QBrush(QColor(0, 0, 0, 255))
         brush.setStyle(Qt.SolidPattern)
         palette.setBrush(QPalette.Active, QPalette.WindowText, brush)
+        brush1 = QBrush(QColor(0, 0, 255, 255))
+        brush1.setStyle(Qt.SolidPattern)
+        palette.setBrush(QPalette.Active, QPalette.Button, brush1)
+        palette.setBrush(QPalette.Active, QPalette.Base, brush1)
+        palette.setBrush(QPalette.Active, QPalette.Window, brush1)
         palette.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
+        palette.setBrush(QPalette.Inactive, QPalette.Button, brush1)
+        palette.setBrush(QPalette.Inactive, QPalette.Base, brush1)
+        palette.setBrush(QPalette.Inactive, QPalette.Window, brush1)
+        palette.setBrush(QPalette.Disabled, QPalette.Button, brush1)
+        palette.setBrush(QPalette.Disabled, QPalette.Base, brush1)
+        palette.setBrush(QPalette.Disabled, QPalette.Window, brush1)
         self.QLNombreApp.setPalette(palette)
         font2 = QFont()
         font2.setPointSize(24)
@@ -260,6 +269,7 @@ class Ui_MainWindow(object):
         self.BMisViajes = QPushButton(self.widget_4)
         self.BMisViajes.setObjectName(u"BMisViajes")
         self.BMisViajes.setMaximumSize(QSize(350, 16777215))
+        self.BMisViajes.setStyleSheet(u"background-color: rgb(202, 223, 241);")
 
         self.horizontalLayout_5.addWidget(self.BMisViajes)
 
@@ -299,6 +309,7 @@ class Ui_MainWindow(object):
         if (self.QTTredingsTopicsTabla.columnCount() < 1):
             self.QTTredingsTopicsTabla.setColumnCount(1)
         __qtablewidgetitem = QTableWidgetItem()
+        __qtablewidgetitem.setBackground(QColor(202, 223, 241));
         self.QTTredingsTopicsTabla.setHorizontalHeaderItem(0, __qtablewidgetitem)
         if (self.QTTredingsTopicsTabla.rowCount() < 1):
             self.QTTredingsTopicsTabla.setRowCount(1)
@@ -323,6 +334,7 @@ class Ui_MainWindow(object):
         self.QTTredingsTopicsTabla.setAcceptDrops(False)
         self.QTTredingsTopicsTabla.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.QTTredingsTopicsTabla.setAutoFillBackground(False)
+        self.QTTredingsTopicsTabla.setStyleSheet(u"background-color: rgb(202, 223, 241);")
         self.QTTredingsTopicsTabla.setFrameShadow(QFrame.Shadow.Sunken)
         self.QTTredingsTopicsTabla.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
         self.QTTredingsTopicsTabla.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
