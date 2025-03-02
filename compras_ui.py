@@ -15,184 +15,185 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QDateEdit, QFrame, QLabel,
-    QMainWindow, QPlainTextEdit, QPushButton, QSizePolicy,
-    QSpinBox, QStatusBar, QTextEdit, QWidget)
+from PySide6.QtWidgets import (QApplication, QDateEdit, QGridLayout, QLabel,
+    QLineEdit, QMainWindow, QPushButton, QSizePolicy,
+    QSpacerItem, QSpinBox, QStatusBar, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(800, 600)
-        MainWindow.setStyleSheet(u"\n"
-"    MainWindow {\n"
-"        background-image: url(\"imagenes/fondo.jpg\") background-position: center;\n"
-"    }\n"
+        MainWindow.resize(755, 485)
+        MainWindow.setMinimumSize(QSize(755, 485))
+        MainWindow.setStyleSheet(u"QWidget#principal {\n"
+"    background-image: url(recursos/media/fondo.jpg);\n"
+"    background-repeat: no-repeat;\n"
+"    background-position: center;\n"
+"    background-size: cover; /* Ajusta la imagen al tama\u00f1o de la ventana */\n"
+"}\n"
 "   ")
-        self.centralwidget = QWidget(MainWindow)
-        self.centralwidget.setObjectName(u"centralwidget")
-        self.Titulo = QLabel(self.centralwidget)
+        self.principal = QWidget(MainWindow)
+        self.principal.setObjectName(u"principal")
+        self.gridLayout = QGridLayout(self.principal)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.gridLayout.setHorizontalSpacing(17)
+        self.gridLayout.setVerticalSpacing(18)
+        self.gridLayout.setContentsMargins(16, 16, 16, 16)
+        self.te_apellido = QLineEdit(self.principal)
+        self.te_apellido.setObjectName(u"te_apellido")
+
+        self.gridLayout.addWidget(self.te_apellido, 9, 0, 1, 1)
+
+        self.label = QLabel(self.principal)
+        self.label.setObjectName(u"label")
+        self.label.setAlignment(Qt.AlignBottom|Qt.AlignLeading|Qt.AlignLeft)
+
+        self.gridLayout.addWidget(self.label, 3, 0, 1, 1)
+
+        self.label_2 = QLabel(self.principal)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setAlignment(Qt.AlignBottom|Qt.AlignLeading|Qt.AlignLeft)
+
+        self.gridLayout.addWidget(self.label_2, 7, 0, 1, 1)
+
+        self.te_dni = QLineEdit(self.principal)
+        self.te_dni.setObjectName(u"te_dni")
+
+        self.gridLayout.addWidget(self.te_dni, 13, 0, 1, 1)
+
+        self.fc_salida = QDateEdit(self.principal)
+        self.fc_salida.setObjectName(u"fc_salida")
+        self.fc_salida.setDateTime(QDateTime(QDate(2025, 2, 24), QTime(21, 0, 0)))
+        self.fc_salida.setDate(QDate(2025, 2, 24))
+
+        self.gridLayout.addWidget(self.fc_salida, 3, 3, 1, 1)
+
+        self.pt_vuelo = QLineEdit(self.principal)
+        self.pt_vuelo.setObjectName(u"pt_vuelo")
+
+        self.gridLayout.addWidget(self.pt_vuelo, 13, 2, 1, 1)
+
+        self.verticalSpacer = QSpacerItem(0, 12, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+
+        self.gridLayout.addItem(self.verticalSpacer, 16, 2, 1, 1)
+
+        self.label_5 = QLabel(self.principal)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setAlignment(Qt.AlignBottom|Qt.AlignLeading|Qt.AlignLeft)
+
+        self.gridLayout.addWidget(self.label_5, 7, 2, 1, 1)
+
+        self.Titulo = QLabel(self.principal)
         self.Titulo.setObjectName(u"Titulo")
-        self.Titulo.setGeometry(QRect(0, 10, 800, 60))
         font = QFont()
         font.setFamilies([u"Arial"])
         font.setPointSize(20)
         font.setBold(True)
         self.Titulo.setFont(font)
         self.Titulo.setLayoutDirection(Qt.LeftToRight)
-        self.Titulo.setStyleSheet(u"color: white;")
+        self.Titulo.setStyleSheet(u"color: black;")
         self.Titulo.setAlignment(Qt.AlignCenter)
-        self.te_nombre = QTextEdit(self.centralwidget)
-        self.te_nombre.setObjectName(u"te_nombre")
-        self.te_nombre.setGeometry(QRect(120, 140, 241, 31))
-        self.te_apellido = QTextEdit(self.centralwidget)
-        self.te_apellido.setObjectName(u"te_apellido")
-        self.te_apellido.setGeometry(QRect(120, 220, 241, 31))
-        self.bt_cantidad = QSpinBox(self.centralwidget)
-        self.bt_cantidad.setObjectName(u"bt_cantidad")
-        self.bt_cantidad.setGeometry(QRect(320, 370, 42, 22))
-        self.bt_cantidad.setMinimum(1)
-        self.te_dni = QTextEdit(self.centralwidget)
-        self.te_dni.setObjectName(u"te_dni")
-        self.te_dni.setGeometry(QRect(120, 310, 241, 31))
-        self.boton_comprar = QPushButton(self.centralwidget)
-        self.boton_comprar.setObjectName(u"boton_comprar")
-        self.boton_comprar.setGeometry(QRect(360, 530, 75, 24))
-        self.fc_salida = QDateEdit(self.centralwidget)
-        self.fc_salida.setObjectName(u"fc_salida")
-        self.fc_salida.setGeometry(QRect(560, 110, 110, 22))
-        self.fc_salida.setDateTime(QDateTime(QDate(2025, 2, 24), QTime(22, 0, 0)))
-        self.fc_salida.setDate(QDate(2025, 2, 24))
-        self.fc_vuelta = QDateEdit(self.centralwidget)
-        self.fc_vuelta.setObjectName(u"fc_vuelta")
-        self.fc_vuelta.setGeometry(QRect(560, 140, 110, 22))
-        self.fc_vuelta.setDateTime(QDateTime(QDate(2025, 2, 24), QTime(21, 0, 0)))
-        self.fc_vuelta.setDate(QDate(2025, 2, 24))
-        self.plainTextEdit = QPlainTextEdit(self.centralwidget)
-        self.plainTextEdit.setObjectName(u"plainTextEdit")
-        self.plainTextEdit.setGeometry(QRect(120, 110, 241, 20))
-        self.plainTextEdit.setAcceptDrops(True)
-        self.plainTextEdit.setFrameShape(QFrame.NoFrame)
-        self.plainTextEdit.setFrameShadow(QFrame.Sunken)
-        self.plainTextEdit.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.plainTextEdit.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.plainTextEdit.setTabChangesFocus(False)
-        self.plainTextEdit.setReadOnly(True)
-        self.plainTextEdit.setBackgroundVisible(False)
-        self.plainTextEdit.setCenterOnScroll(False)
-        self.plainTextEdit_2 = QPlainTextEdit(self.centralwidget)
-        self.plainTextEdit_2.setObjectName(u"plainTextEdit_2")
-        self.plainTextEdit_2.setGeometry(QRect(120, 190, 241, 20))
-        self.plainTextEdit_2.setAcceptDrops(True)
-        self.plainTextEdit_2.setFrameShape(QFrame.NoFrame)
-        self.plainTextEdit_2.setFrameShadow(QFrame.Sunken)
-        self.plainTextEdit_2.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.plainTextEdit_2.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.plainTextEdit_2.setTabChangesFocus(False)
-        self.plainTextEdit_2.setReadOnly(True)
-        self.plainTextEdit_2.setBackgroundVisible(False)
-        self.plainTextEdit_2.setCenterOnScroll(False)
-        self.plainTextEdit_3 = QPlainTextEdit(self.centralwidget)
-        self.plainTextEdit_3.setObjectName(u"plainTextEdit_3")
-        self.plainTextEdit_3.setGeometry(QRect(120, 280, 241, 20))
-        self.plainTextEdit_3.setAcceptDrops(True)
-        self.plainTextEdit_3.setFrameShape(QFrame.NoFrame)
-        self.plainTextEdit_3.setFrameShadow(QFrame.Sunken)
-        self.plainTextEdit_3.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.plainTextEdit_3.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.plainTextEdit_3.setTabChangesFocus(False)
-        self.plainTextEdit_3.setReadOnly(True)
-        self.plainTextEdit_3.setBackgroundVisible(False)
-        self.plainTextEdit_3.setCenterOnScroll(False)
-        self.plainTextEdit_4 = QPlainTextEdit(self.centralwidget)
-        self.plainTextEdit_4.setObjectName(u"plainTextEdit_4")
-        self.plainTextEdit_4.setGeometry(QRect(430, 110, 241, 20))
-        self.plainTextEdit_4.setAcceptDrops(True)
-        self.plainTextEdit_4.setFrameShape(QFrame.NoFrame)
-        self.plainTextEdit_4.setFrameShadow(QFrame.Sunken)
-        self.plainTextEdit_4.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.plainTextEdit_4.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.plainTextEdit_4.setTabChangesFocus(False)
-        self.plainTextEdit_4.setReadOnly(True)
-        self.plainTextEdit_4.setBackgroundVisible(False)
-        self.plainTextEdit_4.setCenterOnScroll(False)
-        self.plainTextEdit_5 = QPlainTextEdit(self.centralwidget)
-        self.plainTextEdit_5.setObjectName(u"plainTextEdit_5")
-        self.plainTextEdit_5.setGeometry(QRect(430, 140, 241, 20))
-        self.plainTextEdit_5.setAcceptDrops(True)
-        self.plainTextEdit_5.setFrameShape(QFrame.NoFrame)
-        self.plainTextEdit_5.setFrameShadow(QFrame.Sunken)
-        self.plainTextEdit_5.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.plainTextEdit_5.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.plainTextEdit_5.setTabChangesFocus(False)
-        self.plainTextEdit_5.setReadOnly(True)
-        self.plainTextEdit_5.setBackgroundVisible(False)
-        self.plainTextEdit_5.setCenterOnScroll(False)
-        self.plainTextEdit_6 = QPlainTextEdit(self.centralwidget)
-        self.plainTextEdit_6.setObjectName(u"plainTextEdit_6")
-        self.plainTextEdit_6.setGeometry(QRect(120, 370, 241, 20))
-        self.plainTextEdit_6.setAcceptDrops(True)
-        self.plainTextEdit_6.setFrameShape(QFrame.NoFrame)
-        self.plainTextEdit_6.setFrameShadow(QFrame.Sunken)
-        self.plainTextEdit_6.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.plainTextEdit_6.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.plainTextEdit_6.setTabChangesFocus(False)
-        self.plainTextEdit_6.setReadOnly(True)
-        self.plainTextEdit_6.setBackgroundVisible(False)
-        self.plainTextEdit_6.setCenterOnScroll(False)
-        self.pt_destino = QPlainTextEdit(self.centralwidget)
+
+        self.gridLayout.addWidget(self.Titulo, 0, 0, 1, 5)
+
+        self.pt_destino = QLineEdit(self.principal)
         self.pt_destino.setObjectName(u"pt_destino")
-        self.pt_destino.setGeometry(QRect(430, 220, 241, 31))
-        self.pt_vuelo = QPlainTextEdit(self.centralwidget)
-        self.pt_vuelo.setObjectName(u"pt_vuelo")
-        self.pt_vuelo.setGeometry(QRect(430, 310, 241, 31))
-        self.plainTextEdit_7 = QPlainTextEdit(self.centralwidget)
-        self.plainTextEdit_7.setObjectName(u"plainTextEdit_7")
-        self.plainTextEdit_7.setGeometry(QRect(430, 190, 241, 20))
-        self.plainTextEdit_7.setAcceptDrops(True)
-        self.plainTextEdit_7.setFrameShape(QFrame.NoFrame)
-        self.plainTextEdit_7.setFrameShadow(QFrame.Sunken)
-        self.plainTextEdit_7.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.plainTextEdit_7.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.plainTextEdit_7.setTabChangesFocus(False)
-        self.plainTextEdit_7.setReadOnly(True)
-        self.plainTextEdit_7.setBackgroundVisible(False)
-        self.plainTextEdit_7.setCenterOnScroll(False)
-        self.plainTextEdit_8 = QPlainTextEdit(self.centralwidget)
-        self.plainTextEdit_8.setObjectName(u"plainTextEdit_8")
-        self.plainTextEdit_8.setGeometry(QRect(430, 280, 241, 20))
-        self.plainTextEdit_8.setAcceptDrops(True)
-        self.plainTextEdit_8.setFrameShape(QFrame.NoFrame)
-        self.plainTextEdit_8.setFrameShadow(QFrame.Sunken)
-        self.plainTextEdit_8.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.plainTextEdit_8.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.plainTextEdit_8.setTabChangesFocus(False)
-        self.plainTextEdit_8.setReadOnly(True)
-        self.plainTextEdit_8.setBackgroundVisible(False)
-        self.plainTextEdit_8.setCenterOnScroll(False)
-        self.bt_volver = QPushButton(self.centralwidget)
+
+        self.gridLayout.addWidget(self.pt_destino, 9, 2, 1, 1)
+
+        self.bt_volver = QPushButton(self.principal)
         self.bt_volver.setObjectName(u"bt_volver")
-        self.bt_volver.setGeometry(QRect(20, 530, 75, 24))
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.plainTextEdit_5.raise_()
-        self.plainTextEdit_4.raise_()
-        self.plainTextEdit_6.raise_()
-        self.Titulo.raise_()
-        self.te_nombre.raise_()
-        self.te_apellido.raise_()
-        self.bt_cantidad.raise_()
-        self.te_dni.raise_()
-        self.boton_comprar.raise_()
-        self.fc_salida.raise_()
-        self.fc_vuelta.raise_()
-        self.plainTextEdit.raise_()
-        self.plainTextEdit_2.raise_()
-        self.plainTextEdit_3.raise_()
-        self.pt_destino.raise_()
-        self.pt_vuelo.raise_()
-        self.plainTextEdit_7.raise_()
-        self.plainTextEdit_8.raise_()
-        self.bt_volver.raise_()
+        self.bt_volver.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgba(255, 255, 255, 180); /* Fondo blanco semi-transparente */\n"
+"    border: 1px solid black;  /* Borde negro */\n"
+"    border-radius: 5px;  /* Esquinas redondeadas */\n"
+"    font-size: 14px;  /* Tama\u00f1o del texto */\n"
+"    padding: 5px;  /* Espaciado interno */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgba(200, 200, 200, 200); /* Cambio de color al pasar el mouse */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgba(180, 180, 180, 200); /* Color m\u00e1s oscuro al presionar */\n"
+"}")
+
+        self.gridLayout.addWidget(self.bt_volver, 17, 3, 1, 1)
+
+        self.boton_comprar = QPushButton(self.principal)
+        self.boton_comprar.setObjectName(u"boton_comprar")
+        self.boton_comprar.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgba(255, 255, 255, 180); /* Fondo blanco semi-transparente */\n"
+"    border: 1px solid black;  /* Borde negro */\n"
+"    border-radius: 5px;  /* Esquinas redondeadas */\n"
+"    font-size: 14px;  /* Tama\u00f1o del texto */\n"
+"    padding: 5px;  /* Espaciado interno */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgba(200, 200, 200, 200); /* Cambio de color al pasar el mouse */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgba(180, 180, 180, 200); /* Color m\u00e1s oscuro al presionar */\n"
+"}")
+
+        self.gridLayout.addWidget(self.boton_comprar, 17, 2, 1, 1)
+
+        self.label_7 = QLabel(self.principal)
+        self.label_7.setObjectName(u"label_7")
+
+        self.gridLayout.addWidget(self.label_7, 15, 0, 1, 1)
+
+        self.label_8 = QLabel(self.principal)
+        self.label_8.setObjectName(u"label_8")
+
+        self.gridLayout.addWidget(self.label_8, 5, 2, 1, 1)
+
+        self.bt_cantidad = QSpinBox(self.principal)
+        self.bt_cantidad.setObjectName(u"bt_cantidad")
+        self.bt_cantidad.setMinimum(1)
+
+        self.gridLayout.addWidget(self.bt_cantidad, 15, 1, 1, 1)
+
+        self.te_nombre = QLineEdit(self.principal)
+        self.te_nombre.setObjectName(u"te_nombre")
+
+        self.gridLayout.addWidget(self.te_nombre, 5, 0, 1, 1)
+
+        self.label_3 = QLabel(self.principal)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setAlignment(Qt.AlignBottom|Qt.AlignLeading|Qt.AlignLeft)
+
+        self.gridLayout.addWidget(self.label_3, 11, 0, 1, 1)
+
+        self.label_6 = QLabel(self.principal)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setAlignment(Qt.AlignBottom|Qt.AlignLeading|Qt.AlignLeft)
+
+        self.gridLayout.addWidget(self.label_6, 11, 2, 1, 1)
+
+        self.label_4 = QLabel(self.principal)
+        self.label_4.setObjectName(u"label_4")
+
+        self.gridLayout.addWidget(self.label_4, 3, 2, 1, 1)
+
+        self.fc_vuelta = QDateEdit(self.principal)
+        self.fc_vuelta.setObjectName(u"fc_vuelta")
+        self.fc_vuelta.setDateTime(QDateTime(QDate(2025, 2, 24), QTime(20, 0, 0)))
+        self.fc_vuelta.setDate(QDate(2025, 2, 24))
+
+        self.gridLayout.addWidget(self.fc_vuelta, 5, 3, 1, 1)
+
+        self.verticalSpacer_2 = QSpacerItem(20, 12, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+
+        self.gridLayout.addItem(self.verticalSpacer_2, 1, 0, 1, 1)
+
+        self.gridLayout.setColumnStretch(0, 2)
+        self.gridLayout.setColumnStretch(2, 2)
+        self.gridLayout.setColumnStretch(3, 1)
+        MainWindow.setCentralWidget(self.principal)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
         MainWindow.setStatusBar(self.statusbar)
@@ -204,16 +205,16 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Vuelos App", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Nombre del pasajero:", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Apellidos:", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Destino:", None))
         self.Titulo.setText(QCoreApplication.translate("MainWindow", u"COMPRAR VUELO", None))
-        self.boton_comprar.setText(QCoreApplication.translate("MainWindow", u"Comprar", None))
-        self.plainTextEdit.setPlainText(QCoreApplication.translate("MainWindow", u"Nombre del pasajero", None))
-        self.plainTextEdit_2.setPlainText(QCoreApplication.translate("MainWindow", u"Apellido del pasajero", None))
-        self.plainTextEdit_3.setPlainText(QCoreApplication.translate("MainWindow", u"DNI del pasajero", None))
-        self.plainTextEdit_4.setPlainText(QCoreApplication.translate("MainWindow", u"Fecha de salida", None))
-        self.plainTextEdit_5.setPlainText(QCoreApplication.translate("MainWindow", u"Fecha de vuelta", None))
-        self.plainTextEdit_6.setPlainText(QCoreApplication.translate("MainWindow", u"Cantidad de asientos", None))
-        self.plainTextEdit_7.setPlainText(QCoreApplication.translate("MainWindow", u"Destino del vuelo", None))
-        self.plainTextEdit_8.setPlainText(QCoreApplication.translate("MainWindow", u"Avi\u00f3n del vuelo", None))
         self.bt_volver.setText(QCoreApplication.translate("MainWindow", u"Volver", None))
+        self.boton_comprar.setText(QCoreApplication.translate("MainWindow", u"Comprar", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Cantidad de asientos:", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Fecha de regreso:", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"NIF/Pasaporte:", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"Avi\u00f3n:", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Fecha de salida:", None))
     # retranslateUi
 

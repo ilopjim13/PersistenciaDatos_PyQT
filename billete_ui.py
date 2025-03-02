@@ -15,19 +15,21 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QFormLayout, QFrame,
-    QHBoxLayout, QLayout, QMainWindow, QPushButton,
-    QSizePolicy, QTextEdit, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QFormLayout, QHBoxLayout, QLabel,
+    QLayout, QLineEdit, QMainWindow, QPushButton,
+    QSizePolicy, QVBoxLayout, QWidget)
 import recursos_rc
 
 class Ui_GestionViajes(object):
     def setupUi(self, GestionViajes):
         if not GestionViajes.objectName():
             GestionViajes.setObjectName(u"GestionViajes")
-        GestionViajes.resize(755, 485)
-        GestionViajes.setMinimumSize(QSize(755, 485))
+        GestionViajes.resize(1000, 494)
+        GestionViajes.setMinimumSize(QSize(1000, 494))
+        GestionViajes.setMaximumSize(QSize(1000, 494))
         self.principal = QWidget(GestionViajes)
         self.principal.setObjectName(u"principal")
+        self.principal.setEnabled(True)
         self.principal.setStyleSheet(u"#principal{\n"
 "background-image: url(:/icons/recursos/media/fondo.jpg);\n"
 "background-repeat: no-repeat;\n"
@@ -77,236 +79,229 @@ class Ui_GestionViajes(object):
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.widget = QWidget(self.principal)
         self.widget.setObjectName(u"widget")
+        self.widget.setMaximumSize(QSize(16777215, 16777215))
+        self.widget.setAutoFillBackground(True)
         self.verticalLayout = QVBoxLayout(self.widget)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.widget1 = QWidget(self.widget)
         self.widget1.setObjectName(u"widget1")
+        self.widget1.setMaximumSize(QSize(1200, 900))
+        self.widget1.setAutoFillBackground(False)
+        self.widget1.setStyleSheet(u"QWidget#widget {\n"
+"    border: 0px;\n"
+"    border-bottom:1px solid black; /* Borde negro en la parte inferior */\n"
+"}")
         self.horizontalLayout = QHBoxLayout(self.widget1)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.formLayout_7 = QFormLayout()
+        self.formLayout_7.setObjectName(u"formLayout_7")
+        self.formLayout_7.setFieldGrowthPolicy(QFormLayout.ExpandingFieldsGrow)
+        self.formLayout_7.setRowWrapPolicy(QFormLayout.WrapLongRows)
+        self.formLayout_7.setLabelAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+        self.formLayout_7.setFormAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+        self.formLayout_7.setHorizontalSpacing(6)
+        self.emailLabel = QLabel(self.widget1)
+        self.emailLabel.setObjectName(u"emailLabel")
+
+        self.formLayout_7.setWidget(0, QFormLayout.LabelRole, self.emailLabel)
+
+        self.lt_email = QLineEdit(self.widget1)
+        self.lt_email.setObjectName(u"lt_email")
+        self.lt_email.setStyleSheet(u"QLineEdit {\n"
+"    background: transparent;\n"
+"    border: none;\n"
+"    font-size: 24px;\n"
+"}")
+
+        self.formLayout_7.setWidget(0, QFormLayout.FieldRole, self.lt_email)
+
+
+        self.horizontalLayout.addLayout(self.formLayout_7)
+
+        self.formLayout_2 = QFormLayout()
+        self.formLayout_2.setObjectName(u"formLayout_2")
+        self.formLayout_2.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.formLayout_2.setFieldGrowthPolicy(QFormLayout.FieldsStayAtSizeHint)
+        self.formLayout_2.setRowWrapPolicy(QFormLayout.WrapLongRows)
+        self.formLayout_2.setLabelAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.formLayout_2.setFormAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.formLayout_2.setHorizontalSpacing(13)
+        self.formLayout_2.setContentsMargins(-1, -1, 29, -1)
+        self.QLabel = QLabel(self.widget1)
+        self.QLabel.setObjectName(u"QLabel")
+        self.QLabel.setMaximumSize(QSize(1200, 900))
+        font = QFont()
+        font.setPointSize(20)
+        self.QLabel.setFont(font)
+        self.QLabel.setTextFormat(Qt.AutoText)
+        self.QLabel.setWordWrap(False)
+
+        self.formLayout_2.setWidget(0, QFormLayout.LabelRole, self.QLabel)
+
+        self.te_precio = QLabel(self.widget1)
+        self.te_precio.setObjectName(u"te_precio")
+        self.te_precio.setMaximumSize(QSize(1200, 900))
+        self.te_precio.setFont(font)
+
+        self.formLayout_2.setWidget(0, QFormLayout.FieldRole, self.te_precio)
+
+
+        self.horizontalLayout.addLayout(self.formLayout_2)
+
 
         self.verticalLayout.addWidget(self.widget1)
 
+        self.horizontalLayout_5 = QHBoxLayout()
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.formLayout = QFormLayout()
         self.formLayout.setObjectName(u"formLayout")
+        self.formLayout.setSizeConstraint(QLayout.SetDefaultConstraint)
         self.formLayout.setFieldGrowthPolicy(QFormLayout.FieldsStayAtSizeHint)
-        self.formLayout.setRowWrapPolicy(QFormLayout.DontWrapRows)
-        self.formLayout.setLabelAlignment(Qt.AlignCenter)
-        self.formLayout.setFormAlignment(Qt.AlignHCenter|Qt.AlignTop)
-        self.textEdit = QTextEdit(self.widget)
-        self.textEdit.setObjectName(u"textEdit")
-        self.textEdit.setStyleSheet(u"QTextEdit {\n"
-"    background-color: transparent;  /* Fondo negro suave */\n"
-"    font-size: 24px;  /* Tama\u00f1o del texto */\n"
-"    font-family: \"Arial\", sans-serif;  /* Fuente elegante */\n"
-"    padding: 10px;  /* Espaciado interno */\n"
-"}\n"
-"\n"
-"QTextEdit:focus {\n"
-"    border: 2px solid #555555;  /* Cambio de borde al enfocar */\n"
-"}\n"
-"\n"
-"\n"
-"")
-        self.textEdit.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.textEdit.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.textEdit.setReadOnly(True)
+        self.formLayout.setRowWrapPolicy(QFormLayout.WrapLongRows)
+        self.formLayout.setLabelAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.formLayout.setFormAlignment(Qt.AlignCenter)
+        self.formLayout.setHorizontalSpacing(6)
+        self.formLayout.setVerticalSpacing(40)
+        self.formLayout.setContentsMargins(0, 40, 0, 40)
+        self.nombreDelPasajeroLabel = QLabel(self.widget)
+        self.nombreDelPasajeroLabel.setObjectName(u"nombreDelPasajeroLabel")
+        font1 = QFont()
+        font1.setPointSize(16)
+        self.nombreDelPasajeroLabel.setFont(font1)
 
-        self.formLayout.setWidget(0, QFormLayout.LabelRole, self.textEdit)
+        self.formLayout.setWidget(0, QFormLayout.LabelRole, self.nombreDelPasajeroLabel)
 
-        self.textEdit_2 = QTextEdit(self.widget)
-        self.textEdit_2.setObjectName(u"textEdit_2")
-        self.textEdit_2.setStyleSheet(u"QTextEdit {\n"
-"    background-color: transparent;  /* Fondo negro suave */\n"
-"    font-size: 24px;  /* Tama\u00f1o del texto */\n"
-"    font-family: \"Arial\", sans-serif;  /* Fuente elegante */\n"
-"    padding: 10px;  /* Espaciado interno */\n"
-"}\n"
-"\n"
-"QTextEdit:focus {\n"
-"    border: 2px solid #555555;  /* Cambio de borde al enfocar */\n"
-"}")
-        self.textEdit_2.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.textEdit_2.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.textEdit_2.setReadOnly(True)
-
-        self.formLayout.setWidget(0, QFormLayout.FieldRole, self.textEdit_2)
-
-        self.te_nombre = QTextEdit(self.widget)
+        self.te_nombre = QLineEdit(self.widget)
         self.te_nombre.setObjectName(u"te_nombre")
+        self.te_nombre.setFont(font1)
         self.te_nombre.setReadOnly(True)
 
-        self.formLayout.setWidget(1, QFormLayout.LabelRole, self.te_nombre)
+        self.formLayout.setWidget(0, QFormLayout.FieldRole, self.te_nombre)
 
-        self.textEdit_4 = QTextEdit(self.widget)
-        self.textEdit_4.setObjectName(u"textEdit_4")
-        self.textEdit_4.setEnabled(True)
-        self.textEdit_4.setAutoFillBackground(False)
-        self.textEdit_4.setFrameShape(QFrame.StyledPanel)
-        self.textEdit_4.setFrameShadow(QFrame.Sunken)
-        self.textEdit_4.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.textEdit_4.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.textEdit_4.setSizeAdjustPolicy(QAbstractScrollArea.AdjustIgnored)
-        self.textEdit_4.setReadOnly(True)
+        self.apellidoDelPasajeroLabel = QLabel(self.widget)
+        self.apellidoDelPasajeroLabel.setObjectName(u"apellidoDelPasajeroLabel")
+        self.apellidoDelPasajeroLabel.setFont(font1)
 
-        self.formLayout.setWidget(1, QFormLayout.FieldRole, self.textEdit_4)
+        self.formLayout.setWidget(1, QFormLayout.LabelRole, self.apellidoDelPasajeroLabel)
 
-        self.textEdit_5 = QTextEdit(self.widget)
-        self.textEdit_5.setObjectName(u"textEdit_5")
-        self.textEdit_5.setStyleSheet(u"QTextEdit {\n"
-"    background-color: transparent;  /* Fondo negro suave */\n"
-"    font-size: 24px;  /* Tama\u00f1o del texto */\n"
-"    font-family: \"Arial\", sans-serif;  /* Fuente elegante */\n"
-"    padding: 10px;  /* Espaciado interno */\n"
-"}\n"
-"\n"
-"QTextEdit:focus {\n"
-"    border: 2px solid #555555;  /* Cambio de borde al enfocar */\n"
-"}")
-        self.textEdit_5.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.textEdit_5.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.textEdit_5.setReadOnly(True)
-
-        self.formLayout.setWidget(2, QFormLayout.LabelRole, self.textEdit_5)
-
-        self.textEdit_6 = QTextEdit(self.widget)
-        self.textEdit_6.setObjectName(u"textEdit_6")
-        self.textEdit_6.setStyleSheet(u"QTextEdit {\n"
-"    background-color: transparent;  /* Fondo negro suave */\n"
-"    font-size: 24px;  /* Tama\u00f1o del texto */\n"
-"    font-family: \"Arial\", sans-serif;  /* Fuente elegante */\n"
-"    padding: 10px;  /* Espaciado interno */\n"
-"}\n"
-"\n"
-"QTextEdit:focus {\n"
-"    border: 2px solid #555555;  /* Cambio de borde al enfocar */\n"
-"}")
-        self.textEdit_6.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.textEdit_6.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.textEdit_6.setReadOnly(True)
-
-        self.formLayout.setWidget(2, QFormLayout.FieldRole, self.textEdit_6)
-
-        self.te_apellido = QTextEdit(self.widget)
+        self.te_apellido = QLineEdit(self.widget)
         self.te_apellido.setObjectName(u"te_apellido")
+        self.te_apellido.setFont(font1)
         self.te_apellido.setReadOnly(True)
 
-        self.formLayout.setWidget(3, QFormLayout.LabelRole, self.te_apellido)
+        self.formLayout.setWidget(1, QFormLayout.FieldRole, self.te_apellido)
 
-        self.textEdit_16 = QTextEdit(self.widget)
-        self.textEdit_16.setObjectName(u"textEdit_16")
-        self.textEdit_16.setReadOnly(True)
+        self.dNIDelPasajeroLabel = QLabel(self.widget)
+        self.dNIDelPasajeroLabel.setObjectName(u"dNIDelPasajeroLabel")
+        self.dNIDelPasajeroLabel.setFont(font1)
 
-        self.formLayout.setWidget(3, QFormLayout.FieldRole, self.textEdit_16)
+        self.formLayout.setWidget(2, QFormLayout.LabelRole, self.dNIDelPasajeroLabel)
 
-        self.textEdit_14 = QTextEdit(self.widget)
-        self.textEdit_14.setObjectName(u"textEdit_14")
-        self.textEdit_14.setStyleSheet(u"QTextEdit {\n"
-"    background-color: transparent;  /* Fondo negro suave */\n"
-"    font-size: 24px;  /* Tama\u00f1o del texto */\n"
-"    font-family: \"Arial\", sans-serif;  /* Fuente elegante */\n"
-"    padding: 10px;  /* Espaciado interno */\n"
-"}\n"
-"\n"
-"QTextEdit:focus {\n"
-"    border: 2px solid #555555;  /* Cambio de borde al enfocar */\n"
-"}")
-        self.textEdit_14.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.textEdit_14.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.textEdit_14.setReadOnly(True)
-
-        self.formLayout.setWidget(4, QFormLayout.LabelRole, self.textEdit_14)
-
-        self.textEdit_15 = QTextEdit(self.widget)
-        self.textEdit_15.setObjectName(u"textEdit_15")
-        self.textEdit_15.setStyleSheet(u"QTextEdit {\n"
-"    background-color: transparent;  /* Fondo negro suave */\n"
-"    font-size: 24px;  /* Tama\u00f1o del texto */\n"
-"    font-family: \"Arial\", sans-serif;  /* Fuente elegante */\n"
-"    padding: 10px;  /* Espaciado interno */\n"
-"}\n"
-"\n"
-"QTextEdit:focus {\n"
-"    border: 2px solid #555555;  /* Cambio de borde al enfocar */\n"
-"}")
-        self.textEdit_15.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.textEdit_15.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.textEdit_15.setReadOnly(True)
-
-        self.formLayout.setWidget(4, QFormLayout.FieldRole, self.textEdit_15)
-
-        self.te_dni = QTextEdit(self.widget)
+        self.te_dni = QLineEdit(self.widget)
         self.te_dni.setObjectName(u"te_dni")
+        self.te_dni.setFont(font1)
         self.te_dni.setReadOnly(True)
 
-        self.formLayout.setWidget(5, QFormLayout.LabelRole, self.te_dni)
+        self.formLayout.setWidget(2, QFormLayout.FieldRole, self.te_dni)
 
-        self.textEdit_12 = QTextEdit(self.widget)
-        self.textEdit_12.setObjectName(u"textEdit_12")
-        self.textEdit_12.setReadOnly(True)
+        self.nMeroDeAsientosLabel = QLabel(self.widget)
+        self.nMeroDeAsientosLabel.setObjectName(u"nMeroDeAsientosLabel")
+        self.nMeroDeAsientosLabel.setFont(font1)
 
-        self.formLayout.setWidget(5, QFormLayout.FieldRole, self.textEdit_12)
+        self.formLayout.setWidget(3, QFormLayout.LabelRole, self.nMeroDeAsientosLabel)
 
-        self.textEdit_9 = QTextEdit(self.widget)
-        self.textEdit_9.setObjectName(u"textEdit_9")
-        self.textEdit_9.setStyleSheet(u"QTextEdit {\n"
-"    background-color: transparent;  /* Fondo negro suave */\n"
-"    font-size: 24px;  /* Tama\u00f1o del texto */\n"
-"    font-family: \"Arial\", sans-serif;  /* Fuente elegante */\n"
-"    padding: 10px;  /* Espaciado interno */\n"
-"}\n"
-"\n"
-"QTextEdit:focus {\n"
-"    border: 2px solid #555555;  /* Cambio de borde al enfocar */\n"
-"}")
-        self.textEdit_9.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.textEdit_9.setReadOnly(True)
-
-        self.formLayout.setWidget(6, QFormLayout.LabelRole, self.textEdit_9)
-
-        self.textEdit_10 = QTextEdit(self.widget)
-        self.textEdit_10.setObjectName(u"textEdit_10")
-        self.textEdit_10.setStyleSheet(u"QTextEdit {\n"
-"    background-color: transparent;  /* Fondo negro suave */\n"
-"    font-size: 24px;  /* Tama\u00f1o del texto */\n"
-"    font-family: \"Arial\", sans-serif;  /* Fuente elegante */\n"
-"    padding: 10px;  /* Espaciado interno */\n"
-"}\n"
-"\n"
-"QTextEdit:focus {\n"
-"    border: 2px solid #555555;  /* Cambio de borde al enfocar */\n"
-"}")
-        self.textEdit_10.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.textEdit_10.setReadOnly(True)
-
-        self.formLayout.setWidget(6, QFormLayout.FieldRole, self.textEdit_10)
-
-        self.te_asientos = QTextEdit(self.widget)
+        self.te_asientos = QLineEdit(self.widget)
         self.te_asientos.setObjectName(u"te_asientos")
+        self.te_asientos.setFont(font1)
+        self.te_asientos.setReadOnly(True)
 
-        self.formLayout.setWidget(7, QFormLayout.LabelRole, self.te_asientos)
-
-        self.textEdit_8 = QTextEdit(self.widget)
-        self.textEdit_8.setObjectName(u"textEdit_8")
-
-        self.formLayout.setWidget(7, QFormLayout.FieldRole, self.textEdit_8)
+        self.formLayout.setWidget(3, QFormLayout.FieldRole, self.te_asientos)
 
 
-        self.verticalLayout.addLayout(self.formLayout)
+        self.horizontalLayout_5.addLayout(self.formLayout)
+
+        self.formLayout_6 = QFormLayout()
+        self.formLayout_6.setObjectName(u"formLayout_6")
+        self.formLayout_6.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.formLayout_6.setFieldGrowthPolicy(QFormLayout.FieldsStayAtSizeHint)
+        self.formLayout_6.setRowWrapPolicy(QFormLayout.WrapLongRows)
+        self.formLayout_6.setLabelAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.formLayout_6.setFormAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.formLayout_6.setVerticalSpacing(40)
+        self.formLayout_6.setContentsMargins(0, 40, -1, 40)
+        self.ql_origen = QLabel(self.widget)
+        self.ql_origen.setObjectName(u"ql_origen")
+        self.ql_origen.setFont(font1)
+
+        self.formLayout_6.setWidget(0, QFormLayout.LabelRole, self.ql_origen)
+
+        self.Le_origen = QLineEdit(self.widget)
+        self.Le_origen.setObjectName(u"Le_origen")
+        self.Le_origen.setFont(font1)
+        self.Le_origen.setCursor(QCursor(Qt.CursorShape.IBeamCursor))
+        self.Le_origen.setReadOnly(True)
+
+        self.formLayout_6.setWidget(0, QFormLayout.FieldRole, self.Le_origen)
+
+        self.destinoLabel = QLabel(self.widget)
+        self.destinoLabel.setObjectName(u"destinoLabel")
+        self.destinoLabel.setFont(font1)
+
+        self.formLayout_6.setWidget(1, QFormLayout.LabelRole, self.destinoLabel)
+
+        self.te_destino = QLineEdit(self.widget)
+        self.te_destino.setObjectName(u"te_destino")
+        self.te_destino.setFont(font1)
+        self.te_destino.setReadOnly(True)
+
+        self.formLayout_6.setWidget(1, QFormLayout.FieldRole, self.te_destino)
+
+        self.fechaDeSalidaLabel = QLabel(self.widget)
+        self.fechaDeSalidaLabel.setObjectName(u"fechaDeSalidaLabel")
+        self.fechaDeSalidaLabel.setFont(font1)
+
+        self.formLayout_6.setWidget(2, QFormLayout.LabelRole, self.fechaDeSalidaLabel)
+
+        self.te_salida = QLineEdit(self.widget)
+        self.te_salida.setObjectName(u"te_salida")
+        self.te_salida.setFont(font1)
+        self.te_salida.setReadOnly(True)
+
+        self.formLayout_6.setWidget(2, QFormLayout.FieldRole, self.te_salida)
+
+        self.fechaDeVueltaLabel = QLabel(self.widget)
+        self.fechaDeVueltaLabel.setObjectName(u"fechaDeVueltaLabel")
+        self.fechaDeVueltaLabel.setFont(font1)
+
+        self.formLayout_6.setWidget(3, QFormLayout.LabelRole, self.fechaDeVueltaLabel)
+
+        self.te_regreso = QLineEdit(self.widget)
+        self.te_regreso.setObjectName(u"te_regreso")
+        self.te_regreso.setFont(font1)
+        self.te_regreso.setReadOnly(True)
+
+        self.formLayout_6.setWidget(3, QFormLayout.FieldRole, self.te_regreso)
+
+
+        self.horizontalLayout_5.addLayout(self.formLayout_6)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_5)
 
         self.widget2 = QWidget(self.widget)
         self.widget2.setObjectName(u"widget2")
         self.horizontalLayout_2 = QHBoxLayout(self.widget2)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.horizontalLayout_2.setSizeConstraint(QLayout.SetDefaultConstraint)
-        self.boton_actualizar = QPushButton(self.widget2)
-        self.boton_actualizar.setObjectName(u"boton_actualizar")
+        self.bt_aceptar = QPushButton(self.widget2)
+        self.bt_aceptar.setObjectName(u"bt_aceptar")
 
-        self.horizontalLayout_2.addWidget(self.boton_actualizar)
+        self.horizontalLayout_2.addWidget(self.bt_aceptar)
 
-        self.pushButton = QPushButton(self.widget2)
-        self.pushButton.setObjectName(u"pushButton")
+        self.bt_descargar = QPushButton(self.widget2)
+        self.bt_descargar.setObjectName(u"bt_descargar")
 
-        self.horizontalLayout_2.addWidget(self.pushButton)
+        self.horizontalLayout_2.addWidget(self.bt_descargar)
 
 
         self.verticalLayout.addWidget(self.widget2)
@@ -322,80 +317,21 @@ class Ui_GestionViajes(object):
     # setupUi
 
     def retranslateUi(self, GestionViajes):
-        GestionViajes.setWindowTitle(QCoreApplication.translate("GestionViajes", u"Gesti\u00f3n de Viajes", None))
-        self.textEdit.setHtml(QCoreApplication.translate("GestionViajes", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Arial','sans-serif'; font-size:24px; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:9pt;\">Nombre del pasajero:</span></p></body></html>", None))
-        self.textEdit_2.setHtml(QCoreApplication.translate("GestionViajes", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Arial','sans-serif'; font-size:24px; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:9pt;\">Origen:</span></p></body></html>", None))
-        self.textEdit_4.setHtml(QCoreApplication.translate("GestionViajes", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Espa\u00f1a</p></body></html>", None))
-        self.textEdit_5.setHtml(QCoreApplication.translate("GestionViajes", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Arial','sans-serif'; font-size:24px; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:9pt;\">Apellido del pasajero:</span></p></body></html>", None))
-        self.textEdit_6.setHtml(QCoreApplication.translate("GestionViajes", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Arial','sans-serif'; font-size:24px; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:9pt;\">Destino:</span></p></body></html>", None))
-        self.textEdit_14.setHtml(QCoreApplication.translate("GestionViajes", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Arial','sans-serif'; font-size:24px; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:9pt;\">DNI Del pasajero:</span></p></body></html>", None))
-        self.textEdit_15.setHtml(QCoreApplication.translate("GestionViajes", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Arial','sans-serif'; font-size:24px; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:9pt;\">Fecha de salida:</span></p></body></html>", None))
-        self.textEdit_9.setHtml(QCoreApplication.translate("GestionViajes", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Arial','sans-serif'; font-size:24px; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:9pt;\">Asientos:</span></p></body></html>", None))
-        self.textEdit_10.setHtml(QCoreApplication.translate("GestionViajes", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Arial','sans-serif'; font-size:24px; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:9pt;\">Fecha de vuelta:</span></p></body></html>", None))
-        self.boton_actualizar.setText(QCoreApplication.translate("GestionViajes", u"Aceptar", None))
-        self.pushButton.setText(QCoreApplication.translate("GestionViajes", u"Descargar PDF", None))
+        GestionViajes.setWindowTitle(QCoreApplication.translate("GestionViajes", u"Vuelos App", None))
+        self.emailLabel.setText("")
+        self.lt_email.setText(QCoreApplication.translate("GestionViajes", u"prueba1@gmail.com", None))
+        self.QLabel.setText(QCoreApplication.translate("GestionViajes", u"Precio:", None))
+        self.te_precio.setText(QCoreApplication.translate("GestionViajes", u"0", None))
+        self.nombreDelPasajeroLabel.setText(QCoreApplication.translate("GestionViajes", u"Nombre del pasajero:", None))
+        self.apellidoDelPasajeroLabel.setText(QCoreApplication.translate("GestionViajes", u"Apellido del pasajero:", None))
+        self.dNIDelPasajeroLabel.setText(QCoreApplication.translate("GestionViajes", u"DNI del pasajero:", None))
+        self.nMeroDeAsientosLabel.setText(QCoreApplication.translate("GestionViajes", u"N\u00famero de asientos:", None))
+        self.ql_origen.setText(QCoreApplication.translate("GestionViajes", u"Origen:", None))
+        self.Le_origen.setText(QCoreApplication.translate("GestionViajes", u"Espa\u00f1a", None))
+        self.destinoLabel.setText(QCoreApplication.translate("GestionViajes", u"Destino:", None))
+        self.fechaDeSalidaLabel.setText(QCoreApplication.translate("GestionViajes", u"Fecha de salida:", None))
+        self.fechaDeVueltaLabel.setText(QCoreApplication.translate("GestionViajes", u"Fecha de vuelta:", None))
+        self.bt_aceptar.setText(QCoreApplication.translate("GestionViajes", u"Aceptar", None))
+        self.bt_descargar.setText(QCoreApplication.translate("GestionViajes", u"Descargar PDF", None))
     # retranslateUi
 

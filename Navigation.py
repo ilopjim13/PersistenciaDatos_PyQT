@@ -26,7 +26,7 @@ class WindowManager:
             "misviajes":MisViajes(self),
             "vuelos":Vuelos(self),
             "compra":Compra(self),
-            "billente":Billete(self)
+            "billete":Billete(self)
         }
 
         self.full_screen_state:bool = None # estado de la ventana si esta activa o no

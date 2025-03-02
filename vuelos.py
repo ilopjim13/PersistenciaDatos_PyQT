@@ -66,9 +66,6 @@ class Vuelos(QMainWindow):
         vuelo = [modelo, precio, asientos, id_vuelo, self.destino]
         self.manager.vuelo = vuelo
         self.manager.mostrarVentana("compra")
-        #self.compra = Compra(vuelo, self.pasajero)
-        #self.compra.show()
-        #self.hide()
 
     def volver(self):
         self.manager.mostrarVentana("menu")

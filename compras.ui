@@ -6,532 +6,287 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>755</width>
+    <height>485</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>755</width>
+    <height>485</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Vuelos App</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-    MainWindow {
-        background-image: url(&quot;imagenes/fondo.jpg&quot;) background-position: center;
-    }
+   <string notr="true">QWidget#principal {
+    background-image: url(recursos/media/fondo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* Ajusta la imagen al tamaño de la ventana */
+}
    </string>
   </property>
-  <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="Titulo">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>10</y>
-      <width>800</width>
-      <height>60</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>20</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: white;</string>
-    </property>
-    <property name="text">
-     <string>COMPRAR VUELO</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="te_nombre">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>140</y>
-      <width>241</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="te_apellido">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>220</y>
-      <width>241</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="bt_cantidad">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>370</y>
-      <width>42</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="minimum">
-     <number>1</number>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="te_dni">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>310</y>
-      <width>241</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="boton_comprar">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>530</y>
-      <width>75</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Comprar</string>
-    </property>
-   </widget>
-   <widget class="QDateEdit" name="fc_salida">
-    <property name="geometry">
-     <rect>
-      <x>560</x>
-      <y>110</y>
-      <width>110</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="dateTime">
-     <datetime>
-      <hour>22</hour>
-      <minute>0</minute>
-      <second>0</second>
-      <year>2025</year>
-      <month>2</month>
-      <day>24</day>
-     </datetime>
-    </property>
-    <property name="date">
-     <date>
-      <year>2025</year>
-      <month>2</month>
-      <day>24</day>
-     </date>
-    </property>
-   </widget>
-   <widget class="QDateEdit" name="fc_vuelta">
-    <property name="geometry">
-     <rect>
-      <x>560</x>
-      <y>140</y>
-      <width>110</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="dateTime">
-     <datetime>
-      <hour>21</hour>
-      <minute>0</minute>
-      <second>0</second>
-      <year>2025</year>
-      <month>2</month>
-      <day>24</day>
-     </datetime>
-    </property>
-    <property name="date">
-     <date>
-      <year>2025</year>
-      <month>2</month>
-      <day>24</day>
-     </date>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="plainTextEdit">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>110</y>
-      <width>241</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="acceptDrops">
-     <bool>true</bool>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Sunken</enum>
-    </property>
-    <property name="verticalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="horizontalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="tabChangesFocus">
-     <bool>false</bool>
-    </property>
-    <property name="readOnly">
-     <bool>true</bool>
-    </property>
-    <property name="plainText">
-     <string>Nombre del pasajero</string>
-    </property>
-    <property name="backgroundVisible">
-     <bool>false</bool>
-    </property>
-    <property name="centerOnScroll">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="plainTextEdit_2">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>190</y>
-      <width>241</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="acceptDrops">
-     <bool>true</bool>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Sunken</enum>
-    </property>
-    <property name="verticalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="horizontalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="tabChangesFocus">
-     <bool>false</bool>
-    </property>
-    <property name="readOnly">
-     <bool>true</bool>
-    </property>
-    <property name="plainText">
-     <string>Apellido del pasajero</string>
-    </property>
-    <property name="backgroundVisible">
-     <bool>false</bool>
-    </property>
-    <property name="centerOnScroll">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="plainTextEdit_3">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>280</y>
-      <width>241</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="acceptDrops">
-     <bool>true</bool>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Sunken</enum>
-    </property>
-    <property name="verticalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="horizontalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="tabChangesFocus">
-     <bool>false</bool>
-    </property>
-    <property name="readOnly">
-     <bool>true</bool>
-    </property>
-    <property name="plainText">
-     <string>DNI del pasajero</string>
-    </property>
-    <property name="backgroundVisible">
-     <bool>false</bool>
-    </property>
-    <property name="centerOnScroll">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="plainTextEdit_4">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>110</y>
-      <width>241</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="acceptDrops">
-     <bool>true</bool>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Sunken</enum>
-    </property>
-    <property name="verticalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="horizontalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="tabChangesFocus">
-     <bool>false</bool>
-    </property>
-    <property name="readOnly">
-     <bool>true</bool>
-    </property>
-    <property name="plainText">
-     <string>Fecha de salida</string>
-    </property>
-    <property name="backgroundVisible">
-     <bool>false</bool>
-    </property>
-    <property name="centerOnScroll">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="plainTextEdit_5">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>140</y>
-      <width>241</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="acceptDrops">
-     <bool>true</bool>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Sunken</enum>
-    </property>
-    <property name="verticalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="horizontalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="tabChangesFocus">
-     <bool>false</bool>
-    </property>
-    <property name="readOnly">
-     <bool>true</bool>
-    </property>
-    <property name="plainText">
-     <string>Fecha de vuelta</string>
-    </property>
-    <property name="backgroundVisible">
-     <bool>false</bool>
-    </property>
-    <property name="centerOnScroll">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="plainTextEdit_6">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>370</y>
-      <width>241</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="acceptDrops">
-     <bool>true</bool>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Sunken</enum>
-    </property>
-    <property name="verticalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="horizontalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="tabChangesFocus">
-     <bool>false</bool>
-    </property>
-    <property name="readOnly">
-     <bool>true</bool>
-    </property>
-    <property name="plainText">
-     <string>Cantidad de asientos</string>
-    </property>
-    <property name="backgroundVisible">
-     <bool>false</bool>
-    </property>
-    <property name="centerOnScroll">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="pt_destino">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>220</y>
-      <width>241</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="pt_vuelo">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>310</y>
-      <width>241</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="plainTextEdit_7">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>190</y>
-      <width>241</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="acceptDrops">
-     <bool>true</bool>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Sunken</enum>
-    </property>
-    <property name="verticalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="horizontalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="tabChangesFocus">
-     <bool>false</bool>
-    </property>
-    <property name="readOnly">
-     <bool>true</bool>
-    </property>
-    <property name="plainText">
-     <string>Destino del vuelo</string>
-    </property>
-    <property name="backgroundVisible">
-     <bool>false</bool>
-    </property>
-    <property name="centerOnScroll">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="plainTextEdit_8">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>280</y>
-      <width>241</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="acceptDrops">
-     <bool>true</bool>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Sunken</enum>
-    </property>
-    <property name="verticalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="horizontalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="tabChangesFocus">
-     <bool>false</bool>
-    </property>
-    <property name="readOnly">
-     <bool>true</bool>
-    </property>
-    <property name="plainText">
-     <string>Avión del vuelo</string>
-    </property>
-    <property name="backgroundVisible">
-     <bool>false</bool>
-    </property>
-    <property name="centerOnScroll">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="bt_volver">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>530</y>
-      <width>75</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Volver</string>
-    </property>
-   </widget>
-   <zorder>plainTextEdit_5</zorder>
-   <zorder>plainTextEdit_4</zorder>
-   <zorder>plainTextEdit_6</zorder>
-   <zorder>Titulo</zorder>
-   <zorder>te_nombre</zorder>
-   <zorder>te_apellido</zorder>
-   <zorder>bt_cantidad</zorder>
-   <zorder>te_dni</zorder>
-   <zorder>boton_comprar</zorder>
-   <zorder>fc_salida</zorder>
-   <zorder>fc_vuelta</zorder>
-   <zorder>plainTextEdit</zorder>
-   <zorder>plainTextEdit_2</zorder>
-   <zorder>plainTextEdit_3</zorder>
-   <zorder>pt_destino</zorder>
-   <zorder>pt_vuelo</zorder>
-   <zorder>plainTextEdit_7</zorder>
-   <zorder>plainTextEdit_8</zorder>
-   <zorder>bt_volver</zorder>
+  <widget class="QWidget" name="principal">
+   <layout class="QGridLayout" name="gridLayout" columnstretch="2,0,2,1,0">
+    <property name="leftMargin">
+     <number>16</number>
+    </property>
+    <property name="topMargin">
+     <number>16</number>
+    </property>
+    <property name="rightMargin">
+     <number>16</number>
+    </property>
+    <property name="bottomMargin">
+     <number>16</number>
+    </property>
+    <property name="horizontalSpacing">
+     <number>17</number>
+    </property>
+    <property name="verticalSpacing">
+     <number>18</number>
+    </property>
+    <item row="9" column="0">
+     <widget class="QLineEdit" name="te_apellido"/>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Nombre del pasajero:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Apellidos:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="0">
+     <widget class="QLineEdit" name="te_dni"/>
+    </item>
+    <item row="3" column="3">
+     <widget class="QDateEdit" name="fc_salida">
+      <property name="dateTime">
+       <datetime>
+        <hour>21</hour>
+        <minute>0</minute>
+        <second>0</second>
+        <year>2025</year>
+        <month>2</month>
+        <day>24</day>
+       </datetime>
+      </property>
+      <property name="date">
+       <date>
+        <year>2025</year>
+        <month>2</month>
+        <day>24</day>
+       </date>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="2">
+     <widget class="QLineEdit" name="pt_vuelo"/>
+    </item>
+    <item row="16" column="2">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>0</width>
+        <height>12</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="7" column="2">
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Destino:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="5">
+     <widget class="QLabel" name="Titulo">
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>20</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: black;</string>
+      </property>
+      <property name="text">
+       <string>COMPRAR VUELO</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="2">
+     <widget class="QLineEdit" name="pt_destino"/>
+    </item>
+    <item row="17" column="3">
+     <widget class="QPushButton" name="bt_volver">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: rgba(255, 255, 255, 180); /* Fondo blanco semi-transparente */
+    border: 1px solid black;  /* Borde negro */
+    border-radius: 5px;  /* Esquinas redondeadas */
+    font-size: 14px;  /* Tamaño del texto */
+    padding: 5px;  /* Espaciado interno */
+}
+
+QPushButton:hover {
+    background-color: rgba(200, 200, 200, 200); /* Cambio de color al pasar el mouse */
+}
+
+QPushButton:pressed {
+    background-color: rgba(180, 180, 180, 200); /* Color más oscuro al presionar */
+}</string>
+      </property>
+      <property name="text">
+       <string>Volver</string>
+      </property>
+     </widget>
+    </item>
+    <item row="17" column="2">
+     <widget class="QPushButton" name="boton_comprar">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: rgba(255, 255, 255, 180); /* Fondo blanco semi-transparente */
+    border: 1px solid black;  /* Borde negro */
+    border-radius: 5px;  /* Esquinas redondeadas */
+    font-size: 14px;  /* Tamaño del texto */
+    padding: 5px;  /* Espaciado interno */
+}
+
+QPushButton:hover {
+    background-color: rgba(200, 200, 200, 200); /* Cambio de color al pasar el mouse */
+}
+
+QPushButton:pressed {
+    background-color: rgba(180, 180, 180, 200); /* Color más oscuro al presionar */
+}</string>
+      </property>
+      <property name="text">
+       <string>Comprar</string>
+      </property>
+     </widget>
+    </item>
+    <item row="15" column="0">
+     <widget class="QLabel" name="label_7">
+      <property name="text">
+       <string>Cantidad de asientos:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="2">
+     <widget class="QLabel" name="label_8">
+      <property name="text">
+       <string>Fecha de regreso:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="15" column="1">
+     <widget class="QSpinBox" name="bt_cantidad">
+      <property name="minimum">
+       <number>1</number>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLineEdit" name="te_nombre"/>
+    </item>
+    <item row="11" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>NIF/Pasaporte:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="2">
+     <widget class="QLabel" name="label_6">
+      <property name="text">
+       <string>Avión:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Fecha de salida:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="3">
+     <widget class="QDateEdit" name="fc_vuelta">
+      <property name="dateTime">
+       <datetime>
+        <hour>20</hour>
+        <minute>0</minute>
+        <second>0</second>
+        <year>2025</year>
+        <month>2</month>
+        <day>24</day>
+       </datetime>
+      </property>
+      <property name="date">
+       <date>
+        <year>2025</year>
+        <month>2</month>
+        <day>24</day>
+       </date>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>12</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
