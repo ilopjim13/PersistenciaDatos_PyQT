@@ -1,6 +1,8 @@
+from PyQt6 import QtWidgets
 from PyQt6 import QtWidgets, uic
 import sys
-from PyQt6.QtWidgets import * 
+from PyQt6.QtWidgets import *
+from PyQt6.QtCore import * 
 import sqlite3
 import BD.basedatos as baseLocal
 from datetime import datetime
@@ -29,6 +31,8 @@ class MisViajes(QtWidgets.QMainWindow):
         self.tabla_viajes.setColumnCount(4)
         self.tabla_viajes.setHorizontalHeaderLabels(["Destino", "Fecha de Salida", "Fecha de Regreso", "Precio"])
         self.tabla_viajes.setRowCount(0) 
+        self.tabla_viajes.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
+
         #Añadimos los datos a su celda
         for viaje in self.viajes:
             destino = viaje[2]
