@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'login.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.2
+## Created by: Qt User Interface Compiler version 6.8.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -404,20 +404,20 @@ class Ui_MainWindow(object):
         self.Titulo.setText(QCoreApplication.translate("MainWindow", u"Bienvenido a Vuelos App", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"REGISTRARSE", None))
         self.la_nombre.setText(QCoreApplication.translate("MainWindow", u"Nombre: ", None))
-        self.li_nombre.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce tu usuario", None))
+        self.li_nombre.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce tu nombre", None))
         self.la_nombre_3.setText(QCoreApplication.translate("MainWindow", u"Apellido: ", None))
-        self.li_apellido.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce tu usuario", None))
+        self.li_apellido.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce tu apellido", None))
         self.la_contra_3.setText(QCoreApplication.translate("MainWindow", u"Contrase\u00f1a:", None))
-        self.li_contra_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce tu usuario", None))
+        self.li_contra_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce tu contrase\u00f1a", None))
         self.la_usu_3.setText(QCoreApplication.translate("MainWindow", u"Email:", None))
-        self.li_usuario_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce tu usuario", None))
+        self.li_usuario_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce tu email", None))
         self.la_nombre_2.setText(QCoreApplication.translate("MainWindow", u"DNI:", None))
         self.li_dni.setText("")
-        self.li_dni.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce tu usuario", None))
+        self.li_dni.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce tu dni", None))
         self.bu_reg.setText(QCoreApplication.translate("MainWindow", u"Registrarse", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"LOGIN", None))
         self.la_usu.setText(QCoreApplication.translate("MainWindow", u"Email:", None))
-        self.li_usuario.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce tu usuario", None))
+        self.li_usuario.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce tu email", None))
         self.la_contra.setText(QCoreApplication.translate("MainWindow", u"Contrase\u00f1a:", None))
         self.li_contra.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Introduce tu contrase\u00f1a", None))
         self.bu_login.setText(QCoreApplication.translate("MainWindow", u"Login", None))

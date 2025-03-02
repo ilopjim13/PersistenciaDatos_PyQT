@@ -1,8 +1,9 @@
 from PyQt6 import QtWidgets, uic
 import sys
-from PyQt6.QtWidgets import * # Librerías de los componentes
+from PyQt6.QtWidgets import * 
 import sqlite3
 import BD.basedatos as baseLocal
+from datetime import datetime
 
 class MisViajes(QtWidgets.QMainWindow):
     def __init__(self, manager):
@@ -17,15 +18,15 @@ class MisViajes(QtWidgets.QMainWindow):
             self.cargar_viajes()
 
     def cargar_viajes(self):
-        viajes = baseLocal.getMisViajes(self.email)
-        print(f"Viajes encontrados: {viajes}") 
+        self.viajes = baseLocal.getMisViajes(self.email)
+        print(f"Viajes encontrados: {self.viajes}") 
 
         # La fuckin tabla
         self.tabla_viajes.setColumnCount(4)
         self.tabla_viajes.setHorizontalHeaderLabels(["Destino", "Fecha de Salida", "Fecha de Regreso", "Precio"])
         self.tabla_viajes.setRowCount(0) 
 
-        for viaje in viajes:
+        for viaje in self.viajes:
             destino = viaje[2]
             fecha_salida = viaje[3]  
             fecha_regreso = viaje[4]  
@@ -43,18 +44,42 @@ class MisViajes(QtWidgets.QMainWindow):
         
 
     def actualizar_viaje(self):
-
         selected = self.tabla_viajes.currentRow()
         if selected < 0:
             QtWidgets.QMessageBox.warning(self, "Error", "Selecciona un viaje para actualizar")
             return
-        
-        viaje_id = int(self.tabla_viajes.item(selected, 0).text())
-        nueva_fecha_salida = self.input_fecha_salida.text()
-        nueva_fecha_regreso = self.input_fecha_regreso.text()
 
-        baseLocal.putMisViajes(nueva_fecha_salida, nueva_fecha_regreso, viaje_id)
-        
+        viaje_id = int(self.viajes[selected][0])
+
+        fila = self.tabla_viajes.currentRow()
+        columna = self.tabla_viajes.currentColumn()
+
+        print(fila)
+        print(columna)
+
+        nueva_fecha_salida = self.tabla_viajes.item(selected, 1).text() 
+        nueva_fecha_regreso = self.tabla_viajes.item(selected, 2).text()
+
+        formato_fecha = "%Y-%m-%d"
+        try:
+            fecha_salida = datetime.strptime(nueva_fecha_salida, formato_fecha)
+            fecha_regreso = datetime.strptime(nueva_fecha_regreso, formato_fecha)
+            fecha_actual = datetime.today()
+
+            if fecha_salida < fecha_actual:
+                QtWidgets.QMessageBox.warning(self, "Error", "La fecha de salida no puede ser en el pasado.")
+                return
+
+            if fecha_regreso < fecha_salida:
+                QtWidgets.QMessageBox.warning(self, "Error", "La fecha de regreso no puede ser anterior a la de salida.")
+                return
+
+        except ValueError:
+            QtWidgets.QMessageBox.warning(self, "Error", "Formato de fecha inválido. Use YYYY-MM-DD.")
+            return
+
+        baseLocal.putMisViajes(nueva_fecha_salida, nueva_fecha_regreso,viaje_id)
+
         self.cargar_viajes()
 
     def eliminar_viaje(self):
@@ -64,7 +89,7 @@ class MisViajes(QtWidgets.QMainWindow):
             QtWidgets.QMessageBox.warning(self, "Error", "Selecciona un viaje para eliminar")
             return
         
-        viaje_id = int(self.tabla_viajes.item(selected, 0).text())
+        viaje_id = int(self.viajes[selected][0])
 
         respuesta = QtWidgets.QMessageBox.question(
             self, "Confirmar Eliminación", "¿Estás seguro de eliminar este viaje?",

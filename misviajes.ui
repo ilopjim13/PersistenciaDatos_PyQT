@@ -84,7 +84,59 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
         </widget>
        </item>
        <item>
-        <widget class="QTableWidget" name="tabla_viajes"/>
+        <widget class="QTableWidget" name="tabla_viajes">
+         <property name="styleSheet">
+          <string notr="true">QTableWidget {
+    background-color: rgba(255, 255, 255, 180); /* Fondo blanco semi-transparente /
+    border: 1px solid gray; / Borde negro /
+    gridline-color: black; / Líneas de la tabla en negro /
+    font-size: 14px;
+    selection-background-color: rgba(100, 100, 255, 150); / Color al seleccionar fila /
+}
+
+QHeaderView::section {
+    background-color: rgba(255, 255, 255, 200); / Fondo blanco para los encabezados /
+    font-weight: bold;
+    padding: 5px;
+}
+
+QTableWidget QHeaderView::section {
+    border: none; / Quitar bordes alrededor de los encabezados /
+}
+
+QTableWidget QTableCornerButton::section {
+    background-color: rgba(255, 255, 255, 200); / Esquina superior izquierda /
+}
+
+QHeaderView::section {
+    background: rgba(255, 255, 255, 200); / Fondo blanco en los encabezados /
+    font-weight: bold; / Negrita en los encabezados /
+    border: 1px solid black;
+}
+
+QHeaderView::section:disabled {
+    background: rgba(220, 220, 220, 180); / Fondo de encabezados deshabilitados /
+}
+
+QHeaderView::section {
+    border: 1px solid black; / Borde negro /
+    padding: 5px;
+}
+
+QTableWidget::horizontalHeader {
+    qproperty-contains: false; / Deshabilitar la interacción con los encabezados */
+}</string>
+         </property>
+         <attribute name="horizontalHeaderCascadingSectionResizes">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>190</number>
+         </attribute>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>true</bool>
+         </attribute>
+        </widget>
        </item>
        <item>
         <widget class="QWidget" name="widget" native="true">

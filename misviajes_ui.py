@@ -93,6 +93,50 @@ class Ui_GestionViajes(object):
 
         self.tabla_viajes = QTableWidget(self.widget)
         self.tabla_viajes.setObjectName(u"tabla_viajes")
+        self.tabla_viajes.setStyleSheet(u"QTableWidget {\n"
+"    background-color: rgba(255, 255, 255, 180); /* Fondo blanco semi-transparente /\n"
+"    border: 1px solid gray; / Borde negro /\n"
+"    gridline-color: black; / L\u00edneas de la tabla en negro /\n"
+"    font-size: 14px;\n"
+"    selection-background-color: rgba(100, 100, 255, 150); / Color al seleccionar fila /\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background-color: rgba(255, 255, 255, 200); / Fondo blanco para los encabezados /\n"
+"    font-weight: bold;\n"
+"    padding: 5px;\n"
+"}\n"
+"\n"
+"QTableWidget QHeaderView::section {\n"
+"    border: none; / Quitar bordes alrededor de los encabezados /\n"
+"}\n"
+"\n"
+"QTableWidget QTableCornerButton::section {\n"
+"    background-color: rgba(255, 255, 255, 200); / Esquina superior izquierda /\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background: rgba(255, 255, 255, 200); / Fondo blanco en los encabezados /\n"
+"    font-weight: bold; / Negrita en los encabezados /\n"
+"    border: 1px solid black;\n"
+"}\n"
+"\n"
+"QHeaderView::section:disa"
+                        "bled {\n"
+"    background: rgba(220, 220, 220, 180); / Fondo de encabezados deshabilitados /\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    border: 1px solid black; / Borde negro /\n"
+"    padding: 5px;\n"
+"}\n"
+"\n"
+"QTableWidget::horizontalHeader {\n"
+"    qproperty-contains: false; / Deshabilitar la interacci\u00f3n con los encabezados */\n"
+"}")
+        self.tabla_viajes.horizontalHeader().setCascadingSectionResizes(True)
+        self.tabla_viajes.horizontalHeader().setDefaultSectionSize(190)
+        self.tabla_viajes.horizontalHeader().setStretchLastSection(True)
 
         self.verticalLayout.addWidget(self.tabla_viajes)
 
