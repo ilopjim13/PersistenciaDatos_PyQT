@@ -45,7 +45,7 @@ class Vuelos(QMainWindow):
             self.tabla_vuelos.insertRow(row_idx)
             for col_idx, data in enumerate(row_data):
                 self.tabla_vuelos.setItem(row_idx, col_idx, QTableWidgetItem(str(data)))
-
+        self.tabla_vuelos.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
         conn.close()
 
     def update_tabla_vuelos(self):

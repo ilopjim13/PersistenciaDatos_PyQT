@@ -63,7 +63,8 @@ class Ui_MainWindow(object):
 
         self.fc_salida = QDateEdit(self.principal)
         self.fc_salida.setObjectName(u"fc_salida")
-        self.fc_salida.setDateTime(QDateTime(QDate(2025, 2, 24), QTime(21, 0, 0)))
+        self.fc_salida.setDateTime(QDateTime(QDate(2025, 2, 24), QTime(20, 0, 0)))
+        self.fc_salida.setCalendarPopup(True)
         self.fc_salida.setDate(QDate(2025, 2, 24))
 
         self.gridLayout.addWidget(self.fc_salida, 3, 3, 1, 1)
@@ -181,7 +182,8 @@ class Ui_MainWindow(object):
 
         self.fc_vuelta = QDateEdit(self.principal)
         self.fc_vuelta.setObjectName(u"fc_vuelta")
-        self.fc_vuelta.setDateTime(QDateTime(QDate(2025, 2, 24), QTime(20, 0, 0)))
+        self.fc_vuelta.setDateTime(QDateTime(QDate(2025, 2, 24), QTime(19, 0, 0)))
+        self.fc_vuelta.setCalendarPopup(True)
         self.fc_vuelta.setDate(QDate(2025, 2, 24))
 
         self.gridLayout.addWidget(self.fc_vuelta, 5, 3, 1, 1)
