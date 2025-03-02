@@ -240,6 +240,7 @@ class Ui_MainWindow(object):
 
         self.bu_reg = QPushButton(self.frame_2)
         self.bu_reg.setObjectName(u"bu_reg")
+        self.bu_reg.setMinimumSize(QSize(0, 25))
         self.bu_reg.setStyleSheet(u"\n"
 "        QPushButton {\n"
 "            background-color: #2ecc71;\n"
@@ -334,6 +335,7 @@ class Ui_MainWindow(object):
 
         self.bu_login = QPushButton(self.frame)
         self.bu_login.setObjectName(u"bu_login")
+        self.bu_login.setMinimumSize(QSize(0, 25))
         self.bu_login.setStyleSheet(u"\n"
 "        QPushButton {\n"
 "            background-color: #3498db;\n"
@@ -369,6 +371,7 @@ class Ui_MainWindow(object):
         sizePolicy8.setVerticalStretch(0)
         sizePolicy8.setHeightForWidth(self.bu_salir.sizePolicy().hasHeightForWidth())
         self.bu_salir.setSizePolicy(sizePolicy8)
+        self.bu_salir.setMinimumSize(QSize(0, 25))
         self.bu_salir.setMaximumSize(QSize(150, 16777215))
         self.bu_salir.setStyleSheet(u"\n"
 "        QPushButton {\n"

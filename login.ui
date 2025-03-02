@@ -352,6 +352,12 @@ color:black;
              </item>
              <item>
               <widget class="QPushButton" name="bu_reg">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>25</height>
+                </size>
+               </property>
                <property name="styleSheet">
                 <string notr="true">
         QPushButton {
@@ -514,6 +520,12 @@ color:black;
              </item>
              <item>
               <widget class="QPushButton" name="bu_login">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>25</height>
+                </size>
+               </property>
                <property name="styleSheet">
                 <string notr="true">
         QPushButton {
@@ -553,6 +565,12 @@ color:black;
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>25</height>
+             </size>
             </property>
             <property name="maximumSize">
              <size>
