@@ -49,19 +49,37 @@ class Configuracion(QtWidgets.QMainWindow):
     
     def eliminarusuario(self):
         import pyrebase
-        self.firebaseConfig ={
-            "apiKey": "AIzaSyDtWlIUbITDQtvTI6pi4k0WxxOlimBIXxY",
-            "authDomain": "prueba1-79b1f.firebaseapp.com",
-            "databaseURL": "https://prueba1-79b1f-default-rtdb.firebaseio.com/", 
-            "projectId": "prueba1-79b1f",
-            "storageBucket": "prueba1-79b1f.appspot.com",
-            "messagingSenderId": "827606316467",
-            "appId": "1:827606316467:web:7cd3fcc0d0d4af6edec7c6"
+        import requests
+        self.firebaseConfig = {
+        "apiKey": "AIzaSyDtWlIUbITDQtvTI6pi4k0WxxOlimBIXxY",
+        "authDomain": "prueba1-79b1f.firebaseapp.com",
+        "databaseURL": "https://prueba1-79b1f-default-rtdb.firebaseio.com/", 
+        "projectId": "prueba1-79b1f",
+        "storageBucket": "prueba1-79b1f.appspot.com",
+        "messagingSenderId": "827606316467",
+        "appId": "1:827606316467:web:7cd3fcc0d0d4af6edec7c6"
         }
-        self.firebase = pyrebase.initialize_app(self.firebaseConfig)
-        #self.firebase.auth().delete_user_account(self.manager.token)
 
-        #eliminar de manera local
-        #baseLocal.eliminarClientePorCorreo(self.manager.usuario.email)
-        self.manager.usuario = None
-        self.manager.mostrarVentana("login")
+        # Inicializar Firebase
+        self.firebase = pyrebase.initialize_app(self.firebaseConfig)
+        auth = self.firebase.auth()
+
+        try:
+
+            # Hacer la solicitud a la API de Firebase para eliminar la cuenta
+            url = f"https://identitytoolkit.googleapis.com/v1/accounts:delete?key={self.firebaseConfig['apiKey']}"
+            response = requests.post(url, json={"idToken": self.manager.token})
+
+            self.manager.usuario = None
+            self.manager.mostrarVentana("login")
+            if response.status_code == 200:
+                print("✅ Usuario eliminado correctamente de Firebase")
+            else:
+                print("❌ Error al eliminar el usuario:", response.json())
+
+        except requests.exceptions.RequestException as e:
+            print("❌ Error de conexión:", e)
+
+        except Exception as e:
+            print("❌ Error general:", e)
+            

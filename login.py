@@ -4,8 +4,9 @@ from PyQt6.QtWidgets import *
 from PyQt6 import uic
 import pyrebase
 import requests
+import sqlite3
 import json
-#import Navigation
+import re
 import models.cliente as model
 import BD.basedatos as baseLocal
 
@@ -47,22 +48,24 @@ class Ventana(QMainWindow):
             QMessageBox.critical(self, 'Error', "Ingrese todos los datos")
             return
         
+        if not validar_dni(dni):
+            QMessageBox.critical(self, 'Error', "El dni no es cumple el formato.")
+            return
+
         try:
+            user = self.auth.create_user_with_email_and_password(email, passw)
+
             cliente = model.Cliente(0,nombre, email, apellido, dni)
             existo = baseLocal.insertar_cliente(cliente)
 
             if existo is None:
                 QMessageBox.critical(self, 'Error', "No se ingresó el usuario en la base de datos")
 
-            user = self.auth.create_user_with_email_and_password(email, passw)
             print(user)
             self.manager.usuario = cliente
             self.manager.mostrarVentana("menu")
             self.manager.token = user["idToken"]
             print(user["idToken"])
-            
-            
-            
 
             self.correcto("r")
         except requests.exceptions.HTTPError as e:
@@ -70,6 +73,8 @@ class Ventana(QMainWindow):
             error = json.loads(error_json)['error']['message']
             QMessageBox.critical(self, 'Error', error)
             self.delete_line()
+        except Exception as e:
+            QMessageBox.critical(self, 'Error', "Error")
 
     def gui_login(self):
         email = self.li_usuario.text()
@@ -110,3 +115,6 @@ class Ventana(QMainWindow):
         self.li_usuario.setText("")
         self.li_contra.setText("")
         self.li_usuario.setFocus()
+
+def validar_dni(dni):
+    return bool(re.fullmatch(r"\d{8}[A-Za-z]", dni))

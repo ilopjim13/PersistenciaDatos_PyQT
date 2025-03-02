@@ -21,15 +21,25 @@ class MisViajes(QtWidgets.QMainWindow):
         print(f"Viajes encontrados: {viajes}") 
 
         # La fuckin tabla
-        self.tabla_viajes.setColumnCount(5) 
-        self.tabla_viajes.setHorizontalHeaderLabels(["ID", "Destino", "Fecha de Salida", "Fecha de Regreso", "Precio"])
+        self.tabla_viajes.setColumnCount(4)
+        self.tabla_viajes.setHorizontalHeaderLabels(["Destino", "Fecha de Salida", "Fecha de Regreso", "Precio"])
+        self.tabla_viajes.setRowCount(0) 
 
-        self.tabla_viajes.setRowCount(0)  
-        for row_idx, row_data in enumerate(viajes):
-            self.tabla_viajes.insertRow(row_idx) 
-            for col_idx, data in enumerate(row_data):
-               
-                self.tabla_viajes.setItem(row_idx, col_idx, QtWidgets.QTableWidgetItem(str(data)))
+        for viaje in viajes:
+            destino = viaje[2]
+            fecha_salida = viaje[3]  
+            fecha_regreso = viaje[4]  
+            precio = viaje[5]  
+
+            row_position = self.tabla_viajes.rowCount()
+            self.tabla_viajes.insertRow(row_position)
+
+            self.tabla_viajes.setItem(row_position, 0, QtWidgets.QTableWidgetItem(destino))
+            self.tabla_viajes.setItem(row_position, 1, QtWidgets.QTableWidgetItem(fecha_salida))
+            self.tabla_viajes.setItem(row_position, 2, QtWidgets.QTableWidgetItem(fecha_regreso))
+            self.tabla_viajes.setItem(row_position, 3, QtWidgets.QTableWidgetItem(str(precio)))
+         
+       
         
 
     def actualizar_viaje(self):
