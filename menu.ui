@@ -55,7 +55,10 @@
    </property>
    <property name="styleSheet">
     <string notr="true">#principal{
-	background-color: rgb(238, 247, 255);
+background-image: url(:/icons/recursos/media/fondo.jpg);
+background-repeat: no-repeat;
+background-position: center;
+background-attachment: fixed;
 }
 #QTMisViajes {
 background-color: rgba(255, 255, 255, 150); /* Fondo blanco con 150 de opacidad (0-255) */
@@ -124,7 +127,7 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
        </sizepolicy>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(0, 0, 255);</string>
+       <string notr="true">background-color: rgb(238, 247, 255);</string>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
@@ -198,8 +201,8 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
             <colorrole role="Button">
              <brush brushstyle="SolidPattern">
               <color alpha="255">
-               <red>0</red>
-               <green>0</green>
+               <red>238</red>
+               <green>247</green>
                <blue>255</blue>
               </color>
              </brush>
@@ -207,8 +210,8 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
             <colorrole role="Base">
              <brush brushstyle="SolidPattern">
               <color alpha="255">
-               <red>0</red>
-               <green>0</green>
+               <red>238</red>
+               <green>247</green>
                <blue>255</blue>
               </color>
              </brush>
@@ -216,8 +219,8 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
             <colorrole role="Window">
              <brush brushstyle="SolidPattern">
               <color alpha="255">
-               <red>0</red>
-               <green>0</green>
+               <red>238</red>
+               <green>247</green>
                <blue>255</blue>
               </color>
              </brush>
@@ -236,8 +239,8 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
             <colorrole role="Button">
              <brush brushstyle="SolidPattern">
               <color alpha="255">
-               <red>0</red>
-               <green>0</green>
+               <red>238</red>
+               <green>247</green>
                <blue>255</blue>
               </color>
              </brush>
@@ -245,8 +248,8 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
             <colorrole role="Base">
              <brush brushstyle="SolidPattern">
               <color alpha="255">
-               <red>0</red>
-               <green>0</green>
+               <red>238</red>
+               <green>247</green>
                <blue>255</blue>
               </color>
              </brush>
@@ -254,8 +257,8 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
             <colorrole role="Window">
              <brush brushstyle="SolidPattern">
               <color alpha="255">
-               <red>0</red>
-               <green>0</green>
+               <red>238</red>
+               <green>247</green>
                <blue>255</blue>
               </color>
              </brush>
@@ -265,8 +268,8 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
             <colorrole role="Button">
              <brush brushstyle="SolidPattern">
               <color alpha="255">
-               <red>0</red>
-               <green>0</green>
+               <red>238</red>
+               <green>247</green>
                <blue>255</blue>
               </color>
              </brush>
@@ -274,8 +277,8 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
             <colorrole role="Base">
              <brush brushstyle="SolidPattern">
               <color alpha="255">
-               <red>0</red>
-               <green>0</green>
+               <red>238</red>
+               <green>247</green>
                <blue>255</blue>
               </color>
              </brush>
@@ -283,8 +286,8 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
             <colorrole role="Window">
              <brush brushstyle="SolidPattern">
               <color alpha="255">
-               <red>0</red>
-               <green>0</green>
+               <red>238</red>
+               <green>247</green>
                <blue>255</blue>
               </color>
              </brush>
@@ -443,9 +446,6 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(202, 223, 241);</string>
-                  </property>
                   <property name="text">
                    <string>Mis Viajes</string>
                   </property>
@@ -550,9 +550,6 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
                   <property name="autoFillBackground">
                    <bool>false</bool>
                   </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(202, 223, 241);</string>
-                  </property>
                   <property name="frameShadow">
                    <enum>QFrame::Shadow::Sunken</enum>
                   </property>
@@ -620,13 +617,6 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
                   <column>
                    <property name="text">
                     <string>Destino</string>
-                   </property>
-                   <property name="background">
-                    <color>
-                     <red>202</red>
-                     <green>223</green>
-                     <blue>241</blue>
-                    </color>
                    </property>
                   </column>
                   <item row="0" column="0">
