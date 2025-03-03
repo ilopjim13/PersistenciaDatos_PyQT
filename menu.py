@@ -22,6 +22,7 @@ class Menu(QtWidgets.QMainWindow):
 
         #revisamo si el usuario ya se ha logeado
         if self.manager.usuario is not None:
+            #cargamos los viajes del usuario
             self.cargarDatosLista()
             self.QLNombre.setText(self.manager.usuario.nombre)
             self.QLCorreo.setText(self.manager.usuario.email)
@@ -39,7 +40,6 @@ class Menu(QtWidgets.QMainWindow):
 
         #esta funcion nos regresa todas los nombre de los destinos disponible
         destinos = baseLocal.obtenerSoloElNombreDelDestinoParaLaPantallaMenu()
-        
 
         # Configurar la tabla con una sola columna llamada "Destinos"
         self.QTTredingsTopicsTabla.setColumnCount(1)

@@ -48,6 +48,7 @@ class Configuracion(QtWidgets.QMainWindow):
 
         #busque del usuario mediante el usuario registrado gracias a nuestro navigation
         correo = self.manager.usuario.email
+            #validamos el dni
         if bool(re.fullmatch(r"\d{8}[A-Za-z]", dni)):
             #le informamos al usuario una confirmacion mediante un QMesaageBox
             respuesta = QMessageBox.question(
@@ -71,6 +72,7 @@ class Configuracion(QtWidgets.QMainWindow):
             else:
                 QMessageBox.information(self, "Acción cancelada por el usuario", "No se han actualizado los datos.")
         else:
+                #lanzamos un error debido que el dni no cumple el formato especificado
                 QMessageBox.critical(self, 'Error', "El dni no es cumple el formato.")
     #eliminamos el usuario del nuestro firebase y base local 
     def eliminarusuario(self):
