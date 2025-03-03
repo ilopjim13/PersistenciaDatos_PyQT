@@ -6,10 +6,12 @@ from PyQt6.QtCore import QDate
 import BD.basedatos as baseLocal
 import sqlite3
 
+# Clase que muestra la ventana de compra
 class Compra(QMainWindow):
     def __init__(self, manager):
         super().__init__()
         uic.loadUi("compras.ui", self)
+        # Cargamos las variables de la clase y los componentes de la interfaz
         self.manager = manager
         if self.manager.usuario is not None:
             self.vuelo = self.manager.vuelo
@@ -23,6 +25,7 @@ class Compra(QMainWindow):
             self.bt_cantidad.valueChanged.connect(self.set_cantidad_asientos)
             self.boton_comprar.clicked.connect(self.comprar)
 
+    # Método que carga los datos del pasajero y del vuelo
     def cargar_datos(self):
         self.te_nombre.setText(self.pasajero.nombre)
         self.te_apellido.setText(self.pasajero.apellido)
@@ -35,73 +38,71 @@ class Compra(QMainWindow):
         self.set_fecha_salida(QDate.currentDate())
         self.bt_volver.clicked.connect(self.volver)
 
+    # Método que establece la cantidad de asientos
     def set_cantidad_asientos(self, cantidad):
         self.cantidad_asientos = cantidad
 
+    # Método que establece la fecha de salida
     def set_fecha_salida(self, fecha):
         self.fecha_salida = fecha.toString("yyyy-MM-dd")
 
+    # Método que establece la fecha de regreso
     def set_fecha_regreso(self, fecha):
         self.fecha_regreso = fecha.toString("yyyy-MM-dd")
 
+    # Método que realiza la compra del vuelo
     def comprar(self):
+        # Comprobamos si hay suficientes asientos
         if self.cantidad_asientos > int(self.vuelo[3]):
             QMessageBox.critical(self, "Error", "No hay suficientes asientos disponibles")
             return
+        
+        if self.fecha_anterior_a_hoy():
+            QMessageBox.critical(self, "Error", "La fecha de salida debe ser posterior a la actual")
+            return
 
+        # Comprobamos si la fecha de regreso es posterior a la de salida
         if self.comprobar_fechas():
-            #con = sqlite3.connect("viajes.db")
-            #cur = con.cursor()
-            #id = self.obtener_ultimo_id_viaje() + 1 
-            #cur.execute('''
-            #    INSERT INTO viaje (id, cliente_email, vuelo_id, fecha_salida, fecha_regreso, precio)
-            #    VALUES (?, ?, ?, ?, ?, ?)
-            #''', (id, self.pasajero.email, self.vuelo[3], self.fecha_salida, self.fecha_regreso, self.vuelo[1])) 
-            #con.commit()
-            #con.close()
-            #self.actualizar_asientos()
+            # Insertamos el viaje en la base de datos
+            baseLocal.insertar_viaje(self.pasajero.email, self.vuelo[3], self.fecha_salida, self.fecha_regreso, self.vuelo[1])
+            self.actualizar_asientos()
+            # Guardamos los datos del viaje y mostramos la ventana del billete
             self.manager.viaje = [id, self.pasajero.email, self.vuelo[3], self.fecha_salida, self.fecha_regreso, self.vuelo[1], self.cantidad_asientos]
             self.manager.mostrarVentana("billete")
         else:
+            # Mostramos un mensaje de error
             QMessageBox.critical(self, "Error", "La fecha de regreso debe ser posterior a la de salida")
 
+    # Método que actualiza la cantidad de asientos
     def actualizar_asientos(self):
-        con = sqlite3.connect("viajes.db")
-        cur = con.cursor()
-        cur.execute('''
-            UPDATE vuelo
-            SET cantidad_asientos = cantidad_asientos - ?
-            WHERE id = ?
-        ''', (self.cantidad_asientos, self.vuelo[3]))
-        con.commit()
-        con.close()
+        baseLocal.actualizar_asientos(self.cantidad_asientos, self.vuelo[3])
 
+    # Método que comprueba si la fecha de salida es anterior a la actual
+    def fecha_anterior_a_hoy(self):
+        hoy = QDate.currentDate()
+        # Convertimos la fecha de salida a QDate
+        fecha_salida_qdate = QDate.fromString(self.fecha_salida, "yyyy-MM-dd")
+        # Comprobamos si la fecha de salida es anterior a la actual
+        if fecha_salida_qdate < hoy:
+            return True
+        return False
+
+    # Método que comprueba si la fecha de regreso es posterior a la de salida
     def comprobar_fechas(self):
         if self.fecha_salida <= self.fecha_regreso:
             return True
         return False
 
-    def obtener_ultimo_id_viaje(self):
-        con = sqlite3.connect("viajes.db")
-        cur = con.cursor()
-        cur.execute('''
-            SELECT MAX(id) FROM viaje
-        ''')
-        id = cur.fetchone()
-        con.close()
-        print(f"ID: {id}")
-        if id[0] == None:
-            return 0
-        else:
-            return int(id[0])
-        
+    # Método que lleva a la ventana de vuelos
     def volver(self):
         self.manager.mostrarVentana("vuelos")
 
 
+# Clase que muestra la ventana del billete
 class Billete(QMainWindow):
     def __init__(self, manager):
         super().__init__()
+        # Cargamos las variables de la clase y los componentes de la interfaz
         uic.loadUi("billete.ui", self)
         self.manager = manager
         self.viaje = manager.viaje
@@ -109,6 +110,7 @@ class Billete(QMainWindow):
         self.cargar_datos()
         self.bt_aceptar.clicked.connect(self.aceptar)
 
+    # Método que carga los datos del cliente y del viaje
     def cargar_datos(self):
         if self.cliente is not None:
             self.te_nombre.setText(self.cliente.nombre)
@@ -124,15 +126,6 @@ class Billete(QMainWindow):
             if destino is not None:
                 self.te_destino.setText(destino[0][0])
 
+    # Método que lleva a la ventana de vuelos
     def aceptar(self):
         self.manager.mostrarVentana("menu")
-
-if __name__ == "__main__":
-    # se crea la instancia de la aplicación
-    app = QApplication(sys.argv)
-    # se crea la instancia de la ventana
-    window = Compra(["España", "Avion 1"], ["Juan", "Perez", "12345678", "1"])
-    # se muestra la ventana 
-    window.show()
-    # se entrega el control al sistema operativo
-    app.exec() 

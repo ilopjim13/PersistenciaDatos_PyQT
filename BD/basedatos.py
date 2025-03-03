@@ -144,7 +144,44 @@ def delMisViajes(viaje_id):
     cursor.execute("DELETE FROM viaje WHERE id = ?", (viaje_id,))
     conn.commit()
     conn.close()
-    
+
+def insertar_viaje(cliente_email, vuelo_id, fecha_salida, fecha_regreso, precio):
+    con = sqlite3.connect("viajes.db")
+    cur = con.cursor()
+    id = obtener_ultimo_id_viaje() + 1 
+    cur.execute('''
+        INSERT INTO viaje (id, cliente_email, vuelo_id, fecha_salida, fecha_regreso, precio)
+        VALUES (?, ?, ?, ?, ?, ?)
+    ''', (id, cliente_email, vuelo_id, fecha_salida, fecha_regreso, precio)) 
+    con.commit()
+    con.close()
+
+def obtener_ultimo_id_viaje():
+    con = sqlite3.connect("viajes.db")
+    cur = con.cursor()
+    cur.execute('''
+        SELECT MAX(id) FROM viaje
+    ''')
+    id = cur.fetchone()
+    con.close()
+    print(f"ID: {id}")
+    if id[0] == None:
+        return 0
+    else:
+        return int(id[0])
+
+
+def actualizar_asientos(cantidad_asientos, vuelo_id):
+    con = sqlite3.connect("viajes.db")
+    cur = con.cursor()
+    cur.execute('''
+        UPDATE vuelo
+        SET cantidad_asientos = cantidad_asientos - ?
+        WHERE id = ?
+    ''', (cantidad_asientos, vuelo_id))
+    con.commit()
+    con.close()
+
 
 def obtener_destinos_y_aviones(vuelo_id):
     conn = sqlite3.connect("viajes.db")
@@ -161,6 +198,23 @@ def obtener_destinos_y_aviones(vuelo_id):
     destinos = cursor.fetchall()
     conn.close()
     return destinos
+
+
+def obtener_vuelos(destino, orden):
+    conn = sqlite3.connect("viajes.db")
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT a.modelo, a.categoria, ROUND(v.precio, 2), v.cantidad_asientos,v.id 
+        FROM avion a
+        JOIN vuelo v ON a.id = v.avion_id
+        JOIN destino d ON v.destino_id = d.id
+        WHERE d.nombre = ?
+        ORDER BY ?
+    """, (destino, orden))
+    aviones = cursor.fetchall()
+    conn.close()
+    return aviones
+
 
 def restablecer():
     conn = sqlite3.connect("viajes.db")

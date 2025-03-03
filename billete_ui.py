@@ -24,9 +24,9 @@ class Ui_GestionViajes(object):
     def setupUi(self, GestionViajes):
         if not GestionViajes.objectName():
             GestionViajes.setObjectName(u"GestionViajes")
-        GestionViajes.resize(1000, 494)
-        GestionViajes.setMinimumSize(QSize(1000, 494))
-        GestionViajes.setMaximumSize(QSize(1000, 494))
+        GestionViajes.resize(755, 485)
+        GestionViajes.setMinimumSize(QSize(755, 485))
+        GestionViajes.setMaximumSize(QSize(755, 490))
         self.principal = QWidget(GestionViajes)
         self.principal.setObjectName(u"principal")
         self.principal.setEnabled(True)
@@ -112,6 +112,7 @@ class Ui_GestionViajes(object):
 "    border: none;\n"
 "    font-size: 24px;\n"
 "}")
+        self.lt_email.setReadOnly(True)
 
         self.formLayout_7.setWidget(0, QFormLayout.FieldRole, self.lt_email)
 
@@ -166,7 +167,7 @@ class Ui_GestionViajes(object):
         self.nombreDelPasajeroLabel = QLabel(self.widget)
         self.nombreDelPasajeroLabel.setObjectName(u"nombreDelPasajeroLabel")
         font1 = QFont()
-        font1.setPointSize(16)
+        font1.setPointSize(15)
         self.nombreDelPasajeroLabel.setFont(font1)
 
         self.formLayout.setWidget(0, QFormLayout.LabelRole, self.nombreDelPasajeroLabel)
@@ -295,11 +296,15 @@ class Ui_GestionViajes(object):
         self.horizontalLayout_2.setSizeConstraint(QLayout.SetDefaultConstraint)
         self.bt_aceptar = QPushButton(self.widget2)
         self.bt_aceptar.setObjectName(u"bt_aceptar")
+        font2 = QFont()
+        font2.setPointSize(10)
+        self.bt_aceptar.setFont(font2)
 
         self.horizontalLayout_2.addWidget(self.bt_aceptar)
 
         self.bt_descargar = QPushButton(self.widget2)
         self.bt_descargar.setObjectName(u"bt_descargar")
+        self.bt_descargar.setFont(font2)
 
         self.horizontalLayout_2.addWidget(self.bt_descargar)
 
@@ -323,9 +328,9 @@ class Ui_GestionViajes(object):
         self.QLabel.setText(QCoreApplication.translate("GestionViajes", u"Precio:", None))
         self.te_precio.setText(QCoreApplication.translate("GestionViajes", u"0", None))
         self.nombreDelPasajeroLabel.setText(QCoreApplication.translate("GestionViajes", u"Nombre del pasajero:", None))
-        self.apellidoDelPasajeroLabel.setText(QCoreApplication.translate("GestionViajes", u"Apellido del pasajero:", None))
-        self.dNIDelPasajeroLabel.setText(QCoreApplication.translate("GestionViajes", u"DNI del pasajero:", None))
-        self.nMeroDeAsientosLabel.setText(QCoreApplication.translate("GestionViajes", u"N\u00famero de asientos:", None))
+        self.apellidoDelPasajeroLabel.setText(QCoreApplication.translate("GestionViajes", u"Apellidos:", None))
+        self.dNIDelPasajeroLabel.setText(QCoreApplication.translate("GestionViajes", u"NIF/Pasaporte:", None))
+        self.nMeroDeAsientosLabel.setText(QCoreApplication.translate("GestionViajes", u"Cantidad de asientos:", None))
         self.ql_origen.setText(QCoreApplication.translate("GestionViajes", u"Origen:", None))
         self.Le_origen.setText(QCoreApplication.translate("GestionViajes", u"Espa\u00f1a", None))
         self.destinoLabel.setText(QCoreApplication.translate("GestionViajes", u"Destino:", None))

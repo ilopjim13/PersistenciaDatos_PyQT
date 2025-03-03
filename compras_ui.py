@@ -26,7 +26,7 @@ class Ui_MainWindow(object):
         MainWindow.resize(755, 485)
         MainWindow.setMinimumSize(QSize(755, 485))
         MainWindow.setStyleSheet(u"QWidget#principal {\n"
-"    background-image: url(recursos/media/fondo.jpg);\n"
+"    background-image: url(:/icons/recursos/media/fondo.jpg);\n"
 "    background-repeat: no-repeat;\n"
 "    background-position: center;\n"
 "    background-size: cover; /* Ajusta la imagen al tama\u00f1o de la ventana */\n"
@@ -41,29 +41,38 @@ class Ui_MainWindow(object):
         self.gridLayout.setContentsMargins(16, 16, 16, 16)
         self.te_apellido = QLineEdit(self.principal)
         self.te_apellido.setObjectName(u"te_apellido")
+        font = QFont()
+        font.setPointSize(15)
+        self.te_apellido.setFont(font)
+        self.te_apellido.setReadOnly(True)
 
         self.gridLayout.addWidget(self.te_apellido, 9, 0, 1, 1)
 
         self.label = QLabel(self.principal)
         self.label.setObjectName(u"label")
+        self.label.setFont(font)
         self.label.setAlignment(Qt.AlignBottom|Qt.AlignLeading|Qt.AlignLeft)
 
         self.gridLayout.addWidget(self.label, 3, 0, 1, 1)
 
         self.label_2 = QLabel(self.principal)
         self.label_2.setObjectName(u"label_2")
+        self.label_2.setFont(font)
         self.label_2.setAlignment(Qt.AlignBottom|Qt.AlignLeading|Qt.AlignLeft)
 
         self.gridLayout.addWidget(self.label_2, 7, 0, 1, 1)
 
         self.te_dni = QLineEdit(self.principal)
         self.te_dni.setObjectName(u"te_dni")
+        self.te_dni.setFont(font)
+        self.te_dni.setReadOnly(True)
 
         self.gridLayout.addWidget(self.te_dni, 13, 0, 1, 1)
 
         self.fc_salida = QDateEdit(self.principal)
         self.fc_salida.setObjectName(u"fc_salida")
-        self.fc_salida.setDateTime(QDateTime(QDate(2025, 2, 24), QTime(20, 0, 0)))
+        self.fc_salida.setFont(font)
+        self.fc_salida.setDateTime(QDateTime(QDate(2025, 2, 24), QTime(19, 0, 0)))
         self.fc_salida.setCalendarPopup(True)
         self.fc_salida.setDate(QDate(2025, 2, 24))
 
@@ -71,6 +80,8 @@ class Ui_MainWindow(object):
 
         self.pt_vuelo = QLineEdit(self.principal)
         self.pt_vuelo.setObjectName(u"pt_vuelo")
+        self.pt_vuelo.setFont(font)
+        self.pt_vuelo.setReadOnly(True)
 
         self.gridLayout.addWidget(self.pt_vuelo, 13, 2, 1, 1)
 
@@ -80,17 +91,18 @@ class Ui_MainWindow(object):
 
         self.label_5 = QLabel(self.principal)
         self.label_5.setObjectName(u"label_5")
+        self.label_5.setFont(font)
         self.label_5.setAlignment(Qt.AlignBottom|Qt.AlignLeading|Qt.AlignLeft)
 
         self.gridLayout.addWidget(self.label_5, 7, 2, 1, 1)
 
         self.Titulo = QLabel(self.principal)
         self.Titulo.setObjectName(u"Titulo")
-        font = QFont()
-        font.setFamilies([u"Arial"])
-        font.setPointSize(20)
-        font.setBold(True)
-        self.Titulo.setFont(font)
+        font1 = QFont()
+        font1.setFamilies([u"Arial"])
+        font1.setPointSize(20)
+        font1.setBold(True)
+        self.Titulo.setFont(font1)
         self.Titulo.setLayoutDirection(Qt.LeftToRight)
         self.Titulo.setStyleSheet(u"color: black;")
         self.Titulo.setAlignment(Qt.AlignCenter)
@@ -99,6 +111,8 @@ class Ui_MainWindow(object):
 
         self.pt_destino = QLineEdit(self.principal)
         self.pt_destino.setObjectName(u"pt_destino")
+        self.pt_destino.setFont(font)
+        self.pt_destino.setReadOnly(True)
 
         self.gridLayout.addWidget(self.pt_destino, 9, 2, 1, 1)
 
@@ -124,6 +138,8 @@ class Ui_MainWindow(object):
 
         self.boton_comprar = QPushButton(self.principal)
         self.boton_comprar.setObjectName(u"boton_comprar")
+        font2 = QFont()
+        self.boton_comprar.setFont(font2)
         self.boton_comprar.setStyleSheet(u"QPushButton {\n"
 "    background-color: rgba(255, 255, 255, 180); /* Fondo blanco semi-transparente */\n"
 "    border: 1px solid black;  /* Borde negro */\n"
@@ -144,45 +160,54 @@ class Ui_MainWindow(object):
 
         self.label_7 = QLabel(self.principal)
         self.label_7.setObjectName(u"label_7")
+        self.label_7.setFont(font)
 
         self.gridLayout.addWidget(self.label_7, 15, 0, 1, 1)
 
         self.label_8 = QLabel(self.principal)
         self.label_8.setObjectName(u"label_8")
+        self.label_8.setFont(font)
 
         self.gridLayout.addWidget(self.label_8, 5, 2, 1, 1)
 
         self.bt_cantidad = QSpinBox(self.principal)
         self.bt_cantidad.setObjectName(u"bt_cantidad")
+        self.bt_cantidad.setFont(font)
         self.bt_cantidad.setMinimum(1)
 
         self.gridLayout.addWidget(self.bt_cantidad, 15, 1, 1, 1)
 
         self.te_nombre = QLineEdit(self.principal)
         self.te_nombre.setObjectName(u"te_nombre")
+        self.te_nombre.setFont(font)
+        self.te_nombre.setReadOnly(True)
 
         self.gridLayout.addWidget(self.te_nombre, 5, 0, 1, 1)
 
         self.label_3 = QLabel(self.principal)
         self.label_3.setObjectName(u"label_3")
+        self.label_3.setFont(font)
         self.label_3.setAlignment(Qt.AlignBottom|Qt.AlignLeading|Qt.AlignLeft)
 
         self.gridLayout.addWidget(self.label_3, 11, 0, 1, 1)
 
         self.label_6 = QLabel(self.principal)
         self.label_6.setObjectName(u"label_6")
+        self.label_6.setFont(font)
         self.label_6.setAlignment(Qt.AlignBottom|Qt.AlignLeading|Qt.AlignLeft)
 
         self.gridLayout.addWidget(self.label_6, 11, 2, 1, 1)
 
         self.label_4 = QLabel(self.principal)
         self.label_4.setObjectName(u"label_4")
+        self.label_4.setFont(font)
 
         self.gridLayout.addWidget(self.label_4, 3, 2, 1, 1)
 
         self.fc_vuelta = QDateEdit(self.principal)
         self.fc_vuelta.setObjectName(u"fc_vuelta")
-        self.fc_vuelta.setDateTime(QDateTime(QDate(2025, 2, 24), QTime(19, 0, 0)))
+        self.fc_vuelta.setFont(font)
+        self.fc_vuelta.setDateTime(QDateTime(QDate(2025, 2, 24), QTime(18, 0, 0)))
         self.fc_vuelta.setCalendarPopup(True)
         self.fc_vuelta.setDate(QDate(2025, 2, 24))
 

@@ -21,7 +21,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget#principal {
-    background-image: url(recursos/media/fondo.jpg);
+    background-image: url(:/icons/recursos/media/fondo.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; /* Ajusta la imagen al tamaño de la ventana */
@@ -49,10 +49,24 @@
      <number>18</number>
     </property>
     <item row="9" column="0">
-     <widget class="QLineEdit" name="te_apellido"/>
+     <widget class="QLineEdit" name="te_apellido">
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="3" column="0">
      <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Nombre del pasajero:</string>
       </property>
@@ -63,6 +77,11 @@
     </item>
     <item row="7" column="0">
      <widget class="QLabel" name="label_2">
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Apellidos:</string>
       </property>
@@ -72,13 +91,27 @@
      </widget>
     </item>
     <item row="13" column="0">
-     <widget class="QLineEdit" name="te_dni"/>
+     <widget class="QLineEdit" name="te_dni">
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="3" column="3">
      <widget class="QDateEdit" name="fc_salida">
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
       <property name="dateTime">
        <datetime>
-        <hour>20</hour>
+        <hour>19</hour>
         <minute>0</minute>
         <second>0</second>
         <year>2025</year>
@@ -99,7 +132,16 @@
      </widget>
     </item>
     <item row="13" column="2">
-     <widget class="QLineEdit" name="pt_vuelo"/>
+     <widget class="QLineEdit" name="pt_vuelo">
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="16" column="2">
      <spacer name="verticalSpacer">
@@ -119,6 +161,11 @@
     </item>
     <item row="7" column="2">
      <widget class="QLabel" name="label_5">
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Destino:</string>
       </property>
@@ -151,7 +198,16 @@
      </widget>
     </item>
     <item row="9" column="2">
-     <widget class="QLineEdit" name="pt_destino"/>
+     <widget class="QLineEdit" name="pt_destino">
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="17" column="3">
      <widget class="QPushButton" name="bt_volver">
@@ -179,6 +235,11 @@ QPushButton:pressed {
     </item>
     <item row="17" column="2">
      <widget class="QPushButton" name="boton_comprar">
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
     background-color: rgba(255, 255, 255, 180); /* Fondo blanco semi-transparente */
@@ -203,6 +264,11 @@ QPushButton:pressed {
     </item>
     <item row="15" column="0">
      <widget class="QLabel" name="label_7">
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Cantidad de asientos:</string>
       </property>
@@ -210,6 +276,11 @@ QPushButton:pressed {
     </item>
     <item row="5" column="2">
      <widget class="QLabel" name="label_8">
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Fecha de regreso:</string>
       </property>
@@ -217,16 +288,35 @@ QPushButton:pressed {
     </item>
     <item row="15" column="1">
      <widget class="QSpinBox" name="bt_cantidad">
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
       <property name="minimum">
        <number>1</number>
       </property>
      </widget>
     </item>
     <item row="5" column="0">
-     <widget class="QLineEdit" name="te_nombre"/>
+     <widget class="QLineEdit" name="te_nombre">
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="11" column="0">
      <widget class="QLabel" name="label_3">
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>NIF/Pasaporte:</string>
       </property>
@@ -237,6 +327,11 @@ QPushButton:pressed {
     </item>
     <item row="11" column="2">
      <widget class="QLabel" name="label_6">
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Avión:</string>
       </property>
@@ -247,6 +342,11 @@ QPushButton:pressed {
     </item>
     <item row="3" column="2">
      <widget class="QLabel" name="label_4">
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Fecha de salida:</string>
       </property>
@@ -254,9 +354,14 @@ QPushButton:pressed {
     </item>
     <item row="5" column="3">
      <widget class="QDateEdit" name="fc_vuelta">
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
       <property name="dateTime">
        <datetime>
-        <hour>19</hour>
+        <hour>18</hour>
         <minute>0</minute>
         <second>0</second>
         <year>2025</year>
