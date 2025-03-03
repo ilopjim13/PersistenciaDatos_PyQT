@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import re
 import sqlite3
 
 import os
@@ -47,29 +48,30 @@ class Configuracion(QtWidgets.QMainWindow):
 
         #busque del usuario mediante el usuario registrado gracias a nuestro navigation
         correo = self.manager.usuario.email
+        if bool(re.fullmatch(r"\d{8}[A-Za-z]", dni)):
+            #le informamos al usuario una confirmacion mediante un QMesaageBox
+            respuesta = QMessageBox.question(
+            self,
+            "Confirmar actualización",
+            f"¿Seguro que quieres actualizar estos datos?\n\n"
+            f"Nombre: {nuevo_nombre}\n"
+            f"Email: {nuevo_email}\n"
+            f"DNI: {dni}",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
 
-        #le informamos al usuario una confirmacion mediante un QMesaageBox
-        respuesta = QMessageBox.question(
-        self,
-        "Confirmar actualización",
-        f"¿Seguro que quieres actualizar estos datos?\n\n"
-        f"Nombre: {nuevo_nombre}\n"
-        f"Email: {nuevo_email}\n"
-        f"DNI: {dni}",
-        QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
+            # Si el usuario confirma, actualizar en la base de datos
+            if respuesta == QMessageBox.StandardButton.Yes:
+                baseLocal.update_cliente(nuevo_nombre, nuevo_email, dni, correo,)
+                usuario_actualizado = baseLocal.obtenerUsuarioPorCorreo(correo)
+                id, nombre, email, apellido, dni = usuario_actualizado
+                self.manager.usuario = Cliente(id, nombre, email, apellido, dni)
+                QMessageBox.information(self, "Actualización", "Datos actualizados con éxito.")
 
-        # Si el usuario confirma, actualizar en la base de datos
-        if respuesta == QMessageBox.StandardButton.Yes:
-            baseLocal.update_cliente(nuevo_nombre, nuevo_email, dni, correo,)
-            usuario_actualizado = baseLocal.obtenerUsuarioPorCorreo(correo)
-            id, nombre, email, apellido, dni = usuario_actualizado
-            self.manager.usuario = Cliente(id, nombre, email, apellido, dni)
-            QMessageBox.information(self, "Actualización", "Datos actualizados con éxito.")
-
-        #si no informa que el propio usuario lo ha cancelado
+            #si no informa que el propio usuario lo ha cancelado
+            else:
+                QMessageBox.information(self, "Acción cancelada por el usuario", "No se han actualizado los datos.")
         else:
-            QMessageBox.information(self, "Acción cancelada por el usuario", "No se han actualizado los datos.")
-
+                QMessageBox.critical(self, 'Error', "El dni no es cumple el formato.")
     #eliminamos el usuario del nuestro firebase y base local 
     def eliminarusuario(self):
         import pyrebase
