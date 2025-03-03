@@ -104,15 +104,18 @@ class Configuracion(QtWidgets.QMainWindow):
                 if response.status_code == 200:
                     baseLocal.eliminarClientePorCorreo(self.manager.usuario.email)
                     print("✅ Usuario eliminado correctamente de Firebase")
-                    # una vez elminado de firebase, podemos irno de la base de datos y lo regresamos al login
+                    # una vez eliminado de firebase, podemos eliminarlo de la base de datos y lo regresamos al login
                     self.cerrarSesion()
                 else:
+                    #en caso de error lo logeamos a la consola
                     print("❌ Error al eliminar el usuario:", response.json())
 
+            #en caso de error lo logeamos a la consola
             except requests.exceptions.RequestException as e:
                 print("❌ Error de conexión:", e)
 
             except Exception as e:
                 print("❌ Error general:", e)
         else:
+            #le informamos al usuario que el mismo esta cancelando esa accion
             QMessageBox.information(self, "Acción cancelada por el usuario", "No se ha eliminado la cuenta.")
