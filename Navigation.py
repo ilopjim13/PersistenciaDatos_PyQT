@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import *
-from PyQt6.QtCore import QSize,QPoint
+from PyQt6.QtCore import QSize,QPoint,Qt
 import sys
 from configuracion import Configuracion
 from login import Ventana
@@ -53,6 +53,8 @@ class WindowManager:
             if self.previous_size:
                 self.current_window.resize(self.previous_size)
                 self.current_window.move(self.previous_position) 
+            #bloqueo la pantalla que se pueda redimensionar debido preferencia del equipo de desarrollo
+            self.current_window.setFixedSize(self.current_window.size())
             self.current_window.show()
 
     def cerrarVentana(self):
