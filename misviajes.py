@@ -73,14 +73,17 @@ class MisViajes(QtWidgets.QMainWindow):
             #Comprobamos los datos entre sí
             if fecha_salida < fecha_actual:
                 QtWidgets.QMessageBox.warning(self, "Error", "La fecha de salida no puede ser en el pasado.")
+                self.cargar_viajes()
                 return
 
             if fecha_regreso < fecha_salida:
                 QtWidgets.QMessageBox.warning(self, "Error", "La fecha de regreso no puede ser anterior a la de salida.")
+                self.cargar_viajes()
                 return
         #Excepción para posible error del formato
         except ValueError:
             QtWidgets.QMessageBox.warning(self, "Error", "Formato de fecha inválido.")
+            self.cargar_viajes()
             return
         #Cargamos en la bd
         baseLocal.putMisViajes(nueva_fecha_salida, nueva_fecha_regreso,viaje_id)
