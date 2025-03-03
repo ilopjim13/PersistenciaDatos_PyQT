@@ -5,22 +5,26 @@ from PyQt6 import uic  # Librería para trabajar con el archivo de la interfaz
 import BD.basedatos as baseLocal
 import sqlite3
 from compra import Compra
+from PyQt6.QtGui import QIcon
 
 # Clase que muestra los vuelos disponibles
 class Vuelos(QMainWindow):
     def __init__(self, manager):
         super().__init__()
-        uic.loadUi("vuelos.ui", self)
+        file_log = "vuelos.ui"
+        full_path_lo = os.path.join(os.path.dirname(__file__), file_log)
+        uic.loadUi(full_path_lo, self)
         # Cargamos las variables de la clase y los componente de la interfaz
         self.manager = manager
         self.destino = self.manager.destino
-        self.Titulo.setText(f"Vuelos a {self.destino}")
+        self.te_titulo.setText(f"Vuelos a {self.destino}")
         self.pasajero = self.manager.usuario
         self.orden = 0
         self.cargar_vuelos()
         self.comboBox.currentIndexChanged.connect(self.update_tabla_vuelos)
         self.tabla_vuelos.cellClicked.connect(self.ir_a_comprar)
         self.bt_volver.clicked.connect(self.volver)
+        self.setWindowIcon(QIcon("recursos/iconos/icon.ico")) # Se le pone el icon a la aplicación
 
     # Método que carga los vuelos disponibles
     def cargar_vuelos(self):

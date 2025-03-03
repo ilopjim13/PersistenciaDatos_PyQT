@@ -4,13 +4,16 @@ from PyQt6.QtWidgets import * # Librerías de los componentes
 from PyQt6 import uic  # Librería para trabajar con el archivo de la interfaz
 from PyQt6.QtCore import QDate
 import BD.basedatos as baseLocal
-import sqlite3
+from PyQt6.QtGui import QIcon
 
 # Clase que muestra la ventana de compra
 class Compra(QMainWindow):
     def __init__(self, manager):
         super().__init__()
-        uic.loadUi("compras.ui", self)
+        file_log = "compras.ui"
+        full_path_lo = os.path.join(os.path.dirname(__file__), file_log)
+        uic.loadUi(full_path_lo, self)
+        self.setWindowIcon(QIcon("recursos/iconos/icon.ico"))
         # Cargamos las variables de la clase y los componentes de la interfaz
         self.manager = manager
         if self.manager.usuario is not None:
@@ -103,12 +106,15 @@ class Billete(QMainWindow):
     def __init__(self, manager):
         super().__init__()
         # Cargamos las variables de la clase y los componentes de la interfaz
-        uic.loadUi("billete.ui", self)
+        file_log = "billete.ui"
+        full_path_lo = os.path.join(os.path.dirname(__file__), file_log)
+        uic.loadUi(full_path_lo, self)
         self.manager = manager
         self.viaje = manager.viaje
         self.cliente = self.manager.usuario
         self.cargar_datos()
         self.bt_aceptar.clicked.connect(self.aceptar)
+        self.setWindowIcon(QIcon("recursos/iconos/icon.ico"))
 
     # Método que carga los datos del cliente y del viaje
     def cargar_datos(self):

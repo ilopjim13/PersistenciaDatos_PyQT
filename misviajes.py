@@ -1,6 +1,6 @@
 from PyQt6 import QtWidgets
 from PyQt6 import QtWidgets, uic
-import sys
+import os
 from PyQt6.QtWidgets import *
 from PyQt6.QtCore import * 
 import sqlite3
@@ -11,7 +11,9 @@ from datetime import datetime
 class MisViajes(QtWidgets.QMainWindow):
     def __init__(self, manager):
         super().__init__()
-        uic.loadUi("misviajes.ui", self) 
+        file_log = "misviajes.ui"
+        full_path_lo = os.path.join(os.path.dirname(__file__), file_log)
+        uic.loadUi(full_path_lo, self) 
         #añadimos la instancia del manager al self y comprobamos que existe.
         self.manager = manager
         if self.manager.usuario is not None:

@@ -8,7 +8,10 @@ from misviajes import MisViajes
 from vuelos import Vuelos
 from compra import Compra, Billete
 from models.cliente import Cliente
+from PyQt6.QtGui import QIcon
 
+# Para la ejecucíon del comando:
+# pyinstaller --windowed --icon=recursos/iconos/icon.ico --add-data="BD/basedatos.py:BD" --add-data="models/cliente.py:models" --add-data="recursos/iconos/engranaje.png:recursos/iconos" --add-data="recursos/iconos/usuario.png:recursos/iconos" --add-data="recursos/media/billete.jpg:recursos/media" --add-data="recursos/media/fondo.jpg:recursos/media" --add-data="billete_ui.py:." --add-data="billete.ui:." --add-data="compra.py:." --add-data="compras_ui.py:." --add-data="compras.ui:." --add-data="configuracion_ui.py:." --add-data="configuracion.py:." --add-data="configuracion.ui:." --add-data="firebase.txt:." --add-data="login_ui.py:." --add-data="login.py:." --add-data="login.ui:." --add-data="menu_ui.py:." --add-data="menu.ui:." --add-data="menu.py:." --add-data="misviajes_ui.py:." --add-data="misviajes.ui:." --add-data="misviajes.ui:." --add-data="recursos_rc.py:." --add-data="recursos.qrc:." --add-data="viajes.db:." --add-data="vuelos_ui.py:." --add-data="vuelos.py:." --add-data="vuelos.ui:." --name "Skyberia" Navigation.py
 
 class WindowManager:
     def __init__(self):
