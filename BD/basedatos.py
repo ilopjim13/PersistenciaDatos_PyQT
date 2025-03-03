@@ -32,6 +32,22 @@ def obtenerSoloElNombreDelDestinoParaLaPantallaMenu():
     conn.close()
     return destinos
 
+def obtenerSoloElNombreDelViajeParaLaPantallaMenu(email):
+    conn = sqlite3.connect("viajes.db") 
+    cursor = conn.cursor()
+    cursor.execute("""
+    SELECT destino.nombre
+    FROM viaje
+    JOIN cliente ON viaje.cliente_email = cliente.email
+    JOIN vuelo ON viaje.vuelo_id = vuelo.id
+    JOIN destino ON vuelo.destino_id = destino.id
+    WHERE cliente.email = ?
+    """, (email,))
+    # Porquee cojoneeees no sale nadaaaaaaaaa
+    viajes = cursor.fetchall()
+    conn.close()
+    return viajes
+
 def obtenerUsuarioPorCorreo(correo):
     conn = sqlite3.connect('viajes.db')
     cursor = conn.cursor()

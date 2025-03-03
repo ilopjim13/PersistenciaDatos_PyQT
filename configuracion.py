@@ -43,7 +43,7 @@ class Configuracion(QtWidgets.QMainWindow):
         correo = self.manager.usuario.email
         baseLocal.update_cliente(nuevo_nombre, nuevo_email, dni,correo,)
         usuario_actualizado = baseLocal.obtenerUsuarioPorCorreo(correo)
-        QMessageBox.information(self, "Actualización", usuario_actualizado)
+        QMessageBox.information(self, "Actualización", str(usuario_actualizado))
         id, nombre, email, apellido, dni = usuario_actualizado
         self.manager.usuario = Cliente(id, nombre, email, apellido, dni)
     

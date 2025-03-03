@@ -12,9 +12,14 @@ class Menu(QtWidgets.QMainWindow):
         full_path_lo = os.path.join(os.path.dirname(__file__), file_log)
         uic.loadUi(full_path_lo,self)
         self.cargarDatos()
+        self.manager = manager
+        if self.manager.usuario is not None:
+            self.cargarDatosLista()
+            self.QLNombre.setText(self.manager.usuario.nombre)
+            self.QLCorreo.setText(self.manager.usuario.email)
         self.QLabelUsuario.setPixmap(QtGui.QPixmap(":/icons/recursos/iconos/usuario.png"))
         self.QLabelConfiguracion.setPixmap(QtGui.QPixmap(":/icons/recursos/iconos/engranaje.png"))
-        self.manager = manager
+        self.QTMisViajes.itemClicked.connect(self.irAMisViajes)
         self.BMisViajes.clicked.connect(self.irAMisViajes)
         self.QTTredingsTopicsTabla.cellClicked.connect(self.irACompras)
         self.QLabelConfiguracion.mousePressEvent= self.mousePressEventLabel
@@ -31,6 +36,15 @@ class Menu(QtWidgets.QMainWindow):
             for col_idx, data in enumerate(row_data):
                 self.QTTredingsTopicsTabla.setItem(row_idx, col_idx, QtWidgets.QTableWidgetItem(str(data)))
     
+    def cargarDatosLista(self):
+        viajes = baseLocal.obtenerSoloElNombreDelViajeParaLaPantallaMenu(self.manager.usuario.email)
+        if not viajes:
+            print("No se encontraron viajes para este email.")  # Depuración
+    
+        self.QTMisViajes.clear()  # Limpia la lista antes de agregar nuevos elementos
+        for viaje in viajes:
+            self.QTMisViajes.addItem(viaje[0]) 
+
     def irAMisViajes(self):
         self.manager.mostrarVentana("misviajes")
 
