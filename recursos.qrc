@@ -3,5 +3,6 @@
     <file>recursos/iconos/usuario.png</file>
     <file>recursos/iconos/engranaje.png</file>
     <file>recursos/media/fondo.jpg</file>
+    <file>recursos/media/billete.jpg</file>
   </qresource>
 </RCC>

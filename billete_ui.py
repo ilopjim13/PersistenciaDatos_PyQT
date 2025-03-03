@@ -24,14 +24,14 @@ class Ui_GestionViajes(object):
     def setupUi(self, GestionViajes):
         if not GestionViajes.objectName():
             GestionViajes.setObjectName(u"GestionViajes")
-        GestionViajes.resize(755, 485)
+        GestionViajes.resize(773, 512)
         GestionViajes.setMinimumSize(QSize(755, 485))
-        GestionViajes.setMaximumSize(QSize(755, 490))
+        GestionViajes.setMaximumSize(QSize(16777215, 16777215))
         self.principal = QWidget(GestionViajes)
         self.principal.setObjectName(u"principal")
         self.principal.setEnabled(True)
         self.principal.setStyleSheet(u"#principal{\n"
-"background-image: url(:/icons/recursos/media/fondo.jpg);\n"
+"background-image: url(:/icons/recursos/media/billete.jpg);\n"
 "background-repeat: no-repeat;\n"
 "background-position: center;\n"
 "background-attachment: fixed;\n"
@@ -56,8 +56,8 @@ class Ui_GestionViajes(object):
 "color: black; /* Color del texto en las cabeceras */\n"
 "border: 1px solid black; /* Borde negro */\n"
 "}\n"
-"QTableWidget::horizon"
-                        "talHeader {\n"
+"QTableWidget::horiz"
+                        "ontalHeader {\n"
 "background-color: rgba(255, 255, 255, 50); /* Fondo semitransparente para las cabeceras horizontales */\n"
 "color: black; /* Color del texto en las cabeceras */\n"
 "border: 1px solid black; /* Borde negro */\n"
@@ -76,23 +76,27 @@ class Ui_GestionViajes(object):
 "background-color: rgba(150, 150, 150, 200); /* Fondo a\u00fan m\u00e1s oscuro al presionar */\n"
 "}")
         self.verticalLayout_3 = QVBoxLayout(self.principal)
+        self.verticalLayout_3.setSpacing(6)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(17, 17, 18, 19)
         self.widget = QWidget(self.principal)
         self.widget.setObjectName(u"widget")
         self.widget.setMaximumSize(QSize(16777215, 16777215))
-        self.widget.setAutoFillBackground(True)
+        self.widget.setAutoFillBackground(False)
         self.verticalLayout = QVBoxLayout(self.widget)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.widget1 = QWidget(self.widget)
-        self.widget1.setObjectName(u"widget1")
-        self.widget1.setMaximumSize(QSize(1200, 900))
-        self.widget1.setAutoFillBackground(False)
-        self.widget1.setStyleSheet(u"QWidget#widget {\n"
+        self.verticalLayout.setContentsMargins(-1, -1, -1, 10)
+        self.widget_1 = QWidget(self.widget)
+        self.widget_1.setObjectName(u"widget_1")
+        self.widget_1.setMaximumSize(QSize(1200, 900))
+        self.widget_1.setAutoFillBackground(False)
+        self.widget_1.setStyleSheet(u"QWidget#widget {\n"
 "    border: 0px;\n"
 "    border-bottom:1px solid black; /* Borde negro en la parte inferior */\n"
 "}")
-        self.horizontalLayout = QHBoxLayout(self.widget1)
+        self.horizontalLayout = QHBoxLayout(self.widget_1)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(0, -1, -1, -1)
         self.formLayout_7 = QFormLayout()
         self.formLayout_7.setObjectName(u"formLayout_7")
         self.formLayout_7.setFieldGrowthPolicy(QFormLayout.ExpandingFieldsGrow)
@@ -100,21 +104,23 @@ class Ui_GestionViajes(object):
         self.formLayout_7.setLabelAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
         self.formLayout_7.setFormAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
         self.formLayout_7.setHorizontalSpacing(6)
-        self.emailLabel = QLabel(self.widget1)
-        self.emailLabel.setObjectName(u"emailLabel")
-
-        self.formLayout_7.setWidget(0, QFormLayout.LabelRole, self.emailLabel)
-
-        self.lt_email = QLineEdit(self.widget1)
+        self.formLayout_7.setContentsMargins(0, -1, -1, -1)
+        self.lt_email = QLineEdit(self.widget_1)
         self.lt_email.setObjectName(u"lt_email")
         self.lt_email.setStyleSheet(u"QLineEdit {\n"
 "    background: transparent;\n"
 "    border: none;\n"
 "    font-size: 24px;\n"
+"	color:white;\n"
 "}")
         self.lt_email.setReadOnly(True)
 
         self.formLayout_7.setWidget(0, QFormLayout.FieldRole, self.lt_email)
+
+        self.emailLabel = QLabel(self.widget_1)
+        self.emailLabel.setObjectName(u"emailLabel")
+
+        self.formLayout_7.setWidget(0, QFormLayout.LabelRole, self.emailLabel)
 
 
         self.horizontalLayout.addLayout(self.formLayout_7)
@@ -128,21 +134,23 @@ class Ui_GestionViajes(object):
         self.formLayout_2.setFormAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
         self.formLayout_2.setHorizontalSpacing(13)
         self.formLayout_2.setContentsMargins(-1, -1, 29, -1)
-        self.QLabel = QLabel(self.widget1)
+        self.QLabel = QLabel(self.widget_1)
         self.QLabel.setObjectName(u"QLabel")
         self.QLabel.setMaximumSize(QSize(1200, 900))
         font = QFont()
         font.setPointSize(20)
         self.QLabel.setFont(font)
+        self.QLabel.setStyleSheet(u"color:white;")
         self.QLabel.setTextFormat(Qt.AutoText)
         self.QLabel.setWordWrap(False)
 
         self.formLayout_2.setWidget(0, QFormLayout.LabelRole, self.QLabel)
 
-        self.te_precio = QLabel(self.widget1)
+        self.te_precio = QLabel(self.widget_1)
         self.te_precio.setObjectName(u"te_precio")
         self.te_precio.setMaximumSize(QSize(1200, 900))
         self.te_precio.setFont(font)
+        self.te_precio.setStyleSheet(u"color:white;")
 
         self.formLayout_2.setWidget(0, QFormLayout.FieldRole, self.te_precio)
 
@@ -150,7 +158,7 @@ class Ui_GestionViajes(object):
         self.horizontalLayout.addLayout(self.formLayout_2)
 
 
-        self.verticalLayout.addWidget(self.widget1)
+        self.verticalLayout.addWidget(self.widget_1)
 
         self.horizontalLayout_5 = QHBoxLayout()
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
@@ -163,7 +171,7 @@ class Ui_GestionViajes(object):
         self.formLayout.setFormAlignment(Qt.AlignCenter)
         self.formLayout.setHorizontalSpacing(6)
         self.formLayout.setVerticalSpacing(40)
-        self.formLayout.setContentsMargins(0, 40, 0, 40)
+        self.formLayout.setContentsMargins(0, 42, 0, 40)
         self.nombreDelPasajeroLabel = QLabel(self.widget)
         self.nombreDelPasajeroLabel.setObjectName(u"nombreDelPasajeroLabel")
         font1 = QFont()
@@ -198,13 +206,6 @@ class Ui_GestionViajes(object):
 
         self.formLayout.setWidget(2, QFormLayout.LabelRole, self.dNIDelPasajeroLabel)
 
-        self.te_dni = QLineEdit(self.widget)
-        self.te_dni.setObjectName(u"te_dni")
-        self.te_dni.setFont(font1)
-        self.te_dni.setReadOnly(True)
-
-        self.formLayout.setWidget(2, QFormLayout.FieldRole, self.te_dni)
-
         self.nMeroDeAsientosLabel = QLabel(self.widget)
         self.nMeroDeAsientosLabel.setObjectName(u"nMeroDeAsientosLabel")
         self.nMeroDeAsientosLabel.setFont(font1)
@@ -218,6 +219,13 @@ class Ui_GestionViajes(object):
 
         self.formLayout.setWidget(3, QFormLayout.FieldRole, self.te_asientos)
 
+        self.te_dni = QLineEdit(self.widget)
+        self.te_dni.setObjectName(u"te_dni")
+        self.te_dni.setFont(font1)
+        self.te_dni.setReadOnly(True)
+
+        self.formLayout.setWidget(2, QFormLayout.FieldRole, self.te_dni)
+
 
         self.horizontalLayout_5.addLayout(self.formLayout)
 
@@ -229,7 +237,7 @@ class Ui_GestionViajes(object):
         self.formLayout_6.setLabelAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
         self.formLayout_6.setFormAlignment(Qt.AlignHCenter|Qt.AlignTop)
         self.formLayout_6.setVerticalSpacing(40)
-        self.formLayout_6.setContentsMargins(0, 40, -1, 40)
+        self.formLayout_6.setContentsMargins(0, 42, -1, 40)
         self.ql_origen = QLabel(self.widget)
         self.ql_origen.setObjectName(u"ql_origen")
         self.ql_origen.setFont(font1)
@@ -289,12 +297,12 @@ class Ui_GestionViajes(object):
 
         self.verticalLayout.addLayout(self.horizontalLayout_5)
 
-        self.widget2 = QWidget(self.widget)
-        self.widget2.setObjectName(u"widget2")
-        self.horizontalLayout_2 = QHBoxLayout(self.widget2)
+        self.widget_2 = QWidget(self.widget)
+        self.widget_2.setObjectName(u"widget_2")
+        self.horizontalLayout_2 = QHBoxLayout(self.widget_2)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.horizontalLayout_2.setSizeConstraint(QLayout.SetDefaultConstraint)
-        self.bt_aceptar = QPushButton(self.widget2)
+        self.bt_aceptar = QPushButton(self.widget_2)
         self.bt_aceptar.setObjectName(u"bt_aceptar")
         font2 = QFont()
         font2.setPointSize(10)
@@ -302,14 +310,14 @@ class Ui_GestionViajes(object):
 
         self.horizontalLayout_2.addWidget(self.bt_aceptar)
 
-        self.bt_descargar = QPushButton(self.widget2)
+        self.bt_descargar = QPushButton(self.widget_2)
         self.bt_descargar.setObjectName(u"bt_descargar")
         self.bt_descargar.setFont(font2)
 
         self.horizontalLayout_2.addWidget(self.bt_descargar)
 
 
-        self.verticalLayout.addWidget(self.widget2)
+        self.verticalLayout.addWidget(self.widget_2)
 
 
         self.verticalLayout_3.addWidget(self.widget)
@@ -323,8 +331,8 @@ class Ui_GestionViajes(object):
 
     def retranslateUi(self, GestionViajes):
         GestionViajes.setWindowTitle(QCoreApplication.translate("GestionViajes", u"Vuelos App", None))
-        self.emailLabel.setText("")
         self.lt_email.setText(QCoreApplication.translate("GestionViajes", u"prueba1@gmail.com", None))
+        self.emailLabel.setText("")
         self.QLabel.setText(QCoreApplication.translate("GestionViajes", u"Precio:", None))
         self.te_precio.setText(QCoreApplication.translate("GestionViajes", u"0", None))
         self.nombreDelPasajeroLabel.setText(QCoreApplication.translate("GestionViajes", u"Nombre del pasajero:", None))

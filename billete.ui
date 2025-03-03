@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>755</width>
-    <height>485</height>
+    <width>773</width>
+    <height>512</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -18,8 +18,8 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>755</width>
-    <height>490</height>
+    <width>16777215</width>
+    <height>16777215</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -31,7 +31,7 @@
    </property>
    <property name="styleSheet">
     <string notr="true">#principal{
-background-image: url(:/icons/recursos/media/fondo.jpg);
+background-image: url(:/icons/recursos/media/billete.jpg);
 background-repeat: no-repeat;
 background-position: center;
 background-attachment: fixed;
@@ -76,6 +76,21 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
 }</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_3">
+    <property name="spacing">
+     <number>6</number>
+    </property>
+    <property name="leftMargin">
+     <number>17</number>
+    </property>
+    <property name="topMargin">
+     <number>17</number>
+    </property>
+    <property name="rightMargin">
+     <number>18</number>
+    </property>
+    <property name="bottomMargin">
+     <number>19</number>
+    </property>
     <item>
      <widget class="QWidget" name="widget" native="true">
       <property name="maximumSize">
@@ -85,11 +100,14 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
        </size>
       </property>
       <property name="autoFillBackground">
-       <bool>true</bool>
+       <bool>false</bool>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="bottomMargin">
+        <number>10</number>
+       </property>
        <item>
-        <widget class="QWidget" name="widget" native="true">
+        <widget class="QWidget" name="widget_1" native="true">
          <property name="maximumSize">
           <size>
            <width>1200</width>
@@ -106,6 +124,9 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
 }</string>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
           <item>
            <layout class="QFormLayout" name="formLayout_7">
             <property name="fieldGrowthPolicy">
@@ -123,13 +144,9 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
             <property name="horizontalSpacing">
              <number>6</number>
             </property>
-            <item row="0" column="0">
-             <widget class="QLabel" name="emailLabel">
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
             <item row="0" column="1">
              <widget class="QLineEdit" name="lt_email">
               <property name="styleSheet">
@@ -137,6 +154,7 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
     background: transparent;
     border: none;
     font-size: 24px;
+	color:white;
 }</string>
               </property>
               <property name="text">
@@ -144,6 +162,13 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
               </property>
               <property name="readOnly">
                <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="emailLabel">
+              <property name="text">
+               <string/>
               </property>
              </widget>
             </item>
@@ -185,6 +210,9 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
                 <pointsize>20</pointsize>
                </font>
               </property>
+              <property name="styleSheet">
+               <string notr="true">color:white;</string>
+              </property>
               <property name="text">
                <string>Precio:</string>
               </property>
@@ -208,6 +236,9 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
                <font>
                 <pointsize>20</pointsize>
                </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color:white;</string>
               </property>
               <property name="text">
                <string>0</string>
@@ -248,7 +279,7 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
             <number>0</number>
            </property>
            <property name="topMargin">
-            <number>40</number>
+            <number>42</number>
            </property>
            <property name="rightMargin">
             <number>0</number>
@@ -316,18 +347,6 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
              </property>
             </widget>
            </item>
-           <item row="2" column="1">
-            <widget class="QLineEdit" name="te_dni">
-             <property name="font">
-              <font>
-               <pointsize>15</pointsize>
-              </font>
-             </property>
-             <property name="readOnly">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
            <item row="3" column="0">
             <widget class="QLabel" name="nMeroDeAsientosLabel">
              <property name="font">
@@ -342,6 +361,18 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
            </item>
            <item row="3" column="1">
             <widget class="QLineEdit" name="te_asientos">
+             <property name="font">
+              <font>
+               <pointsize>15</pointsize>
+              </font>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="te_dni">
              <property name="font">
               <font>
                <pointsize>15</pointsize>
@@ -378,7 +409,7 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
             <number>0</number>
            </property>
            <property name="topMargin">
-            <number>40</number>
+            <number>42</number>
            </property>
            <property name="bottomMargin">
             <number>40</number>
@@ -490,7 +521,7 @@ background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presion
         </layout>
        </item>
        <item>
-        <widget class="QWidget" name="widget" native="true">
+        <widget class="QWidget" name="widget_2" native="true">
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <property name="sizeConstraint">
            <enum>QLayout::SetDefaultConstraint</enum>
