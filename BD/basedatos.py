@@ -67,16 +67,21 @@ def obtener_cliente(email):
 def eliminarClientePorCorreo(correo):
     conexion = sqlite3.connect("viajes.db")
     cursor = conexion.cursor()
-    
+
     try:
+        # Primero eliminamos los viajes del cliente
+        cursor.execute("DELETE FROM viaje WHERE cliente_email = ?", (correo,))
+        # Luego eliminamos al cliente
         cursor.execute("DELETE FROM cliente WHERE email = ?", (correo,))
+
         conexion.commit()
-        print("Cliente eliminado correctamente.")
+        print("Cliente y sus viajes eliminados correctamente.")
     except sqlite3.Error as e:
         print("Error al eliminar cliente:", e)
     finally:
         cursor.close()
         conexion.close()
+
 
 
 def prueba():

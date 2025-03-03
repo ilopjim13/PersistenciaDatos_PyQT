@@ -7,43 +7,48 @@ from PyQt6 import QtWidgets, uic
 import BD.basedatos as baseLocal
 from models.cliente import Cliente  # Librería para trabajar con el archivo de la interfaz
 
-#configuracion
-#eliminar la cuenta del usuario
-#actualizar la cuneta del usuario
-#si se actualiza la contraseña del mismo debemos actualizarloen el firebase,como se hace esto?
-#si se elimina la cuenta del usuario debemos eliminarlo del firebase,como se hace esto?
-#si se actualiza la cuenta del usuario debemos actualizarlo en el firebase,como se hace esto?
-#contraseña y email estan dentro del firebase, 
-#el usuario preguntar sobre el usuario una vez que se haya accedido 
-# en firebase trabajar directamente con usuario y cuenta, todo lo demas puede ser en bd local??
-
+#clase que se encarga de actualizar el usuario, eliminar la cuenta del usuario o cerrar la sesion
 class Configuracion(QtWidgets.QMainWindow):
     def __init__(self,manager):
         super(Configuracion, self).__init__()
+        #archivo donde se aloja la pantalla
         file_log = "configuracion.ui"
         full_path_lo = os.path.join(os.path.dirname(__file__), file_log)
-        uic.loadUi(full_path_lo, self)  # Cargar la UI de QtDesigner
+        uic.loadUi(full_path_lo, self)
+        #nuestro windowManager, este es el que se encarga de la navegacion y saber que usuario esta logeado
         self.manager = manager
+        #conecto los diferente elementos del mismo
         self.QPBVolver.clicked.connect(lambda: self.irAMenu())
         self.buttonBox_2.button(self.buttonBox_2.StandardButton.Apply).clicked.connect(lambda: self.eliminarusuario())
         self.BBActualizarUsuario.clicked.connect(lambda :self.actualizarUsuario())
+        #debido a que nuestro navigation (manager), lo instancia antes de tiempo, debemos asegurarno si el usuario a iniciado antes para poner los campos
         if self.manager.usuario is not None:
-            self.QTENombre.setPlainText(self.manager.usuario.nombre)  # Para QLineEdit
-            self.QTEApellido.setPlainText(self.manager.usuario.apellido)  # Para QLineEdit
-            self.QTEDni.setPlainText(self.manager.usuario.dni)  # Para QLineEdit
+            self.QTENombre.setPlainText(self.manager.usuario.nombre)
+            self.QTEApellido.setPlainText(self.manager.usuario.apellido)
+            self.QTEDni.setPlainText(self.manager.usuario.dni)
         self.BcerrarSesion.clicked.connect(self.cerrarSesion)
+
+    #navega hasta la ventana menu
     def irAMenu(self):
         self.manager.mostrarVentana("menu")
 
+    #pone en None el usuario, eso significa que no hay nadie logeado y navega hasta login donde hara de nuevo un register o login
     def cerrarSesion(self):
         self.manager.usuario = None
         self.manager.mostrarVentana("login")
+
+    #actualiza al usuario en la base de datos local de nuestro sistema 
     def actualizarUsuario(self):
-        # Obtener el texto del QTextEdit para el nombre
+
+        # Obtener el texto de los QTextEdit para el nombre,email y dni
         nuevo_nombre = self.QTENombre.toPlainText()
         nuevo_email = self.QTEApellido.toPlainText()
         dni = self.QTEDni.toPlainText()
+
+        #busque del usuario mediante el usuario registrado gracias a nuestro navigation
         correo = self.manager.usuario.email
+
+        #le informamos al usuario una confirmacion mediante un QMesaageBox
         respuesta = QMessageBox.question(
         self,
         "Confirmar actualización",
@@ -52,6 +57,7 @@ class Configuracion(QtWidgets.QMainWindow):
         f"Email: {nuevo_email}\n"
         f"DNI: {dni}",
         QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
+
         # Si el usuario confirma, actualizar en la base de datos
         if respuesta == QMessageBox.StandardButton.Yes:
             baseLocal.update_cliente(nuevo_nombre, nuevo_email, dni, correo,)
@@ -59,10 +65,12 @@ class Configuracion(QtWidgets.QMainWindow):
             id, nombre, email, apellido, dni = usuario_actualizado
             self.manager.usuario = Cliente(id, nombre, email, apellido, dni)
             QMessageBox.information(self, "Actualización", "Datos actualizados con éxito.")
+
         #si no informa que el propio usuario lo ha cancelado
         else:
-            QMessageBox.information(self, "Cancelado", "No se han actualizado los datos.")
+            QMessageBox.information(self, "Acción cancelada por el usuario", "No se han actualizado los datos.")
 
+    #eliminamos el usuario del nuestro firebase y base local 
     def eliminarusuario(self):
         import pyrebase
         import requests
@@ -107,4 +115,4 @@ class Configuracion(QtWidgets.QMainWindow):
             except Exception as e:
                 print("❌ Error general:", e)
         else:
-            QMessageBox.information(self, "Cancelado", "No se ha eliminado la cuenta.")
+            QMessageBox.information(self, "Acción cancelada por el usuario", "No se ha eliminado la cuenta.")
