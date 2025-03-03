@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'menu.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.1
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -143,27 +143,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.QLNombre = QLabel(self.QWGirdDatosUsuarios)
         self.QLNombre.setObjectName(u"QLNombre")
-        font = QFont()
-        font.setPointSize(20)
-        font.setWeight(QFont.ExtraBold)
-        self.QLNombre.setFont(font)
-
-        self.verticalLayout_2.addWidget(self.QLNombre)
-
-        self.QLCorreo = QLabel(self.QWGirdDatosUsuarios)
-        self.QLCorreo.setObjectName(u"QLCorreo")
-        font1 = QFont()
-        font1.setPointSize(15)
-        font1.setWeight(QFont.ExtraBold)
-        self.QLCorreo.setFont(font1)
-
-        self.verticalLayout_2.addWidget(self.QLCorreo)
-
-
-        self.horizontalLayout.addWidget(self.QWGirdDatosUsuarios)
-
-        self.QLNombreApp = QLabel(self.QWGridCabecera)
-        self.QLNombreApp.setObjectName(u"QLNombreApp")
         palette = QPalette()
         brush = QBrush(QColor(0, 0, 0, 255))
         brush.setStyle(Qt.SolidPattern)
@@ -180,7 +159,54 @@ class Ui_MainWindow(object):
         palette.setBrush(QPalette.Disabled, QPalette.Button, brush1)
         palette.setBrush(QPalette.Disabled, QPalette.Base, brush1)
         palette.setBrush(QPalette.Disabled, QPalette.Window, brush1)
-        self.QLNombreApp.setPalette(palette)
+        self.QLNombre.setPalette(palette)
+        font = QFont()
+        font.setPointSize(20)
+        font.setWeight(QFont.ExtraBold)
+        self.QLNombre.setFont(font)
+
+        self.verticalLayout_2.addWidget(self.QLNombre)
+
+        self.QLCorreo = QLabel(self.QWGirdDatosUsuarios)
+        self.QLCorreo.setObjectName(u"QLCorreo")
+        palette1 = QPalette()
+        palette1.setBrush(QPalette.Active, QPalette.WindowText, brush)
+        palette1.setBrush(QPalette.Active, QPalette.Button, brush1)
+        palette1.setBrush(QPalette.Active, QPalette.Base, brush1)
+        palette1.setBrush(QPalette.Active, QPalette.Window, brush1)
+        palette1.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
+        palette1.setBrush(QPalette.Inactive, QPalette.Button, brush1)
+        palette1.setBrush(QPalette.Inactive, QPalette.Base, brush1)
+        palette1.setBrush(QPalette.Inactive, QPalette.Window, brush1)
+        palette1.setBrush(QPalette.Disabled, QPalette.Button, brush1)
+        palette1.setBrush(QPalette.Disabled, QPalette.Base, brush1)
+        palette1.setBrush(QPalette.Disabled, QPalette.Window, brush1)
+        self.QLCorreo.setPalette(palette1)
+        font1 = QFont()
+        font1.setPointSize(15)
+        font1.setWeight(QFont.ExtraBold)
+        self.QLCorreo.setFont(font1)
+
+        self.verticalLayout_2.addWidget(self.QLCorreo)
+
+
+        self.horizontalLayout.addWidget(self.QWGirdDatosUsuarios)
+
+        self.QLNombreApp = QLabel(self.QWGridCabecera)
+        self.QLNombreApp.setObjectName(u"QLNombreApp")
+        palette2 = QPalette()
+        palette2.setBrush(QPalette.Active, QPalette.WindowText, brush)
+        palette2.setBrush(QPalette.Active, QPalette.Button, brush1)
+        palette2.setBrush(QPalette.Active, QPalette.Base, brush1)
+        palette2.setBrush(QPalette.Active, QPalette.Window, brush1)
+        palette2.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
+        palette2.setBrush(QPalette.Inactive, QPalette.Button, brush1)
+        palette2.setBrush(QPalette.Inactive, QPalette.Base, brush1)
+        palette2.setBrush(QPalette.Inactive, QPalette.Window, brush1)
+        palette2.setBrush(QPalette.Disabled, QPalette.Button, brush1)
+        palette2.setBrush(QPalette.Disabled, QPalette.Base, brush1)
+        palette2.setBrush(QPalette.Disabled, QPalette.Window, brush1)
+        self.QLNombreApp.setPalette(palette2)
         font2 = QFont()
         font2.setPointSize(24)
         font2.setWeight(QFont.Black)
@@ -247,9 +273,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4 = QHBoxLayout(self.widget_2)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.QTMisViajes = QListWidget(self.widget_2)
-        QListWidgetItem(self.QTMisViajes)
-        QListWidgetItem(self.QTMisViajes)
-        QListWidgetItem(self.QTMisViajes)
         self.QTMisViajes.setObjectName(u"QTMisViajes")
         sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
         sizePolicy4.setHorizontalStretch(0)
@@ -398,25 +421,14 @@ class Ui_MainWindow(object):
         self.QLNombreApp.setText(QCoreApplication.translate("MainWindow", u"Skyberia", None))
         self.QLabelConfiguracion.setText("")
         self.QLMisViajes.setText(QCoreApplication.translate("MainWindow", u"Mis viajes", None))
-
-        __sortingEnabled = self.QTMisViajes.isSortingEnabled()
-        self.QTMisViajes.setSortingEnabled(False)
-        ___qlistwidgetitem = self.QTMisViajes.item(0)
-        ___qlistwidgetitem.setText(QCoreApplication.translate("MainWindow", u"Grecia", None));
-        ___qlistwidgetitem1 = self.QTMisViajes.item(1)
-        ___qlistwidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Francia", None));
-        ___qlistwidgetitem2 = self.QTMisViajes.item(2)
-        ___qlistwidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Alemania", None));
-        self.QTMisViajes.setSortingEnabled(__sortingEnabled)
-
         self.BMisViajes.setText(QCoreApplication.translate("MainWindow", u"Mis Viajes", None))
         self.QLTredingTopics.setText(QCoreApplication.translate("MainWindow", u"Treding topics", None))
         ___qtablewidgetitem = self.QTTredingsTopicsTabla.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Destino", None));
 
-        __sortingEnabled1 = self.QTTredingsTopicsTabla.isSortingEnabled()
+        __sortingEnabled = self.QTTredingsTopicsTabla.isSortingEnabled()
         self.QTTredingsTopicsTabla.setSortingEnabled(False)
-        self.QTTredingsTopicsTabla.setSortingEnabled(__sortingEnabled1)
+        self.QTTredingsTopicsTabla.setSortingEnabled(__sortingEnabled)
 
     # retranslateUi
 

@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'configuracion.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.1
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -63,6 +63,12 @@ class Ui_MainWindow(object):
         self.label_7.setFont(font)
 
         self.horizontalLayout.addWidget(self.label_7)
+
+        self.BcerrarSesion = QPushButton(self.widget)
+        self.BcerrarSesion.setObjectName(u"BcerrarSesion")
+        self.BcerrarSesion.setMaximumSize(QSize(100, 50))
+
+        self.horizontalLayout.addWidget(self.BcerrarSesion)
 
 
         self.verticalLayout.addWidget(self.widget)
@@ -450,6 +456,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.QPBVolver.setText(QCoreApplication.translate("MainWindow", u"volver", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"CONFIGURACION", None))
+        self.BcerrarSesion.setText(QCoreApplication.translate("MainWindow", u"Cerrar sesion", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Actualizar tu cuenta", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u" Nombre", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Apellido", None))
