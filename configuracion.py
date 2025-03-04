@@ -7,6 +7,7 @@ from PyQt6.QtWidgets import * # Librerías de los componentes
 from PyQt6 import QtWidgets, uic
 import BD.basedatos as baseLocal
 from models.cliente import Cliente  # Librería para trabajar con el archivo de la interfaz
+from PyQt6.QtGui import QIcon
 
 #clase que se encarga de actualizar el usuario, eliminar la cuenta del usuario o cerrar la sesion
 class Configuracion(QtWidgets.QMainWindow):
@@ -16,6 +17,7 @@ class Configuracion(QtWidgets.QMainWindow):
         file_log = "configuracion.ui"
         full_path_lo = os.path.join(os.path.dirname(__file__), file_log)
         uic.loadUi(full_path_lo, self)
+        self.setWindowIcon(QIcon("recursos/iconos/icon.ico"))
         #nuestro windowManager, este es el que se encarga de la navegacion y saber que usuario esta logeado
         self.manager = manager
         #conecto los diferente elementos del mismo

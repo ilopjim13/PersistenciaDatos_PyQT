@@ -6,6 +6,7 @@ from PyQt6.QtCore import *
 import sqlite3
 import BD.basedatos as baseLocal
 from datetime import datetime
+from PyQt6.QtGui import QIcon
 
 #Clase de La ventana
 class MisViajes(QtWidgets.QMainWindow):
@@ -14,6 +15,7 @@ class MisViajes(QtWidgets.QMainWindow):
         file_log = "misviajes.ui"
         full_path_lo = os.path.join(os.path.dirname(__file__), file_log)
         uic.loadUi(full_path_lo, self) 
+        self.setWindowIcon(QIcon("recursos/iconos/icon.ico"))
         #añadimos la instancia del manager al self y comprobamos que existe.
         self.manager = manager
         if self.manager.usuario is not None:

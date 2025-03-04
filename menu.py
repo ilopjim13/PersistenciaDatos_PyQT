@@ -4,6 +4,7 @@ import sys
 from PyQt6.QtWidgets import *
 from recursos_rc import *
 import BD.basedatos as baseLocal
+from PyQt6.QtGui import QIcon
 
 class Menu(QtWidgets.QMainWindow):
     def __init__(self,manager):
@@ -13,6 +14,7 @@ class Menu(QtWidgets.QMainWindow):
         file_log = "menu.ui"
         full_path_lo = os.path.join(os.path.dirname(__file__), file_log)
         uic.loadUi(full_path_lo,self)
+        self.setWindowIcon(QIcon("recursos/iconos/icon.ico"))
         
         #cargamos los datos del destino
         self.cargarDatos()

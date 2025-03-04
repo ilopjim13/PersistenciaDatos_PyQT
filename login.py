@@ -9,6 +9,7 @@ import json
 import re
 import models.cliente as model
 import BD.basedatos as baseLocal
+from PyQt6.QtGui import QIcon
 
 
 #Ventana Login / Register
@@ -19,6 +20,7 @@ class Ventana(QMainWindow):
         file_log = "login.ui"
         full_path_lo = os.path.join(os.path.dirname(__file__), file_log)
         uic.loadUi(full_path_lo, self)
+        self.setWindowIcon(QIcon("recursos/iconos/icon.ico"))
         #Añadimos lso datos de firebase.
         self.manager = manager
         self.firebaseConfig = {
