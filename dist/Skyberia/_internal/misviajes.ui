@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GestionViajes</class>
+ <widget class="QMainWindow" name="GestionViajes">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>755</width>
+    <height>485</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>755</width>
+    <height>485</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Gestión de Viajes</string>
+  </property>
+  <widget class="QWidget" name="principal">
+   <property name="styleSheet">
+    <string notr="true">#principal{
+background-image: url(:/icons/recursos/media/fondo.jpg);
+background-repeat: no-repeat;
+background-position: center;
+background-attachment: fixed;
+}
+QTableWidget {
+background-color: rgba(255, 255, 255, 150); /* Fondo blanco con 150 de opacidad (0-255) */
+color: black; 
+border: 1px solid #555; /* Borde gris */
+padding: 5px; /* Espaciado interno */
+}
+QTableWidget::item {
+padding: 5px; /* Espaciado interno en cada item */
+color: black; 
+margin: 5px; /* Espaciado externo en cada item */
+}
+QTableWidget::item:selected {
+background-color: rgba(100, 100, 255, 200); /* Fondo azul al seleccionar un item */
+color: black; /* Color del texto al seleccionar */
+}
+QTableWidget QTableCornerButton::section {
+background-color: rgba(255, 255, 255, 50); /* Fondo semitransparente para las cabeceras */
+color: black; /* Color del texto en las cabeceras */
+border: 1px solid black; /* Borde negro */
+}
+QTableWidget::horizontalHeader {
+background-color: rgba(255, 255, 255, 50); /* Fondo semitransparente para las cabeceras horizontales */
+color: black; /* Color del texto en las cabeceras */
+border: 1px solid black; /* Borde negro */
+}
+QPushButton {
+background-color: rgba(255, 255, 255, 150); /* Fondo semitransparente para los botones */
+color: black; /* Color del texto en los botones */
+border: 1px solid black; /* Borde negro */
+padding: 5px; /* Espaciado interno */
+border-radius: 5px; /* Bordes redondeados */
+}
+QPushButton:hover {
+background-color: rgba(200, 200, 200, 200); /* Fondo más oscuro al pasar el ratón */
+}
+QPushButton:pressed {
+background-color: rgba(150, 150, 150, 200); /* Fondo aún más oscuro al presionar */
+}</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QWidget" name="widget" native="true">
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QPushButton" name="boton_volver_menu">
+            <property name="text">
+             <string>&lt; Volver al menu</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="tabla_viajes">
+         <property name="styleSheet">
+          <string notr="true">QTableWidget {
+    background-color: rgba(255, 255, 255, 180); /* Fondo blanco semi-transparente /
+    border: 1px solid gray; / Borde negro /
+    gridline-color: black; / Líneas de la tabla en negro /
+    font-size: 14px;
+    selection-background-color: rgba(100, 100, 255, 150); / Color al seleccionar fila /
+}
+
+QHeaderView::section {
+    background-color: rgba(255, 255, 255, 200); / Fondo blanco para los encabezados /
+    font-weight: bold;
+    padding: 5px;
+}
+
+QTableWidget QHeaderView::section {
+    border: none; / Quitar bordes alrededor de los encabezados /
+}
+
+QTableWidget QTableCornerButton::section {
+    background-color: rgba(255, 255, 255, 200); / Esquina superior izquierda /
+}
+
+QHeaderView::section {
+    background: rgba(255, 255, 255, 200); / Fondo blanco en los encabezados /
+    font-weight: bold; / Negrita en los encabezados /
+    border: 1px solid black;
+}
+
+QHeaderView::section:disabled {
+    background: rgba(220, 220, 220, 180); / Fondo de encabezados deshabilitados /
+}
+
+QHeaderView::section {
+    border: 1px solid black; / Borde negro /
+    padding: 5px;
+}
+
+QTableWidget::horizontalHeader {
+    qproperty-contains: false; / Deshabilitar la interacción con los encabezados */
+}</string>
+         </property>
+         <attribute name="horizontalHeaderCascadingSectionResizes">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>190</number>
+         </attribute>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>true</bool>
+         </attribute>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget" native="true">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QPushButton" name="boton_actualizar">
+            <property name="text">
+             <string>Actualizar Viaje</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="boton_eliminar">
+            <property name="text">
+             <string>Eliminar Viaje</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="recursos.qrc"/>
+ </resources>
+ <connections/>
+</ui>
