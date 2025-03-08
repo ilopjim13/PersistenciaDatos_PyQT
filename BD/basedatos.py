@@ -4,6 +4,19 @@ from models.cliente import Cliente
 
 #Crear las tablas que necesiteis brothers nico gay
 
+def obtenerClientes():
+    conn = sqlite3.connect('viajes.db')
+    cursor = conn.cursor()
+    # Ejecutar la actualización
+    cursor.execute("""
+        select * from cliente 
+    """)
+    clientes = cursor.fetchall()
+    
+    conn.commit()
+    conn.close()
+    return clientes
+
 def update_cliente(nuevo_nombre, nuevo_email, dni,correo):
     conn = sqlite3.connect('viajes.db')
     cursor = conn.cursor()
@@ -62,7 +75,7 @@ def obtener_cliente(email):
     cursor.execute("SELECT * FROM cliente WHERE email = ?", (email,))
     cliente = cursor.fetchone()
     conn.close()
-    return Cliente(0,cliente[1],cliente[2],cliente[3],cliente[4])
+    return Cliente(0,cliente[1],cliente[2],cliente[3],cliente[4],cliente[5])
 
 def eliminarClientePorCorreo(correo):
     conexion = sqlite3.connect("viajes.db")
@@ -101,7 +114,7 @@ def insertar_cliente(cliente):
 
     cursor.execute("""
         INSERT INTO cliente (nombre, password, email, apellido, dni)
-        VALUES (?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?)
     """, (cliente.nombre, cliente.password, cliente.email, cliente.apellido, cliente.dni))
     
     conn.commit()
@@ -221,7 +234,7 @@ def restablecer():
     cursor = conn.cursor()
 
     # DROP PARA CREAR LAS TABLAS DE NUEVO
-    #cursor.execute("DROP TABLE IF EXISTS cliente") 
+    cursor.execute("DROP TABLE IF EXISTS cliente") 
     cursor.execute("DROP TABLE IF EXISTS destino") 
     cursor.execute("DROP TABLE IF EXISTS vuelo") 
     cursor.execute("DROP TABLE IF EXISTS avion") 
@@ -281,15 +294,6 @@ def restablecer():
         )
     """)
 
-
-    ## INSERTS PARA PRUEBAS
-    #insert para clientes
-    #cursor.execute("""
-    #    INSERT INTO cliente (nombre, email, apellido, dni)
-    #    VALUES (?, ?, ?, ?)
-    #""", ("Juan", "juan@example.com", "Pérez", "12345678A"))
-
-    # INSERTS DE DESTINOS
     cursor.execute("""
         INSERT INTO destino (nombre, precio) VALUES 
         ('España', 200),

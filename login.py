@@ -42,6 +42,7 @@ class Ventana(QMainWindow):
         self.bu_login.clicked.connect(self.gui_login)
         self.bu_reg.clicked.connect(self.gui_reg)
 
+
     #Hacemos el register
     def gui_reg(self):
         #Obtenemos los datos 
@@ -93,6 +94,8 @@ class Ventana(QMainWindow):
         except Exception as e:
             QMessageBox.critical(self, 'Error', "Error")
 
+
+
     #Realizamos el login
     def gui_login(self):
         #Obtenemos los datos
@@ -127,6 +130,9 @@ class Ventana(QMainWindow):
             error = json.loads(error_json)['error']['message']
             QMessageBox.critical(self, 'Error', error)
             self.delete_line()
+        except Exception as e:
+            QMessageBox.critical(self, 'Error', "Error")
+
 
     #Si los datos son correctos, enseñará diferentes mensajes.
     def correcto(self, estatus):
